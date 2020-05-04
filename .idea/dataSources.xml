@@ -7,7 +7,7 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://balarama.db.elephantsql.com:5432/ijaznmhb</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="postgres@localhost" uuid="ac329bec-ee1c-488f-a64a-d9f2a43d3fd6">
+    <data-source source="LOCAL" name="postgres@localhost" uuid="30b6ba84-751e-4812-a230-93c9d2fb5ae0">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
