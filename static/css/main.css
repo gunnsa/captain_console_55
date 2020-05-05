@@ -31,11 +31,11 @@ body {
 
 .single-product {
     text-align: center;
-    border: 2px solid #AB17FF;
 }
 
 
 .product-img {
+    
     width:  200px;
     height: 250px;
     border: 2px solid #AB17FF;
