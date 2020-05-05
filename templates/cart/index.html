@@ -9,7 +9,6 @@
                 <td> {{ product.name }} </td>
                 <td> {{ product.price }}</td>
             </tr>
-            {% include 'product/single_product.html' with product=product %}
         {% endfor %}
     </table>
 {% endblock %}

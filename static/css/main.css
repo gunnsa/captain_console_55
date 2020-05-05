@@ -10,9 +10,14 @@ body {
     color: white;
 }
 
-/*.product {
-    border-bottom: solid 2px #AB17FF;
-}*/
+
+.allproducts{
+    display: block;
+    width: 40%;
+    height: auto;
+    border-bottom: 2px;
+    border-bottom-color: #AB17FF;
+}
 
 * {
     box-sizing: border-box;
@@ -31,7 +36,7 @@ body {
     text-align: center;
 }
 
-
+/*hver og ein mynd af vöru*/
 .product-img {
     object-fit: contain;
     width:  200px;

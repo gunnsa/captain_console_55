@@ -10,9 +10,13 @@
             <p>{{ product.price }}$</p>
             <p>{{ product.color }}</p>
             <p>{{ product.manufacturer }}</p>
-            <li><a href="#">How many?</a></li>
-            <li><a href="{% url 'cart-index' %}">Add to Cart</a></li>
-            <li><a href="#">Add to Wishlist</a></li>
+            <a href="#">How many?</a><br>
+            <a href="{% url 'cart' %}">Add to Cart</a><br>
+            <!-- <li><a href="/cart/">Add to Cart</li> -->
+            <!--<li><a href="% url 'cart' product.id %}">Add to Cart</a></li> -->
+            <!--<button class="btn -btn-primary" onclick="location.href% url 'cart' %}?id=product.id">Add to Cart</button> -->
+            <!--<a href="% url 'cart' %}?id=product.id"> -->
+            <a href="#">Add to Wishlist</a>
         </div>
     </div>
     <div class="product-description">
