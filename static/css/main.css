@@ -35,7 +35,7 @@ body {
 
 
 .product-img {
-    
+    object-fit: contain;
     width:  200px;
     height: 250px;
     border: 2px solid #AB17FF;
