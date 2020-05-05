@@ -1,3 +1,19 @@
+/* öll síðan svört og hvítir stafir */
+body {
+    background-color: black;
+    color: white;
+}
+
+/* navigation bar */
+.container-fluid {
+    background-color: black;
+    color: white;
+}
+
+.container {
+    margin: 200px;
+}
+
 /*.product {
     border-bottom: solid 2px #AB17FF;
 }*/
@@ -6,16 +22,10 @@
     box-sizing: border-box;
 }
 
-.navbar {
-    position: relative;
-    overflow: hidden;
-}
-
 .products {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-
 
 .single-product h4, p {
     color: white;
@@ -23,19 +33,14 @@
 
 .single-product {
     text-align: center;
-    border: 1px solid white;
+    border: 2px solid #AB17FF;
 }
 
 
 .product-img {
     width:  200px;
     height: 250px;
-}
-
-/* öll síðan svört og hvítir stafir */
-body {
-    background-color: black;
-    color: white;
+    border: 2px solid #AB17FF;
 }
 
 /* linkar undir information í footer hvítir */
@@ -43,9 +48,7 @@ footer a {
     color: white;
 }
 
-/* navigation bar */
-.container-fluid {
-    background-color: black;
-    color: white;
+footer {
+    position: absolute;
 }
 
