@@ -6,10 +6,7 @@
     box-sizing: border-box;
 }
 
-.navbar {
-    position: relative;
-    overflow: hidden;
-}
+
 
 .products {
     display: grid;
