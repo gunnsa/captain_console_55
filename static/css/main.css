@@ -35,12 +35,19 @@
 /* öll síðan svört og hvítir stafir */
 body {
     background-color: black;
-}*/
+}
+*/
     color: white;
 }
 
 /* linkar undir information í footer hvítir */
 footer a {
+    color: white;
+}
+
+/* navigation bar */
+.container-fluid, navbar-header {
+    background-color: black;
     color: white;
 }
 
