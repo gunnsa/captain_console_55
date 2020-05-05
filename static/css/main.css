@@ -15,7 +15,11 @@ body {
     display: block;
     width: 40%;
     height: auto;
-
+}
+.signup {
+    display: block;
+    width: 35%;
+    height: auto;
 }
 
 * {
@@ -50,7 +54,6 @@ footer a {
 
 footer {
     position: absolute;
-    margin-left: 15%;
 }
 
 .product-details {
@@ -68,3 +71,6 @@ footer {
     margin: 20px;
 }
 
+.input-group {
+    width: 30%;
+}
