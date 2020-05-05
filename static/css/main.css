@@ -46,7 +46,7 @@ footer a {
 }
 
 /* navigation bar */
-.container-fluid, navbar-header {
+.container-fluid {
     background-color: black;
     color: white;
 }
