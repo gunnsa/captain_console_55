@@ -10,9 +10,7 @@ body {
     color: white;
 }
 
-.container {
-    margin: 200px;
-}
+
 
 /*.product {
     border-bottom: solid 2px #AB17FF;
@@ -50,5 +48,20 @@ footer a {
 
 footer {
     position: absolute;
+}
+
+.product-details {
+    position: center;
+}
+
+.product-details div {
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+}
+
+.product-details .product-img {
+    display: inline-block;
+    margin: 20px;
 }
 
