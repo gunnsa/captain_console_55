@@ -3,9 +3,11 @@
     {% for product_image in product.productimage_set.all %}
         <img src="{{ product_image.image }}" class="product-img" />
     {% endfor %}
-    <h1>{{ product.name }}</h1>
-    <p>{{ product.price }}$</p>
-    <p>{{ product.color }}</p>
-    <p>{{ product.manufacturer }}</p>
+    <div>
+        <h1>{{ product.name }}</h1>
+        <p>{{ product.price }}$</p>
+        <p>{{ product.color }}</p>
+        <p>{{ product.manufacturer }}</p>
+    </div>
     <p>{{ product.long_description }}</p>
 {% endblock %}
