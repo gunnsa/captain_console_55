@@ -6,6 +6,7 @@ $(document).ready(function () {
       value < 1 ? value = 1 : '1';
       value--;
       document.getElementById('quantity').value = value;
+      document.getElementById('quantity').innerHTML = value; //þannig við sjáum breytingu í HTML til að tengja við cart
     })
 })
 
@@ -16,6 +17,7 @@ $(document).ready(function () {
       value = isNaN(value) ? 0 : value;
       value++;
       document.getElementById('quantity').value = value;
+      document.getElementById('quantity').innerHTML = value; //þannig við sjáum breytingu í HTML til að tengja við cart
     })
 })
 
