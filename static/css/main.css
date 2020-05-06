@@ -183,7 +183,11 @@ footer {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #393939;}
+.dropdown-content a:hover {
+    background-color: #393939;
+}
 
 /* Show the dropdown menu on hover */
-.dropdown-brand:hover .dropdown-content {display: block;}
+.dropdown-brand:hover .dropdown-content {
+    display: block;
+}
