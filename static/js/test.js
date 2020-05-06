@@ -7,10 +7,10 @@ $(document).ready(function () {
             url: '/products/' + cartItemId + '/add_to_cart',
             type: 'POST',
             success: function (resp) {
-                alert("SUCCESS!")
+                alert("Item added to cart")
             },
             error: function (status, error) {
-                alert("ERROR")
+                alert("Whoops something went wrong :(")
 
             }
 

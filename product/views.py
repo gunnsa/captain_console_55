@@ -1,7 +1,9 @@
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
 
+from cart.models import Cart
 from product.models import Product
 
 
@@ -36,14 +38,16 @@ def get_product_by_id(request, id):
         'product': get_object_or_404(Product, pk=id)
     })
 
-@csrf_exempt
-def add_to_cart(request, productid):
-    print(productid)
-    context = {'products': Product.objects.all().order_by('name')}
-    return render(request, 'product/index.html', context)
-
 def sort_product_by_specific(request, manufacturer):
     context = {'products': Product.objects.all()}
     return render(request, 'product/index.html', context)
+
+@csrf_exempt
+def add_to_cart(request, productid):
+    current_user = request.user.id
+    Cart.objects.create(user_id=current_user, product_id=productid, quantity=1)
+    context = {'products': Product.objects.all().order_by('name')}
+    return render(request, 'product/index.html', context)
+
 
 
