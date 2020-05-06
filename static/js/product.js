@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $('#search-btn').on('click', function (e) {
         e.preventDefault();
+
         console.log(this)
         var searchText = $(this).attr('data-name');
 
