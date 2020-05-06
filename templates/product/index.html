@@ -11,7 +11,7 @@
       </button>
       <div class="dropdown-content">
           {% for i in manufacturers  %}
-              <a href="#" id="search-btn" data-name="{{ i }}">{{ i }}</a>
+              <a href="#{{ i }}" id="search-btn" data-name="{{ i }}">{{ i }}</a>
           {% endfor %}
       </div>
     </div>

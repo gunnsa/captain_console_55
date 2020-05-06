@@ -11,9 +11,7 @@ $(document).ready(function () {
             },
             error: function (status, error) {
                 alert("ERROR")
-
             }
-
         });
     })
 })
