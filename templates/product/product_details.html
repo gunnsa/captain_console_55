@@ -13,12 +13,13 @@
             <p>{{ product.price }}$</p>
             <p>{{ product.color }}</p>
             <p>{{ product.manufacturer }}</p>
-            <a href="#">How many?</a><br>
-            <p>
-                <a><img src="https://pngimg.com/uploads/minus/minus_PNG8.png" id="minus1" width="20" height="20"></a>
-                <input id="qty1" type="text" value="1" disabled>
-                <a><img id="add1" src="https://images.emojiterra.com/google/android-10/512px/2795.png" width="20" height="20"></a>
-            </p>
+
+            <div class="nice-number">
+               <button id="decrease" onclick="decreaseValue()">-</button>
+               <input type="number" value="1" disabled>
+               <button id="increase" onclick="increaseValue()">+</button>
+            </div>
+        </div>
 
 
             <a href="{% url 'cart' %}">Add to Cart</a><br>
