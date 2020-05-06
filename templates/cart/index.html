@@ -4,10 +4,14 @@
         <h2>Cart</h2>
     </div>
     <table>
-        {% for product in cart.products.all %}
+        {% for cart in carts %}
             <tr>
-                <td> {{ product.name }} </td>
-                <td> {{ product.price }}</td>
+                <td> {{ cart.user }} </td>
+                <td> {{ cart.quantity }} </td>
+                <td> {{ cart.product.name }}</td>
+                <td> {{ cart.product.price }}</td>
+                <td> {{ cart.product.short_description }}</td>
+                <img class="product-img" src="{{ cart.product.productimage_set.first.image }}" />
             </tr>
         {% endfor %}
     </table>
