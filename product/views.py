@@ -12,9 +12,8 @@ def index(request):
         products = [{
             'id': x.id,
             'name': x.name,
-            'description': x.description,
-            'productImage': x.productimage_set.first().image
-        } for x in Product.objects.filter(name_icontains=drop_filter)]
+            'manufacturer': x.manufacturer,
+        } for x in Product.objects.filter(name__icontains=drop_filter)]
         return JsonResponse({'data': products})
 
     products = Product.objects.all().order_by('name')
