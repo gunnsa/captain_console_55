@@ -14,9 +14,10 @@ def index(request):
         products = [{
             'id': x.id,
             'name': x.name,
-            'manufacturer': x.manufacturer,
+            'color': x.color,
             'price': x.price,
             'short_description': x.short_description,
+            'manufacturer': x.manufacturer,
             'color': x.color,
             'firstImage': x.productimage_set.first().image
         } for x in Product.objects.filter(manufacturer__exact=drop_filter)]
@@ -54,6 +55,3 @@ def add_to_cart(request, productid):
     Cart.objects.create(user_id=current_user, product_id=productid, quantity=1)
     context = {'products': Product.objects.all().order_by('name')}
     return render(request, 'product/index.html', context)
-
-
-
