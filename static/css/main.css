@@ -33,12 +33,11 @@ body {
     padding-left: 47%;
     transform: translate(-50%, -50%);
 }
-
 input {
     background: black;
     outline: #AB17FF;
     text-align: center;
-    width: 4ch;
+    width: 5ch;
 }
 
 button {
