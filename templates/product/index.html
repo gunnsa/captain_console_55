@@ -4,29 +4,44 @@
         <img class="allproducts" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/95992786_10158165756738972_5391447888045801472_o.jpg?_nc_cat=110&_nc_sid=e007fa&_nc_ohc=0iLAORcCWpEAX_bvWvT&_nc_ht=scontent.frkv3-1.fna&oh=f13967415510ae44a81a0de405c1473b&oe=5ED82A38">
     </div>
 
-    <div class="dropdown-sort">
-      <button class="dropbtn">Sort by
-        <span class="caret"></span>
-      </button>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-    </div>
 
     <div class="dropdown-brand">
       <button class="dropbtn">Brand
         <span class="caret"></span>
       </button>
       <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+          {% for i in manufacturers  %}
+              <button id="search-btn" class="btn btn-default">{{ i }}</button>
+          {% endfor %}
       </div>
     </div>
 
-    
+
+    <div class="dropdown-sort">
+      <button class="dropbtn">Sort by
+        <span class="caret"></span>
+      </button>
+      <div class="dropdown-content">
+          <a href="#" onclick="veronika()">Product name</a>
+          <a href="#" onclick="veronika()">Price high to low</a>
+          <a href="#" onclick="veronika()">Price low to high</a>
+      </div>
+    </div>
+
+
+    <form method="GET">
+        <select id="airline-selected">
+            {% for i in manufacturers %}
+                <option value="{{ i.id }}">
+                {{ i }}
+                </option>
+            {% endfor %}
+        </select>
+        <input type="button" value="Update" id="selection-button" method="GET">
+    </form>
+
+
+
     <div class="products">
         {% for product in products %}
             {% include 'product/single_product.html' with product=product %}

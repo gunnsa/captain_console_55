@@ -1,1 +1,7 @@
-$(document)
+$(document).ready(function () {
+    $('#search-btn').on('click', function(e) {
+
+
+    })
+
+})
