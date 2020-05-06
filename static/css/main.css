@@ -22,6 +22,12 @@ body {
     height: auto;
 }
 
+.productdetails {
+    display: block;
+    width: 40%;
+    height: auto;
+}
+
 * {
     box-sizing: border-box;
 }

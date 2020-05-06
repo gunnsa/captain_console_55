@@ -3,7 +3,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-    <h1>Product Details</h1>
+    <img class="productdetails" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96013030_10158139329987567_4199711239271612416_n.jpg?_nc_cat=100&_nc_sid=e007fa&_nc_oc=AQmLLQCCJ_2BuXXnF6ZOlq54VbKUDlRhB1ujwsm8W-DGJCSy1MKjFsHg_pzXhAEMLFM&_nc_ht=scontent.frkv3-1.fna&oh=644930f0dd3d7435701f542f8be0c3ef&oe=5ED6E0B5">
     <div class="product-details">
         {% for product_image in product.productimage_set.all %}
             <img src="{{ product_image.image }}" class="product-img" />

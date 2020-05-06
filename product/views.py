@@ -1,10 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-
 from product.models import Product
 
 # Create your views here.
 def index(request):
-    context = {'products': Product.objects.all().order_by('name')}
+    context = {'products': Product.objects.all()}
     return render(request, 'product/index.html', context)
 
 #/products/id
@@ -13,5 +12,8 @@ def get_product_by_id(request, id):
         'product': get_object_or_404(Product, pk=id)
     })
 
-def add_to_cart(request):
-    pass
+def sort_product_by_specific(request, manufacturer):
+    context = {'products': Product.objects.all()}
+    return render(request, 'product/index.html', context)
+
+
