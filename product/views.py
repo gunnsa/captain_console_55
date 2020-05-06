@@ -1,8 +1,6 @@
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth.decorators import login_required
-
 from cart.models import Cart
 from product.models import Product
 
@@ -48,10 +46,16 @@ def sort_product_by_specific(request, manufacturer):
 
 @csrf_exempt
 def add_to_cart(request, productid):
-    current_user = request.user.id
-    if Cart.objects.filter(product_id__exact=productid) and Cart.objects.filter(user_id__exact=current_user):
-        existing_cart = Cart.objects.filter(product__cart__exact=productid, user_id__exact=current_user)
-        existing_cart.quantity
-    Cart.objects.create(user_id=current_user, product_id=productid, quantity=1)
+    if request.method == 'POST':
+        current_user = request.user.id
+        if Cart.objects.filter(product_id__exact=productid) and Cart.objects.filter(user_id__exact=current_user):
+            existing_cart = Cart.objects.get(product_id=productid, user_id=current_user)
+            print(existing_cart.quantity)
+            existing_cart.quantity = existing_cart.quantity + 1
+            print(existing_cart.quantity)
+            existing_cart.save()
+        else:
+            Cart.objects.create(user_id=current_user, product_id=productid, quantity=1)
+
     context = {'products': Product.objects.all().order_by('name')}
     return render(request, 'product/index.html', context)
