@@ -4,7 +4,7 @@
 {% load static %}
 {% block content %}
     <h1>Product Details</h1>
-    <div class="product-details">
+    <div class="product-details" data-name="{{ product.name }}" data-price="{{ product.price }}" data-id="{{ product.id }}" data-qty="1">
         {% for product_image in product.productimage_set.all %}
             <img src="{{ product_image.image }}" class="product-img" />
         {% endfor %}
@@ -14,11 +14,9 @@
             <p>{{ product.color }}</p>
             <p>{{ product.manufacturer }}</p>
             <a href="#">How many?</a><br>
-            <!--<li><a href="% url 'cart' product.id %}">Add to Cart</a></li> -->
-            <script src = {% static "js/test.js" %}> </script>
-            <button class="btn -btn-primary" onclick=get_id({{ product.id }}{{ product.name }})>Add to Cart</button>
-            <!--<a href="% url 'cart' %}?id=product.id"> -->
-            <a href="#">Add to Wishlist</a>
+            <button class="bth -bth-primary" id="add_to_cart_btn" data-id="{{ product.id }}">Add to cart</button>
+            <a href="#">Add to Wishlist</a><br>
+            <a href="#">{{ product.name }}</a><br>
         </div>
     </div>
     <div class="product-description">
