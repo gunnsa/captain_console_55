@@ -1,3 +1,8 @@
+$(document).ready(function () {
+
+})
+
+
 function get_id(proId, name) {
     localStorage.setItem('productId', JSON.stringify(proId))
     localStorage.setItem('productId', JSON.stringify(proId))
