@@ -14,7 +14,7 @@ $(document).ready(function () {
               var newHtml = resp.data.map(d => {
                   return `<div class='single-product'>
                           <a href='/products/${d.id}'>
-                            <img class="product-img" src="${d.firstImage}"/>
+                                <img class="product-img" src="${d.firstImage}"/>
                                 <h4>${d.name}</h4> 
                                 <p>${d.short_description}</p>
                                 <p>${d.price}$</p>
