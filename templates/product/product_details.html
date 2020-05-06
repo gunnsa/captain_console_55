@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Product Details</h1>
+    <img class="productdetails" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96013030_10158139329987567_4199711239271612416_n.jpg?_nc_cat=100&_nc_sid=e007fa&_nc_oc=AQmLLQCCJ_2BuXXnF6ZOlq54VbKUDlRhB1ujwsm8W-DGJCSy1MKjFsHg_pzXhAEMLFM&_nc_ht=scontent.frkv3-1.fna&oh=644930f0dd3d7435701f542f8be0c3ef&oe=5ED6E0B5">
     <div class="product-details">
         {% for product_image in product.productimage_set.all %}
             <img src="{{ product_image.image }}" class="product-img" />
@@ -11,6 +11,13 @@
             <p>{{ product.color }}</p>
             <p>{{ product.manufacturer }}</p>
             <a href="#">How many?</a><br>
+            <p>
+                <a><img src="https://pngimg.com/uploads/minus/minus_PNG8.png" id="minus1" width="20" height="20"></a>
+                <input id="qty1" type="text" value="1" disabled>
+                <a><img id="add1" src="https://images.emojiterra.com/google/android-10/512px/2795.png" width="20" height="20"></a>
+            </p>
+
+
             <a href="{% url 'cart' %}">Add to Cart</a><br>
             <!-- <li><a href="/cart/">Add to Cart</li> -->
             <!--<li><a href="% url 'cart' product.id %}">Add to Cart</a></li> -->
