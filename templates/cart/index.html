@@ -15,7 +15,6 @@
 
         <tbody>
         {% for cart in carts %}
-
             <tr>
                 <td><img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}"></td>
                 <td> {{ cart.product.name }} <br>
@@ -31,13 +30,16 @@
                     </div>
                 </td>
 
-                <td class="total" data-quantity="{{ cart.quantity }}" data-price="{{ cart.price }}"> {{ cart.product.price }} </td>
+                {% for price in eachitem %}
+                    <td class="total"> {{ price }} </td>
+                {% endfor %}
                 <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 
             </tr>
             <tr></tr>
 
         {% endfor %}
+        <td class="total"> {{ sumtotal }} </td>
         </tbody>
 
     <i class="fa fa-trash-alt"></i>
