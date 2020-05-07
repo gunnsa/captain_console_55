@@ -50,9 +50,11 @@ def get_product_by_id(request, id):
         'product': get_object_or_404(Product, pk=id)
     })
 
+
 def sort_product_by_specific(request, manufacturer):
     context = {'products': Product.objects.all()}
     return render(request, 'product/index.html', context)
+
 
 @csrf_exempt
 def add_to_cart(request, productid, quantity):
