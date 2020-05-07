@@ -2,10 +2,19 @@
 body {
     background-color: black;
     color: white;
+    padding-bottom: 0px;
 }
 /* gerir takka/linka hvita */
 a {
     color: white;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 200px;
 }
 
 
@@ -454,4 +463,14 @@ button {
     height: 40%;
     float: left;
     display: inline-block;
+}
+
+.cart h2 {
+    padding-left: 40%;
+    padding-bottom: 10%;
+}
+
+.cart button {
+    width: 90px;
+    height: 40px;
 }
