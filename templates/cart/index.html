@@ -14,13 +14,13 @@
         </thead>
 
         <tbody>
-        {% for cart in carts %}
+        {% for cart in carts %} <!-- carts kemur fra cart\views.py - listi af öllum vörum sem þessi notandi hefur í körfu -->
 
             <tr>
                 <td><img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}"></td>
                 <td> {{ cart.product.name }} <br>
                     {{ cart.product.short_description }} <br>
-                    {{ cart.product.price }} <!-- TODO: calculate total price -->
+                    {{ cart.product.price }}
                 </td>
 
                 <td>
@@ -31,7 +31,8 @@
                     </div>
                 </td>
 
-                <td class="total" data-quantity="{{ cart.quantity }}" data-price="{{ cart.price }}"> {{ cart.product.price }} </td>
+                <td class="total"> {{ cart.product.price }} </td> <!-- TODO: calculate total price -->
+                <td>{{ total }}</td>
                 <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 
             </tr>

@@ -68,7 +68,6 @@ def add_to_cart(request, productid, quantity):
     return render(request, 'product/index.html', context)
 
 
-def total_price(self):
-    return self.total_quantity * self.price
+
 
 
