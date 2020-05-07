@@ -45,7 +45,7 @@ def sort_product_by_specific(request, manufacturer):
     return render(request, 'product/index.html', context)
 
 @csrf_exempt
-def add_to_cart(request, productid):
+def add_to_cart(request, productid, quantity):
     if request.method == 'POST':
         current_user = request.user.id
         if Cart.objects.filter(product_id__exact=productid) and Cart.objects.filter(user_id__exact=current_user):
@@ -55,7 +55,7 @@ def add_to_cart(request, productid):
             print(existing_cart.quantity)
             existing_cart.save()
         else:
-            Cart.objects.create(user_id=current_user, product_id=productid, quantity=1)
+            Cart.objects.create(user_id=current_user, product_id=productid, quantity=quantity)
 
     context = {'products': Product.objects.all().order_by('name')}
     return render(request, 'product/index.html', context)
