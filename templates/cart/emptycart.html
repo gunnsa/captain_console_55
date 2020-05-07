@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="cart">
+        <h2>Cart</h2>
+        <h4>Your cart is empty! :( </h4>
+        <button class="btn -btn-primary" onclick="location.href='{% url 'products-index' %}?';" id = "go_shop">Go shop!</button>
+    </div>
+{% endblock %}
