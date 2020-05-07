@@ -15,7 +15,10 @@ def index(request):
         sumtotal += product.quantity * product.product.price
         rounded_sumtotal = ("{:.2f}".format(float(sumtotal)))
         context = {'carts': Cart.objects.all().filter(user_id=request.user.id), 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
-    return render(request, 'cart/index.html', context)
+    try:
+        return render(request, 'cart/index.html', context)
+    except:
+        return render(request, 'cart/emptycart.html')
 
 
 @csrf_exempt
