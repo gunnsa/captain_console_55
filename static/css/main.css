@@ -337,17 +337,7 @@ button {
     box-sizing: border-box;
 }
 
-.dropdown-content button.search-btn {
-    border: none;
-    padding: 12px 16px;
-    min-width: 160px;
-    position: relative;
-    display: inline-block;
 
-}
-
-.dropdown-content button:hover {
-    background-color: #393939;
 .form.form-horizontal {
     display: inline-block;
     padding-left: 10%;
@@ -359,3 +349,37 @@ button {
     float: left;
     display: inline-block;
 }
+
+
+
+
+.dropdown-content button.price-btn{
+    border: none;
+    padding: 12px 16px;
+    min-width: 160px;
+    position: relative;
+    display: inline-block;
+    text-align:left;
+}
+
+.dropdown-content button:focus {
+    outline: none;
+}
+
+
+.dropdown-content button:hover {
+    background-color: #393939;
+}
+
+.dropdown-content button.brand-btn {
+    border: none;
+    padding: 12px 16px;
+    min-width: 160px;
+    position: relative;
+    display: inline-block;
+    text-align:left;
+
+}
+
+
+

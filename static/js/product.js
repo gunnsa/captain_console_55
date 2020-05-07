@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('.search-btn').on('click', function (e) {
+    $('.brand-btn').on('click', function (e) {
         e.preventDefault();
         console.log(this)
         var searchText = $(this).attr('data-name');
@@ -19,7 +19,7 @@ $(document).ready(function () {
                       </div>`
               });
               $('.products').html(newHtml.join(''));
-              $('#search-btn').val('');
+              $('#brand-btn').val('');
             },
             error: function (xhr, status, error) {
                 console.error(error);
