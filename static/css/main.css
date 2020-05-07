@@ -110,6 +110,11 @@ body {
 }
 
 
+.table tbody tr {
+    color: #AB17FF;
+}
+
+
 /* -------------- footer -------------- */
 
 .signup {

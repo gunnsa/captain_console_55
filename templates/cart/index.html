@@ -4,14 +4,17 @@
         <h2>Cart</h2>
     </div>
     <table class="table">
-        <tr>
-            <td></td>
-            <td> Product </td>
-            <td> Quantity </td>
-            <td> Price </td>
-        </tr>
+        <thead>
+            <tr>
+                <td></td>
+                <td> Product </td>
+                <td> Quantity </td>
+                <td> Price </td>
+            </tr>
+        </thead>
 
         {% for cart in carts %}
+            <tbody>
             <tr>
                 <td><img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}"></td>
                 <td> {{ cart.product.name }} <br>
@@ -24,6 +27,7 @@
                 <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash" aria-hidden="true"></i></i></button></td>
 
             </tr>
+            </tbody>
         {% endfor %}
 
     <i class="fa fa-trash-alt"></i>
