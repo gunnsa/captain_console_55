@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#remove_cart_item_btn').on('click', function(e){
+    $('.remove_cart_item_btn').on('click', function(e){
         e.preventDefault();
         var cartId = $(this).attr('data-id');
         console.log(cartId)
