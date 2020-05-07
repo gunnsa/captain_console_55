@@ -24,26 +24,33 @@
                 </td>
 
                 <td>
-                    <div id="nice-number">
+                    <div id="nice-number"> <!-- TODO: Laga þannig hægt sé að nota quantity takka -->
                         <button class="decrease_value" id="decrease">-</button>
                         <input id="quantity" type="number" value="{{ cart.quantity }}" disabled>
                         <button class="increase_value" id="increase">+</button>
                     </div>
                 </td>
 
-                {% for price in eachitem %}
-                    <td class="total"> {{ price }} </td>
+
+                {% for product, price in eachItemTotal.items %}
+                    {% if product ==  cart.product.id %}
+                        <td class="product-total"> {{ price }} </td>
+                    {% endif %}
                 {% endfor %}
+
                 <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 
             </tr>
             <tr></tr>
 
         {% endfor %}
-        <td class="total"> {{ sumtotal }} </td>
-        </tbody>
 
-    <i class="fa fa-trash-alt"></i>
+
+
+        </tbody>
+    <td class="total" colspan="4"> <h4>Total:</h4></td>
+    <td class="total" > <h4>{{ sumTotal }} </h4></td>
 
     </table>
+
 {% endblock %}

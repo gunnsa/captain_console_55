@@ -7,17 +7,15 @@ from cart.models import Cart
 def index(request):
     usercart = Cart.objects.all().filter(user_id=request.user.id)
     sumtotal = 0
-    eachItem = []
+    eachItem = {}
     for product in usercart:
-        print(product.quantity)
+
         total = product.quantity * product.product.price
-        print('total: ', total)
-        eachItem.append(total)
+        eachItem[product.product.id] = total
         sumtotal += product.quantity * product.product.price
-        print(sumtotal)
-        print('eachitem ', eachItem)
-        #sum += carts.quantity * carts.product.price
-        context = {'carts': Cart.objects.all().filter(user_id=request.user.id), 'sumtotal': sumtotal, 'eachitem': eachItem}
+        rounded_sumtotal = ("{:.2f}".format(float(sumtotal)))
+
+        context = {'carts': Cart.objects.all().filter(user_id=request.user.id), 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
     return render(request, 'cart/index.html', context)
 
 
