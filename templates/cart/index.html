@@ -23,11 +23,19 @@
                     {{ cart.product.price }}
                 </td>
 
-                <td> {{ cart.quantity }} </td>
+                <td>
+                    <div id="nice-number">
+                        <button class="decrease_value" id="decrease">-</button>
+                        <input id="quantity" type="number" value="{{ cart.quantity }}" disabled>
+                        <button class="increase_value" id="increase">+</button>
+                    </div>
+                </td>
+
                 <td> {{ cart.product.price }} </td>
                 <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 
             </tr>
+            <tr></tr>
 
         {% endfor %}
         </tbody>
