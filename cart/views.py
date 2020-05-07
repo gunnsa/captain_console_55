@@ -5,6 +5,7 @@ from cart.models import Cart
 
 
 def index(request):
+    cuantity = Cart.objects.
     total = sum([item.product.price for item in Cart.objects.all().filter(user_id=request.user.id)])
     context = {'carts': Cart.objects.all().filter(user_id=request.user.id), 'total': total}
     return render(request, 'cart/index.html', context)
