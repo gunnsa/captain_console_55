@@ -59,3 +59,8 @@ def add_to_cart(request, productid):
 
     context = {'products': Product.objects.all().order_by('name')}
     return render(request, 'product/index.html', context)
+
+
+def total_price(self):
+    return self.total_quantity * self.price
+

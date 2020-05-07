@@ -20,5 +20,3 @@ $(document).ready(function () {
       document.getElementById('quantity').innerHTML = value; //þannig við sjáum breytingu í HTML til að tengja við cart
     })
 })
-
-
