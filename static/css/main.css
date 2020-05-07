@@ -46,6 +46,12 @@ body {
     color: white;
 }
 
+/* tekur hvítan border line */
+.navbar {
+    border: none;
+}
+
+
 /* -------------- products -------------- */
 
 .allproducts{
