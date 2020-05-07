@@ -248,13 +248,21 @@ footer a {
 .quantity_cart_wishlist {
     margin: 5px;
 }
-
+/*fyrir logged in people*/
 #add_to_cart_btn {
     display: inline-block;
     vertical-align: top;
     margin: 5px;
     border: 2px solid #90FFFF;
 }
+/*fyrir loggedout people */
+#add_to_cart {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+}
+
 
 #nice-number {
     display: inline-block;
