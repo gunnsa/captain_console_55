@@ -379,10 +379,3 @@ button {
     float: left;
     display: inline-block;
 }
-/*update takki*/
-.btn.btn-primary {
-    background: black;
-    width: 80px;
-    margin: 5px;
-    border: 2px solid #90FFFF
-}
