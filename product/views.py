@@ -5,7 +5,6 @@ from django.views.decorators.csrf import csrf_exempt
 from cart.models import Cart
 from product.models import Product
 
-
 # Create your views here.
 def index(request):
     if 'brand_filter' in request.GET:
