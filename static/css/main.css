@@ -4,60 +4,74 @@ body {
     color: white;
 }
 
+
+
+/* -------------- navigation bar -------------- */
+
 /* navigation bar */
 .container-fluid {
     background-color: black;
     color: white;
 }
 
+/* white font in navigationbar */
+#cart {
+    color: white;
+}
+
+/* cart icon */
+.fa-shopping-cart {
+    color: white;
+}
+
+/* allur texti í navigation bar hvítur */
+.nav.navbar-nav li a {
+    color: white;
+}
+
+/* search -> navbar */
+.input-group.md-form.form-sm.form-2 input {
+  border: 1px solid #bdbdbd;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+/* search -> navbar */
+.input-group.md-form.form-sm.form-2 input.amber-border {
+  border: 1px solid #ffca28;
+}
+
+/* Captain Console (logo) white */
+.navbar-default .navbar-brand  {
+    color: white;
+}
+
+/* tekur hvítan border line */
+.navbar {
+    border: none;
+}
+
+
+/* -------------- products -------------- */
 
 .allproducts{
     display: block;
     width: 40%;
     height: auto;
 }
-.signup {
-    display: block;
-    width: 35%;
-    height: auto;
-}
 
-.productdetails {
-    display: block;
-    width: 40%;
-    height: auto;
-}
-.box {
-    top: 50%;
-    left: 50%;
-    padding-left: 47%;
-    transform: translate(-50%, -50%);
-}
-input {
-    background: black;
-    outline: #AB17FF;
-    text-align: center;
-    width: 5ch;
-}
-
-button {
-    background: black;
-}
-
-
-* {
-    box-sizing: border-box;
-}
-
+/* setur vörur í fina röð */
 .products {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+/* texti undir myndir hvitur */
 .single-product h4, p {
     color: white;
 }
 
+/* setur texta undir myndr í miðjuna */
 .single-product {
     text-align: center;
 }
@@ -70,19 +84,26 @@ button {
     border: 2px solid #AB17FF;
 }
 
-/* linkar undir information í footer hvítir */
-footer a {
-    color: white;
+.product-img_cart {
+    object-fit: contain;
+    width:  100px;
+    height: 150px;
+    border: 2px solid #AB17FF;
 }
 
-footer {
-    position: absolute;
+/* neon product detail */
+.productdetails {
+    display: block;
+    width: 40%;
+    height: auto;
 }
 
+/* ekki viss hvað þetta gerir */
 .product-details {
     position: center;
 }
 
+/* nafn, verð, litur og framleiðandi */
 .product-details div {
     display: inline-block;
     vertical-align: top;
@@ -94,11 +115,39 @@ footer {
     margin: 20px;
 }
 
+/* til að setja texta í kördu í miðjuna -- þurfti að yfirskrifa bootsrap */
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  vertical-align: middle;
+}
+
+/* taka útlínur á takka þannig sjáist bara ruslið */
+#remove_cart_item_btn {
+    border: none;
+}
 
 
 
 
+/* -------------- footer -------------- */
 
+.signup {
+    display: block;
+    width: 35%;
+    height: auto;
+}
+
+/* linkar undir information í footer hvítir */
+footer a {
+    color: white;
+}
+
+
+/* -------------- Dropdown -------------- */
 
 /* Dropdown Button */
 .dropbtn {
@@ -143,10 +192,6 @@ footer {
 
 
 
-
-
-
-
 /* Dropdown Button */
 .dropbtn {
   background-color: #000000;
@@ -183,7 +228,105 @@ footer {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #393939;}
+.dropdown-content a:hover {
+    background-color: #393939;
+}
 
 /* Show the dropdown menu on hover */
-.dropdown-brand:hover .dropdown-content {display: block;}
+.dropdown-brand:hover .dropdown-content {
+    display: block;
+}
+
+
+/* heldur utan um quantity cart og wishlist takka */
+.quantity_cart_wishlist {
+    margin: 5px;
+}
+
+#add_to_cart_btn {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+}
+
+#nice-number {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+}
+
+#increase {
+    border: 1px solid white;
+}
+
+#quantity {
+    border: 1px solid white;
+}
+
+#decrease {
+    border: 1px solid white;
+}
+
+
+
+
+/* -------------- Cart og Wishlist -------------- */
+/* add to wishlist hjarta --> bara útlínur */
+.fa-heart-o {
+    color: white;
+    font-size: 48px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+}
+
+/* add to wishlist hjarta --> fyllt */
+.fa-heart {
+    color: white;
+    font-size: 48px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+}
+
+
+/* til að skipta um hjarta þegar mús er ofaná */
+.heart > .fa + .fa,
+.heart:hover > .fa {
+  display: none;
+}
+
+.heart:hover > .fa + .fa {
+  display: inherit;
+}
+
+
+/* -------------- Annað -------------- */
+
+/* veit ekki hvað þetta er */
+.box {
+    top: 50%;
+    left: 50%;
+    padding-left: 47%;
+    transform: translate(-50%, -50%);
+}
+
+/* search bar --> bæði í footer og navigation bar */
+/* afhverju viljum við hafa textann i miðjunni?? */
+input {
+    background: black;
+    outline: #AB17FF;
+    text-align: center;
+    width: 5ch;
+}
+
+/* gerir alla takka svarta */
+button {
+    background: black;
+}
+
+/* held þurfi ekki */
+* {
+    box-sizing: border-box;
+}
