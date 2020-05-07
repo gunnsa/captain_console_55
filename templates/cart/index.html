@@ -3,17 +3,26 @@
     <div class="cart">
         <h2>Cart</h2>
     </div>
-    <table>
+    <table class="table">
+        <tr>
+            <td></td>
+            <td> Product </td>
+            <td> Quantity </td>
+            <td> Price </td>
+        </tr>
+
         {% for cart in carts %}
             <tr>
-                <td> {{ cart.user }} </td>
+                <td><img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}"></td>
                 <td> {{ cart.quantity }} </td>
-                <td> {{ cart.product.name }}</td>
-                <td> {{ cart.product.price }}</td>
-                <td> {{ cart.product.short_description }}</td>
-                <img class="product-img" src="{{ cart.product.productimage_set.first.image }}" />
-                <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary" id="remove_cart_item_btn" data-id="{{ cart.id }}">Delete</button></td>
+                <td> {{ cart.product.name }} </td>
+                <td> {{ cart.product.price }} </td>
+                <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash" aria-hidden="true"></i></i></button></td>
+
             </tr>
         {% endfor %}
+
+    <i class="fa fa-trash-alt"></i>
+
     </table>
 {% endblock %}

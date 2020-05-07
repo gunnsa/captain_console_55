@@ -78,6 +78,13 @@ body {
     border: 2px solid #AB17FF;
 }
 
+.product-img_cart {
+    object-fit: contain;
+    width:  100px;
+    height: 150px;
+    border: 2px solid #AB17FF;
+}
+
 /* neon product detail */
 .productdetails {
     display: block;
@@ -101,7 +108,6 @@ body {
     display: inline-block;
     margin: 20px;
 }
-
 
 
 /* -------------- footer -------------- */
