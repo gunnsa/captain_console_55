@@ -64,3 +64,4 @@ def add_to_cart(request, productid, quantity):
 def total_price(self):
     return self.total_quantity * self.price
 
+
