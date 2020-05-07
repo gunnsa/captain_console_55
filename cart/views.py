@@ -16,7 +16,6 @@ def index(request):
         sumtotal += product.quantity * product.product.price
         print(sumtotal)
         print('eachitem ', eachItem)
-        #sum += carts.quantity * carts.product.price
         context = {'carts': Cart.objects.all().filter(user_id=request.user.id), 'sumtotal': sumtotal, 'eachitem': eachItem}
     return render(request, 'cart/index.html', context)
 
@@ -28,6 +27,10 @@ def remove_cart_item(request, cartid):
 
     context = {'carts': Cart.objects.all().filter(user_id=request.user.id)}
     return render(request, 'cart/index.html', context)
+
+def update_cart(request):
+    #laga quantity þegar það er ýtt á + eða mínus og uppfæra þá total-ið
+    pass
 
 
 #def total_price(request):
