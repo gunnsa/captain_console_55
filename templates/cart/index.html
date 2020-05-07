@@ -31,8 +31,8 @@
                     </div>
                 </td>
 
-                <td> {{ cart.product.price }} </td>
-                <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                <td class="total" data-quantity="{{ cart.quantity }}" data-price="{{ cart.price }}"> {{ cart.product.price }} </td>
+                <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 
             </tr>
             <tr></tr>
