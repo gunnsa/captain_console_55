@@ -330,3 +330,16 @@ button {
 * {
     box-sizing: border-box;
 }
+
+.dropdown-content button.search-btn {
+    border: none;
+    padding: 12px 16px;
+    min-width: 160px;
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropdown-content button:hover {
+    background-color: #393939;
+}
