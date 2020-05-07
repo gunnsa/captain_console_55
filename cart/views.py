@@ -5,9 +5,19 @@ from cart.models import Cart
 
 
 def index(request):
-    cuantity = Cart.objects.
-    total = sum([item.product.price for item in Cart.objects.all().filter(user_id=request.user.id)])
-    context = {'carts': Cart.objects.all().filter(user_id=request.user.id), 'total': total}
+    usercart = Cart.objects.all().filter(user_id=request.user.id)
+    sumtotal = 0
+    eachItem = []
+    for product in usercart:
+        print(product.quantity)
+        total = product.quantity * product.product.price
+        print('total: ', total)
+        eachItem.append(total)
+        sumtotal += product.quantity * product.product.price
+        print(sumtotal)
+        print('eachitem ', eachItem)
+        #sum += carts.quantity * carts.product.price
+        context = {'carts': Cart.objects.all().filter(user_id=request.user.id), 'sumtotal': sumtotal, 'eachitem': eachItem}
     return render(request, 'cart/index.html', context)
 
 
