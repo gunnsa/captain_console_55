@@ -10,12 +10,10 @@ def index(request):
     sumtotal = 0
     eachItem = {}
     for product in usercart:
-
         total = product.quantity * product.product.price
         eachItem[product.product.id] = total
         sumtotal += product.quantity * product.product.price
         rounded_sumtotal = ("{:.2f}".format(float(sumtotal)))
-
         context = {'carts': Cart.objects.all().filter(user_id=request.user.id), 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
     return render(request, 'cart/index.html', context)
 
