@@ -21,10 +21,18 @@ def index(request):
         } for x in Product.objects.filter(manufacturer__exact=drop_filter)]
         return JsonResponse({'data': products})
 
-    elif 'price-low' in request.GET:
-        products = Product.objects.all().order_by('price')
-        return render(request, 'product/index.html', products)
-
+    elif 'price' in request.GET:
+        products = [{
+            'id': x.id,
+            'name': x.name,
+            'color': x.color,
+            'price': x.price,
+            'short_description': x.short_description,
+            'manufacturer': x.manufacturer,
+            'color': x.color,
+            'firstImage': x.productimage_set.first().image
+        } for x in Product.objects.all().order_by('price')]
+        return JsonResponse({'data': products})
 
     products = Product.objects.all().order_by('name')
     manufacturers = Product.objects.values_list("manufacturer", flat=True).distinct()
@@ -34,9 +42,6 @@ def index(request):
         'manufacturers': manufacturers,
     }
     return render(request, 'product/index.html', context)
-
-
-
 
 
 #/products/id
