@@ -1,13 +1,10 @@
 $(document).ready(function () {
-    $('#search-btn').on('click', function (e) {
+    $('.search-btn').on('click', function (e) {
         e.preventDefault();
-
         console.log(this)
         var searchText = $(this).attr('data-name');
-
-        console.log('searchText: ', searchText)
         $.ajax( {
-            url: '/products?drop_filter=' + searchText,
+            url: '/products?brand_filter=' + searchText,
             type: 'GET',
 
             success: function (resp) {
@@ -30,3 +27,27 @@ $(document).ready(function () {
         })
     });
 });
+
+
+
+
+
+$(document).ready(function () {
+    $('.monika').on('click', function (e) {
+        e.preventDefault();
+        console.log(this)
+        var searchText = $(this).attr('data-name');
+        $.ajax( {
+            url: '/products?price-low=' + searchText,
+            type: 'GET',
+
+            success: function (resp) {
+              console.log('YES');
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        })
+    });
+});
+

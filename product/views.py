@@ -7,8 +7,8 @@ from product.models import Product
 
 # Create your views here.
 def index(request):
-    if 'drop_filter' in request.GET:
-        drop_filter = request.GET['drop_filter']
+    if 'brand_filter' in request.GET:
+        drop_filter = request.GET['brand_filter']
         products = [{
             'id': x.id,
             'name': x.name,
@@ -20,6 +20,11 @@ def index(request):
             'firstImage': x.productimage_set.first().image
         } for x in Product.objects.filter(manufacturer__exact=drop_filter)]
         return JsonResponse({'data': products})
+
+    elif 'price-low' in request.GET:
+        products = Product.objects.all().order_by('price')
+        return render(request, 'product/index.html', products)
+
 
     products = Product.objects.all().order_by('name')
     manufacturers = Product.objects.values_list("manufacturer", flat=True).distinct()
