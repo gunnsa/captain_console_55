@@ -14,7 +14,11 @@
         {% for cart in carts %}
             <tr>
                 <td><img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}"></td>
-                <td> {{ cart.product.name }} </td>
+                <td> {{ cart.product.name }} <br>
+                    {{ cart.product.short_description }} <br>
+                    {{ cart.product.price }}
+                </td>
+
                 <td> {{ cart.quantity }} </td>
                 <td> {{ cart.product.price }} </td>
                 <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash" aria-hidden="true"></i></i></button></td>
