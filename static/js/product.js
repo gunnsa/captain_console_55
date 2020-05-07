@@ -3,11 +3,12 @@ $(document).ready(function () {
         e.preventDefault();
         console.log(this)
         var searchText = $(this).attr('data-name');
+        console.log(this.url)
         $.ajax( {
             url: '/products?brand_filter=' + searchText,
             type: 'GET',
-
             success: function (resp) {
+                console.log(this.url)
               var newHtml = resp.data.map(d => {
                   return `<div class='single-product'>
                           <a href='/products/${d.id}'>
@@ -35,11 +36,14 @@ $(document).ready(function () {
         e.preventDefault();
         console.log(this)
         var searchText = $(this).attr('data-name');
+        console.log(this.url)
+
         $.ajax( {
             url: '/products?price=' + searchText,
             type: 'GET',
 
             success: function (resp) {
+                console.log(this.url)
               var newHtml = resp.data.map(d => {
                   return `<div class='single-product'>
                           <a href='/products/${d.id}'>
@@ -59,4 +63,6 @@ $(document).ready(function () {
         })
     });
 });
+
+
 
