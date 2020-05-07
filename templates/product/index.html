@@ -11,8 +11,7 @@
       </button>
         <div class="dropdown-content">
               {% for brand in manufacturers  %}
-                  <a id="search-btn" data-name="{{ brand }}">{{ brand }}</a>
-
+                  <a class="search-btn" id="search-btn" data-name="{{ brand }}">{{ brand }}</a>
               {% endfor %}
           </div>
     </div>
@@ -23,12 +22,9 @@
         <span class="caret"></span>
       </button>
       <div class="dropdown-content">
-          <a href="#">Product name</a>
-          <a href="#">Price high to low</a>
-          <a href="#">Price low to high</a>
+          <a class="price-btn" data-name="1">Price low to high</a>
       </div>
     </div>
-
 
 
 
