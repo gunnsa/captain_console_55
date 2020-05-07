@@ -13,8 +13,10 @@
             </tr>
         </thead>
 
+        <tbody>
+
         {% for cart in carts %}
-            <tbody>
+
             <tr>
                 <td><img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}"></td>
                 <td> {{ cart.product.name }} <br>
@@ -24,11 +26,12 @@
 
                 <td> {{ cart.quantity }} </td>
                 <td> {{ cart.product.price }} </td>
-                <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash" aria-hidden="true"></i></i></button></td>
+                <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 
             </tr>
-            </tbody>
+
         {% endfor %}
+        </tbody>
 
     <i class="fa fa-trash-alt"></i>
 
