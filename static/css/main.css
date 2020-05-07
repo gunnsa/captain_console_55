@@ -191,3 +191,38 @@ footer {
 .dropdown-brand:hover .dropdown-content {
     display: block;
 }
+
+
+.tilraun {
+    margin: 5px;
+}
+
+#add_to_cart_btn {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+}
+
+#nice-number {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+}
+#increase {
+    border: 1px solid white;
+}
+
+#quantity {
+    border: 1px solid white;
+}
+
+#decrease {
+    border: 1px solid white;
+}
+
+
+#wishlist {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+}

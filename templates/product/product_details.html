@@ -13,13 +13,17 @@
             <p>{{ product.price }}$</p>
             <p>{{ product.color }}</p>
             <p>{{ product.manufacturer }}</p>
-            <button class="bth -bth-primary" id="add_to_cart_btn" data-id="{{ product.id }}">Add to cart</button>
-            <a href="#">Add to Wishlist</a><br>
+            <div class="tilraun">
 
-            <div class="nice-number">
-                <button class="decrease_value" id="decrease">-</button>
-                <input id="quantity" type="number" value="1" disabled>
-                <button class="increase_value" id="increase">+</button>
+                <div id="nice-number">
+                    <button class="decrease_value" id="decrease">-</button>
+                    <input id="quantity" type="number" value="1" disabled>
+                    <button class="increase_value" id="increase">+</button>
+                </div>
+
+                <button class="bth -bth-primary" id="add_to_cart_btn" data-id="{{ product.id }}">Add to cart</button>
+
+                <button id="wishlist" >Add to Wishlist</button><br>
             </div>
 
         </div>
