@@ -17,30 +17,45 @@
         {% for cart in carts %} <!-- carts kemur fra cart\views.py - listi af öllum vörum sem þessi notandi hefur í körfu -->
 
             <tr>
-                <td><img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}"></td>
-                <td> {{ cart.product.name }} <br>
-                    {{ cart.product.short_description }} <br>
-                    {{ cart.product.price }}
+                <td>
+                    <a href="/products/{{ cart.product.id }}">
+                        <img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}">
+                    </a>
+                </td>
+                <td>
+                    <a href="/products/{{ cart.product.id }}">
+                        <h4>{{ cart.product.name }} </h4></a>
+                        {{ cart.product.short_description }} <br>
+                        {{ cart.product.price }}
                 </td>
 
+
                 <td>
-                    <div id="nice-number">
+                    <div id="nice-number"> <!-- TODO: Laga þannig hægt sé að nota quantity takka -->
                         <button class="decrease_value" id="decrease">-</button>
                         <input id="quantity" type="number" value="{{ cart.quantity }}" disabled>
                         <button class="increase_value" id="increase">+</button>
                     </div>
                 </td>
 
+                <td>
+                    {% for product, price in eachItemTotal.items %}
+                        {% if product == cart.product.id %}
+                            {{ price }}
+                        {% endif %}
+                    {% endfor %}
+                </td>
+
                 <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 
             </tr>
-            <tr></tr>
 
         {% endfor %}
-        <td class="total"> {{ sumtotal }} </td>
-        </tbody>
 
-    <i class="fa fa-trash-alt"></i>
+        </tbody>
+    <td class="total" colspan="3"> <h4>Total:</h4></td>
+    <td class="total" > <h4>{{ sumTotal }} </h4></td>
 
     </table>
+
 {% endblock %}

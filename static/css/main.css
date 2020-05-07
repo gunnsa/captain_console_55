@@ -316,6 +316,17 @@ footer a {
 }
 
 
+.total {
+    text-align: right;
+}
+
+/* linkur á vöru hvítur */
+.table a h4 {
+    color: white;
+}
+
+
+
 /* -------------- Annað -------------- */
 
 /* veit ekki hvað þetta er */
