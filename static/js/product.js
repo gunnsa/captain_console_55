@@ -30,8 +30,6 @@ $(document).ready(function () {
 
 
 
-
-
 $(document).ready(function () {
     $('.price-btn').on('click', function (e) {
         e.preventDefault();

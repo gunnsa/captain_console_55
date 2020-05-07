@@ -31,9 +31,6 @@
                     </div>
                 </td>
 
-                {% for price in eachitem %}
-                    <td class="total"> {{ price }} </td>
-                {% endfor %}
                 <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 
             </tr>
