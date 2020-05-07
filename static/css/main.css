@@ -3,6 +3,11 @@ body {
     background-color: black;
     color: white;
 }
+/* gerir takka/linka hvita */
+a {
+    color: white;
+}
+
 
 
 
@@ -324,6 +329,25 @@ footer a {
 .table a h4 {
     color: white;
 }
+
+#previous_page {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+    float: left;
+}
+
+#next_page {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+    float: right;
+}
+
+
+
 
 
 
