@@ -201,6 +201,7 @@ footer {
     display: inline-block;
     vertical-align: top;
     margin: 5px;
+    border: 2px solid #90FFFF;
 }
 
 #nice-number {
@@ -221,8 +222,61 @@ footer {
 }
 
 
-#wishlist {
+
+/* add to wishlist hjörtu */
+.fa-heart-o {
+    color: white;
+    font-size: 48px;
     display: inline-block;
     vertical-align: top;
     margin: 5px;
+}
+
+.fa-heart {
+    color: white;
+    font-size: 48px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+}
+
+
+/* til að skipta um hjarta þegar mús er ofaná */
+.heart > .fa + .fa,
+.heart:hover > .fa {
+  display: none;
+}
+.heart:hover > .fa + .fa {
+  display: inherit;
+}
+
+
+
+
+
+
+/* white font in navigationbar */
+#cart {
+    color: white;
+}
+
+.fa-shopping-cart {
+    color: white;
+}
+
+
+
+.nav.navbar-nav li a {
+    color: white;
+}
+
+
+.input-group.md-form.form-sm.form-2 input {
+  border: 1px solid #bdbdbd;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.input-group.md-form.form-sm.form-2 input.amber-border {
+  border: 1px solid #ffca28;
 }
