@@ -17,11 +17,18 @@
         {% for cart in carts %} <!-- carts kemur fra cart\views.py - listi af öllum vörum sem þessi notandi hefur í körfu -->
 
             <tr>
-                <td><img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}"></td>
-                <td> {{ cart.product.name }} <br>
-                    {{ cart.product.short_description }} <br>
-                    {{ cart.product.price }}
+                <td>
+                    <a href="/products/{{ cart.product.id }}">
+                        <img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}">
+                    </a>
                 </td>
+                <td>
+                    <a href="/products/{{ cart.product.id }}">
+                        <h4>{{ cart.product.name }} </h4></a>
+                        {{ cart.product.short_description }} <br>
+                        {{ cart.product.price }}
+                </td>
+
 
                 <td>
                     <div id="nice-number"> <!-- TODO: Laga þannig hægt sé að nota quantity takka -->
