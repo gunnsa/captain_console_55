@@ -1,11 +1,15 @@
 {% extends "base.html" %}
+
 {% block content %}
-    <h1>Profile</h1>
+    <img class="profileinfo" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/95490836_10158145841852567_6754688873076359168_n.jpg?_nc_cat=110&_nc_sid=e007fa&_nc_oc=AQkbVbbu3uwpi3cggUW1WFqElqs-jUuO3cfoPEzHx2wQdn8RBvTyUfcqGir1htD-j8o&_nc_ht=scontent.frkv3-1.fna&oh=35e8b53f4f79b6d39b6faecafef6da66&oe=5ED916B2">
     <form class="form form-horizontal" method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" class="btn btn-primary" value="Update">
-
     </form>
+    <input type="submit" class="btn btn-primary" value="Update">
+
+    {% if user.is_authenticated %}
+       <img src="{{ user.profile.profile_image }}" class="profile-image"/>
+    {% endif %}
 
 {% endblock %}
