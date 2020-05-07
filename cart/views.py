@@ -1,9 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 
 from cart.models import Cart
 
-
+@login_required
 def index(request):
     usercart = Cart.objects.all().filter(user_id=request.user.id)
     sumtotal = 0
