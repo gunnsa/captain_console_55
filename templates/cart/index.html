@@ -31,17 +31,22 @@
                     </div>
                 </td>
 
+                <td>
+                    {% for product, price in eachItemTotal.items %}
+                        {% if product == cart.product.id %}
+                            {{ price }}
+                        {% endif %}
+                    {% endfor %}
+                </td>
+
                 <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 
             </tr>
-            <tr></tr>
 
         {% endfor %}
 
-
-
         </tbody>
-    <td class="total" colspan="4"> <h4>Total:</h4></td>
+    <td class="total" colspan="3"> <h4>Total:</h4></td>
     <td class="total" > <h4>{{ sumTotal }} </h4></td>
 
     </table>
