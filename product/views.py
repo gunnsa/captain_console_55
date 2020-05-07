@@ -48,7 +48,7 @@ def sort_product_by_specific(request, manufacturer):
 def add_to_cart(request, productid, quantity):
     if request.method == 'POST':
         current_user = request.user.id
-        if Cart.objects.filter(product_id__exact=productid) and Cart.objects.filter(user_id__exact=current_user):
+        if Cart.objects.filter(user_id__exact=current_user, product_id=productid):
             existing_cart = Cart.objects.get(product_id=productid, user_id=current_user)
             print(existing_cart.quantity)
             existing_cart.quantity = existing_cart.quantity + 1
