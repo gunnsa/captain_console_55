@@ -5,8 +5,20 @@ from cart.models import Cart
 
 
 def index(request):
-    context = {'carts': Cart.objects.all().filter(user_id=request.user.id)}
+    usercart = Cart.objects.all().filter(user_id=request.user.id)
+    sumtotal = 0
+    eachItem = []
+    for product in usercart:
+        print(product.quantity)
+        total = product.quantity * product.product.price
+        print('total: ', total)
+        eachItem.append(total)
+        sumtotal += product.quantity * product.product.price
+        print(sumtotal)
+        print('eachitem ', eachItem)
+        context = {'carts': Cart.objects.all().filter(user_id=request.user.id), 'sumtotal': sumtotal, 'eachitem': eachItem}
     return render(request, 'cart/index.html', context)
+
 
 @csrf_exempt
 def remove_cart_item(request, cartid):
@@ -15,4 +27,13 @@ def remove_cart_item(request, cartid):
 
     context = {'carts': Cart.objects.all().filter(user_id=request.user.id)}
     return render(request, 'cart/index.html', context)
+
+def update_cart(request):
+    #laga quantity þegar það er ýtt á + eða mínus og uppfæra þá total-ið
+    pass
+
+
+#def total_price(request):
+#    total = sum([item.product.price for item in Cart.objects.all().filter(user_id=request.user.id)])
+#    print(total)
 
