@@ -64,11 +64,15 @@ a {
 /* Captain Console (logo) white */
 .navbar-default .navbar-brand  {
     color: white;
+
 }
 
 /* tekur hvítan border line */
 .navbar {
     border: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 
@@ -153,6 +157,13 @@ a {
 
 
 
+.login {
+    display: block;
+    width: 95%;
+    height: auto;
+}
+
+
 /* -------------- footer -------------- */
 
 .signup {
@@ -161,11 +172,6 @@ a {
     height: auto;
 }
 
-.login {
-    display: block;
-    width: 95%;
-    height: auto;
-}
 
 .profileinfo {
     display: block;
@@ -177,6 +183,8 @@ a {
 footer a {
     color: white;
 }
+
+
 
 
 /* -------------- Dropdown -------------- */
