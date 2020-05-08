@@ -14,7 +14,6 @@ a {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 200px;
 }
 
 
@@ -184,6 +183,9 @@ footer a {
     color: white;
 }
 
+footer {
+    float: right;
+}
 
 
 
@@ -537,6 +539,3 @@ button {
     height: 40px;
 }
 
-footer{
-    position: absolute;
-}
