@@ -426,19 +426,11 @@ button {
     margin: 0 auto;
     padding: 70px;
     display: block;
-    border: 1px solid #5f5f5f;
-
-}
-
-#login-form-horizontal.form.form-horizontal {
-    width: 500px;
-    height: 400px;
     border: 1px solid rgba(33, 33, 33, 0.38);
-    margin: auto;
-    display: block;
     box-shadow: 0px 8px 16px 3px rgba(225, 245, 235, 0.24);
     border-radius: 5px;
 }
+
 
 #name_input, #id_password {
     height: 35px;
