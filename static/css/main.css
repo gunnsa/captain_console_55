@@ -536,3 +536,7 @@ button {
     width: 90px;
     height: 40px;
 }
+
+footer{
+    position: absolute;
+}
