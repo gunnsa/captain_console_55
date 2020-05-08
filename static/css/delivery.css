@@ -1,0 +1,41 @@
+.container #delivery-form-horizontal {
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 70px;
+    display: block;
+    border: 1px solid rgba(33, 33, 33, 0.38);
+    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
+    border-radius: 5px;
+}
+
+.delivery_option{
+    margin-bottom: 50px;
+
+}
+#full_name_input {
+    height: 35px;
+    width: 300px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    background-color: black;
+}
+
+#full_name_input:focus {
+    background-color: #ffffff;
+    color: black;
+}
+
+#submit_delivery {
+    background: black;
+    width: 100px;
+    vertical-align: top;
+    border: 2px solid #90FFFF;
+}
+
+.delivery{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
