@@ -45,7 +45,7 @@ def index(request):
             'manufacturer': x.manufacturer,
             'color': x.color,
             'firstImage': x.productimage_set.first().image
-        } for x in Product.objects.filter(name_icontains=search_filter)]
+        } for x in Product.objects.filter(name__icontains=search_filter)]
         return JsonResponse({'data': products})
 
     products = Product.objects.all().order_by('name')
