@@ -58,6 +58,9 @@
     </table>
 
     <a class="btn -btn-primary" id="previous_page" href="{% url 'products-index' %}">Go to previous page</a>
-    <a class="btn -btn-primary" id="next_page" href="#">Go to next page</a> <!-- TODO: setja takka -> áfram í greiðslumáta -->
+    <div class="delivery-pickup">
+        <a class="btn -btn-primary" id="next_page" href="#">Delivery</a> <!-- TODO: setja takka -> heimseding -->
+        <a class="btn -btn-primary" id="next_page" href="#">Pick up</a> <!-- TODO: setja takka -> sækja -->
+    </div>
 
 {% endblock %}
