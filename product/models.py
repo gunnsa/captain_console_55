@@ -1,6 +1,6 @@
 from django.db import models
 from django.db import connections
-
+from django.conf import settings
 
 # Create your models here.
 class Product(models.Model):
@@ -18,3 +18,6 @@ class Product(models.Model):
 class ProductImage(models.Model):
     image = models.CharField(max_length=999)
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+
+
