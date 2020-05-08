@@ -43,8 +43,6 @@
 /* add to wishlist hjarta --> bara útlínur */
 .fa-heart-o {
     color: white;
-    font-size: 48px;
-    display: inline-block;
     vertical-align: top;
     margin: 5px;
 }
@@ -52,8 +50,6 @@
 /* add to wishlist hjarta --> fyllt */
 .fa-heart {
     color: white;
-    font-size: 48px;
-    display: inline-block;
     vertical-align: top;
     margin: 5px;
 }
