@@ -28,3 +28,11 @@ def delivery(request):
     return render(request, 'user/delivery.html', {
         'form': DeliveryForm(instance=delivery)
     })
+def get_payment(request):
+    #get payment info
+    pass
+
+def processed_order(request):
+    #skrifa niður í gagnagrunn nýtt instance af processed order
+    #setja current order á núverandi order í false
+    pass

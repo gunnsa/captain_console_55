@@ -34,9 +34,9 @@ $(document).ready(function () {
         e.preventDefault();
         console.log(this)
         var searchText = $('#search-box').val();
-        console.log(this.url)
+        console.log(searchText)
         $.ajax( {
-            url: '/?search_filter=' + searchText,
+            url: '/products?search_filter=' + searchText,
             type: 'GET',
             success: function (resp) {
                 console.log(this.url)
