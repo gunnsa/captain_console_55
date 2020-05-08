@@ -1,12 +1,7 @@
 /* ------------------------ form.form-horizontal ------------------------ */
 
 
-/* útlit á input í sign in og sign out */
-.form.form-horizontal input {
-    background: black;
-    color: white;
-    border: 0.5px solid white;
-}
+
 
 
 /* VEIT EKKI HVAÐ GERIR!!! */
@@ -120,20 +115,11 @@ button {
 }
 
 
-/*notenda-upplýsingar*/
 
 
 
 
 
-
-
-.profile-image {
-    width: 40%;
-    height: 40%;
-    float: left;
-    display: inline-block;
-}
 
 
 
@@ -187,6 +173,14 @@ button {
     display: inline-block;
 }
 
+.profileinfo {
+    display: block;
+    width: 50%;
+    height: auto;
+}
+
+
+/*
 .cart h2 {
     padding-left: 40%;
     padding-bottom: 10%;
@@ -196,12 +190,5 @@ button {
     width: 90px;
     height: 40px;
 }
-
-
-
-.profileinfo {
-    display: block;
-    width: 50%;
-    height: auto;
-}
+ */
 
