@@ -7,7 +7,15 @@ class Order(models.Model):
 
 
 class Delivery(models.Model):
-    pass
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    full_name = models.CharField(max_length=100)
+    email_address = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=7)
+    home_address = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    zip_code = models.CharField(max_length=3)
+    additional_info = models.CharField(max_length=999)
+    order_date = models.DateTimeField()
 
 
 class PickUp(models.Model):
