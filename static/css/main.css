@@ -124,32 +124,6 @@ button {
 
 
 
-.dropdown-content button.price-btn{
-    border: none;
-    padding: 12px 16px;
-    min-width: 160px;
-    position: relative;
-    display: inline-block;
-    text-align:left;
-}
-
-.dropdown-content button:focus {
-    outline: none;
-}
-
-.dropdown-content button:hover {
-    background-color: #393939;
-}
-
-.dropdown-content button.brand-btn {
-    border: none;
-    padding: 12px 16px;
-    min-width: 160px;
-    position: relative;
-    display: inline-block;
-    text-align:left;
-
-}
 
 
 
@@ -180,12 +154,12 @@ button {
 }
 
 
-/*
+
 .cart h2 {
     padding-left: 40%;
     padding-bottom: 10%;
 }
-
+/*
 .cart button {
     width: 90px;
     height: 40px;
