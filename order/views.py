@@ -1,17 +1,22 @@
-from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 
+from order.forms.delivery_form import DeliveryForm
+from order.models import Delivery
 
-# Create your views here.
+
 def delivery_form(request):
-    if request.method == 'GET':
-      form = UserCreationForm(data=request.POST)
-      if form.is_valid():
-          form.save()
-          return redirect('delivery-index')
+    delivery = Delivery.objects.filter(user_id=request.user).first()
+    if request.method == 'POST':
+        form = DeliveryForm(instance=delivery, data=request.POST)
+        if form.is_valid():
+            delivery = form.save(commit=False)
+            delivery.user = request.user
+            delivery.save()
+            return redirect('delivery-index')
     return render(request, 'order/delivery.html', {
-        'form': UserCreationForm()
+        'form': DeliveryForm(instance=delivery)
     })
+
 
 def get_payment(request):
     #get payment info

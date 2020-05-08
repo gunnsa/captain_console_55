@@ -4,18 +4,13 @@
     <div class="delivery_option">
 
     <form method="post" class="form form-horizontal" id="delivery-form-horizontal">
-    <img class="delivery" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/95988761_10158139212232567_2812288407248568320_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_oc=AQn00Xr5woK-_yeqp5HXbEYmds0Q5MBtd91v-DXe2CZO4yEmhzeatMj9GXh4YgZMr_4&_nc_ht=scontent.frkv3-1.fna&oh=5239797a671b85963df60bbf3174c1b7&oe=5ED58860">
-        <h4> If you order before 14:00 you will receive your parcel the same day between 19:00 - 21:00</h4>
-        <h5> If you order after 14:00 you will receive your parcel the day after between 19:00 - 21:00</h5>
+    <iframe class="delivery" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=43&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=FFFFFF&image_url=&image_text=Delivery information&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="600" height="200"></iframe>
+        <h4> If you order before 14:00 you will receive your parcel the same day between 19:00 - 21:00 otherwise you will receive it the next day </h4>
 
         {% csrf_token %}
-        <input type="text" name="full_name" autofocus autocapitalize="none" id="name_input" placeholder="Full name">
-        <input type="text" name="email_address" autofocus autocapitalize="none" id="email_input" placeholder="Email address">
-        <input type="text" name="phone_number" autofocus autocapitalize="none" id="phone_input" placeholder="Phone number">
-        <input type="text" name="home_address" autofocus autocapitalize="none" id="address_input" placeholder="Home address">
-        <input type="text" name="city" autofocus autocapitalize="none" id="city_input" placeholder="City">
-        <input type="text" name="zip_code" autofocus autocapitalize="none" id="zip_code_input" placeholder="Zip code">
-        <input type="text" name="additional_info" autofocus autocapitalize="none" id="additional_info_input" placeholder="Additional information">
+        <div class='deliveries'>
+            {{ form.as_table }}
+        </div>
 
     <input type="submit" class="btn btn-primary" value="Continue to payment" id="submit_delivery"/>
     </form>

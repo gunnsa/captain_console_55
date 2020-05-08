@@ -1,11 +1,11 @@
 from django.forms import ModelForm, widgets
-from user.models import Profile
+from order.models import Delivery
 
 
-class ProfileForm(ModelForm):
+class DeliveryForm(ModelForm):
     class Meta:
-        model = Profile
-        exclude = ['id', 'user']
+        model = Delivery
+        exclude = ['id', 'user_id']
         widgets = {
             'full_name': widgets.TextInput(attrs={'class': 'form-control'}),
             'email_address': widgets.TextInput(attrs={'class': 'form-control'}),
@@ -13,5 +13,5 @@ class ProfileForm(ModelForm):
             'home_address': widgets.TextInput(attrs={'class': 'form-control'}),
             'city': widgets.TextInput(attrs={'class': 'form-control'}),
             'zip_code': widgets.TextInput(attrs={'class': 'form-control'}),
-            'profile_image': widgets.TextInput(attrs={'class': 'form-control'})
+            'additional_info': widgets.TextInput(attrs={'class': 'form-control'})
         }

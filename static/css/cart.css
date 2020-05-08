@@ -44,17 +44,13 @@
 .fa-heart-o {
     color: white;
     vertical-align: top;
-    margin: 5px;
 }
 
 /* add to wishlist hjarta --> fyllt */
 .fa-heart {
     color: white;
     vertical-align: top;
-    margin: 5px;
 }
-
-
 
 /* til að skipta um hjarta þegar mús er ofaná */
 .heart > .fa + .fa,
@@ -65,6 +61,11 @@
 .heart:hover > .fa + .fa {
   display: inherit;
 }
+
+
+
+
+
 
 
 .total {

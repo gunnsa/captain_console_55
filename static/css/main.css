@@ -1,3 +1,32 @@
+/* ------------------------ form.form-horizontal ------------------------ */
+
+
+
+
+
+/* VEIT EKKI HVAÐ GERIR!!! */
+/*
+.form.form-horizontal {
+    display: inline-block;
+    padding-left: 10%;
+}
+ */
+
+
+
+
+/* ------------------------ .container ------------------------ */
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+/* ------------------------ ANNAÐ ------------------------ */
+
 /* öll síðan svört og hvítir stafir */
 body {
     background-color: black;
@@ -8,20 +37,20 @@ a {
     color: white;
 }
 
-
-footer {
-    float: right;
+/* veit ekki hvað þetta er */
+.box {
+    top: 50%;
+    left: 50%;
+    padding-left: 47%;
+    transform: translate(-50%, -50%);
 }
 
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
+/* ------------------------------------------------------ */
 
 
 
+
+/* mynd a forsíðu */
 .retro {
     width: 35%;
     height: auto;
@@ -31,58 +60,6 @@ footer {
     float: right;
 }
 
-
-
-/* -------------- navigation bar -------------- */
-
-/* navigation bar */
-.container-fluid {
-    background-color: black;
-    color: white;
-}
-
-/* white font in navigationbar */
-#cart {
-    color: white;
-}
-
-/* cart icon */
-.fa-shopping-cart {
-    color: white;
-}
-
-/* allur texti í navigation bar hvítur */
-.nav.navbar-nav li a {
-    color: white;
-}
-
-/* search -> navbar */
-.input-group.md-form.form-sm.form-2 input {
-  border: 1px solid #bdbdbd;
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
-
-/* search -> navbar */
-.input-group.md-form.form-sm.form-2 input.amber-border {
-  border: 1px solid #ffca28;
-}
-
-/* Captain Console (logo) white */
-.navbar-default .navbar-brand  {
-    color: white;
-
-
-}
-
-/* tekur hvítan border line */
-.navbar {
-    border: none;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    margin-top: 0px
-}
 
 
 
@@ -102,37 +79,10 @@ footer {
 
 
 
-.login {
-    display: block;
-    width: 95%;
-    height: auto;
-}
 
 
-/* -------------- footer -------------- */
 
-.signup {
-    display: block;
-    width: 65%;
-    height: auto;
-}
-
-.register {
-    margin-top: 100px;
-    margin-bottom: 50px;
-}
-
-.Login {
-    margin-top: 100px;
-    margin-bottom: 50px;
-}
-
-
-.profileinfo {
-    display: block;
-    width: 50%;
-    height: auto;
-}
+/* ---------------------------- footer ---------------------------- */
 
 /* linkar undir information í footer hvítir */
 footer a {
@@ -152,19 +102,6 @@ footer {
 
 
 
-
-
-
-/* -------------- Annað -------------- */
-
-/* veit ekki hvað þetta er */
-.box {
-    top: 50%;
-    left: 50%;
-    padding-left: 47%;
-    transform: translate(-50%, -50%);
-}
-
 /* search bar --> bæði í footer og navigation bar */
 input {
     background: black;
@@ -177,91 +114,6 @@ button {
     background: black;
 }
 
-/* held þurfi ekki */
-* {
-    box-sizing: border-box;
-}
-/*notenda-upplýsingar*/
-
-
-
-
-.container #login-form-horizontal {
-    width: 500px;
-    height: 400px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 70px;
-    display: block;
-    border: 1px solid rgba(33, 33, 33, 0.38);
-    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
-    border-radius: 5px;
-}
-
-
-#name_input, #id_password {
-    height: 35px;
-    width: 300px;
-    font-size: 18px;
-    margin-bottom: 20px;
-    padding-left: 10px;
-    background-color: black;
-}
-
-#name_input:focus, #id_password:focus {
-    background-color: #ffffff;
-    color: black;
-}
-
-#submit_login{
-    background: black;
-    width: 100px;
-    vertical-align: top;
-    border: 2px solid #90FFFF;
-}
-
-.container #register-form-horizontal {
-    width: 500px;
-    height: 400px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 70px;
-    display: block;
-
-}
-
-.signup {
-    display: block;
-    width: 95%;
-    height: auto;
-}
-
-
-#register-form-horizontal.form.form-horizontal {
-    width: 500px;
-    height: 400px;
-    border: 1px solid rgba(33, 33, 33, 0.38);
-    margin: auto;
-    display: block;
-    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
-    border-radius: 5px;
-}
-
-#name-input, #id_password1, #id_password2 {
-    height: 35px;
-    width: 300px;
-    font-size: 18px;
-    margin-bottom: 20px;
-    padding-left: 10px;
-    background-color: black;
-}
-
-#submit_register{
-    background: black;
-    width: 100px;
-    vertical-align: top;
-    border: 2px solid #90FFFF;
-}
 
 
 
@@ -271,52 +123,12 @@ button {
 
 
 
-.profile-image {
-    width: 40%;
-    height: 40%;
-    float: left;
-    display: inline-block;
-}
 
 
 
 
-.dropdown-content button.price-btn{
-    border: none;
-    padding: 12px 16px;
-    min-width: 160px;
-    position: relative;
-    display: inline-block;
-    text-align:left;
-}
 
-.dropdown-content button:focus {
-    outline: none;
-}
-
-.dropdown-content button:hover {
-    background-color: #393939;
-}
-
-.dropdown-content button.brand-btn {
-    border: none;
-    padding: 12px 16px;
-    min-width: 160px;
-    position: relative;
-    display: inline-block;
-    text-align:left;
-
-}
-
-
-
-
-.form.form-horizontal {
-    display: inline-block;
-    padding-left: 10%;
-}
-
-/*update takki*/
+/* update takki í profile settings */
 .btn.btn-primary {
     background: black;
     width: 80px;
@@ -326,13 +138,8 @@ button {
     border: 2px solid #90FFFF
 }
 
-.form.form-horizontal input {
-    background: black;
-    color: white;
-    border: 0.5px solid #FFFFFF
-}
 
-/*notenda-mynd*/
+/* notenda-mynd */
 .profile-image {
     width: 40%;
     height: 40%;
@@ -340,13 +147,22 @@ button {
     display: inline-block;
 }
 
+.profileinfo {
+    display: block;
+    width: 50%;
+    height: auto;
+}
+
+
+
 .cart h2 {
     padding-left: 40%;
     padding-bottom: 10%;
 }
-
+/*
 .cart button {
     width: 90px;
     height: 40px;
 }
+ */
 

@@ -1,0 +1,57 @@
+.deliveries {
+    width: 500px;
+    height: 450px;
+    margin: 0 auto;
+    padding: 70px;
+    padding-left: 100px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 73px;
+}
+
+
+.delivery_option{
+    margin-bottom: 50px;
+}
+
+
+#id_full_name, #id_email_address, #id_phone_number, #id_home_address, #id_city, #id_zip_code {
+    height: 35px;
+    width: 300px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    background-color: black;
+}
+
+#id_additional_info {
+    height: 95px;
+    width: 400px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    background-color: black;
+}
+
+#submit_delivery {
+    display: inline-block;
+    vertical-align: top;
+    margin: 50px;
+    border: 2px solid #90FFFF;
+    float: right;
+    width: 200px;
+    margin-bottom: 100px;
+
+}
+
+/* NEON */
+.delivery{
+    margin-top: 50px;
+    padding: 70px;
+    padding-left: 100px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: block;
+}
+
