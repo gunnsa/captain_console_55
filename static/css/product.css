@@ -1,5 +1,6 @@
-/* -------------- products -------------- */
+/* -------------- PRODUCTS -------------- */
 
+/* NEON - all products img */
 .allproducts{
     display: block;
     width: 40%;
@@ -12,8 +13,8 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-/* texti undir myndir hvitur */
-.single-product h4, p {
+/* texti undir myndir hvitur --- VEIT EKKI HVORT ÞARF!! */
+.single-product h4 {
     color: white;
 }
 
@@ -30,32 +31,26 @@
     border: 2px solid #AB17FF;
 }
 
-.product-img_cart {
-    object-fit: contain;
-    width:  100px;
-    height: 150px;
-    border: 2px solid #AB17FF;
-}
 
-/* neon product detail */
+
+
+/* -------------- PRODUCT DETAIL -------------- */
+
+/* NEON - product detail img */
 .productdetails {
     display: block;
     width: 40%;
     height: auto;
 }
 
-/* ekki viss hvað þetta gerir */
-.product-details {
-    position: center;
-}
-
-/* nafn, verð, litur og framleiðandi */
+/* setur nafn, verð, lit og framleiðanda í inline-block við product-img */
 .product-details div {
     display: inline-block;
     vertical-align: top;
     margin: 20px;
 }
 
+/* setur product-img í inline-block við nafn, verð, lit og framleiðanda */
 .product-details .product-img {
     display: inline-block;
     margin: 20px;

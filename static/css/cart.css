@@ -94,3 +94,11 @@
     border: 2px solid #90FFFF;
     float: right;
 }
+
+/* mynd af vöru í cart*/
+.product-img_cart {
+    object-fit: contain;
+    width:  100px;
+    height: 150px;
+    border: 2px solid #AB17FF;
+}
