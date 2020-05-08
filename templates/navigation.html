@@ -19,10 +19,10 @@
                 <li><a href="{% url 'products-index' %}">Products</a></li>
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> My account</a></li>
-                    <li><a href="{% url 'home-index' %}">Sign out</a></li>
+                    <li><a href="{% url 'logout' %}">Sign out</a></li>
                 {% else %}
                     <li><a href="{% url 'login' %}">Sign in</a></li>
-                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="{% url 'register' %}">Sign up</a></li>
                 {% endif %}
             </ul>
 

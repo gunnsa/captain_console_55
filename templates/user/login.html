@@ -8,8 +8,9 @@
     <img class="login" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/95988761_10158139212232567_2812288407248568320_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_oc=AQn00Xr5woK-_yeqp5HXbEYmds0Q5MBtd91v-DXe2CZO4yEmhzeatMj9GXh4YgZMr_4&_nc_ht=scontent.frkv3-1.fna&oh=5239797a671b85963df60bbf3174c1b7&oe=5ED58860">
 
         {% csrf_token %}
-        <input type="text" name="username" autofocus autocapitalize="none" id="name_input" placeholder="Username">
-        <input type="password" name="password" autocomplete="current-password" required id="id_password" placeholder="Password">
+        {{ form }}
+        <!--<input type="text" name="username" autofocus autocapitalize="none" id="name_input" placeholder="Username">
+        <input type="password" name="password" autocomplete="current-password" required id="id_password" placeholder="Password">-->
     <input type="submit" class="btn btn-primary" value="Login" id="submit_login"/>
     </form>
     </div>
