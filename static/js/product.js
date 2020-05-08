@@ -29,36 +29,37 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function () {
-    $('#search-btn').on('click', function (e) {
-        e.preventDefault();
-        console.log(this)
-        var searchText = $('#search-box').val();
-        console.log(searchText)
-        $.ajax( {
-            url: '/products?search_filter=' + searchText,
-            type: 'GET',
-            success: function (resp) {
-                console.log(this.url)
-              var newHtml = resp.data.map(d => {
-                  return `<div class='single-product'>
-                          <a href='/products/${d.id}'>
-                                <img class="product-img" src="${d.firstImage}"/>
-                                <h4>${d.name}</h4> 
-                                <p>${d.short_description}</p>
-                                <p>${d.price}$</p>
-                          </a>
-                      </div>`
-              });
-              $('.products').html(newHtml.join(''));
-              $('#search-box').val('');
-            },
-            error: function (xhr, status, error) {
-                console.error(error);
-            }
-        })
-    });
-});
+
+
+
+var searchText = new URLSearchParams(window.location.search).get('search-text');
+if (searchText != null){
+    $('#all_products').innerHTML = ''
+    console.log(searchText)
+    $.ajax( {
+        url: '/products?search_filter=' + searchText,
+        type: 'GET',
+        success: function (resp) {
+            console.log(this.url)
+          var newHtml = resp.data.map(d => {
+              return `<div class='single-product'>
+                      <a href='/products/${d.id}'>
+                            <img class="product-img" src="${d.firstImage}"/>
+                            <h4>${d.name}</h4> 
+                            <p>${d.short_description}</p>
+                            <p>${d.price}$</p>
+                      </a>
+                  </div>`
+          });
+          $('.products').html(newHtml.join(''));
+
+        },
+        error: function (xhr, status, error) {
+            console.error(error);
+        }
+    })
+};
+
 
 
 

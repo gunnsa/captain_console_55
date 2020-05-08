@@ -19,7 +19,7 @@
                 <li><a href="{% url 'products-index' %}">Products</a></li>
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> My account</a></li>
-                    <li><a href="{% url 'home-index' %}">Sign out</a></li>
+                    <li><a href="{% url 'logout' %}">Sign out</a></li>
                 {% else %}
                     <li><a href="{% url 'login' %}">Sign in</a></li>
                     <li><a href="{% url 'register' %}">Register</a></li>
@@ -28,9 +28,9 @@
 
                 <!-- search icon -->
                 <!-- <i class="fa fa-search fa-sm" aria-hidden="true"></i> -->
-            <form class="navbar-form navbar-left" role="search">
+            <form action="/products" method="get" class="navbar-form navbar-left" id="search-form"  role="search">
                 <div class="input-group">
-                    <input type="search" class="form-control" id="search-box" placeholder="Search"/>
+                    <input type="search" class="form-control" id="search-box" name="search-text">
                     <div class="input-group-btn">
                         <button type="submit" id="search-btn" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
