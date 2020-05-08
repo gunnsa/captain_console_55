@@ -1,0 +1,50 @@
+/* ---------------------------- navigation bar ---------------------------- */
+
+/* navigation bar */
+.container-fluid {
+    background-color: black;
+    color: white;
+}
+
+/* white font in navigationbar */
+#cart {
+    color: white;
+}
+
+/* cart icon */
+.fa-shopping-cart {
+    color: white;
+}
+
+/* allur texti í navigation bar hvítur */
+.nav.navbar-nav li a {
+    color: white;
+}
+
+/* search -> navbar */
+.input-group.md-form.form-sm.form-2 input {
+  border: 1px solid #bdbdbd;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+/* search -> navbar */
+.input-group.md-form.form-sm.form-2 input.amber-border {
+  border: 1px solid #ffca28;
+}
+
+/* Captain Console (logo) white */
+.navbar-default .navbar-brand  {
+    color: white;
+
+
+}
+
+/* tekur hvítan border line */
+.navbar {
+    border: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-top: 0px
+}

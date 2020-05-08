@@ -21,7 +21,7 @@
                     <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> My account</a></li>
                     <li><a href="{% url 'logout' %}">Sign out</a></li>
                 {% else %}
-                    <li><a href="{% url 'login' %}">Sign in</a></li>
+                    <li><a href="{% url 'login' %}">Sign in</a></li> <!-- TODO: afhverju fer á my account stillingar þegar loggar inn?? -->
                     <li><a href="{% url 'register' %}">Sign up</a></li>
                 {% endif %}
             </ul>

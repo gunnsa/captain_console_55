@@ -1,39 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="register">
-
+    <div class="register"> <!-- TODO: Laga þannig komi villuboð ef rangt -->
 
         <form class="form form-horizontal" method="post" id="register-form-horizontal">
             <img class="signup" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/95988761_10158139212232567_2812288407248568320_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_oc=AQn00Xr5woK-_yeqp5HXbEYmds0Q5MBtd91v-DXe2CZO4yEmhzeatMj9GXh4YgZMr_4&_nc_ht=scontent.frkv3-1.fna&oh=5239797a671b85963df60bbf3174c1b7&oe=5ED58860">
+
             {% csrf_token %}
-
-            <!--
-            <input type="hidden" name="csrfmiddlewaretoken" value="FWpPHEzV3x60drMRE2s6px1g1oAnMo3vTkIN9VokKfM063w5NHwala6rGKz0LocN">
-            <label for="id_username">Username:</label>
-            <input type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required id="id_username">
-            <br>
-            <span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
-            <label for="id_password1">Password:</label>
-            <input type="password" name="password1" autocomplete="new-password" required id="id_password1">
-            <br>
-            <span class="helptext">
-                <ul>
-                    <li>Your password can’t be too similar to your other personal information.</li>
-                    <li>Your password must contain at least 8 characters.</li>
-                    <li>Your password can’t be a commonly used password.</li>
-                    <li>Your password can’t be entirely numeric.</li>
-                </ul>
-            </span>
-            <label for="id_password2">Password confirmation:</label>
-            <input type="password" name="password2" autocomplete="new-password" required id="id_password2">
-            <span class="helptext">Enter the same password as before, for verification.</span> -->
-
             {{ form }}
+
             <input type="submit" class="btn btn-primary" value="Sign Up" id="submit_register" />
-            <!--<input type="text" name="username" autofocus autocapitalize="none" id="name-input" placeholder="Username">
-            <input type="password" name="password1" autocomplete="new-password" required id="id_password1" placeholder="Password">
-            <input type="password" name="password2" autocomplete="new-password" required id="id_password2" placeholder="Confirm password">
-            <input type="submit" class="btn btn-primary" value="Sign Up" id="submit_register" /> -->
         </form>
     </div>
 {% endblock %}
