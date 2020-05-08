@@ -2,10 +2,10 @@ from django.forms import ModelForm, widgets
 from order.models import Delivery
 
 
-class ProfileForm(ModelForm):
+class DeliveryForm(ModelForm):
     class Meta:
         model = Delivery
-        exclude = ['id', 'user']
+        exclude = ['id', 'user_id']
         widgets = {
             'full_name': widgets.TextInput(attrs={'class': 'form-control'}),
             'email_address': widgets.TextInput(attrs={'class': 'form-control'}),
