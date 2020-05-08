@@ -34,6 +34,20 @@ def index(request):
         } for x in Product.objects.all().order_by('price')]
         return JsonResponse({'data': products})
 
+    elif 'search_filter' in request.GET:
+        search_filter = request.GET['search_filter']
+        products = [{
+            'id': x.id,
+            'name': x.name,
+            'color': x.color,
+            'price': x.price,
+            'short_description': x.short_description,
+            'manufacturer': x.manufacturer,
+            'color': x.color,
+            'firstImage': x.productimage_set.first().image
+        } for x in Product.objects.filter(name_icontains=search_filter)]
+        return JsonResponse({'data': products})
+
     products = Product.objects.all().order_by('name')
     manufacturers = Product.objects.values_list("manufacturer", flat=True).distinct()
 
