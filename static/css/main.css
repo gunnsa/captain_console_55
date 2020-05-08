@@ -2,11 +2,22 @@
 body {
     background-color: black;
     color: white;
-    padding-bottom: 0px;
 }
 /* gerir takka/linka hvita */
 a {
     color: white;
+}
+
+body {
+    margin-bottom: 50px;
+    margin-top: 0;
+    position: relative;
+}
+footer {
+    bottom: -100px;
+    height: 60px;
+    position: absolute;
+    width: 100%;
 }
 
 .container {
