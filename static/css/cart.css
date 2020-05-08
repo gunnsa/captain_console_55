@@ -87,7 +87,7 @@
     float: left;
 }
 
-#next_page {
+#home_delivery, #pick_up{
     display: inline-block;
     vertical-align: top;
     margin: 5px;
