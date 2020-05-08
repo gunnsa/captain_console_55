@@ -17,13 +17,6 @@
             <ul class="nav navbar-nav">
                 <li ><a href="{% url 'home-index'%}">Home <span class="sr-only">(current)</span></a></li>
                 <li><a href="{% url 'products-index' %}">Products</a></li>
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> My account</a></li>
-                    <li><a href="{% url 'logout' %}">Sign out</a></li>
-                {% else %}
-                    <li><a href="{% url 'login' %}">Sign in</a></li>
-                    <li><a href="{% url 'register' %}">Register</a></li>
-                {% endif %}
             </ul>
 
                 <!-- search icon -->
