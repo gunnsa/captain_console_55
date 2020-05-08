@@ -29,6 +29,37 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    $('#search-btn').on('click', function (e) {
+        e.preventDefault();
+        console.log(this)
+        var searchText = $('#search-box').val();
+        console.log(this.url)
+        $.ajax( {
+            url: '/?search_filter=' + searchText,
+            type: 'GET',
+            success: function (resp) {
+                console.log(this.url)
+              var newHtml = resp.data.map(d => {
+                  return `<div class='single-product'>
+                          <a href='/products/${d.id}'>
+                                <img class="product-img" src="${d.firstImage}"/>
+                                <h4>${d.name}</h4> 
+                                <p>${d.short_description}</p>
+                                <p>${d.price}$</p>
+                          </a>
+                      </div>`
+              });
+              $('.products').html(newHtml.join(''));
+              $('#search-box').val('');
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        })
+    });
+});
+
 
 
 $(document).ready(function () {
