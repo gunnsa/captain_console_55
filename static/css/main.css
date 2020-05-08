@@ -1,5 +1,7 @@
 /* ------------------------ form.form-horizontal ------------------------ */
 
+
+/* útlit á input í sign in og sign out */
 .form.form-horizontal input {
     background: black;
     color: white;
@@ -8,10 +10,12 @@
 
 
 /* VEIT EKKI HVAÐ GERIR!!! */
+/*
 .form.form-horizontal {
     display: inline-block;
     padding-left: 10%;
 }
+ */
 
 
 
@@ -24,113 +28,6 @@
   padding-left: 15px;
   padding-right: 15px;
 }
-
-
-/* ------------------------ SIGN IN -- SIGN UP ------------------------ */
-
-/* sign in síðan */
-.container #login-form-horizontal {
-    width: 500px;
-    height: 400px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 70px;
-    display: block;
-    border: 1px solid rgba(33, 33, 33, 0.38);
-    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
-    border-radius: 5px;
-}
-
-/* sign up síðan */
-.container #register-form-horizontal {
-    width: 500px;
-    height: 400px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 70px;
-    display: block;
-    border: 1px solid rgba(33, 33, 33, 0.38);
-    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
-    border-radius: 5px;
-}
-
-/* input gluggar á sign in síðunni */
-#name_input, #id_password {
-    height: 35px;
-    width: 300px;
-    font-size: 18px;
-    margin-bottom: 20px;
-    padding-left: 10px;
-    background-color: black;
-}
-
-/* input gluggar á sign in síðunni */
-#name_input:focus, #id_password:focus {
-    background-color: black;
-    color: white;
-}
-
-/* input gluggar á sign up síðunni */
-#id_username, #id_password1, #id_password2 {
-    height: 35px;
-    width: 300px;
-    font-size: 18px;
-    margin-bottom: 20px;
-    padding-left: 10px;
-    background-color: black;
-}
-
-/* sign in takkinn á sign in síðunni */
-#submit_login{
-    background: black;
-    width: 100px;
-    vertical-align: top;
-    border: 2px solid #90FFFF;
-}
-
-/* sign up takkinn á sign up síðunni */
-#submit_register{
-    background: black;
-    width: 100px;
-    vertical-align: top;
-    border: 2px solid #90FFFF;
-}
-
-/* NEON */
-.login {
-    display: block;
-    width: 95%;
-    height: auto;
-}
-
-/* NEON */
-.signup {
-    display: block;
-    width: 95%;
-    height: auto;
-}
-
-/* glugginn a sign in siðunni */
-.Login {
-    margin-top: 100px;
-    margin-bottom: 50px;
-}
-
-/* glugginn a sign up siðunni */
-.register {
-    margin-top: 100px;
-    margin-bottom: 50px;
-}
-
-/* hjálpar texti á sign up síðunni */
-.helptext {
-    display: none;
-}
-
-#register-form-horizontal label {
-    display: none;
-}
-
 
 
 /* ------------------------ ANNAÐ ------------------------ */
@@ -168,58 +65,6 @@ a {
     float: right;
 }
 
-
-
-/* ---------------------------- navigation bar ---------------------------- */
-
-/* navigation bar */
-.container-fluid {
-    background-color: black;
-    color: white;
-}
-
-/* white font in navigationbar */
-#cart {
-    color: white;
-}
-
-/* cart icon */
-.fa-shopping-cart {
-    color: white;
-}
-
-/* allur texti í navigation bar hvítur */
-.nav.navbar-nav li a {
-    color: white;
-}
-
-/* search -> navbar */
-.input-group.md-form.form-sm.form-2 input {
-  border: 1px solid #bdbdbd;
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
-
-/* search -> navbar */
-.input-group.md-form.form-sm.form-2 input.amber-border {
-  border: 1px solid #ffca28;
-}
-
-/* Captain Console (logo) white */
-.navbar-default .navbar-brand  {
-    color: white;
-
-
-}
-
-/* tekur hvítan border line */
-.navbar {
-    border: none;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    margin-top: 0px
-}
 
 
 
@@ -323,7 +168,7 @@ button {
 
 
 
-/*update takki*/
+/* update takki í profile settings */
 .btn.btn-primary {
     background: black;
     width: 80px;
@@ -334,7 +179,7 @@ button {
 }
 
 
-/*notenda-mynd*/
+/* notenda-mynd */
 .profile-image {
     width: 40%;
     height: 40%;
