@@ -1,0 +1,62 @@
+/* -------------- products -------------- */
+
+.allproducts{
+    display: block;
+    width: 40%;
+    height: auto;
+}
+
+/* setur vörur í fina röð */
+.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* texti undir myndir hvitur */
+.single-product h4, p {
+    color: white;
+}
+
+/* setur texta undir myndr í miðjuna */
+.single-product {
+    text-align: center;
+}
+
+/*hver og ein mynd af vöru*/
+.product-img {
+    object-fit: contain;
+    width:  200px;
+    height: 250px;
+    border: 2px solid #AB17FF;
+}
+
+.product-img_cart {
+    object-fit: contain;
+    width:  100px;
+    height: 150px;
+    border: 2px solid #AB17FF;
+}
+
+/* neon product detail */
+.productdetails {
+    display: block;
+    width: 40%;
+    height: auto;
+}
+
+/* ekki viss hvað þetta gerir */
+.product-details {
+    position: center;
+}
+
+/* nafn, verð, litur og framleiðandi */
+.product-details div {
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+}
+
+.product-details .product-img {
+    display: inline-block;
+    margin: 20px;
+}

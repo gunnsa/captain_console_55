@@ -1,0 +1,96 @@
+/* heldur utan um quantity cart og wishlist takka */
+.quantity_cart_wishlist {
+    margin: 5px;
+}
+/*fyrir logged in people*/
+#add_to_cart_btn {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+}
+/*fyrir loggedout people */
+#add_to_cart {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+}
+
+
+#nice-number {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+}
+
+#increase {
+    border: 1px solid white;
+}
+
+#quantity {
+    border: 1px solid white;
+}
+
+#decrease {
+    border: 1px solid white;
+}
+
+
+
+
+/* -------------- Cart og Wishlist -------------- */
+/* add to wishlist hjarta --> bara útlínur */
+.fa-heart-o {
+    color: white;
+    font-size: 48px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+}
+
+/* add to wishlist hjarta --> fyllt */
+.fa-heart {
+    color: white;
+    font-size: 48px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+}
+
+
+/* til að skipta um hjarta þegar mús er ofaná */
+.heart > .fa + .fa,
+.heart:hover > .fa {
+  display: none;
+}
+
+.heart:hover > .fa + .fa {
+  display: inherit;
+}
+
+
+.total {
+    text-align: right;
+}
+
+/* linkur á vöru hvítur */
+.table a h4 {
+    color: white;
+}
+
+#previous_page {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+    float: left;
+}
+
+#next_page {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+    float: right;
+}
