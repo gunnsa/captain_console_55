@@ -1,22 +1,24 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 
 from cart.models import Cart
 
-
+@login_required
 def index(request):
     usercart = Cart.objects.all().filter(user_id=request.user.id)
     sumtotal = 0
     eachItem = {}
     for product in usercart:
-
         total = product.quantity * product.product.price
         eachItem[product.product.id] = total
         sumtotal += product.quantity * product.product.price
         rounded_sumtotal = ("{:.2f}".format(float(sumtotal)))
-
         context = {'carts': Cart.objects.all().filter(user_id=request.user.id), 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
-    return render(request, 'cart/index.html', context)
+    try:
+        return render(request, 'cart/index.html', context)
+    except:
+        return render(request, 'cart/emptycart.html')
 
 
 @csrf_exempt

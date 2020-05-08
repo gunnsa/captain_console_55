@@ -1,10 +1,9 @@
-
+from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from cart.models import Cart
 from product.models import Product
-
 
 # Create your views here.
 def index(request):
@@ -57,6 +56,7 @@ def sort_product_by_specific(request, manufacturer):
     return render(request, 'product/index.html', context)
 
 
+#@login_required
 @csrf_exempt
 def add_to_cart(request, productid, quantity):
     if request.method == 'POST':

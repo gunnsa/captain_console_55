@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="cart"> <!-- TODO: setja takka -> tilbaka og áfram í greiðslumáta -->
+    <div class="cart">
         <h2>Cart</h2>
     </div>
     <table class="table">
@@ -15,7 +15,6 @@
 
         <tbody>
         {% for cart in carts %} <!-- carts kemur fra cart\views.py - listi af öllum vörum sem þessi notandi hefur í körfu -->
-
             <tr>
                 <td>
                     <a href="/products/{{ cart.product.id }}">
@@ -26,15 +25,15 @@
                     <a href="/products/{{ cart.product.id }}">
                         <h4>{{ cart.product.name }} </h4></a>
                         {{ cart.product.short_description }} <br>
-                        {{ cart.product.price }}
+                        {{ cart.product.price }} $
                 </td>
 
 
                 <td>
                     <div id="nice-number"> <!-- TODO: Laga þannig hægt sé að nota quantity takka -->
-                        <button class="decrease_value" id="decrease">-</button>
-                        <input id="quantity" type="number" value="{{ cart.quantity }}" disabled>
-                        <button class="increase_value" id="increase">+</button>
+                        <button class="decrease_value" id="decrease" data-id="{{ cart.product.id }}">-</button>
+                        <input id="quantity" data-id="{{ cart.product.id }}" type="number" value="{{ cart.quantity }}" disabled>
+                        <button class="increase_value" id="increase" data-id="{{ cart.product.id }}">+</button>
                     </div>
                 </td>
 
@@ -53,9 +52,12 @@
         {% endfor %}
 
         </tbody>
-    <td class="total" colspan="3"> <h4>Total:</h4></td>
-    <td class="total" > <h4>{{ sumTotal }} </h4></td>
+        <td class="total" colspan="3"> <h4>Total:</h4></td>
+        <td class="total" > <h4> {{ sumTotal }} </h4></td>
 
     </table>
+
+    <a class="btn -btn-primary" id="previous_page" href="{% url 'products-index' %}">Go to previous page</a>
+    <a class="btn -btn-primary" id="next_page" href="#">Go to next page</a> <!-- TODO: setja takka -> áfram í greiðslumáta -->
 
 {% endblock %}

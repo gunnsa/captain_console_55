@@ -21,7 +21,7 @@
                 {% if user.is_authenticated %}
                     <button class="btn -btn-primary" id="add_to_cart_btn" data-id="{{ product.id }}">Add to cart</button>
                  {% else %}
-                    <button class="btn -btn-primary" onclick="location.href='{% url 'login' %}';" id = "add_to_cart">Add to cart</button>
+                    <button class="btn -btn-primary" onclick="location.href='{% url 'login' %}?next={{request.path}}';" id = "add_to_cart">Add to cart</button>
                 {% endif %}
 
 
