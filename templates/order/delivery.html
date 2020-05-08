@@ -8,7 +8,10 @@
         <h4> If you order before 14:00 you will receive your parcel the same day between 19:00 - 21:00 otherwise you will receive it the next day </h4>
 
         {% csrf_token %}
-        {{ form }}
+        <div class='deliveries'>
+            {{ form }}
+        </div>
+
     <input type="submit" class="btn btn-primary" value="Continue to payment" id="submit_delivery"/>
     </form>
     </div>

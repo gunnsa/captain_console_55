@@ -4,30 +4,42 @@
 
 .delivery_option{
     margin-bottom: 50px;
+    
 
 }
-#full_name_input {
+
+
+#id_full_name, #id_email_address, #id_phone_number, #id_home_address, #id_city, #id_zip_code {
     height: 35px;
     width: 300px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    background-color: black;
+}
+
+
+
+
+#id_additional_info {
+    height: 95px;
+    width: 400px;
     font-size: 18px;
     margin-bottom: 20px;
     padding-left: 10px;
     background-color: black;
 }
 
-#full_name_input:focus {
-    background-color: #ffffff;
-    color: black;
-}
-
 #submit_delivery {
-    background: black;
-    width: 100px;
+    display: inline-block;
     vertical-align: top;
+    margin: 50px;
     border: 2px solid #90FFFF;
+    float: right;
+    width: 200px;
 }
 
+/* NEON */
 .delivery{
     margin-top: 50px;
-    margin-bottom: 50px;
 }
+
