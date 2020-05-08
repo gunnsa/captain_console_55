@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 from order.models import Delivery
 
 
-def index(request):
+def delivery_form(request):
     if request.method == 'GET':
       form = UserCreationForm(data=request.POST)
       if form.is_valid():
