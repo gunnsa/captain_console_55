@@ -4,26 +4,28 @@
         <img class="allproducts-img" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/95992786_10158165756738972_5391447888045801472_o.jpg?_nc_cat=110&_nc_sid=e007fa&_nc_ohc=0iLAORcCWpEAX_bvWvT&_nc_ht=scontent.frkv3-1.fna&oh=f13967415510ae44a81a0de405c1473b&oe=5ED82A38">
     </div>
 
+    <div class="both-drop-down">
+        <div class="dropdown-brand">
+          <button class="dropbtn">Brand
+            <span class="caret"></span>
+          </button>
+            <div class="dropdown-content">
+                  {% for brand in manufacturers  %}
+                      <button class="brand-btn" id="brand-btn" data-name="{{ brand }}">{{ brand }}</button>
+                  {% endfor %}
+              </div>
+        </div>
 
-    <div class="dropdown-brand">
-      <button class="dropbtn">Brand
-        <span class="caret"></span>
-      </button>
-        <div class="dropdown-content">
-              {% for brand in manufacturers  %}
-                  <button class="brand-btn" id="brand-btn" data-name="{{ brand }}">{{ brand }}</button>
-              {% endfor %}
+
+
+        <div class="dropdown-sort">
+          <button class="dropbtn">Sort by
+            <span class="caret"></span>
+          </button>
+          <div class="dropdown-content">
+              <button class="price-btn" id="price-btn" data-name="1">Price low to high</button>
           </div>
-    </div>
-
-
-    <div class="dropdown-sort">
-      <button class="dropbtn">Sort by
-        <span class="caret"></span>
-      </button>
-      <div class="dropdown-content">
-          <button class="price-btn" id="price-btn" data-name="1">Price low to high</button>
-      </div>
+        </div>
     </div>
 
 
