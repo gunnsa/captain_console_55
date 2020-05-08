@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="cart">
-        <h2>Cart</h2>
+        <h2></h2>
     </div>
     <table class="table">
         <thead>
@@ -45,7 +45,7 @@
                     {% endfor %}
                 </td>
 
-                <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
 
             </tr>
 
