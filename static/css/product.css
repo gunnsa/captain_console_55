@@ -9,12 +9,15 @@
     display: block;
     width: 30%;
     height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
 }
 
 /* setur vörur í fina röð */
 .products {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 50px;
     margin-bottom: 50px;
 }
@@ -27,14 +30,15 @@
 /* setur texta undir myndr í miðjuna */
 .single-product {
     text-align: center;
+    margin-bottom: 70px;
 }
 
 /*hver og ein mynd af vöru*/
 .product-img {
     object-fit: contain;
-    width:  200px;
-    height: 250px;
-    border: 2px solid #AB17FF;
+    width:  160px;
+    height: 180px;
+    border: 2px solid rgb(248, 244, 10);
 }
 
 
