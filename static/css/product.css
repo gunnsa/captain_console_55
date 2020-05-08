@@ -1,0 +1,57 @@
+/* -------------- PRODUCTS -------------- */
+
+/* NEON - all products img */
+.allproducts{
+    display: block;
+    width: 40%;
+    height: auto;
+}
+
+/* setur vörur í fina röð */
+.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* texti undir myndir hvitur --- VEIT EKKI HVORT ÞARF!! */
+.single-product h4 {
+    color: white;
+}
+
+/* setur texta undir myndr í miðjuna */
+.single-product {
+    text-align: center;
+}
+
+/*hver og ein mynd af vöru*/
+.product-img {
+    object-fit: contain;
+    width:  200px;
+    height: 250px;
+    border: 2px solid #AB17FF;
+}
+
+
+
+
+/* -------------- PRODUCT DETAIL -------------- */
+
+/* NEON - product detail img */
+.productdetails {
+    display: block;
+    width: 40%;
+    height: auto;
+}
+
+/* setur nafn, verð, lit og framleiðanda í inline-block við product-img */
+.product-details div {
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+}
+
+/* setur product-img í inline-block við nafn, verð, lit og framleiðanda */
+.product-details .product-img {
+    display: inline-block;
+    margin: 20px;
+}
