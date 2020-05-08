@@ -188,6 +188,9 @@ footer a {
     color: white;
 }
 
+footer {
+    float: right;
+}
 
 
 
@@ -541,6 +544,3 @@ button {
     height: 40px;
 }
 
-footer{
-    position: absolute;
-}
