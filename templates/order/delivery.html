@@ -9,7 +9,7 @@
 
         {% csrf_token %}
         <div class='deliveries'>
-            {{ form }}
+            {{ form.as_table }}
         </div>
 
     <input type="submit" class="btn btn-primary" value="Continue to payment" id="submit_delivery"/>
