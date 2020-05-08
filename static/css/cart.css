@@ -54,6 +54,10 @@
     margin: 5px;
 }
 
+.heart {
+    padding: 15px;
+}
+
 
 /* til að skipta um hjarta þegar mús er ofaná */
 .heart > .fa + .fa,
