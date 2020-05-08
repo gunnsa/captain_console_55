@@ -9,32 +9,44 @@
     display: block;
     width: 30%;
     height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
 }
 
 /* setur vörur í fina röð */
 .products {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 50px;
     margin-bottom: 50px;
+    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
+    border-radius: 5px;
+
 }
 
 /* texti undir myndir hvitur --- VEIT EKKI HVORT ÞARF!! */
 .single-product h4 {
     color: white;
+
 }
 
 /* setur texta undir myndr í miðjuna */
 .single-product {
     text-align: center;
+    margin-bottom: 70px;
+    margin-top: 50px;
+
 }
 
 /*hver og ein mynd af vöru*/
 .product-img {
     object-fit: contain;
-    width:  200px;
-    height: 250px;
-    border: 2px solid #AB17FF;
+    /*width:  160px;
+    height: 180px;*/
+    width: 220px;
+    height: 220px;
+
 }
 
 
