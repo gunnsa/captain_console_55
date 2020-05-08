@@ -1,25 +1,34 @@
 /* ---------------------------- navigation bar ---------------------------- */
 
-/* navigation bar */
+/* navigation bar svartur*/
 .container-fluid {
     background-color: black;
-    color: white;
-}
-
-/* white font in navigationbar */
-#cart {
-    color: white;
-}
-
-/* cart icon */
-.fa-shopping-cart {
-    color: white;
 }
 
 /* allur texti í navigation bar hvítur */
 .nav.navbar-nav li a {
     color: white;
+    background-color: black;
 }
+
+/* Captain Console (logo) white */
+.navbar-default .navbar-brand  {
+    color: white;
+}
+
+
+#cart {
+    color: white;
+    padding: 10px;
+}
+
+#heart-nav-bar {
+    margin: 10px;
+}
+
+
+
+
 
 /* search -> navbar */
 .input-group.md-form.form-sm.form-2 input {
@@ -33,12 +42,7 @@
   border: 1px solid #ffca28;
 }
 
-/* Captain Console (logo) white */
-.navbar-default .navbar-brand  {
-    color: white;
 
-
-}
 
 /* tekur hvítan border line */
 .navbar {

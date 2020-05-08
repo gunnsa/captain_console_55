@@ -1,12 +1,7 @@
 /* ------------------------ form.form-horizontal ------------------------ */
 
 
-/* útlit á input í sign in og sign out */
-.form.form-horizontal input {
-    background: black;
-    color: white;
-    border: 0.5px solid white;
-}
+
 
 
 /* VEIT EKKI HVAÐ GERIR!!! */
@@ -120,7 +115,6 @@ button {
 }
 
 
-/*notenda-upplýsingar*/
 
 
 
@@ -128,42 +122,8 @@ button {
 
 
 
-.profile-image {
-    width: 40%;
-    height: 40%;
-    float: left;
-    display: inline-block;
-}
 
 
-
-
-.dropdown-content button.price-btn{
-    border: none;
-    padding: 12px 16px;
-    min-width: 160px;
-    position: relative;
-    display: inline-block;
-    text-align:left;
-}
-
-.dropdown-content button:focus {
-    outline: none;
-}
-
-.dropdown-content button:hover {
-    background-color: #393939;
-}
-
-.dropdown-content button.brand-btn {
-    border: none;
-    padding: 12px 16px;
-    min-width: 160px;
-    position: relative;
-    display: inline-block;
-    text-align:left;
-
-}
 
 
 
@@ -187,21 +147,22 @@ button {
     display: inline-block;
 }
 
-.cart h2 {
-    padding-left: 40%;
-    padding-bottom: 10%;
-}
-
-.cart button {
-    width: 90px;
-    height: 40px;
-}
-
-
-
 .profileinfo {
     display: block;
     width: 50%;
     height: auto;
 }
+
+
+
+.cart h2 {
+    padding-left: 40%;
+    padding-bottom: 10%;
+}
+/*
+.cart button {
+    width: 90px;
+    height: 40px;
+}
+ */
 
