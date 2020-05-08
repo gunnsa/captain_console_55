@@ -437,9 +437,11 @@ button {
 #login-form-horizontal.form.form-horizontal {
     width: 500px;
     height: 400px;
-    border: 1px solid #5f5f5f;
+    border: 1px solid rgba(33, 33, 33, 0.38);
     margin: auto;
     display: block;
+    box-shadow: 0px 8px 16px 3px rgba(225, 245, 235, 0.24);
+    border-radius: 5px;
 }
 
 
@@ -457,13 +459,56 @@ button {
     color: black;
 }
 
-
 #submit_login{
     background: black;
     width: 100px;
     vertical-align: top;
     border: 2px solid #90FFFF;
 }
+
+.container #register-form-horizontal {
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 70px;
+    display: block;
+
+}
+
+.signup {
+    display: block;
+    width: 95%;
+    height: auto;
+}
+
+#register-form-horizontal.form.form-horizontal {
+    width: 500px;
+    height: 400px;
+    border: 1px solid rgba(33, 33, 33, 0.38);
+    margin: auto;
+    display: block;
+    box-shadow: 0px 8px 16px 3px rgba(225, 245, 235, 0.24);
+    border-radius: 5px;
+}
+
+#name-input, #id_password1, #id_password2 {
+    height: 35px;
+    width: 300px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    background-color: black;
+}
+
+#submit_register{
+    background: black;
+    width: 100px;
+    vertical-align: top;
+    border: 2px solid #90FFFF;
+}
+
+
 
 
 
