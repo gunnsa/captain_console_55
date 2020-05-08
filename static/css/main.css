@@ -36,6 +36,7 @@ footer {
 .container-fluid {
     background-color: black;
     color: white;
+    box-shadow: 0px 3px 8px 0px rgba(225, 245, 235, 0.24);
 }
 
 /* white font in navigationbar */
@@ -425,17 +426,8 @@ button {
     margin: 0 auto;
     padding: 70px;
     display: block;
-
-}
-
-#login-form-horizontal.form.form-horizontal {
-    width: 500px;
-    height: 400px;
     border: 1px solid #5f5f5f;
-    margin: auto;
-    display: block;
 }
-
 
 #name_input, #id_password {
     height: 35px;
