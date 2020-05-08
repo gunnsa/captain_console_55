@@ -1,9 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
-class Order(models.Model):
-    pass
 
 
 class Delivery(models.Model):
@@ -15,16 +14,3 @@ class Delivery(models.Model):
     city = models.CharField(max_length=100)
     zip_code = models.CharField(max_length=3)
     additional_info = models.CharField(max_length=999)
-    order_date = models.DateTimeField()
-
-
-class PickUp(models.Model):
-    pass
-
-
-class Payment(models.Model):
-    pass
-
-
-class ProcessedOrder(models.Model):
-    pass
