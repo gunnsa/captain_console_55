@@ -1,3 +1,140 @@
+/* ------------------------ form.form-horizontal ------------------------ */
+
+.form.form-horizontal input {
+    background: black;
+    color: white;
+    border: 0.5px solid #FFFFFF
+}
+
+
+/* VEIT EKKI HVAÐ GERIR!!! */
+.form.form-horizontal {
+    display: inline-block;
+    padding-left: 10%;
+}
+
+
+
+
+/* ------------------------ .container ------------------------ */
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+/* ------------------------ SIGN IN -- SIGN UP ------------------------ */
+
+/* sign in síðan */
+.container #login-form-horizontal {
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 70px;
+    display: block;
+    border: 1px solid rgba(33, 33, 33, 0.38);
+    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
+    border-radius: 5px;
+}
+
+/* sign up síðan */
+.container #register-form-horizontal {
+    width: 500px;
+    height: 400px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 70px;
+    display: block;
+    border: 1px solid rgba(33, 33, 33, 0.38);
+    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
+    border-radius: 5px;
+}
+
+/* input gluggar á sign in síðunni */
+#name_input, #id_password {
+    height: 35px;
+    width: 300px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    background-color: black;
+}
+
+/* input gluggar á sign in síðunni */
+#name_input:focus, #id_password:focus {
+    background-color: black;
+    color: white;
+}
+
+/* input gluggar á sign up síðunni */
+#id_username, #id_password1, #id_password2 {
+    height: 35px;
+    width: 300px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    background-color: black;
+}
+
+/* sign in takkinn á sign in síðunni */
+#submit_login{
+    background: black;
+    width: 100px;
+    vertical-align: top;
+    border: 2px solid #90FFFF;
+}
+
+/* sign up takkinn á sign up síðunni */
+#submit_register{
+    background: black;
+    width: 100px;
+    vertical-align: top;
+    border: 2px solid #90FFFF;
+}
+
+/* NEON */
+.login {
+    display: block;
+    width: 95%;
+    height: auto;
+}
+
+/* NEON */
+.signup {
+    display: block;
+    width: 95%;
+    height: auto;
+}
+
+/* glugginn a sign in siðunni */
+.Login {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+/* glugginn a sign up siðunni */
+.register {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+/* hjálpar texti á sign up síðunni */
+.helptext {
+    display: none;
+}
+
+#register-form-horizontal label {
+    display: none;
+}
+
+
+
+/* ------------------------ ANNAÐ ------------------------ */
+
 /* öll síðan svört og hvítir stafir */
 body {
     background-color: black;
@@ -8,20 +145,20 @@ a {
     color: white;
 }
 
-
-footer {
-    float: right;
+/* veit ekki hvað þetta er */
+.box {
+    top: 50%;
+    left: 50%;
+    padding-left: 47%;
+    transform: translate(-50%, -50%);
 }
 
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
+/* ------------------------------------------------------ */
 
 
 
+
+/* mynd a forsíðu */
 .retro {
     width: 35%;
     height: auto;
@@ -33,7 +170,7 @@ footer {
 
 
 
-/* -------------- navigation bar -------------- */
+/* ---------------------------- navigation bar ---------------------------- */
 
 /* navigation bar */
 .container-fluid {
@@ -102,37 +239,10 @@ footer {
 
 
 
-.login {
-    display: block;
-    width: 95%;
-    height: auto;
-}
 
 
-/* -------------- footer -------------- */
 
-.signup {
-    display: block;
-    width: 65%;
-    height: auto;
-}
-
-.register {
-    margin-top: 100px;
-    margin-bottom: 50px;
-}
-
-.Login {
-    margin-top: 100px;
-    margin-bottom: 50px;
-}
-
-
-.profileinfo {
-    display: block;
-    width: 50%;
-    height: auto;
-}
+/* ---------------------------- footer ---------------------------- */
 
 /* linkar undir information í footer hvítir */
 footer a {
@@ -152,19 +262,6 @@ footer {
 
 
 
-
-
-
-/* -------------- Annað -------------- */
-
-/* veit ekki hvað þetta er */
-.box {
-    top: 50%;
-    left: 50%;
-    padding-left: 47%;
-    transform: translate(-50%, -50%);
-}
-
 /* search bar --> bæði í footer og navigation bar */
 input {
     background: black;
@@ -177,93 +274,8 @@ button {
     background: black;
 }
 
-/* held þurfi ekki */
-* {
-    box-sizing: border-box;
-}
+
 /*notenda-upplýsingar*/
-
-
-
-
-.container #login-form-horizontal {
-    width: 500px;
-    height: 400px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 70px;
-    display: block;
-    border: 1px solid rgba(33, 33, 33, 0.38);
-    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
-    border-radius: 5px;
-}
-
-
-#name_input, #id_password {
-    height: 35px;
-    width: 300px;
-    font-size: 18px;
-    margin-bottom: 20px;
-    padding-left: 10px;
-    background-color: black;
-}
-
-#name_input:focus, #id_password:focus {
-    background-color: #ffffff;
-    color: black;
-}
-
-#submit_login{
-    background: black;
-    width: 100px;
-    vertical-align: top;
-    border: 2px solid #90FFFF;
-}
-
-.container #register-form-horizontal {
-    width: 500px;
-    height: 400px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 70px;
-    display: block;
-
-}
-
-.signup {
-    display: block;
-    width: 95%;
-    height: auto;
-}
-
-
-#register-form-horizontal.form.form-horizontal {
-    width: 500px;
-    height: 400px;
-    border: 1px solid rgba(33, 33, 33, 0.38);
-    margin: auto;
-    display: block;
-    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
-    border-radius: 5px;
-}
-
-#name-input, #id_password1, #id_password2 {
-    height: 35px;
-    width: 300px;
-    font-size: 18px;
-    margin-bottom: 20px;
-    padding-left: 10px;
-    background-color: black;
-}
-
-#submit_register{
-    background: black;
-    width: 100px;
-    vertical-align: top;
-    border: 2px solid #90FFFF;
-}
-
-
 
 
 
@@ -311,11 +323,6 @@ button {
 
 
 
-.form.form-horizontal {
-    display: inline-block;
-    padding-left: 10%;
-}
-
 /*update takki*/
 .btn.btn-primary {
     background: black;
@@ -326,11 +333,6 @@ button {
     border: 2px solid #90FFFF
 }
 
-.form.form-horizontal input {
-    background: black;
-    color: white;
-    border: 0.5px solid #FFFFFF
-}
 
 /*notenda-mynd*/
 .profile-image {
@@ -348,5 +350,13 @@ button {
 .cart button {
     width: 90px;
     height: 40px;
+}
+
+
+
+.profileinfo {
+    display: block;
+    width: 50%;
+    height: auto;
 }
 
