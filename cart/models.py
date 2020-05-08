@@ -18,6 +18,5 @@ class Delivery(models.Model):
     city = models.CharField(max_length=100)
     zip_code = models.CharField(max_length=3)
     additional_info = models.CharField(max_length=999)
-    order_date = models.FloatField()
-    order_time = models.FloatField()
+    order_date = models.DateTimeField()
 
