@@ -32,13 +32,13 @@
             </form>
 
             <ul class="nav navbar-nav navbar-right">
-                <li class="heart" id="heart-nav-bar">
-                    <i class="fa fa-heart-o fa-2x"></i>
-                    <i class="fa fa-heart fa-2x"></i>
+                <li class="heart">
+                    <i class="fa fa-heart-o fa-lg" id="heart-nav-bar"></i>
+                    <i class="fa fa-heart fa-lg" id="heart-nav-bar"></i>
                 </li>
-                <li><a id="cart" href="{% url 'cart-index' %}"><i class="fa fa-shopping-cart fa-2x"></i></a></li>
+                <li><a id="cart" href="{% url 'cart-index' %}"><i class="fa fa-shopping-cart fa-lg"></i></a></li>
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> My account</a></li>
+                    <li><a href="{% url 'profile' %}" id="account-img"><i class="fa fa-user fa-lg"></i> My account</a></li>
                     <li><a href="{% url 'logout' %}">Sign out</a></li>
                 {% else %}
                     <li><a href="{% url 'login' %}">Sign in</a></li> <!-- TODO: afhverju fer á my account stillingar þegar loggar inn?? -->
