@@ -16,15 +16,25 @@
     color: white;
 }
 
+/* tekur hvítan border line og festir nav bar */
+.navbar {
+    border: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-top: 0px
+}
 
 #cart {
     color: white;
     padding: 15px;
+    padding-left: 5px;
 }
 
 #heart-nav-bar {
     padding: 15px;
-    padding-top: 20px;
+    padding-top: 18px;
+    padding-right: 5px;
 }
 
 #account-img {
@@ -45,17 +55,8 @@
  */
 
 /* search -> navbar */
+/*
 .input-group.md-form.form-sm.form-2 input.amber-border {
   border: 1px solid #ffca28;
 }
-
-
-
-/* tekur hvítan border line */
-.navbar {
-    border: none;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    margin-top: 0px
-}
+ */
