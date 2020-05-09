@@ -34,8 +34,6 @@ $(document).ready(function () {
 
 var searchText = new URLSearchParams(window.location.search).get('search-text');
 if (searchText != null){
-    $('#all_products').innerHTML = ''
-    console.log(searchText)
     $.ajax( {
         url: '/products?search_filter=' + searchText,
         type: 'GET',
