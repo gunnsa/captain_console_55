@@ -41,13 +41,26 @@
     padding: 15px;
 }
 
+#search-box.form-control{
+    background-color: black;
+    color: white;
+}
+
+.input-group-btn{
+    background-color: black;
+}
+
+#search-btn.btn-default {
+    background-color: #851ec6;
+}
+
 
 
 
 
 /* search -> navbar */
 /*
-.input-group.md-form.form-sm.form-2 input {
+.input-group.md-for.form-sm.form-2 input {
   border: 1px solid #bdbdbd;
   border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;

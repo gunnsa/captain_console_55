@@ -5,7 +5,7 @@ from order.models import Delivery
 
 
 def delivery_form(request):
-    delivery = Delivery.objects.filter(user_id=request.user).first()
+    delivery = Delivery.objects.filter(user=request.user).first()
     if request.method == 'POST':
         form = DeliveryForm(instance=delivery, data=request.POST)
         if form.is_valid():

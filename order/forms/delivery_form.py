@@ -5,7 +5,7 @@ from order.models import Delivery
 class DeliveryForm(ModelForm):
     class Meta:
         model = Delivery
-        exclude = ['id', 'user_id']
+        exclude = ['id', 'user']
         widgets = {
             'full_name': widgets.TextInput(attrs={'class': 'form-control'}),
             'email_address': widgets.TextInput(attrs={'class': 'form-control'}),
