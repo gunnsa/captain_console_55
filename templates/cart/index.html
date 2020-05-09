@@ -1,65 +1,67 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="cart">
-        <iframe src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=0&image_font_size=80&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=Cart&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="250" height="200"></iframe>
+        <iframe class="cart-img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=0&image_font_size=50&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=Cart&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="250" height="190"></iframe>
     </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <td></td>
-                <td> Product </td>
-                <td> Quantity </td>
-                <td> Price </td>
-            </tr>
-        </thead>
+    <div class="table-and-buttons">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td> Product </td>
+                    <td> Quantity </td>
+                    <td> Price </td>
+                </tr>
+            </thead>
 
-        <tbody>
-        {% for cart in carts %} <!-- carts kemur fra cart\views.py - listi af öllum vörum sem þessi notandi hefur í körfu -->
-            <tr>
-                <td>
-                    <a href="/products/{{ cart.product.id }}">
-                        <img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}">
-                    </a>
-                </td>
-                <td>
-                    <a href="/products/{{ cart.product.id }}">
-                        <h4>{{ cart.product.name }} </h4></a>
-                        {{ cart.product.short_description }} <br>
-                        {{ cart.product.price }} $
-                </td>
+            <tbody>
+            {% for cart in carts %} <!-- carts kemur fra cart\views.py - listi af öllum vörum sem þessi notandi hefur í körfu -->
+                <tr>
+                    <td>
+                        <a href="/products/{{ cart.product.id }}">
+                            <img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/products/{{ cart.product.id }}">
+                            <h4>{{ cart.product.name }} </h4></a>
+                            {{ cart.product.short_description }} <br>
+                            {{ cart.product.price }} $
+                    </td>
 
 
-                <td>
-                    <div id="nice-number"> <!-- TODO: Laga þannig hægt sé að nota quantity takka -->
-                        <button class="decrease_value" id="decrease" data-id="{{ cart.product.id }}">-</button>
-                        <input id="quantity" data-id="{{ cart.product.id }}" type="number" value="{{ cart.quantity }}" disabled>
-                        <button class="increase_value" id="increase" data-id="{{ cart.product.id }}">+</button>
-                    </div>
-                </td>
+                    <td>
+                        <div id="nice-number"> <!-- TODO: Laga þannig hægt sé að nota quantity takka -->
+                            <button class="decrease_value" id="decrease" data-id="{{ cart.product.id }}">-</button>
+                            <input id="quantity" data-id="{{ cart.product.id }}" type="number" value="{{ cart.quantity }}" disabled>
+                            <button class="increase_value" id="increase" data-id="{{ cart.product.id }}">+</button>
+                        </div>
+                    </td>
 
-                <td>
-                    {% for product, price in eachItemTotal.items %}
-                        {% if product == cart.product.id %}
-                            {{ price }}
-                        {% endif %}
-                    {% endfor %}
-                </td>
+                    <td>
+                        {% for product, price in eachItemTotal.items %}
+                            {% if product == cart.product.id %}
+                                {{ price }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
 
-                <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
+                    <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
 
-            </tr>
+                </tr>
 
-        {% endfor %}
+            {% endfor %}
 
-        </tbody>
-        <td class="total" colspan="3"> <h4>Total:</h4></td>
-        <td class="total" > <h4> {{ sumTotal }} </h4></td>
+            </tbody>
+            <td id="total" colspan="3"> <h4>Total:</h4></td>
+            <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
 
-    </table>
+        </table>
 
-    <a class="btn -btn-primary" id="previous_page" href="{% url 'products-index' %}">Go to previous page</a>
-    <a class="btn -btn-primary" id="pick_up" href="#">Pickup</a> <!-- TODO: setja takka -> áfram í greiðslumáta -->
-    <a class="btn -btn-primary" id="home_delivery" href="{% url 'delivery-index' %}">Delivery</a> <!-- TODO: setja takka -> áfram í afhendingarmata -->
+        <a class="btn -btn-primary" id="previous_page" href="{% url 'products-index' %}">Go to previous page</a>
+        <a class="btn -btn-primary" id="pick_up" href="#">Pickup</a> <!-- TODO: setja takka -> áfram í greiðslumáta -->
+        <a class="btn -btn-primary" id="home_delivery" href="{% url 'delivery-index' %}">Delivery</a> <!-- TODO: setja takka -> áfram í afhendingarmata -->
 
+    </div>
 
 {% endblock %}

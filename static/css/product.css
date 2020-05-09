@@ -10,7 +10,6 @@
     height: auto;
     margin-top: 20px;
     margin-bottom: 20px;
-
 }
 
 /* setur vörur í fina röð */
@@ -71,4 +70,25 @@
 .product-details .product-img {
     display: inline-block;
     margin: 20px;
+}
+
+/* heldur utan um quantity cart og wishlist takka --> PRODUCT DETAIL */
+.quantity_cart_wishlist {
+    margin: 5px;
+}
+
+/* fyrir logged in people --> PRODUCT DETAIL */
+#add_to_cart_btn {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+}
+
+/* fyrir loggedout people --> PRODUCT DETAIL */
+#add_to_cart {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
 }

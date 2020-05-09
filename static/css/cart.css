@@ -1,29 +1,48 @@
+.table > thead > tr > td {
+    padding: 15px;
+}
+
+/* til að setja texta í körfu í miðjuna */
+.table > tbody > tr > td {
+    vertical-align: middle;
+    padding: 20px;
+    border-top: 1px solid #403f3f;
+}
+.table {
+    border-collapse: separate;
+}
 
 
-/*
-table.table > tbody > tr > td{
-    border:1px solid green;
+.table-and-buttons {
+    border-radius: 5px;
+    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
 }
- */
 
-/* heldur utan um quantity cart og wishlist takka */
-.quantity_cart_wishlist {
-    margin: 5px;
+#total {
+    text-align: right;
 }
-/*fyrir logged in people*/
-#add_to_cart_btn {
-    display: inline-block;
-    vertical-align: top;
-    margin: 5px;
-    border: 2px solid #90FFFF;
+
+
+
+/* linkur á vöru hvítur */
+.table a h4 {
+    color: white;
 }
-/*fyrir loggedout people */
-#add_to_cart {
-    display: inline-block;
-    vertical-align: top;
-    margin: 5px;
-    border: 2px solid #90FFFF;
+
+.cart {
+    margin-top: 50px;
 }
+
+/* NEON - cart img */
+.cart-img{
+    display: block;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
 
 
 #nice-number {
@@ -76,14 +95,8 @@ table.table > tbody > tr > td{
 
 
 
-.total {
-    text-align: right;
-}
 
-/* linkur á vöru hvítur */
-.table a h4 {
-    color: white;
-}
+
 
 #previous_page {
     display: inline-block;
@@ -106,7 +119,6 @@ table.table > tbody > tr > td{
     object-fit: contain;
     width:  100px;
     height: 150px;
-    border: 2px solid #AB17FF;
 }
 
 .productdetails {
