@@ -1,6 +1,6 @@
 .deliveries {
     width: 570px;
-    height: 660px;
+    height: 840px;
     margin: 0 auto;
     padding: 70px;
     padding-left: 100px;
@@ -8,23 +8,33 @@
     padding-bottom: 20px;
     display: block;
     border-radius: 5px;
-    margin-bottom: 73px;
+    margin-bottom: 60px;
     box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
     border-radius: 5px;
 }
 
+.delivery_info{
+    margin-bottom: 10px;
+    vertical-align: center;
+}
 
-.delivery_option{
+
+.contact_information{
     margin-bottom: 50px;
 }
 
 
-#id_full_name, #id_email_address, #id_phone_number, #id_home_address, #id_city, #id_zip_code {
+#id_full_name, #id_email_address, #id_phone_number, #id_home_address, #id_city, #id_zip_code, #id_country {
     height: 35px;
     width: 300px;
     font-size: 18px;
     margin-bottom: 20px;
     background-color: black;
+}
+
+#id_home_delivery{
+    padding: 6px 12px;
+    margin-bottom: 20px;
 }
 
 #id_additional_info {
@@ -36,16 +46,16 @@
     background-color: black;
 }
 
-#submit_delivery {
+#continue_to_payment {
     background: black;
     width: 200px;
     border: 2px solid #90FFFF;
-    margin-left: 100px;
-
+    float: right;
+    margin-bottom: 70px;
 }
 
 /* NEON */
-.delivery{
+.contact-img{
     margin-top: 50px;
     padding: 70px;
     padding-left: 100px;
