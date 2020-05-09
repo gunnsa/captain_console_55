@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'user.apps.UserConfig',
     'cart.apps.CartConfig',
-    'order.apps.OrderConfig'
+    'order.apps.OrderConfig',
+    'django_countries'
 ]
 
 MIDDLEWARE = [
@@ -128,6 +129,6 @@ STATICFILES_DIRS = [
 ]
 
 LOGIN_URL = '/user/login'
-LOGIN_REDIRECT_URL = '/user/profile'
+LOGIN_REDIRECT_URL = ''
 
 
