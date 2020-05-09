@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 $(document).ready(function () {
     $('#add_to_cart_btn').on('click', function(e){
         e.preventDefault();
