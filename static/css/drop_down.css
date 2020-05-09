@@ -61,7 +61,7 @@
 
 
 /* lagar útlit á drop down valmöguleikum */
-.dropdown-content button.price-btn{
+.dropdown-content button.min-price-btn, .dropdown-content button.max-price-btn, .dropdown-content button.name-btn {
     border: none;
     padding: 12px 16px;
     min-width: 160px;

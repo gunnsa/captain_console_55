@@ -1,38 +1,5 @@
-$(document).ready(function () {
-    $('.brand-btn').on('click', function (e) {
-        e.preventDefault();
-        console.log(this)
-        var searchText = $(this).attr('data-name');
-        console.log(this.url)
-        $.ajax( {
-            url: '/products?brand_filter=' + searchText,
-            type: 'GET',
-            success: function (resp) {
-                console.log(this.url)
-              var newHtml = resp.data.map(d => {
-                  return `<div class='single-product'>
-                          <a href='/products/${d.id}'>
-                                <img class="product-img" src="${d.firstImage}"/>
-                                <h4>${d.name}</h4> 
-                                <p>${d.short_description}</p>
-                                <p>${d.price}$</p>
-                          </a>
-                      </div>`
-              });
-              $('.products').html(newHtml.join(''));
-              $('#brand-btn').val('');
-            },
-            error: function (xhr, status, error) {
-                console.error(error);
-            }
-        })
-    });
-});
-
-
-
-
 var searchText = new URLSearchParams(window.location.search).get('search-text');
+console.log('searchText: ', searchText)
 if (searchText != null){
     $.ajax( {
         url: '/products?search_filter=' + searchText,
@@ -62,18 +29,16 @@ if (searchText != null){
 
 
 $(document).ready(function () {
-    $('.price-btn').on('click', function (e) {
+    $('.min-price-btn').on('click', function (e) {
         e.preventDefault();
-        console.log(this)
-        var searchText = $(this).attr('data-name');
-        console.log(this.url)
+        var sort_by = $(this).attr('data-name');
+        var pathname = window.location.pathname;
 
         $.ajax( {
-            url: '/products?price=' + searchText,
+            url: pathname + '?min_price=' + sort_by,
             type: 'GET',
 
             success: function (resp) {
-                console.log(this.url)
               var newHtml = resp.data.map(d => {
                   return `<div class='single-product'>
                           <a href='/products/${d.id}'>
@@ -85,7 +50,37 @@ $(document).ready(function () {
                       </div>`
               });
               $('.products').html(newHtml.join(''));
-              $('#price-btn').val('');
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        })
+    });
+});
+
+
+$(document).ready(function () {
+    $('.max-price-btn').on('click', function (e) {
+        e.preventDefault();
+        var sort_by = $(this).attr('data-name');
+        var pathname = window.location.pathname;
+
+        $.ajax( {
+            url: pathname + '?max_price=' + sort_by,
+            type: 'GET',
+
+            success: function (resp) {
+              var newHtml = resp.data.map(d => {
+                  return `<div class='single-product'>
+                          <a href='/products/${d.id}'>
+                                <img class="product-img" src="${d.firstImage}"/>
+                                <h4>${d.name}</h4> 
+                                <p>${d.short_description}</p>
+                                <p>${d.price}$</p>
+                          </a>
+                      </div>`
+              });
+              $('.products').html(newHtml.join(''));
             },
             error: function (xhr, status, error) {
                 console.error(error);
@@ -96,3 +91,32 @@ $(document).ready(function () {
 
 
 
+$(document).ready(function () {
+    $('.name-btn').on('click', function (e) {
+        e.preventDefault();
+        var sort_by = $(this).attr('data-name');
+        var pathname = window.location.pathname;
+
+        $.ajax( {
+            url: pathname + '?name=' + sort_by,
+            type: 'GET',
+
+            success: function (resp) {
+              var newHtml = resp.data.map(d => {
+                  return `<div class='single-product'>
+                          <a href='/products/${d.id}'>
+                                <img class="product-img" src="${d.firstImage}"/>
+                                <h4>${d.name}</h4> 
+                                <p>${d.short_description}</p>
+                                <p>${d.price}$</p>
+                          </a>
+                      </div>`
+              });
+              $('.products').html(newHtml.join(''));
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        })
+    });
+});
