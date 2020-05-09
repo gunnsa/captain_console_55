@@ -7,12 +7,14 @@
     border: 0.5px solid white;
 }
 
+
 /* útlit á input í sign out */
 .form.form-horizontal#register-form-horizontal input {
     background: black;
     color: white;
     border: 0.5px solid white;
 }
+
 
 /* sign in síðan */
 .container #login-form-horizontal {
@@ -27,6 +29,7 @@
     box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
     border-radius: 5px;
 }
+
 
 /* sign up síðan */
 .container #register-form-horizontal {
@@ -43,6 +46,7 @@
     border-radius: 5px;
 }
 
+
 /* input gluggar á sign in og sign up síðunum */
 #id_username, #id_password, #id_password1, #id_password2 {
     height: 35px;
@@ -54,6 +58,7 @@
     border-radius: 5px;
 }
 
+
 /* sign in takkinn á sign in síðunni */
 #submit_login{
     background: black;
@@ -61,6 +66,7 @@
     border: 2px solid #90FFFF;
     margin-left: 100px;
 }
+
 
 /* sign up takkinn á sign up síðunni */
 #submit_register {
@@ -71,20 +77,19 @@
 }
 
 
-
-
-
 /* glugginn a sign in siðunni */
 .sign-in {
     margin-top: 100px;
     margin-bottom: 250px;
 }
 
+
 /* glugginn a sign up siðunni */
 .register {
     margin-top: 100px;
     margin-bottom: 250px;
 }
+
 
 /* hjálpar texti á sign up síðunni */
 .helptext {

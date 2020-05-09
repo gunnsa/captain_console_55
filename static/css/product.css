@@ -28,7 +28,6 @@
     text-align: center;
     margin-bottom: 70px;
     margin-top: 50px;
-
 }
 
 /*hver og ein mynd af vöru*/
@@ -45,14 +44,24 @@
 /* -------------- PRODUCT DETAIL -------------- */
 
 /* NEON - product detail img */
-.productdetails {
+.productdetails-img {
     display: block;
-    width: 40%;
     height: auto;
+    margin-top: 50px;
+}
+
+/* kassi utan um allt */
+.all-product-detail  {
+    margin-top: 60px;
+    margin-bottom: 50px;
+    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
+    border-radius: 5px;
+    clear: both;
+    padding: 50px;
 }
 
 /* setur nafn, verð, lit og framleiðanda í inline-block við product-img */
-.product-details div {
+.product-details .product-info {
     display: inline-block;
     vertical-align: top;
     margin: 20px;
@@ -62,6 +71,8 @@
 .product-details .product-img {
     display: inline-block;
     margin: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 /* heldur utan um quantity cart og wishlist takka --> PRODUCT DETAIL */
@@ -84,3 +95,10 @@
     margin: 5px;
     border: 2px solid #90FFFF;
 }
+
+
+.fa.fa-heart-o.fa-2x, .fa.fa-heart.fa-2x {
+    padding: 10px;
+}
+
+

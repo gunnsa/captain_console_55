@@ -1,43 +1,50 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-    <img class="productdetails" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96013030_10158139329987567_4199711239271612416_n.jpg?_nc_cat=100&_nc_sid=e007fa&_nc_oc=AQmLLQCCJ_2BuXXnF6ZOlq54VbKUDlRhB1ujwsm8W-DGJCSy1MKjFsHg_pzXhAEMLFM&_nc_ht=scontent.frkv3-1.fna&oh=644930f0dd3d7435701f542f8be0c3ef&oe=5ED6E0B5">
-    <div class="product-details">
-        {% for product_image in product.productimage_set.all %}
-            <img src="{{ product_image.image }}" class="product-img" />
-        {% endfor %}
-        <div>
-            <h1>{{ product.name }}</h1>
-            <p>{{ product.price }}$</p>
-            <p>{{ product.color }}</p>
-            <p>{{ product.manufacturer }}</p>
-            <div class="quantity_cart_wishlist">
+    <!--<img class="productdetails-img" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96013030_10158139329987567_4199711239271612416_n.jpg?_nc_cat=100&_nc_sid=e007fa&_nc_oc=AQmLLQCCJ_2BuXXnF6ZOlq54VbKUDlRhB1ujwsm8W-DGJCSy1MKjFsHg_pzXhAEMLFM&_nc_ht=scontent.frkv3-1.fna&oh=644930f0dd3d7435701f542f8be0c3ef&oe=5ED6E0B5"> -->
+    <iframe class="productdetails-img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=0&image_font_size=50&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=Product details&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="600" height="200"></iframe>
+    <div class="all-product-detail">
+        <div class="product-details">
+            {% for product_image in product.productimage_set.all %}
+                <img src="{{ product_image.image }}" class="product-img" />
+            {% endfor %}
+            <div class="product-info">
+                <h1>{{ product.name }}</h1>
+                <p>{{ product.price }}$</p>
+                <p>{{ product.color }}</p>
+                <p>{{ product.manufacturer }}</p>
+                <div class="quantity_cart_wishlist">
 
-                <div id="nice-number">
-                    <button class="decrease_value" id="decrease">-</button>
-                    <input id="quantity" type="number" value="1" disabled>
-                    <button class="increase_value" id="increase">+</button>
+                    <div id="nice-number">
+                        <div class="pull-left">
+                            <button class="decrease_value" id="decrease">-</button>
+                        </div>
+                        <input id="quantity" type="number" value="1" disabled>
+                        <div class="pull-right">
+                            <button class="increase_value" id="increase">+</button>
+                        </div>
+                    </div>
+
+                    {% if user.is_authenticated %}
+                        <button class="btn -btn-primary" id="add_to_cart_btn" data-id="{{ product.id }}">Add to cart</button>
+                     {% else %}
+                        <button class="btn -btn-primary" onclick="location.href='{% url 'login' %}?next={{request.path}}';" id = "add_to_cart">Add to cart</button>
+                    {% endif %}
+
+                    <!-- ef mús fer yfir fyllist hjarta og texti "Add to Wishlist" -->
+                    <a class="heart" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
+                        <i class="fa fa-heart-o fa-2x"></i>
+                        <i class="fa fa-heart fa-2x"></i>
+                    </a>
+
                 </div>
-                {% if user.is_authenticated %}
-                    <button class="btn -btn-primary" id="add_to_cart_btn" data-id="{{ product.id }}">Add to cart</button>
-                 {% else %}
-                    <button class="btn -btn-primary" onclick="location.href='{% url 'login' %}?next={{request.path}}';" id = "add_to_cart">Add to cart</button>
-                {% endif %}
-
-
-
-                <!-- ef mús fer yfir fyllist hjarta og texti "Add to Wishlist" -->
-                <a class="heart" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
-                    <i class="fa fa-heart-o fa-2x"></i>
-                    <i class="fa fa-heart fa-2x"></i>
-                </a>
 
             </div>
-
         </div>
-    </div>
 
-    <div class="product-description">
-        <p>{{ product.long_description }}</p>
+        <div class="product-description">
+            <!--<h4>Description</h4>-->
+            <p>{{ product.long_description }}</p>
+        </div>
     </div>
 {% endblock %}

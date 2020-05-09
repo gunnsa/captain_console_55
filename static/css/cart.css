@@ -1,40 +1,3 @@
-.table > thead > tr > td {
-    padding: 15px;
-}
-
-/* til að setja texta í körfu í miðjuna */
-.table > tbody > tr > td {
-    vertical-align: middle;
-    padding: 20px;
-    border-top: 1px solid #403f3f;
-}
-
-.table {
-    border-collapse: separate;
-}
-
-
-.table-and-buttons {
-    margin-top: 40px;
-    margin-bottom: 50px;
-    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
-    border-radius: 5px;
-}
-
-
-
-#total {
-    text-align: right;
-}
-
-
-
-/* linkur á vöru hvítur */
-.table a h4 {
-    color: white;
-}
-
-
 /* NEON - cart img */
 .cart-img{
     display: block;
@@ -45,6 +8,44 @@
 }
 
 
+/* table header */
+.table > thead > tr > td {
+    padding: 15px;
+}
+
+
+/* table body */
+.table > tbody > tr > td {
+    vertical-align: middle;
+    padding: 20px;
+    border-top: 1px solid #403f3f;
+}
+
+
+.table {
+    border-collapse: separate;
+}
+
+
+/* ÞARF AÐ LAGA!! -> VIL FÁ TAKKA INN Í REITINN!! */
+.table-and-buttons {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
+    border-radius: 5px;
+}
+
+
+/* heildarverð */
+#total {
+    text-align: right;
+}
+
+
+/* linkur á vöru hvítur */
+.table a h4 {
+    color: white;
+}
 
 
 
@@ -54,16 +55,25 @@
     margin: 5px;
 }
 
+
 #increase {
     border: 1px solid white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
+
 
 #quantity {
     border: 1px solid white;
+    border-left: none;
+    border-right: none;
 }
+
 
 #decrease {
     border: 1px solid white;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 
@@ -76,11 +86,13 @@
     vertical-align: top;
 }
 
+
 /* add to wishlist hjarta --> fyllt */
 .fa-heart {
     color: white;
     vertical-align: top;
 }
+
 
 /* til að skipta um hjarta þegar mús er ofaná */
 .heart > .fa + .fa,
@@ -88,15 +100,10 @@
   display: none;
 }
 
+
 .heart:hover > .fa + .fa {
   display: inherit;
 }
-
-
-
-
-
-
 
 
 
@@ -117,17 +124,21 @@
     float: right;
 }
 
-/* mynd af vöru í cart*/
+/* mynd af vöru í cart */
 .product-img_cart {
     object-fit: contain;
     width:  100px;
     height: 150px;
 }
 
+
+/* ehv sem tengist empty cart */
 .productdetails {
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+
 /* taka útlínur á takka þannig sjáist bara ruslið */
 #remove_cart_item_btn {
     border: none;
