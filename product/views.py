@@ -99,5 +99,3 @@ def add_to_cart(request, productid, quantity):
         else:
             CartTest.objects.create(user_id=current_user, product_id=productid, quantity=quantity)
 
-    context = {'products': Product.objects.all().order_by('name')}
-    return render(request, 'product/index.html', context)
