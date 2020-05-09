@@ -2,8 +2,9 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
-from cart.models import Cart
+from cart.models import Cart, CartTest
 from product.models import Product
+from user.models import User
 
 # Create your views here.
 def index(request):
@@ -77,7 +78,7 @@ def add_to_cart(request, productid, quantity):
         if Cart.objects.filter(user_id__exact=current_user, product_id=productid):
             existing_cart = Cart.objects.get(product_id=productid, user_id=current_user)
             print(existing_cart.quantity)
-            existing_cart.quantity = existing_cart.quantity + 1
+            existing_cart.quantity = existing_cart.quantity + quantity
             print(existing_cart.quantity)
             existing_cart.save()
         else:
@@ -85,25 +86,6 @@ def add_to_cart(request, productid, quantity):
 
     context = {'products': Product.objects.all().order_by('name')}
     return render(request, 'product/index.html', context)
-
-
-def search(request):
-    if 'search_filter' in request.GET:
-        search_filter = request.GET['search_filter']
-        products = [{
-            'id': x.id,
-            'name': x.name,
-            'color': x.color,
-            'price': x.price,
-            'short_description': x.short_description,
-            'manufacturer': x.manufacturer,
-            'color': x.color,
-            'firstImage': x.productimage_set.first().image
-        } for x in Product.objects.filter(name__icontains=search_filter)]
-        return JsonResponse({'data': products})
-
-
-
 
 
 
