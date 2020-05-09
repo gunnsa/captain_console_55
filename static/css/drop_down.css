@@ -1,57 +1,66 @@
-/*.both-drop-down {
+.both-drop-down {
+    width: 380px;
     float: right;
     margin-bottom: 20px;
 }
- */
 
 
 /* Dropdown Button */
 .dropbtn {
-  background-color: #000000;
-  color: white;
-  font-size: 16px;
-  border-bottom: 1px solid #90ffff;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  height: 35px;
-  width: 160px;
+    background-color: #000000;
+    color: white;
+    font-size: 16px;
+    border-bottom: 1px solid #90ffff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 35px;
+    width: 160px;
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown-sort {
-  display: inline-block;
-  position: relative;
-}
 
 /* The container <div> - needed to position the dropdown content */
-.dropdown-brand {
-  display: inline-block;
-  position: relative;
+.dropdown-sort { /* þarf að vera - annars fara drop down linkar í rugl */
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+
 }
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown-brand { /* þarf að vera - annars fara drop down linkar í rugl */
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+}
+
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  display: none;
-  position: absolute;
-  color: white;
-  background-color: black;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(225, 245, 235, 0.24);
-  z-index: 1;
-
+    display: none;
+    position: absolute;
+    color: white;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(225, 245, 235, 0.24);
+    z-index: 1;
 }
+
 
 /* Show the dropdown menu on hover */
 .dropdown-sort:hover .dropdown-content {
-  display: block;
+    display: block;
 }
+
 
 /* Show the dropdown menu on hover */
 .dropdown-brand:hover .dropdown-content {
     display: block;
 }
 
+
+/* lagar útlit á drop down valmöguleikum */
 .dropdown-content button.price-btn{
     border: none;
     padding: 12px 16px;
@@ -61,6 +70,8 @@
     text-align:left;
 }
 
+
+/* lagar útlit á drop down valmöguleikum */
 .dropdown-content button.brand-btn {
     border: none;
     padding: 12px 16px;
@@ -70,11 +81,16 @@
     text-align:left;
 }
 
+
+/* */
 .dropdown-content button:focus {
     outline: none;
 }
 
+
+/* gerir takka gráa þegar farið er yfir þá */
 .dropdown-content button:hover {
     background-color: #393939;
 }
+
 
