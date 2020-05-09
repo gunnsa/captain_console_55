@@ -19,18 +19,20 @@
                 <li><a href="{% url 'products-index' %}">Products</a></li>
             </ul>
 
-                <!-- search icon -->
-                <!-- <i class="fa fa-search fa-sm" aria-hidden="true"></i> -->
-            <form action="/products" method="get" class="navbar-form navbar-left" id="search-form"  role="search">
-                <div class="input-group">
-                    <input type="search" class="form-control" id="search-box" name="search-text">
-                    <div class="input-group-btn">
-                        <button type="submit" id="search-btn" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
-                    </div>
-                </div>
-            </form>
+
+
 
             <ul class="nav navbar-nav navbar-right">
+                <!-- search icon -->
+                <!-- <i class="fa fa-search fa-sm" aria-hidden="true"></i> -->
+                <form action="/products" method="get" class="navbar-form navbar-left" id="search-form"  role="search">
+                    <div class="input-group">
+                        <input type="search" class="form-control" id="search-box" name="search-text" placeholder="Search for product...">
+                        <div class="input-group-btn">
+                            <button type="submit" id="search-btn" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
                 <li class="heart">
                     <i class="fa fa-heart-o fa-lg" id="heart-nav-bar"></i>
                     <i class="fa fa-heart fa-lg" id="heart-nav-bar"></i>
