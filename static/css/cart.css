@@ -114,6 +114,7 @@
     margin: 5px;
     border: 2px solid #90FFFF;
     float: left;
+    margin-bottom: 70px;
 }
 
 #home_delivery, #pick_up{
@@ -122,6 +123,8 @@
     margin: 5px;
     border: 2px solid #90FFFF;
     float: right;
+    margin-bottom: 70px;
+
 }
 
 /* mynd af vöru í cart */
