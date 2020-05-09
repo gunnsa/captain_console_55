@@ -8,7 +8,4 @@ class Profile(models.Model):
     full_name = models.CharField(max_length=100)
     email_address = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=7)
-    home_address = models.CharField(max_length=100)
-    city = models.CharField(max_length=100)
-    zip_code = models.CharField(max_length=3)
-    profile_image = models.CharField(max_length=9999)
+    profile_image = models.CharField(max_length=9999, blank=True)
