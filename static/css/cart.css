@@ -1,3 +1,11 @@
+
+
+/*
+table.table > tbody > tr > td{
+    border:1px solid green;
+}
+ */
+
 /* heldur utan um quantity cart og wishlist takka */
 .quantity_cart_wishlist {
     margin: 5px;
