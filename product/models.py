@@ -18,6 +18,3 @@ class Product(models.Model):
 class ProductImage(models.Model):
     image = models.CharField(max_length=999)
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
-
-
-
