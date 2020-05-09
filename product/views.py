@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from cart.models import Cart, CartTest
@@ -60,9 +60,28 @@ def index(request):
 
 #/products/id
 def get_product_by_id(request, id):
-    return render(request, 'product/product_details.html', {
+
+    product_id = id
+    print(request.method)
+    if request.method == 'GET':
+        print(request.COOKIES)
+        if id in request.COOKIES:
+            product_id = request.COOKIES['id']
+            print('GET-id: ' + request.COOKIES.get('id'))
+    elif request.method == 'POST':
+        product_id = request.POST.get(id)
+        print('POST-id: ' + request.POST(id))
+
+    response =  render(request, 'product/product_details.html', {
         'product': get_object_or_404(Product, pk=id)
     })
+
+    response.set_cookie(str(id), product_id, max_age=10000)
+    return response
+
+    #return render(request, 'product/product_details.html', {
+    #    'product': get_object_or_404(Product, pk=id)
+    #})
 
 
 def sort_product_by_specific(request, manufacturer):
@@ -88,4 +107,14 @@ def add_to_cart(request, productid, quantity):
     return render(request, 'product/index.html', context)
 
 
+def test_cookie(request, id):
+    print(request.COOKIES)
+    if request.COOKIES.get('id'):
+        print(request.COOKIES['id'])
+        return HttpResponse("Your product id is: {}".format(request.COOKIES['id']))
 
+    else:
+        print("Visiting for the first time.")
+        response = HttpResponse("Visiting for the first time.")
+        response.set_cookie('id', id, max_age=1000)
+        return response
