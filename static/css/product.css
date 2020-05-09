@@ -86,6 +86,9 @@
     vertical-align: top;
     margin: 5px;
     border: 2px solid #90FFFF;
+    height: 30px;
+    padding: 3px 6px;
+
 }
 
 /* fyrir loggedout people --> PRODUCT DETAIL */
@@ -102,3 +105,25 @@
 }
 
 
+
+/*decrease product quantity */
+#decrease {
+    border: 1px solid white;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 20px;
+    height: 30px;
+}
+
+/*inecrease product quantity */
+#increase {
+    border: 1px solid white;
+    width: 20px;
+    height: 30px;
+}
+
+/*product quantity button*/
+#quantity{
+    height: 30px;
+    text-align: right;
+}

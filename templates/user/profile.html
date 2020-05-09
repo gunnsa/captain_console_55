@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <img class="profileinfo" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/95490836_10158145841852567_6754688873076359168_n.jpg?_nc_cat=110&_nc_sid=e007fa&_nc_oc=AQkbVbbu3uwpi3cggUW1WFqElqs-jUuO3cfoPEzHx2wQdn8RBvTyUfcqGir1htD-j8o&_nc_ht=scontent.frkv3-1.fna&oh=35e8b53f4f79b6d39b6faecafef6da66&oe=5ED916B2">
+    <iframe class="profileinfo"  src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=40&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=Profile information&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="900" height="200"></iframe>
+
     <form class="form form-horizontal" method="post">
         {% csrf_token %}
         {{ form }}
