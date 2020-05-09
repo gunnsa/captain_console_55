@@ -1,6 +1,6 @@
 .deliveries {
     width: 570px;
-    height: 730px;
+    height: 840px;
     margin: 0 auto;
     padding: 70px;
     padding-left: 100px;
@@ -8,9 +8,14 @@
     padding-bottom: 20px;
     display: block;
     border-radius: 5px;
-    margin-bottom: 73px;
+    margin-bottom: 60px;
     box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
     border-radius: 5px;
+}
+
+.delivery_info{
+    margin-bottom: 10px;
+    vertical-align: center;
 }
 
 
@@ -45,8 +50,8 @@
     background: black;
     width: 200px;
     border: 2px solid #90FFFF;
-    margin-left: 100px;
-
+    float: right;
+    margin-bottom: 70px;
 }
 
 /* NEON */
