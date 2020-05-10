@@ -5,14 +5,14 @@
 
     <div class="both-drop-down"> <!-- TODO: laga drop down -- setja til hægri!! -->
         <div class="dropdown-brand">
-          <button class="dropbtn">Brand
+          <button class="dropbtn">Filter by
             <span class="caret"></span>
           </button>
             <div class="dropdown-content">
-                  {% for brand in manufacturers  %}
-                      <a href="/products/{{ brand }}" class="brand-btn" id="brand-btn" data-name="{{ brand }}">{{ brand }}</a>
+                  {% for filter in manufacturers  %}
+                      <a href="/products/{{ filter }}" class="brand-btn" id="brand-btn" data-name="{{ filter }}">{{ filter }}</a>
                   {% endfor %}
-                        <a href="/products/">home</a>
+                <a href="/products/">All products</a>
 
               </div>
         </div>

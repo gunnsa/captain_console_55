@@ -6,7 +6,6 @@
     padding-left: 100px;
     padding-top: 20px;
     padding-bottom: 20px;
-    display: block;
     border-radius: 5px;
     margin-bottom: 60px;
     box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
@@ -31,6 +30,8 @@
     margin-bottom: 20px;
     background-color: black;
 }
+
+
 
 #id_home_delivery{
     padding: 6px 12px;

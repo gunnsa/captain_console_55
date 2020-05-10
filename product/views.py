@@ -36,7 +36,6 @@ def index(request):
 
 #/products/id
 def get_product_by_id(request, id):
-
     product_id = id
     print(request.method)
     if request.method == 'GET':
@@ -48,8 +47,10 @@ def get_product_by_id(request, id):
         product_id = request.POST.get(id)
         print('POST-id: ' + request.POST(id))
 
+    tilraun = Product.objects.all()
+
     response = render(request, 'product/product_details.html', {
-        'product': get_object_or_404(Product, pk=id)
+        'product': get_object_or_404(Product, pk=id), 'all_products': tilraun
     })
 
     response.set_cookie(str(id), product_id, max_age=10000)
@@ -58,6 +59,11 @@ def get_product_by_id(request, id):
     #return render(request, 'product/product_details.html', {
     #    'product': get_object_or_404(Product, pk=id)
     #})
+
+
+def recently_viewed(request):
+    print('hello from recently_viewed')
+
 
 
 def sort_product_by_specific(request, manufacturer):
@@ -98,8 +104,15 @@ def sort_by_brand(request, manufacturer):
         return JsonResponse({'data': tilraun})
 
     products = Product.objects.all().filter(manufacturer__exact=manufacturer)
-    context = {'products': products}
+    manufacturers = Product.objects.values_list("manufacturer", flat=True).distinct()
+
+    context = {
+        'products': products,
+        'manufacturers': manufacturers,
+    }
     return render(request, 'product/index.html', context)
+
+
 
 
 def JsonResponse_form(request):
