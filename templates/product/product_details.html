@@ -54,11 +54,13 @@
                     {% for product in all_products %}
                         {% if product_id|add:0 == product.id %}
                             {% for product_image in product.productimage_set.all %}
-                                <img src="{{ product_image.image }}" class="product-img" />
+                                <a href="/products/{{ product.id }}">
+                                    <img src="{{ product_image.image }}" class="product-img" />
+                                    <h4>{{ product.name }}</h4>
+                                </a>
                             {% endfor %}
-                            <p>All products id: {{ product.id }}</p>
-                            <p>Cookie id: {{ product_id }}</p>
-
+                                <p>{{ product.short_description }}</p>
+                                <p>{{ product.price }}$</p>
                         {% endif %}
                     {% endfor %}
                 {% endfor %}
