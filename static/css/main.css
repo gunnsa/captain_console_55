@@ -45,10 +45,6 @@ button {
     background: black;
 }
 
-/* tekur blaa rammann thegar ytt */
-button:focus{
-    outline:0;
-}
 
 
 /* ------------------------------------------------------ */
