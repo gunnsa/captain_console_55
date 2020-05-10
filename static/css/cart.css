@@ -80,34 +80,6 @@
 
 
 /* -------------- Cart og Wishlist -------------- */
-/* add to wishlist hjarta --> bara útlínur */
-.fa-heart-o {
-    color: white;
-    vertical-align: top;
-}
-
-
-/* add to wishlist hjarta --> fyllt */
-.fa-heart {
-    color: white;
-    vertical-align: top;
-}
-
-
-/* til að skipta um hjarta þegar mús er ofaná */
-.heart > .fa + .fa,
-.heart:hover > .fa {
-  display: none;
-}
-
-
-.heart:hover > .fa + .fa {
-  display: inherit;
-}
-
-
-
-
 #previous_page {
     display: inline-block;
     vertical-align: top;
