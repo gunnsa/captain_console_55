@@ -13,3 +13,6 @@ class CartTest(models.Model):
     user = models.ForeignKey(User, blank=True, on_delete=models.CASCADE)
     product = models.ManyToManyField(Product)
     quantity = models.PositiveIntegerField()
+
+
+

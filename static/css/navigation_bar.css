@@ -11,6 +11,10 @@
     background-color: black;
 }
 
+.container-fluid a{
+    font-size: 17px;
+}
+
 /* Captain Console (logo) white */
 .navbar-default .navbar-brand  {
     color: white;
@@ -44,7 +48,7 @@
 #search-box.form-control {
     background-color: black;
     color: white;
-    height: 25px;
+    height: 29px;
     width: 240px;
 }
 
@@ -53,18 +57,16 @@
 }
 
 #search-btn.btn-default {
-    height: 25px;
+    height: 29px;
     background-color: black;
     text-shadow: none;
     background-position: 0 -30px;
     width: 45px;
-
 }
 
 .glyphicon.glyphicon-search {
     color: white;
     background-color: black;
-
 }
 
 #search-form{

@@ -92,7 +92,54 @@ input {
     width: 5ch;
 }
 
+#news_letter_box.form-control {
+    background-color: black;
+    color: white;
+    height: 29px;
+    width: 240px;
+}
 
+#newsletter-btn.btn-default {
+    height: 29px;
+    background-color: black;
+    text-shadow: none;
+    background-position: 0 -30px;
+    width: 70px;
+    color: white;
+}
+
+#footer_contact {
+    padding-right: 40px ;
+    padding-left: 40px;
+    width: 245px;
+    text-align:left;
+}
+
+#socialmedia_logo {
+    padding-right: 10px ;
+    padding-left: 0px;
+    width: 155px;
+    text-align:left;
+ }
+
+#footer_openhours {
+    padding-right: 40px ;
+    padding-left: 40px;
+    width: 270px;
+    text-align:left;
+}
+
+
+#footer_row {
+    margin-right: -350px;
+    margin-left: 10px;
+}
+
+#footer_newsletter {
+    margin-right: -1px;
+    margin-left: 10px;
+    width: 570px;
+}
 
 
 /* ---------------------------- profile settings ---------------------------- */
@@ -121,3 +168,27 @@ input {
     width: 50%;
     height: auto;
 }
+
+
+
+/* --------------------------------- */
+/* tharf thetta????? */
+
+html, body {
+    height: 100%;
+}
+main {
+    min-height: 100%;
+    margin-bottom: -100px;
+    background: #ddd;
+}
+main:after {
+    content: "";
+    display: block;
+    height: 100px;
+}
+footer {
+    height: 100px;
+}
+
+/* ---------------------------------- */
