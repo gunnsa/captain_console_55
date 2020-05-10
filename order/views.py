@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from cart.models import Cart
 from order.forms.delivery_form import DeliveryForm
 from order.forms.payment_form import PaymentForm
-from order.models import ContactInformation, Order, Payment
+from order.models import ContactInformation, Order, Payment, ProcessedOrder
 
 
 def order_contact_form(request):
@@ -23,11 +23,16 @@ def order_contact_form(request):
 
 
 def get_payment(request):
+    print('inside')
     payment = Payment.objects.filter(user=request.user).first()
     if request.method == 'POST':
-        form = DeliveryForm(instance=payment, data=request.POST)
+        print('wayyyyy inside')
+        form = PaymentForm(instance=payment, data=request.POST)
+        print(form)
         if form.is_valid():
-            payment = form.save(commit=False)
+            print('wayyyyy inside 2')
+            payment = form.save(commit=True)
+            payment.user = request.user
             payment.authorized = True   #bara athuga
             payment.save()
             return redirect('payment-index') #geyma
@@ -37,16 +42,13 @@ def get_payment(request):
     })
 
 
-def processed_order(request):
-    #skrifa niður í gagnagrunn nýtt instance af processed order
-    #setja current order á núverandi order í false
-    pass
+
+
 
 
 @csrf_exempt
 def create_order(request):
     if request.method == 'POST':
-        print('we here')
         usercarts = Cart.objects.filter(user=request.user)
         for cart in usercarts:
             cart_total = 0

@@ -14,4 +14,23 @@ $(document).ready(function () {
     })
 })
 
+$(document).ready(function () {
+    $('#processed-order').on('click', function(e){
+        $.ajax({
+            url: '/order/payment/create',
+            type: 'POST',
+            success: function (resp) {
+                alert("Processed order created")
+            },
+            error: function (status, error) {
+                alert("Whoops something went wrong :(")
+
+            }
+        });
+    })
+})
+
+
+
+
 
