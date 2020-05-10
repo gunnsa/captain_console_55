@@ -50,13 +50,16 @@
         <div class="recently-viewed">
             <h3>Recently viewed items</h3>
             <div class="viewed-products"></div>
-                {% for product_id in request.COOKIES %}
-                    {% for product_image in product.productimage_set.all %}
-                       <img src="{{ product_image.image }}" class="product-img" />
+                {% for product_id  in request.COOKIES.values %}
+                    {% for product_image in all_products %}
+                            <p>All products id: {{ product_image.id }}</p>
+                            <p>Cookie id: {{ product_id }}</p>
                     {% endfor %}
                 {% endfor %}
             </div>
         </div>
+
+
 
     </div>
 {% endblock %}
