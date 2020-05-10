@@ -49,8 +49,6 @@ button {
 /* ------------------------------------------------------ */
 
 
-
-
 /* mynd a forsíðu */
 .retro {
     width: 240px;
@@ -75,70 +73,63 @@ button {
 
 /* ---------------------------- footer ---------------------------- */
 
-/* linkar undir information í footer hvítir */
-footer a {
-    color: white;
-}
-
-footer {
-    float: right;
-}
-
-
-/* search bar --> bæði í footer og navigation bar */
-input {
-    background: black;
-    outline: #AB17FF;
-    width: 5ch;
-}
-
+/* search bar --> í footer */
 #news_letter_box.form-control {
     background-color: black;
     color: white;
-    height: 29px;
+    height: 32px;
     width: 240px;
+    margin-top: 10px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 #newsletter-btn.btn-default {
-    height: 29px;
+    height: 32px;
+    width: 70px;
     background-color: black;
+    color: white;
     text-shadow: none;
     background-position: 0 -30px;
-    width: 70px;
-    color: white;
+    margin-top: 10px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 #footer_contact {
-    padding-right: 40px ;
-    padding-left: 40px;
+    margin: 10px;
+    padding: 10px;
     width: 245px;
     text-align:left;
+    float: right;
 }
 
-#socialmedia_logo {
-    padding-right: 10px ;
-    padding-left: 0px;
-    width: 155px;
-    text-align:left;
- }
-
 #footer_openhours {
-    padding-right: 40px ;
-    padding-left: 40px;
+    margin: 10px;
+    padding: 10px;
     width: 270px;
     text-align:left;
 }
 
-
-#footer_row {
-    margin-right: -350px;
+#footer_newsletter {
+    margin-right: 100px;
     margin-left: 10px;
+    width: 370px;
+    margin-top: 60px;
 }
 
-#footer_newsletter {
-    margin-right: -1px;
-    margin-left: 10px;
-    width: 570px;
+#footer_newsletter b{
+    float: left;
+    font-size: 16px;
+}
+
+#footer_row {
+    margin: 10px;
+    padding: 10px;
+}
+
+#container-footer{
+    margin: 10px;
 }
 
 

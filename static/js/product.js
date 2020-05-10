@@ -4,8 +4,8 @@ if (searchText != null){
     $.ajax( {
         url: '/products?search_filter=' + searchText,
         type: 'GET',
+
         success: function (resp) {
-            console.log(this.url)
           var newHtml = resp.data.map(d => {
               return `<div class='single-product'>
                       <a href='/products/${d.id}'>
@@ -33,7 +33,6 @@ $(document).ready(function () {
         e.preventDefault();
         var sort_by = $(this).attr('data-name');
         var pathname = window.location.pathname;
-
         $.ajax( {
             url: pathname + '?min_price=' + sort_by,
             type: 'GET',
