@@ -14,7 +14,7 @@ def order_contact_form(request):
             delivery = form.save(commit=False)
             delivery.user = request.user
             delivery.save()
-            return redirect('contactinfo-index')
+            return redirect('payment-index')
 
     return render(request, 'order/contactinfo.html', {
         'form': DeliveryForm(instance=delivery)
