@@ -48,7 +48,7 @@ def get_product_by_id(request, id):
         product_id = request.POST.get(id)
         print('POST-id: ' + request.POST(id))
 
-    response =  render(request, 'product/product_details.html', {
+    response = render(request, 'product/product_details.html', {
         'product': get_object_or_404(Product, pk=id)
     })
 
@@ -114,6 +114,8 @@ def JsonResponse_form(request):
         'firstImage': x.productimage_set.first().image
     } for x in request]
     return products
+
+
 def test_cookie(request, id):
     print(request.COOKIES)
     if request.COOKIES.get('id'):

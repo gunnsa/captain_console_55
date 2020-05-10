@@ -78,6 +78,7 @@
 /* heldur utan um quantity cart og wishlist takka --> PRODUCT DETAIL */
 .quantity_cart_wishlist {
     margin: 5px;
+    height: 40px;
 }
 
 /* fyrir logged in people --> PRODUCT DETAIL */
@@ -100,16 +101,30 @@
 }
 
 
-.fa.fa-heart-o.fa-2x, .fa.fa-heart.fa-2x {
-    padding: 10px;
-}
-
 #heart-product {
     padding: 15px;
     padding-top: 5px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 }
 
+
+/* add to wishlist hjörtu */
+.fa-heart-o, .fa-heart {
+    color: white;
+    vertical-align: top;
+}
+
+
+/* til að skipta um hjarta þegar mús er ofaná */
+.heart > .fa + .fa,
+.heart:hover > .fa {
+  display: none;
+}
+
+
+.heart:hover > .fa + .fa {
+  display: inherit;
+}
 
 
 /*decrease product quantity */
@@ -117,14 +132,14 @@
     border: 1px solid white;
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
-    width: 20px;
+    width: 23px;
     height: 30px;
 }
 
 /*inecrease product quantity */
 #increase {
     border: 1px solid white;
-    width: 20px;
+    width: 23px;
     height: 30px;
 }
 
@@ -132,4 +147,14 @@
 #quantity{
     height: 30px;
     text-align: right;
+}
+
+
+.product-description h4 {
+    text-decoration: underline;
+}
+
+.product-description {
+    margin-right: 25px;
+    margin-left: 25px;
 }
