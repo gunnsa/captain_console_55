@@ -35,7 +35,6 @@
     object-fit: contain;
     width: 220px;
     height: 220px;
-
 }
 
 
@@ -89,7 +88,10 @@
     border: 2px solid #90FFFF;
     height: 30px;
     padding: 3px 6px;
+}
 
+#add_to_cart_btn:focus{
+    outline:0;
 }
 
 /* fyrir loggedout people --> PRODUCT DETAIL */
@@ -98,6 +100,12 @@
     vertical-align: top;
     margin: 5px;
     border: 2px solid #90FFFF;
+    height: 30px;
+    padding: 3px 6px;
+}
+
+#add_to_cart:focus{
+    outline:0;
 }
 
 
@@ -139,14 +147,19 @@
 /*inecrease product quantity */
 #increase {
     border: 1px solid white;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
     width: 23px;
     height: 30px;
 }
 
 /*product quantity button*/
 #quantity{
-    height: 30px;
     text-align: right;
+    background-color: black;
+    border: 1px solid white;
+    width: 37px;
+    height: 30px;
 }
 
 
