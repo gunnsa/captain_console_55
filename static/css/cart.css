@@ -56,31 +56,41 @@
 }
 
 
-#increase {
-    border: 1px solid white;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
 
-
-#quantity {
-    border: 1px solid white;
-    border-left: none;
-    border-right: none;
-}
-
-
-#decrease {
+/*decrease product quantity */
+#decrease_cart {
     border: 1px solid white;
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
+    width: 23px;
+    height: 25px;
 }
+
+/*inecrease product quantity */
+#increase_cart {
+    border: 1px solid white;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 23px;
+    height: 25px;
+}
+
+/*product quantity button*/
+#quantity_cart {
+    text-align: right;
+    background-color: black;
+    border: 1px solid white;
+    width: 32px;
+    height: 25px;
+}
+
+
 
 
 
 
 /* -------------- Cart og Wishlist -------------- */
-#previous_page {
+#previous-page {
     display: inline-block;
     vertical-align: top;
     margin: 5px;
@@ -89,7 +99,7 @@
     margin-bottom: 70px;
 }
 
-#home_delivery, #pick_up{
+#contact-info, #pick_up{
     display: inline-block;
     vertical-align: top;
     margin: 5px;
