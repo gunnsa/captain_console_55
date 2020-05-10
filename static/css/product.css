@@ -158,3 +158,32 @@
     margin-right: 25px;
     margin-left: 25px;
 }
+
+/* texti undir myndir hvitur */
+.single-recently-viewed h4{
+    color: white;
+}
+
+/* setur texta undir myndr í miðjuna */
+.single-recently-viewed {
+    text-align: center;
+    margin-bottom: 70px;
+    margin-top: 50px;
+}
+
+/* setur vörur í fina röð */
+.recently-viewed {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-bottom: 50px;
+}
+
+.recently-viewed-box {
+    margin-top: 60px;
+    margin-bottom: 50px;
+    padding: 50px;
+    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
+    border-radius: 5px;
+    clear: both;
+}
+
