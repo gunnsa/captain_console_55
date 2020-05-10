@@ -15,7 +15,6 @@
                 <p>{{ product.manufacturer }}</p>
                 <div class="quantity_cart_wishlist">
 
-                    <div id="nice-number">
                         <div class="pull-left">
                             <button class="decrease_value" id="decrease">-</button>
                         </div>
@@ -52,7 +51,7 @@
         <!--<h3>Recently viewed items</h3>-->
 
         <div class="recently-viewed">
-            {% for key, product_id  in request.COOKIES.items reversed %}
+            {% for key, product_id  in request.COOKIES.items %}
                 {% for product in all_products %}
                     {% include 'product/recently_viewed.html' with product=product %}
                 {% endfor %}

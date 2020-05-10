@@ -166,22 +166,29 @@ button:focus{
     border: 2px solid #90FFFF
 }
 
+#profile-info{
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    padding-left: 10%;
+}
 
 /* notenda-mynd */
 .profile-image {
-    width: 40%;
-    height: 40%;
+    width: 26%;
+    height: 26%;
     float: left;
     display: inline-block;
+    margin-left: 3%;
 }
 
-.profileinfo {
-    display: block;
-    width: 50%;
-    height: auto;
+#id_profile_image {
+    height: 35px;
+    width: 300px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    background-color: black;
 }
-
-
 
 /* --------------------------------- */
 /* tharf thetta????? */
