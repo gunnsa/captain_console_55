@@ -120,14 +120,3 @@ def JsonResponse_form(request):
     return products
 
 
-def test_cookie(request, id):
-    print(request.COOKIES)
-    if request.COOKIES.get('id'):
-        print(request.COOKIES['id'])
-        return HttpResponse("Your product id is: {}".format(request.COOKIES['id']))
-
-    else:
-        print("Visiting for the first time.")
-        response = HttpResponse("Visiting for the first time.")
-        response.set_cookie('id', id, max_age=1000)
-        return response
