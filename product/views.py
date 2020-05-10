@@ -4,7 +4,6 @@ from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from cart.models import Cart, CartTest
 from product.models import Product
-from user.models import User
 
 # Create your views here.
 def index(request):
@@ -34,18 +33,15 @@ def index(request):
     }
     return render(request, 'product/index.html', context)
 
-#/products/id
+
+#/products/id OG GEYMIR COOKIE
 def get_product_by_id(request, id):
     product_id = id
-    print(request.method)
     if request.method == 'GET':
-        print(request.COOKIES)
         if id in request.COOKIES:
             product_id = request.COOKIES['id']
-            print('GET-id: ' + request.COOKIES.get('id'))
     elif request.method == 'POST':
         product_id = request.POST.get(id)
-        print('POST-id: ' + request.POST(id))
 
     all_products = Product.objects.all()
 
@@ -53,9 +49,7 @@ def get_product_by_id(request, id):
         'product': get_object_or_404(Product, pk=id), 'all_products': all_products
     })
 
-    response.set_cookie(str(id), product_id, max_age=10000)
-
-    tilarun = recently_viewed(response)
+    response.set_cookie(str(id), product_id, max_age=604800)
     return response
 
     #return render(request, 'product/product_details.html', {
@@ -63,21 +57,12 @@ def get_product_by_id(request, id):
     #})
 
 
-def recently_viewed(request):
-    print('hello from recently_viewed')
-
-    tilraun = Product.objects.all()
-
-    return tilraun
-
-
-
 def sort_product_by_specific(request, manufacturer):
     context = {'products': Product.objects.all()}
     return render(request, 'product/index.html', context)
 
 
-#@login_required
+
 @csrf_exempt
 def add_to_cart(request, productid, quantity):
     if request.method == 'POST':

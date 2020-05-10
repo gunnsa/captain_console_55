@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-
 from cart.models import Cart
 from product.models import Product
 from django_countries.fields import CountryField
@@ -17,3 +16,7 @@ class ContactInformation(models.Model):
     zip_code = models.CharField(max_length=3)
     home_delivery = models.BooleanField()
     additional_info = models.CharField(max_length=999, blank=True)
+
+class Order(models.Model):
+    line_items = models.ManyToManyField(Cart)
+    total = models.PositiveIntegerField()
