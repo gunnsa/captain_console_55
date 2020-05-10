@@ -52,7 +52,7 @@
             <div class="viewed-products"></div>
                 {% for product_id in request.COOKIES %}
                     {% for product_image in product.productimage_set.all %}
-                        <img src="{{ product_image.product_id.image }}" class="product-img" />
+                       <img src="{{ product_image.image }}" class="product-img" />
                     {% endfor %}
                 {% endfor %}
             </div>
