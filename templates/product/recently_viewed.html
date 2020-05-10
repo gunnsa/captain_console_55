@@ -1,10 +1,12 @@
 {% if product_id|add:0 == product.id %}
-    {% for product_image in product.productimage_set.all %}
-        <a href="/products/{{ product.id }}">
-            <img src="{{ product_image.image }}" class="product-img" />
-            <h4>{{ product.name }}</h4>
-        </a>
-    {% endfor %}
+    <div class="single-recently-viewed">
+        {% for product_image in product.productimage_set.all %}
+            <a href="/products/{{ product.id }}">
+                <img src="{{ product_image.image }}" class="product-img" />
+                <h4>{{ product.name }}</h4>
+            </a>
+        {% endfor %}
         <p>{{ product.short_description }}</p>
         <p>{{ product.price }}$</p>
+    </div>
 {% endif %}
