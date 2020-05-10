@@ -47,13 +47,15 @@ def get_product_by_id(request, id):
         product_id = request.POST.get(id)
         print('POST-id: ' + request.POST(id))
 
-    tilraun = Product.objects.all()
+    all_products = Product.objects.all()
 
     response = render(request, 'product/product_details.html', {
-        'product': get_object_or_404(Product, pk=id), 'all_products': tilraun
+        'product': get_object_or_404(Product, pk=id), 'all_products': all_products
     })
 
     response.set_cookie(str(id), product_id, max_age=10000)
+
+    tilarun = recently_viewed(response)
     return response
 
     #return render(request, 'product/product_details.html', {
@@ -63,6 +65,10 @@ def get_product_by_id(request, id):
 
 def recently_viewed(request):
     print('hello from recently_viewed')
+
+    tilraun = Product.objects.all()
+
+    return tilraun
 
 
 
