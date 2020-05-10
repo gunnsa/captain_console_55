@@ -46,5 +46,17 @@
             <!--<h4>Description</h4>-->
             <p>{{ product.long_description }}</p>
         </div>
+
+        <div class="recently-viewed">
+            <h3>Recently viewed items</h3>
+            <div class="viewed-products"></div>
+                {% for product_id in request.COOKIES %}
+                    {% for product_image in product.productimage_set.all %}
+                        <img src="{{ product_image.product_id.image }}" class="product-img" />
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+
     </div>
 {% endblock %}
