@@ -1,9 +1,8 @@
 $(document).ready(function () {
-    $('#continue_to_payment').on('click', function(e){
-        e.preventDefault();
+    $('#contact-info').on('click', function(e){
         console.log(quantity)
         $.ajax({
-            url: '/order/delivery',
+            url: '/order/create',
             type: 'POST',
             success: function (resp) {
                 alert("Item added to cart")
@@ -15,3 +14,5 @@ $(document).ready(function () {
         });
     })
 })
+
+
