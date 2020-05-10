@@ -2,7 +2,6 @@
 
 {% block content %}
     <iframe class="profileinfo"  src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=40&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=Profile information&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="900" height="200"></iframe>
-
     <form class="form form-horizontal" id="profile-info" method="post">
         {% csrf_token %}
         {{ form }}
@@ -12,6 +11,5 @@
     {% if user.is_authenticated %}
         <img src="{{ user.profile.profile_image }}" class="profile-image" onerror="this.src='https://ualr.edu/studentaffairs/files/2020/01/blank-picture-holder.png';"/>
     {% endif %}
-
 {% endblock %}
 
