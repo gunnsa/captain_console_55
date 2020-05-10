@@ -41,19 +41,35 @@
     padding: 15px;
 }
 
-#search-box.form-control{
+#search-box.form-control {
     background-color: black;
     color: white;
+    height: 25px;
+    width: 240px;
 }
 
-.input-group-btn{
+.input-group-btn {
     background-color: black;
 }
 
 #search-btn.btn-default {
-    background-color: #851ec6;
+    height: 25px;
+    background-color: black;
+    text-shadow: none;
+    background-position: 0 -30px;
+    width: 45px;
+
 }
 
+.glyphicon.glyphicon-search {
+    color: white;
+    background-color: black;
+
+}
+
+#search-form{
+    margin-top: 12px;
+}
 
 
 
