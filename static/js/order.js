@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('#contact-info').on('click', function(e){
-        console.log(quantity)
+        console.log('WE HERE!')
         $.ajax({
             url: '/order/create',
             type: 'POST',
