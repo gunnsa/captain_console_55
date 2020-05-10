@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
-from cart.models import Cart, CartTest
+from cart.models import Cart
 from product.models import Product
 
 # Create your views here.
