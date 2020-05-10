@@ -16,7 +16,7 @@ class ContactInformation(models.Model):
     zip_code = models.CharField(max_length=3)
     home_delivery = models.BooleanField()
     additional_info = models.CharField(max_length=999, blank=True)
-    current = models.BooleanField(default=True)
+
 
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -25,13 +25,15 @@ class Order(models.Model):
     total = models.FloatField()
     processed = models.BooleanField()
 
+
 class Payment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     card_number = models.PositiveIntegerField()
     card_month = models.PositiveIntegerField()
     card_year = models.PositiveIntegerField()
     card_CVC = models.PositiveIntegerField()
-    current = models.BooleanField(default=True)
     authorized = models.BooleanField()
+
 
 class ProcessedOrder(models.Model):
     line_items = models.ManyToManyField(Order)
