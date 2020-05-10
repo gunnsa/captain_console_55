@@ -52,12 +52,8 @@
             <div class="viewed-products"></div>
                 {% for product_id  in request.COOKIES.values %}
                     {% for product_image in all_products %}
-                        {{ product_id }}
-                        {% if product_id.values == product_image.id %} <!-- HELD SÉ RÉTT EN product_id ER STRING OG product_image.id ER INT -->
-                            <p>product_image: {{ product_image.id }}</p>
-                            <p>product_id: {{ product_id.value }}</p>
-                            <img src="{{ product_image.product_id.image }}" class="product-img" />
-                        {% endif %}
+                            <p>All products id: {{ product_image.id }}</p>
+                            <p>Cookie id: {{ product_id }}</p>
                     {% endfor %}
                 {% endfor %}
             </div>
