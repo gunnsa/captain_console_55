@@ -54,6 +54,8 @@
                     {% for product_image in all_products %}
                             <p>All products id: {{ product_image.id }}</p>
                             <p>Cookie id: {{ product_id }}</p>
+                        {% if product_id.values == product_image.id  %}
+                        {% endif %}
                     {% endfor %}
                 {% endfor %}
             </div>
