@@ -90,7 +90,7 @@
 
 
 /* -------------- Cart og Wishlist -------------- */
-#previous_page {
+#previous-page {
     display: inline-block;
     vertical-align: top;
     margin: 5px;
@@ -99,7 +99,7 @@
     margin-bottom: 70px;
 }
 
-#home_delivery, #pick_up{
+#contact-info, #pick_up{
     display: inline-block;
     vertical-align: top;
     margin: 5px;

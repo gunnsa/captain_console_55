@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
 
 from cart.models import Cart
 from order.forms.delivery_form import DeliveryForm
-from order.models import ContactInformation
+from order.models import ContactInformation, Order
 
 
 def order_contact_form(request):
@@ -14,6 +15,7 @@ def order_contact_form(request):
             delivery.user = request.user
             delivery.save()
             return redirect('contactinfo-index')
+
     return render(request, 'order/contactinfo.html', {
         'form': DeliveryForm(instance=delivery)
     })
@@ -28,5 +30,15 @@ def processed_order(request):
     #setja current order á núverandi order í false
     pass
 
+
+@csrf_exempt
 def create_order(request):
-    pass
+    if request.method == 'POST':
+        print('we here')
+        usercarts = Cart.objects.filter(user=request.user)
+        for cart in usercarts:
+            cart_total = 0
+            cart_total += cart.product.price * cart.quantity
+            Order.objects.create(user=cart.user, product=cart.product, quantity=cart.quantity, total=cart_total, processed=False)
+        return redirect('contactinfo-index')
+

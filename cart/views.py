@@ -3,6 +3,8 @@ from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 
 from cart.models import Cart
+from order.models import Order
+
 
 @login_required
 def index(request):
@@ -31,6 +33,17 @@ def remove_cart_item(request, cartid):
 def update_cart(request):
     #laga quantity þegar það er ýtt á + eða mínus og uppfæra þá total-ið
     pass
+
+def create_order(request):
+    if request.method == 'POST':
+        print('we here')
+        usercarts = Cart.objects.filter(user=request.user)
+        for cart in usercarts:
+            cart_total = 0
+            cart_total += cart.product.price * cart.quantity
+            Order.objects.create(user=cart.user, product=cart.product, quantity=cart.quantity, total=cart_total, processed=False)
+
+
 
 
 

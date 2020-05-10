@@ -1,5 +1,4 @@
 var searchText = new URLSearchParams(window.location.search).get('search-text');
-console.log('searchText: ', searchText)
 if (searchText != null){
     $.ajax( {
         url: '/products?search_filter=' + searchText,
