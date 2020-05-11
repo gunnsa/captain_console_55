@@ -41,7 +41,6 @@
     padding-right: 8px;
 }
 
-
 #search-form{
     position: relative;
     top: 50%;
@@ -124,7 +123,7 @@
     border: none;
 }
 
-
+/* þannig karfan og allt það sé lengra til vinstri */
 .nav.navbar-nav.navbar-right {
     padding-right: 50px;
 }
