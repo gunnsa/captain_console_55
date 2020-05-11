@@ -150,10 +150,9 @@
 }
 
 
-
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content-navbar {
-    display: none;
+    display: block;
     position: absolute;
     color: white;
     background-color: black;
@@ -162,21 +161,18 @@
     z-index: 1;
 }
 
-
 /* Show the dropdown menu on hover */
-.dropdown-nav-bar:hover.dropdown-content-navbar {
+.dropdown-nav-bar {
     display: block;
 }
 
-
-
 /* lagar útlit á drop down valmöguleikum */
-.dropdown-content-navbar a  {
+.dropdown-content-navbar:hover a  {
     border: none;
     padding: 12px 16px;
     min-width: 160px;
     position: relative;
-    display: inline-block;
+    display: block;
     text-align:left;
     text-decoration:none;
     /* color: inherit; */
