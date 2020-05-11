@@ -43,38 +43,76 @@
     padding-right: 5px;
 }
 
-#account-img {
-    padding: 15px;
-    padding-left: 10px;
-}
 
-#search-box.form-control {
-    background-color: black;
-    color: white;
-    height: 29px;
-    width: 240px;
-}
 
-.input-group-btn {
-    background-color: black;
-}
 
-#search-btn.btn-default {
-    height: 29px;
-    background-color: black;
-    text-shadow: none;
-    background-position: 0 -30px;
-    width: 45px;
-}
 
-.glyphicon.glyphicon-search {
-    color: white;
-    background-color: black;
-}
 
 #search-form{
-    margin-top: 12px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+    width: 30px;
+    height: 30px;
+    background: #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    padding: 5px;
 }
+
+.input-group, #search-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 22.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+    color: #f60808;
+    background: #000000;
+}
+
+.fa_search {
+    box-sizing: border-box;
+    padding: 3.5px;
+    width: 22.5px;
+    height: 22.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #597fcd;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+#search-form:hover{
+    width: 200px;
+    cursor: pointer;
+}
+
+#search-form:hover #search-box{
+    display: block;
+}
+
+#search-form:hover #fa_search{
+    background: #000000;
+    color: #470505;
+}
+
+
+
+
+
 
 
 
@@ -94,3 +132,9 @@
   border: 1px solid #ffca28;
 }
  */
+
+
+
+
+
+

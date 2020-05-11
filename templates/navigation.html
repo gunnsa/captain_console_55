@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" xmlns="http://www.w3.org/1999/html">
     <div class="container-fluid">
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -9,48 +9,57 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Captain Console</a>
         </div>
 
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li ><a href="{% url 'home-index'%}">Home <span class="sr-only">(current)</span></a></li>
+                <li><a href="{% url 'home-index'%}"> <img src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96819675_10158184402458972_6930808980620967936_o.jpg?_nc_cat=100&_nc_sid=e007fa&_nc_ohc=VdrdSpCw7GkAX8WdDRb&_nc_ht=scontent.frkv3-1.fna&oh=041858408470877f09815d3501e6ff81&oe=5EDC5C6A" width="240" height="30"></img>  <span class="sr-only">(current)</span></a></li>
                 <li><a href="{% url 'products-index' %}">Products</a></li>
             </ul>
-
-
 
 
             <ul class="nav navbar-nav navbar-right">
                 <!-- search icon -->
                 <!-- <i class="fa fa-search fa-sm" aria-hidden="true"></i> -->
                 <form action="/products" method="get" class="navbar-form navbar-left" id="search-form"  role="search">
-                    <div class="input-group">
-                        <input type="search" class="form-control" id="search-box" name="search-text" placeholder="Search for product...">
-                        <div class="input-group-btn">
-                            <button type="submit" id="search-btn" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                    </div>
+                    <input type="search"  id="search-box" name="search-text">
+                    <i id="fa_search" class="fa fa-search"></i>
                 </form>
                 <li class="heart">
                     <i class="fa fa-heart-o fa-lg" id="heart-nav-bar"></i>
                     <i class="fa fa-heart fa-lg" id="heart-nav-bar"></i>
                 </li>
                 <li><a id="cart" href="{% url 'cart-index' %}"><i class="fa fa-shopping-cart fa-lg"></i></a></li>
+
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'profile' %}" id="account-img"><i class="fa fa-user fa-lg"></i></a></li>
-                    <li><a href="{% url 'logout' %}">Sign out</a></li>
+                    <div class="dropdown-nav-bar">
+                        <button class="dropbtn_nav"><i class="fa fa-user fa-lg" id="account-img" ></i></button>
+                        <div class="dropdown-content-navbar">
+                          <button><a href="{% url 'profile' %}">My account</a></button>
+                          <button><a href="{% url 'logout' %}">Sign out</a></button>
+                        </div>
+                    </div>
                 {% else %}
                     <li><a href="{% url 'login' %}">Sign in</a></li>
                     <li><a href="{% url 'register' %}">Sign up</a></li>
                 {% endif %}
 
-
             </ul>
-
 
         </div><!-- /.navbar-collapse -->
 
     </div> <!-- /.container-fluid -->
 </nav>
+
+
+
+                <form action="/products" method="get" class="navbar-form navbar-left" id="search-form"  role="search">
+                    <input type="search"  id="search-box" name="search-text">
+                    <i id="fa_search" class="fa fa-search"></i>
+                </form>
+
+                <form action="/products" method="get" id="formm" role="search" class="navbar-form navbar-left">
+                  <input type="search" id="inputt" name="search-text">
+                  <i class="fa fa-search" id="faa"></i>
+                </form>
