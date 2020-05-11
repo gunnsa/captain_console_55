@@ -11,7 +11,7 @@
     color: white;
 }
 
-.container-fluid a{
+.container-fluid a {
     font-size: 17px;
 }
 
@@ -167,6 +167,7 @@
 .dropdown-nav-bar:hover.dropdown-content-navbar {
     display: block;
 }
+
 
 
 /* lagar útlit á drop down valmöguleikum */

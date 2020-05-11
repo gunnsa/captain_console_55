@@ -7,6 +7,6 @@ urlpatterns = [
     path('', views.order_contact_form, name="contactinfo-index"),
     path('create', views.create_order),
     path('payment', views.get_payment, name="payment-index"),
-    path('payment/create', views.processed_order, name="prodessed-order"),
-    path('display_order', views.display_order, name="displayorder-index")
+    #path('payment/create', views.processed_order, name="prodessed-order"),
+    #path('display_order', views.display_order, name="displayorder-index")
 ]

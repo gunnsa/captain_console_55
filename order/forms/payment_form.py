@@ -5,7 +5,7 @@ from order.models import Payment
 class PaymentForm(ModelForm):
     class Meta:
         model = Payment
-        exclude = ['id', 'user', 'authorized']
+        exclude = ['id', 'user']
         widgets = {
             'card_number': widgets.NumberInput(attrs={'class': 'form-control'}),
             'card_month': widgets.NumberInput(attrs={'class': 'form-control'}),
