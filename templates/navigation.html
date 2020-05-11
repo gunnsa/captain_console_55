@@ -22,15 +22,12 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- search icon -->
                 <!-- <i class="fa fa-search fa-sm" aria-hidden="true"></i> -->
-                <form action="/products" method="get" class="navbar-form navbar-left" id="search-form"  role="search">
-                    <input type="search"  id="search-box" name="search-text">
-                    <i id="fa_search" class="fa fa-search"></i>
-                </form>
-                <li class="heart">
-                    <i class="fa fa-heart-o fa-lg" id="heart-nav-bar"></i>
-                    <i class="fa fa-heart fa-lg" id="heart-nav-bar"></i>
-                </li>
-                <li><a id="cart" href="{% url 'cart-index' %}"><i class="fa fa-shopping-cart fa-lg"></i></a></li>
+                <div class="tilraun-vero">
+                    <form action="/products" method="get" class="navbar-form navbar-left" id="search-form" role="search">
+                        <input type="search"  id="search-box" name="search-text">
+                        <i id="fa_search" class="fa fa-search"></i>
+                    </form>
+                </div>
 
                 {% if user.is_authenticated %}
                     <div class="dropdown-nav-bar">
@@ -44,6 +41,13 @@
                     <li><a href="{% url 'login' %}">Sign in</a></li>
                     <li><a href="{% url 'register' %}">Sign up</a></li>
                 {% endif %}
+
+                <li class="heart">
+                    <i class="fa fa-heart-o fa-lg" id="heart-nav-bar"></i>
+                    <i class="fa fa-heart fa-lg" id="heart-nav-bar"></i>
+                </li>
+                <li><a id="cart" href="{% url 'cart-index' %}"><i class="fa fa-shopping-cart fa-lg"></i></a></li>
+
 
             </ul>
 
