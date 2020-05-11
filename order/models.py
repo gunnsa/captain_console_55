@@ -28,18 +28,21 @@ class Order(models.Model):
 
 class Payment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    card_number = models.PositiveIntegerField()
-    card_month = models.PositiveIntegerField()
-    card_year = models.PositiveIntegerField()
-    card_CVC = models.PositiveIntegerField()
+    card_number = models.CharField(max_length=16)
+    card_month = models.CharField(max_length=2)
+    card_year = models.CharField(max_length=2)
+    card_CVC = models.CharField(max_length=3)
     authorized = models.BooleanField()
 
 
 class ProcessedOrder(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     line_items = models.ManyToManyField(Order)
     contact_info = models.ForeignKey(ContactInformation, on_delete=models.CASCADE)
     payment_info = models.ForeignKey(Payment, on_delete=models.CASCADE)
     sum_total = models.FloatField()
+    confirmed = models.BooleanField()
+
 
 
 
