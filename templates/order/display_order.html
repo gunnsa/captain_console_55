@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="order">
+        <iframe class="cart-img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=0&image_font_size=50&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=Cart&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="250" height="190"></iframe>
+
+        <div class="table-and-buttons">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td> Product </td>
+                        <td> Quantity </td>
+                        <td> Price </td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                {% for cart in carts %} <!-- carts kemur fra cart\views.py - listi af öllum vörum sem þessi notandi hefur í körfu -->
+                    <tr>
+                        <td>
+                            <a href="/products/{{ cart.product.id }}">
+                                <img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/products/{{ cart.product.id }}">
+                                <h4>{{ cart.product.name }} </h4></a>
+                                {{ cart.product.short_description }} <br>
+                                {{ cart.product.price }} $
+                        </td>
+
+
+                        <td>
+                            <input id="quantity" data-id="{{ cart.product.id }}" type="number" value="{{ cart.quantity }}" disabled>
+                        </td>
+
+                        <td>
+                            {% for product, price in eachItemTotal.items %}
+                                {% if product == cart.product.id %}
+                                    {{ price }}
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+                <td id="total" colspan="3"> <h4>Total:</h4></td>
+                <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
+
+            </table>
+            <a class="btn -btn-primary" id="create-order" >Submit order</a>
+        </div>
+    </div>
+
+{% endblock %}

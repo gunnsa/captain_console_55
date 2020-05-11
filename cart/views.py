@@ -8,7 +8,7 @@ from order.models import Order
 
 @login_required
 def index(request):
-    usercart = Cart.objects.all().filter(user_id=request.user.id)
+    usercart = Cart.objects.all().filter(user_id=request.user.id, order_id__exact='')
     sumtotal = 0
     eachItem = {}
     for product in usercart:
@@ -16,7 +16,7 @@ def index(request):
         eachItem[product.product.id] = total
         sumtotal += product.quantity * product.product.price
         rounded_sumtotal = ("{:.2f}".format(float(sumtotal))+' $')
-        context = {'carts': Cart.objects.all().filter(user_id=request.user.id), 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
+        context = {'carts': Cart.objects.all().filter(user_id=request.user.id, order_id__exact=''), 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
     try:
         return render(request, 'cart/index.html', context)
     except:
@@ -36,7 +36,7 @@ def update_cart(request):
 
 def create_order(request):
     if request.method == 'POST':
-        print('we here')
+        print('create_order: we here')
         usercarts = Cart.objects.filter(user=request.user)
         for cart in usercarts:
             cart_total = 0
