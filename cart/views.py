@@ -16,7 +16,6 @@ def index(request):
         eachItem[product.product.id] = total
         sumtotal += product.quantity * product.product.price
         rounded_sumtotal = ("{:.2f}".format(float(sumtotal))+' $')
-        #context = {'carts': Cart.objects.all().filter(user_id=request.user.id, order_id__exact=''), 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
         context = {'carts': usercart, 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
     try:
         return render(request, 'cart/index.html', context)
