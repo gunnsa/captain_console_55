@@ -162,12 +162,12 @@
 }
 
 /* Show the dropdown menu on hover */
-.dropdown-nav-bar {
+.dropdown-nav-bar:hover .dropdown-content-navbar {
     display: block;
 }
 
 /* lagar útlit á drop down valmöguleikum */
-.dropdown-content-navbar:hover a  {
+.dropdown-content-navbar a.nav-drop-btn  {
     border: none;
     padding: 12px 16px;
     min-width: 160px;
@@ -175,12 +175,16 @@
     display: block;
     text-align:left;
     text-decoration:none;
-    /* color: inherit; */
+    color: inherit;
+}
+
+.dropdown-content-navbar button:focus {
+    outline: none;
 }
 
 
 
-/* gerir takka gráa þegar farið er yfir þá */
+/* gerir linka gráa þegar farið er yfir þá */
 .dropdown-content-navbar a:hover{
     background-color: #393939;
 }
