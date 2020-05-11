@@ -3,7 +3,7 @@ $(document).ready(function () {
         e.preventDefault();
         var cartItemId = $(this).attr('data-id');
         var quantity = $('#quantity').val()
-        console.log(quantity)
+
         $.ajax({
             url: '/products/' + cartItemId + '/add_to_cart/' + quantity,
             type: 'POST',

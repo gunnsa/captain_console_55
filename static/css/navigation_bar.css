@@ -11,7 +11,7 @@
     color: white;
 }
 
-.container-fluid a{
+.container-fluid a {
     font-size: 17px;
 }
 
@@ -40,7 +40,6 @@
     padding-top: 20px;
     padding-right: 8px;
 }
-
 
 #search-form{
     position: relative;
@@ -124,7 +123,7 @@
     border: none;
 }
 
-
+/* þannig karfan og allt það sé lengra til vinstri */
 .nav.navbar-nav.navbar-right {
     padding-right: 50px;
 }
@@ -170,8 +169,9 @@
 }
 
 
+
 /* lagar útlit á drop down valmöguleikum */
-.dropdown-content-navbar a {
+.dropdown-content-navbar a  {
     border: none;
     padding: 12px 16px;
     min-width: 160px;

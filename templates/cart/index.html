@@ -31,13 +31,13 @@
 
 
                         <td>
-                            <div id="nice-number"> <!-- TODO: Laga þannig hægt sé að nota quantity takka -->
+                            <div class="cart_quantity" id="nice-number">
                                 <div class="pull-left">
-                                   <button class="decrease_value" id="decrease" data-id="{{ cart.product.id }}">-</button>
+                                   <button onclick="location.href='{% url 'cart-index' %}';"class="decrease_cart" id="decrease" data-id="{{ cart.id }}">-</button>
                                 </div>
-                                <input id="quantity" data-id="{{ cart.product.id }}" type="number" value="{{ cart.quantity }}" disabled>
+                                    <input id="quantity" data-id="{{ cart.product.id }}" type="number" value="{{ cart.quantity }}" disabled>
                                 <div class="pull-right">
-                                    <button class="increase_value" id="increase" data-id="{{ cart.product.id }}">+</button>
+                                    <button onclick="location.href='{% url 'cart-index' %}';"class="increase_cart" id="increase" data-id="{{ cart.id }}">+</button>
                                 </div>
                             </div>
                         </td>
@@ -62,7 +62,7 @@
 
             </table>
             <a class="btn -btn-primary" id="previous-page" href="{% url 'products-index' %}">Go to previous page</a>
-            <a class="btn -btn-primary" id="contact-info" href="{% url 'contactinfo-index' %}">Proceed to next step</a> <!-- TODO: setja takka -> áfram í afhendingarmata -->
+            <a class="btn -btn-primary" id="contact-info" href="{% url 'contactinfo-index' %}">Proceed to next step</a>
         </div>
     </div>
 
