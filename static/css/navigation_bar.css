@@ -165,7 +165,7 @@
 
 
 /* Show the dropdown menu on hover */
-.dropdown-nav-bar:hover .dropdown-content-navbar {
+.dropdown-nav-bar:hover.dropdown-content-navbar {
     display: block;
 }
 
@@ -179,7 +179,7 @@
     display: inline-block;
     text-align:left;
     text-decoration:none;
-    /* color: inherit;
+    /* color: inherit; */
 }
 
 
