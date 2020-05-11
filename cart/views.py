@@ -32,11 +32,6 @@ def remove_cart_item(request, cartid):
 def update_cart(request, cartid, quantity):
     print('in update cart')
     user_cart = Cart.objects.filter(pk=cartid)
-    for line in user_cart:
-        if line.quantity == 1:
-            Cart.objects.filter(pk=cartid).delete()
-            return render(request, 'cart/index.html')
-
     Cart.objects.filter(pk=cartid).update(quantity=quantity)
     return render(request, 'cart/index.html')
 
