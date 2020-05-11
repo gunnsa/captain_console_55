@@ -34,6 +34,11 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    $('.decrease_cart').on('click', function(e){
+      e.preventDefault();
+      var parent_value = this.parentNode.parentNode
+      child_value = parent_value.childNodes
 
 $(document).ready(function () {
     $('.decrease_value').on('click', function (e) {
