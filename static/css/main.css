@@ -211,17 +211,16 @@ footer {
 
 
 
-/* ---------- Dropdown - Navigation bar -------------------- */
+/* -------------------- Dropdown - Navigation bar -------------------- */
 
 /* Dropdown Button */
 .dropbtn_nav {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: black;
+    color: white;
     font-size: 16px;
     height: 35px;
     width: 50px;
     border: none;
-    padding-right: 100px;
 }
 
 
