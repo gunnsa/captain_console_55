@@ -58,9 +58,11 @@
     height: 30px;
     background: #000000;
     box-sizing: border-box;
-    border-radius: 5px;
-    border: 1px solid #ffffff;
     padding: 5px;
+    border-bottom: 1px solid #ffffff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 #search-box{
