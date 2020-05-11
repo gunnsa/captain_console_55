@@ -8,7 +8,7 @@ from order.models import Order
 
 @login_required
 def index(request):
-    usercart = Cart.objects.all().filter(user_id=request.user.id)
+    usercart = Cart.objects.all().filter(user_id=request.user.id).order_by('product__name')
     sumtotal = 0
     eachItem = {}
     for product in usercart:
@@ -16,7 +16,7 @@ def index(request):
         eachItem[product.product.id] = total
         sumtotal += product.quantity * product.product.price
         rounded_sumtotal = ("{:.2f}".format(float(sumtotal))+' $')
-        context = {'carts': Cart.objects.all().filter(user_id=request.user.id), 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
+        context = {'carts': usercart, 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
     try:
         return render(request, 'cart/index.html', context)
     except:
@@ -27,14 +27,12 @@ def index(request):
 def remove_cart_item(request, cartid):
     print(cartid)
     Cart.objects.filter(pk=cartid).delete()
-    context = {'carts': Cart.objects.all().filter(user_id=request.user.id)}
-    return render(request, 'cart/index.html', context)
+    return render(request, 'cart/index.html')
 
 def update_cart(request, cartid, quantity):
     print('in update cart')
     Cart.objects.filter(pk=cartid).update(quantity=quantity)
-    context = {'carts': Cart.objects.all().filter(user_id=request.user.id)}
-    return render(request, 'cart/index.html', context)
+    return render(request, 'cart/index.html')
 
 
 def create_order(request):
