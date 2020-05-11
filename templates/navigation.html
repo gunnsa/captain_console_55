@@ -22,25 +22,28 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- search icon -->
                 <!-- <i class="fa fa-search fa-sm" aria-hidden="true"></i> -->
-                <div class="tilraun-vero">
+                <div class="search-navigationbar">
                     <form action="/products" method="get" class="navbar-form navbar-left" id="search-form" role="search">
-                        <input type="search"  id="search-box" name="search-text">
-                        <i id="fa_search" class="fa fa-search"></i>
+                        <input type="search"  id="search-box" name="search-text" placeholder="Search...">
+                        <button id="disabled-navigation-btn"><i id="fa_search" class="fa fa-search"></i></button>
                     </form>
                 </div>
 
-                {% if user.is_authenticated %}
-                    <div class="dropdown-nav-bar">
-                        <button class="dropbtn_nav"><i class="fa fa-user fa-lg" id="account-img" ></i></button>
-                        <div class="dropdown-content-navbar">
-                          <button><a href="{% url 'profile' %}">My account</a></button>
-                          <button><a href="{% url 'logout' %}">Sign out</a></button>
+
+                <li class="login-navigationbar">
+                    {% if user.is_authenticated %}
+                        <div class="dropdown-nav-bar">
+                            <button class="dropbtn_nav"><i class="fa fa-user fa-lg" id="account-img" ></i></button>
+                            <div class="dropdown-content-navbar">
+                              <button><a href="{% url 'profile' %}">My account</a></button>
+                              <button><a href="{% url 'logout' %}">Sign out</a></button>
+                            </div>
                         </div>
-                    </div>
-                {% else %}
-                    <li><a href="{% url 'login' %}">Sign in</a></li>
-                    <li><a href="{% url 'register' %}">Sign up</a></li>
-                {% endif %}
+                    {% else %}
+                        <li><a href="{% url 'login' %}">Sign in</a></li>
+                        <li><a href="{% url 'register' %}">Sign up</a></li>
+                    {% endif %}
+                </li>
 
                 <li class="heart">
                     <i class="fa fa-heart-o fa-lg" id="heart-nav-bar"></i>

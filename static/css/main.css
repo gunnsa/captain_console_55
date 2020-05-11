@@ -228,7 +228,8 @@ footer {
 .dropdown-nav-bar { /* þarf að vera - annars fara drop down linkar í rugl */
     display: inline-block;
     position: relative;
-    margin: 10px;
+    margin: 5px;
+    margin-top: 8px;
 }
 
 
