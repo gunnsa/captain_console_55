@@ -50,9 +50,10 @@
                             {% endfor %}
                         </td>
 
-                        <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
+                        <td><button class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
 
                     </tr>
+
 
                 {% endfor %}
 

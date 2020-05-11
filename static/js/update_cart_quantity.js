@@ -68,12 +68,9 @@ $(document).ready(function () {
     })
 });
 
-
-
-
 $(document).ready(function () {
     $('.decrease_cart').on('click', function (e) {
-        e.preventDefault();
+
         var cartid = $(this).attr('data-id');
         var parent_value = this.parentNode.parentNode
         var child_value = parent_value.childNodes
@@ -81,26 +78,7 @@ $(document).ready(function () {
         var quantity = parseInt(child_value[3].value, 10);
         $.ajax({
             url: '/cart/' + cartid + '/update_cart/' + quantity,
-            type: 'POST',
-            success: function (resp) {
-
-            },
-            error: function (status, error) {
-                alert("Whoops something went wrong :(")
-
-            }
-        });
-    })
-    $('.increase_cart').on('click', function (e) {
-        e.preventDefault();
-        var cartid = $(this).attr('data-id');
-        var parent_value = this.parentNode.parentNode
-        var child_value = parent_value.childNodes
-
-        var quantity = parseInt(child_value[3].value, 10);
-        $.ajax({
-            url: '/cart/' + cartid + '/update_cart/' + quantity,
-            type: 'POST',
+            type: 'PATCH',
             success: function (resp) {
 
             },
@@ -110,4 +88,38 @@ $(document).ready(function () {
             }
         });
     });
+    $('.increase_cart').on('click', function (e) {
+
+        var cartid = $(this).attr('data-id');
+        var parent_value = this.parentNode.parentNode
+        var child_value = parent_value.childNodes
+
+        var quantity = parseInt(child_value[3].value, 10);
+        $.ajax({
+            url: '/cart/' + cartid + '/update_cart/' + quantity,
+            type: 'PATCH',
+            success: function (resp) {
+
+            },
+            error: function (status, error) {
+                alert("Whoops something went wrong :(")
+
+            }
+        });
+    });
+    $('.remove_cart_item_btn').on('click', function(e){
+        console.log('remove item pushed')
+        var cartId = $(this).attr('data-id');
+        $.ajax({
+            url: '/cart/' + cartId + '/remove_cart_item',
+            type: 'DELETE',
+            success: function (resp) {
+                window.location.replace("/cart/")
+            },
+            error: function (status, error) {
+                alert("Whoops something went wrong :(")
+
+            }
+        });
+    })
 })
