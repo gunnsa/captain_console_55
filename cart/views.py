@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, redirect
 from django.views.decorators.csrf import csrf_exempt
 
 from cart.models import Cart
@@ -16,7 +16,6 @@ def index(request):
         eachItem[product.product.id] = total
         sumtotal += product.quantity * product.product.price
         rounded_sumtotal = ("{:.2f}".format(float(sumtotal))+' $')
-        #context = {'carts': Cart.objects.all().filter(user_id=request.user.id, order_id__exact=''), 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
         context = {'carts': usercart, 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
     try:
         return render(request, 'cart/index.html', context)
@@ -24,17 +23,20 @@ def index(request):
         return render(request, 'cart/emptycart.html')
 
 
-@csrf_exempt
 def remove_cart_item(request, cartid):
-    print("cartid", cartid)
-    Cart.objects.filter(pk=cartid).delete()
-    return render(request, 'cart/index.html')
+    if request.method == 'DELETE':
+        print(cartid)
+        Cart.objects.filter(pk=cartid).delete()
+        return render(request, 'cart/index.html')
+
 
 
 def update_cart(request, cartid, quantity):
-    print('in update cart')
-    Cart.objects.filter(pk=cartid).update(quantity=quantity)
-    return render(request, 'cart/index.html')
+    if request.method == 'PATCH':
+        print('in update cart')
+        Cart.objects.filter(pk=cartid).update(quantity=quantity)
+        return render(request, 'cart/index.html')
+
 
 
 def create_order(request):
