@@ -8,7 +8,7 @@ from order.models import Order
 
 @login_required
 def index(request):
-    usercart = Cart.objects.all().filter(user_id=request.user.id).order_by('product__name')
+    usercart = Cart.objects.all().filter(user_id=request.user.id, order_id__exact='').order_by('product__name')
     sumtotal = 0
     eachItem = {}
     for product in usercart:
@@ -40,7 +40,7 @@ def update_cart(request, cartid, quantity):
 
 def create_order(request):
     if request.method == 'POST':
-        print('we here')
+        print('create_order: we here')
         usercarts = Cart.objects.filter(user=request.user)
         for cart in usercarts:
             cart_total = 0
