@@ -35,8 +35,8 @@
                         <div class="dropdown-nav-bar">
                             <button class="dropbtn_nav"><i class="fa fa-user fa-lg" id="account-img" ></i></button>
                             <div class="dropdown-content-navbar">
-                              <button><a href="{% url 'profile' %}">My account</a></button>
-                              <button><a href="{% url 'logout' %}">Sign out</a></button>
+                              <a href="{% url 'profile' %}" >My account</a>
+                              <a href="{% url 'logout' %}" >Sign out</a>
                             </div>
                         </div>
                     {% else %}
