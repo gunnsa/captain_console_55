@@ -2,7 +2,7 @@ $(document).ready(function () {
     $('#add_to_cart_btn').on('click', function(e){
         e.preventDefault();
         var cartItemId = $(this).attr('data-id');
-        var quantity = $('#quantity_cart').val()
+        var quantity = $('#quantity').val()
         console.log(quantity)
         $.ajax({
             url: '/products/' + cartItemId + '/add_to_cart/' + quantity,
