@@ -26,13 +26,13 @@ def index(request):
 
 @csrf_exempt
 def remove_cart_item(request, cartid):
-    print(cartid)
+    print("cartid", cartid)
     Cart.objects.filter(pk=cartid).delete()
     return render(request, 'cart/index.html')
 
+
 def update_cart(request, cartid, quantity):
     print('in update cart')
-    user_cart = Cart.objects.filter(pk=cartid)
     Cart.objects.filter(pk=cartid).update(quantity=quantity)
     return render(request, 'cart/index.html')
 
@@ -45,10 +45,4 @@ def create_order(request):
             cart_total = 0
             cart_total += cart.product.price * cart.quantity
             Order.objects.create(user=cart.user, product=cart.product, quantity=cart.quantity, total=cart_total, processed=False)
-
-
-
-
-
-
 

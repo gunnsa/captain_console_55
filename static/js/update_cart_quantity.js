@@ -68,9 +68,6 @@ $(document).ready(function () {
     })
 });
 
-
-
-
 $(document).ready(function () {
     $('.decrease_cart').on('click', function (e) {
         e.preventDefault();
@@ -108,6 +105,6 @@ $(document).ready(function () {
                 alert("Whoops something went wrong :(")
 
             }
-        });
-    });
-})
+        })
+    })
+});
