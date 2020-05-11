@@ -170,7 +170,7 @@
 
 
 /* lagar útlit á drop down valmöguleikum */
-.dropdown-content-navbar a {
+.dropdown-content-navbar a  {
     border: none;
     padding: 12px 16px;
     min-width: 160px;

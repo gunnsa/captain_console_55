@@ -5,7 +5,6 @@ $(document).ready(function () {
       child_value = parent_value.childNodes
 
       var value = parseInt(child_value[3].value, 10);
-      console.log(value)
       value = isNaN(value) ? 0 : value;
 
       if (value == 1) {
