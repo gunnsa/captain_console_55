@@ -9,7 +9,6 @@
 /* allur texti í navigation bar hvítur */
 .nav.navbar-nav li a {
     color: white;
-    background-color: black;
 }
 
 .container-fluid a{
@@ -41,7 +40,6 @@
     padding-top: 20px;
     padding-right: 8px;
 }
-
 
 #search-form{
     position: relative;
@@ -125,7 +123,7 @@
     border: none;
 }
 
-
+/* þannig karfan og allt það sé lengra til vinstri */
 .nav.navbar-nav.navbar-right {
     padding-right: 50px;
 }
@@ -166,7 +164,7 @@
 
 
 /* Show the dropdown menu on hover */
-.dropdown-nav-bar:hover .dropdown-content-navbar {
+.dropdown-nav-bar:hover.dropdown-content-navbar {
     display: block;
 }
 
@@ -180,7 +178,7 @@
     display: inline-block;
     text-align:left;
     text-decoration:none;
-
+    /* color: inherit; */
 }
 
 
