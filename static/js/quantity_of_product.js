@@ -7,8 +7,8 @@ $(document).ready(function () {
 
       var DEC_cartid_qty = document.getElementById('quantity').getAttribute('data-id');
       console.log('DEC_cartid_qty: ', DEC_cartid_qty);
+      var value = parseInt(document.getElementById('quantity').value, 10);
 
-      var value = parseInt(document.getElementById('quantity').value,10);
       value = isNaN(value) ? 0 : value;
 
       if (value == 1) {

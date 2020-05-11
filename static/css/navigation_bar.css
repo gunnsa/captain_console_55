@@ -9,7 +9,6 @@
 /* allur texti í navigation bar hvítur */
 .nav.navbar-nav li a {
     color: white;
-    /* background-color: black; */
 }
 
 .container-fluid a{
@@ -164,6 +163,10 @@
 }
 
 
+/* Show the dropdown menu on hover */
+.dropdown-nav-bar:hover.dropdown-content-navbar {
+    display: block;
+}
 
 
 /* lagar útlit á drop down valmöguleikum */
