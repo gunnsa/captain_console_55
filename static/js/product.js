@@ -10,9 +10,10 @@ if (searchText != null){
                       <a href='/products/${d.id}'>
                             <img class="product-img" src="${d.firstImage}"/>
                             <h4>${d.name}</h4> 
+                      </a>
                             <p>${d.short_description}</p>
                             <p>${d.price}$</p>
-                      </a>
+                      
                   </div>`
           });
           $('.products').html(newHtml.join(''));
@@ -30,10 +31,11 @@ if (searchText != null){
 $(document).ready(function () {
     $('.min-price-btn').on('click', function (e) {
         e.preventDefault();
-        console.log(this)
+
         var sort_by = $(this).attr('data-name');
         var pathname = window.location.pathname;
-        $.ajax( {
+
+        $.ajax({
             url: pathname + '?min_price=' + sort_by,
             type: 'GET',
 
@@ -43,9 +45,9 @@ $(document).ready(function () {
                           <a href='/products/${d.id}'>
                                 <img class="product-img" src="${d.firstImage}"/>
                                 <h4>${d.name}</h4> 
+                          </a>
                                 <p>${d.short_description}</p>
                                 <p>${d.price}$</p>
-                          </a>
                       </div>`
               });
               $('.products').html(newHtml.join(''));
@@ -55,10 +57,7 @@ $(document).ready(function () {
             }
         })
     });
-});
 
-
-$(document).ready(function () {
     $('.max-price-btn').on('click', function (e) {
         e.preventDefault();
         var sort_by = $(this).attr('data-name');
@@ -70,13 +69,14 @@ $(document).ready(function () {
 
             success: function (resp) {
               var newHtml = resp.data.map(d => {
+
                   return `<div class='single-product'>
                           <a href='/products/${d.id}'>
                                 <img class="product-img" src="${d.firstImage}"/>
                                 <h4>${d.name}</h4> 
+                          </a>
                                 <p>${d.short_description}</p>
                                 <p>${d.price}$</p>
-                          </a>
                       </div>`
               });
               $('.products').html(newHtml.join(''));
@@ -86,11 +86,7 @@ $(document).ready(function () {
             }
         })
     });
-});
 
-
-
-$(document).ready(function () {
     $('.name-btn').on('click', function (e) {
         e.preventDefault();
         var sort_by = $(this).attr('data-name');
@@ -106,9 +102,9 @@ $(document).ready(function () {
                           <a href='/products/${d.id}'>
                                 <img class="product-img" src="${d.firstImage}"/>
                                 <h4>${d.name}</h4> 
+                          </a>
                                 <p>${d.short_description}</p>
                                 <p>${d.price}$</p>
-                          </a>
                       </div>`
               });
               $('.products').html(newHtml.join(''));
@@ -119,3 +115,4 @@ $(document).ready(function () {
         })
     });
 });
+
