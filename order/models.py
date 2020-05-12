@@ -1,9 +1,10 @@
+from django import forms
 from django.db import models
 from django.contrib.auth.models import User
 from cart.models import Cart
 from product.models import Product
 from django_countries.fields import CountryField
-#  from creditcards.models import CardNumberField, CardExpiryField, SecurityCodeField
+from creditcards.models import CardNumberField, CardExpiryField, SecurityCodeField
 
 
 class ContactInformation(models.Model):
@@ -26,6 +27,12 @@ class Payment(models.Model):
     card_CVC = models.CharField(max_length=3)
 
 
+class Payment2(forms.ModelForm):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    card_number = models.CharField(max_length=16)
+    card_month = models.DateField()
+    # card_year = models.CharField(max_length=2)
+    card_CVC = models.CharField(max_length=3)
 
 
 # from django import forms

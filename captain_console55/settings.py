@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'order.apps.OrderConfig',
     'django_countries',
-    ''
 ]
 
 MIDDLEWARE = [

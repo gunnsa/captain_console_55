@@ -42,18 +42,17 @@ def get_payment(request):
         print('get_payment: 2')
         form = PaymentForm(instance=payment, data=request.POST)
         if form.is_valid():
-            print('get_payment: 3')
+            print('get_payment: 3 -- form.is_valid()')
             payment = form.save(commit=False)
             payment.user = request.user
             payment.save()
-            return redirect('displayorder-index') #PASSIVE AGRESSIVE SERIOUSLY HER ER REDIRECT
+            return redirect('displayorder-index')  # PASSIVE AGRESSIVE SERIOUSLY HER ER REDIRECT
 
     return render(request, 'order/payment.html', {
         'form': PaymentForm(instance=payment)
     })
 
 
-# þegar ýtir á cart-icon gerist þetta
 def display_order(request):
     usercart = Cart.objects.all().filter(user_id=request.user.id, order_id__exact='')
     sumtotal = 0
