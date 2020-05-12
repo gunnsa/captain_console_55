@@ -50,9 +50,10 @@
                             {% endfor %}
                         </td>
 
-                        <td><button onclick="location.href='{% url 'cart-index' %}';" class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
+                        <td><button class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
 
                     </tr>
+
 
                 {% endfor %}
 
@@ -61,7 +62,7 @@
                 <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
 
             </table>
-            <a class="btn -btn-primary" id="previous-page" href="{% url 'products-index' %}">Go to previous page</a>
+            <a class="btn -btn-primary" id="previous-page" href="{% url 'products-index' %}">Go back to products</a>
             <a class="btn -btn-primary" id="contact-info" href="{% url 'contactinfo-index' %}">Proceed to next step</a>
         </div>
     </div>

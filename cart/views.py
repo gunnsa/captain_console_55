@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, redirect
 from django.views.decorators.csrf import csrf_exempt
 
 from cart.models import Cart
@@ -23,17 +23,20 @@ def index(request):
         return render(request, 'cart/emptycart.html')
 
 
-@csrf_exempt
 def remove_cart_item(request, cartid):
-    print(cartid)
-    Cart.objects.filter(pk=cartid).delete()
-    return render(request, 'cart/index.html')
+    if request.method == 'DELETE':
+        print(cartid)
+        Cart.objects.filter(pk=cartid).delete()
+        return render(request, 'cart/index.html')
+
+
 
 def update_cart(request, cartid, quantity):
-    print('in update cart')
-    user_cart = Cart.objects.filter(pk=cartid)
-    Cart.objects.filter(pk=cartid).update(quantity=quantity)
-    return render(request, 'cart/index.html')
+    if request.method == 'PATCH':
+        print('in update cart')
+        Cart.objects.filter(pk=cartid).update(quantity=quantity)
+        return render(request, 'cart/index.html')
+
 
 
 def create_order(request):
@@ -44,10 +47,4 @@ def create_order(request):
             cart_total = 0
             cart_total += cart.product.price * cart.quantity
             Order.objects.create(user=cart.user, product=cart.product, quantity=cart.quantity, total=cart_total, processed=False)
-
-
-
-
-
-
 

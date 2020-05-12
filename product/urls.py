@@ -8,8 +8,4 @@ urlpatterns = [
     path('<int:productid>/add_to_cart/<int:quantity>', views.add_to_cart),
     path('<str:manufacturer>', views.sort_by_brand, name="manufacturer-index"),
 
-    #path('<int:productid>/add_to_cart_test/<int:quantity>', views.add_to_cart_test),
-    #path('?search_filter=<str:searchText>',views.search ,name="product-search")
-    #path('price=<int:searchtext>', views.sort_product_by_price)
-    #path('cart', add_to_cart, name="cart")
 ]

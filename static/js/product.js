@@ -32,6 +32,7 @@ $(document).ready(function () {
     $('.min-price-btn').on('click', function (e) {
         e.preventDefault();
 
+        console.log(this)
         var sort_by = $(this).attr('data-name');
         var pathname = window.location.pathname;
 
