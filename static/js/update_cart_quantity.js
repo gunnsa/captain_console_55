@@ -68,9 +68,6 @@ $(document).ready(function () {
     })
 });
 
-
-
-
 $(document).ready(function () {
     $('.decrease_cart').on('click', function (e) {
 

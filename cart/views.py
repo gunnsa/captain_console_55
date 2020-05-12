@@ -30,6 +30,7 @@ def remove_cart_item(request, cartid):
         return render(request, 'cart/index.html')
 
 
+
 def update_cart(request, cartid, quantity):
     if request.method == 'PATCH':
         print('in update cart')
@@ -46,10 +47,4 @@ def create_order(request):
             cart_total = 0
             cart_total += cart.product.price * cart.quantity
             Order.objects.create(user=cart.user, product=cart.product, quantity=cart.quantity, total=cart_total, processed=False)
-
-
-
-
-
-
 
