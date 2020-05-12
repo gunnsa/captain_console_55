@@ -50,13 +50,18 @@
     <div class="recently-viewed-box">
         <iframe id="recently-viewed-NEON" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=30&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=Recently viewed items&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="500" height="100"></iframe>
         <!--<h3>Recently viewed items</h3>-->
-
-        <div class="recently-viewed">
-            {% for key, product_id  in request.COOKIES.items %}
-                {% for product in all_products %}
-                    {% include 'product/recently_viewed.html' with product=product %}
+    <div class="recently-viewed">
+                {% for key, product_id  in request.COOKIES.items %}
+                    {% for product in all_products %}
+                        {% if forloop.counter <= 8 %}
+                            {% if forloop.first %}
+                                {% include 'product/recently_viewed.html' with product=product %}
+                            {% else %}
+                                {% include 'product/recently_viewed.html' with product=product %}
+                            {% endif %}
+                            {% endif %}
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
+            </div>
         </div>
-    </div>
 {% endblock %}
