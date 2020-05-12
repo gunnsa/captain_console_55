@@ -32,39 +32,14 @@ $(document).ready(function () {
     $('.min-price-btn').on('click', function (e) {
         e.preventDefault();
 
-        console.log(this)
         var sort_by = $(this).attr('data-name');
         var pathname = window.location.pathname;
-
-        const childDivs = document.querySelectorAll('.single-product')
-        console.log(childDivs)
-
-
-        //var tilraun = document.getElementsByClassName('single-product')
-        //console.log(tilraun)
-
-        for (var i = 0; i < childDivs.length; i++) {
-            console.log(childDivs[i])
-            //if (childDivs[i].tagName == 'a' || childDivs[i].tagName == 'p') {
-            //  console.log(childDivs[i])
-
-                //console.log(childDivs[i].getAttribute('data-name'));
-            //}
-            if (childDivs[i].tagName == 'a') {
-                console.log(childDivs[i])
-            }
-        }
-
-        //var hello = tilraun[1].childNodes
-
-        //console.log(hello)
 
         $.ajax({
             url: pathname + '?min_price=' + sort_by,
             type: 'GET',
 
             success: function (resp) {
-                console.log(resp)
               var newHtml = resp.data.map(d => {
                   return `<div class='single-product'>
                           <a href='/products/${d.id}'>
@@ -82,10 +57,7 @@ $(document).ready(function () {
             }
         })
     });
-});
 
-
-$(document).ready(function () {
     $('.max-price-btn').on('click', function (e) {
         e.preventDefault();
         var sort_by = $(this).attr('data-name');
@@ -96,7 +68,6 @@ $(document).ready(function () {
             type: 'GET',
 
             success: function (resp) {
-                console.log(resp)
               var newHtml = resp.data.map(d => {
 
                   return `<div class='single-product'>
@@ -115,11 +86,7 @@ $(document).ready(function () {
             }
         })
     });
-});
 
-
-
-$(document).ready(function () {
     $('.name-btn').on('click', function (e) {
         e.preventDefault();
         var sort_by = $(this).attr('data-name');

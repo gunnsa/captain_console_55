@@ -1,5 +1,7 @@
 from django.forms import ModelForm, widgets
 from order.models import Payment
+from django import forms
+#from creditcards.forms import CardNumberField, CardExpiryField, SecurityCodeField
 
 
 class PaymentForm(ModelForm):
@@ -13,3 +15,8 @@ class PaymentForm(ModelForm):
             'card_CVC': widgets.NumberInput(attrs={'class': 'form-control'})
         }
 
+
+#class PaymentForm2(forms.Form):
+#    cc_number = CardNumberField(label='Card Number')
+#    cc_expiry = CardExpiryField(label='Expiration Date')
+#    cc_code = SecurityCodeField(label='CVV/CVC')

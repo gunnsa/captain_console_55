@@ -3,7 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from cart.models import Cart
 from order.forms.contact_form import ContactForm
-from order.forms.payment_form import PaymentForm
+from order.forms.payment_form import PaymentForm, PaymentForm2
 from order.models import ContactInformation, Order, Payment
 
 
