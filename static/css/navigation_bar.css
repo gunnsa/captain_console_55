@@ -5,20 +5,25 @@
     background-color: black;
 }
 
+.navbar navbar-default {
+    height: 200px;
+    margin-bottom: 30px;
+}
+
 
 /* allur texti í navigation bar hvítur */
 .nav.navbar-nav li a {
     color: white;
 }
 
+.nav.navbar-nav a{
+    padding: 2px;
+}
+
 .container-fluid a {
     font-size: 17px;
 }
 
-/* Captain Console (logo) white */
-.navbar-default .navbar-brand  {
-    color: white;
-}
 
 /* tekur hvítan border line og festir nav bar */
 .navbar {
@@ -125,7 +130,7 @@
 
 /* þannig karfan og allt það sé lengra til vinstri */
 .nav.navbar-nav.navbar-right {
-    padding-right: 50px;
+    padding-right: 30px;
 }
 
 /* -------------------- Dropdown - Navigation bar -------------------- */
@@ -138,6 +143,7 @@
     height: 35px;
     width: 50px;
     border: none;
+    padding-right: 1px;
 }
 
 
@@ -183,10 +189,49 @@
 }
 
 
-
 /* gerir linka gráa þegar farið er yfir þá */
 .dropdown-content-navbar a:hover{
     background-color: #393939;
 }
 
+/* takkar a dropdown account */
+#nav-drop-btn {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+
 /* ---------------------------------- */
+
+/* Products takki a nav-bar */
+.all_prodctss {
+    margin-bottom: 1px;
+    margin-top: 15px;
+}
+
+.login-navigationbar #sign-in-btn{
+    margin-bottom: 1px;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.login-navigationbar #sign-up-btn{
+    margin-bottom: 1px;
+    margin-top: 1px;
+    margin-right: 20px;
+}
+
+.nav>li>a {
+    display: inline-block;
+}
+
+
+/* LOGO myndin */
+.logo_img {
+    margin-top: 7px;
+    margin-bottom: 1px;
+    padding: 2px;
+}
