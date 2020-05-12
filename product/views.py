@@ -3,6 +3,7 @@ from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from cart.models import Cart
+from home.models import Newsletter
 from product.models import Product
 
 # Create your views here.
@@ -118,4 +119,7 @@ def JsonResponse_form(request):
     } for x in request]
     return products
 
-
+def add_to_newsletter(request, email):
+    if request.method == 'POST':
+        Newsletter.objects.create(email=email)
+    return render(request, 'home/index.html')
