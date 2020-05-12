@@ -1,0 +1,22 @@
+#create-order {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+    float: right;
+    margin-bottom: 70px;
+}
+
+
+/* product quantity button */
+#quantity-displayorder {
+    text-align: right;
+    background-color: black;
+    border: none;
+    width: 32px;
+    height: 25px;
+}
+
+#email {
+    color: black;
+}

@@ -1,10 +1,11 @@
 {% if product_id|add:0 == product.id %}
     <div class="single-recently-viewed">
-            <a href="/products/{{ product.id }}">
-                <img class="product-img" src="{{ product.productimage_set.first.image }}" />
-                <h4>{{ product.name }}</h4>
-            </a>
+        <a href="/products/{{ product.id }}">
+            <img class="product-img" src="{{ product.productimage_set.first.image }}" />
+            <h4>{{ product.name }}</h4>
+        </a>
         <p>{{ product.short_description }}</p>
         <p>{{ product.price }}$</p>
     </div>
+
 {% endif %}

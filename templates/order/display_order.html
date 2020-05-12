@@ -18,20 +18,17 @@
                 {% for cart in carts %} <!-- carts kemur fra cart\views.py - listi af öllum vörum sem þessi notandi hefur í körfu -->
                     <tr>
                         <td>
-                            <a href="/products/{{ cart.product.id }}">
                                 <img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}">
-                            </a>
                         </td>
                         <td>
-                            <a href="/products/{{ cart.product.id }}">
-                                <h4>{{ cart.product.name }} </h4></a>
+                                <h4>{{ cart.product.name }} </h4>
                                 {{ cart.product.short_description }} <br>
                                 {{ cart.product.price }} $
                         </td>
 
 
                         <td>
-                            <input id="quantity" data-id="{{ cart.product.id }}" type="number" value="{{ cart.quantity }}" disabled>
+                            <input id="quantity-displayorder" data-id="{{ cart.product.id }}" type="number" value="{{ cart.quantity }}" disabled>
                         </td>
 
                         <td>

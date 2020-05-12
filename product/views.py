@@ -1,6 +1,9 @@
+import json
+
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404
+from django.template import loader, RequestContext
 from django.views.decorators.csrf import csrf_exempt
 from cart.models import Cart
 from home.models import Newsletter
@@ -9,6 +12,12 @@ from product.models import Product
 # Create your views here.
 def index(request):
     if 'min_price' in request.GET:
+
+        print('request: ', request) #request:  <WSGIRequest: GET '/products/?min_price=min&sort_by=min'>
+        print('request: ', request.GET) #request: < QueryDict: {'min_price': ['min'], 'sort_by': ['min']} >
+
+
+
         products = JsonResponse_form(Product.objects.all().order_by('price'))
         return JsonResponse({'data': products})
 
@@ -67,7 +76,7 @@ def sort_product_by_specific(request, manufacturer):
 def add_to_cart(request, productid, quantity):
     if request.method == 'POST':
         current_user = request.user.id
-        if Cart.objects.filter(user_id__exact=current_user, product_id=productid):
+        if Cart.objects.filter(user_id__exact=current_user, product_id=productid, order_id__exact=''):
             existing_cart = Cart.objects.get(product_id=productid, user_id=current_user)
             print(existing_cart.quantity)
             existing_cart.quantity = existing_cart.quantity + quantity
@@ -83,6 +92,9 @@ def add_to_cart(request, productid, quantity):
 @csrf_exempt
 def sort_by_brand(request, manufacturer):
     if 'min_price' in request.GET:
+        #tilraun = JsonResponse_form(Product.objects.all().order_by('price'))
+        #return JsonResponse({'data': tilraun})
+
         tilraun = JsonResponse_form(Product.objects.all().filter(manufacturer__exact=manufacturer).order_by('price'))
         return JsonResponse({'data': tilraun})
 
