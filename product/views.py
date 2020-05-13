@@ -72,7 +72,6 @@ def add_to_cart(request, productid, quantity):
         else:
             Cart.objects.create(user_id=current_user, product_id=productid, quantity=quantity)
 
-    # context = {'products': Product.objects.all().order_by('name')}
     return render(request, 'product/index.html')
 
 
@@ -85,25 +84,21 @@ def add_to_wishlist(request, productid):
         else:
             WishList.objects.create(user_id=current_user, product_id=productid)
 
-    # context = {'products': Product.objects.all().order_by('name')}
     return render(request, 'product/index.html')
 
 
 def sort_by_brand(request, manufacturer):
     if 'min_price' in request.GET:
-        #tilraun = JsonResponse_form(Product.objects.all().order_by('price'))
-        #return JsonResponse({'data': tilraun})
-
-        tilraun = JsonResponse_form(Product.objects.all().filter(manufacturer__exact=manufacturer).order_by('price'))
-        return JsonResponse({'data': tilraun})
+        product = JsonResponse_form(Product.objects.all().filter(manufacturer__exact=manufacturer).order_by('price'))
+        return JsonResponse({'data': product})
 
     elif 'max_price' in request.GET:
-        tilraun = JsonResponse_form(Product.objects.all().filter(manufacturer__exact=manufacturer).order_by('-price'))
-        return JsonResponse({'data': tilraun})
+        product = JsonResponse_form(Product.objects.all().filter(manufacturer__exact=manufacturer).order_by('-price'))
+        return JsonResponse({'data': product})
 
     elif 'name' in request.GET:
-        tilraun = JsonResponse_form(Product.objects.all().filter(manufacturer__exact=manufacturer).order_by('name'))
-        return JsonResponse({'data': tilraun})
+        product = JsonResponse_form(Product.objects.all().filter(manufacturer__exact=manufacturer).order_by('name'))
+        return JsonResponse({'data': product})
 
     products = Product.objects.all().filter(manufacturer__exact=manufacturer)
     manufacturers = Product.objects.values_list("manufacturer", flat=True).distinct()
