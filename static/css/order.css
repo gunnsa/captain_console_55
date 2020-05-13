@@ -32,12 +32,16 @@
 }
 
 /* texti hvitur */
-.deliveries input, .deliveries select {
+.contact_info_form input, .deliveries select {
     background: black;
     color: white;
 }
 
-.deliveries input:invalid {
+.contact_info_form input:invalid {
+    border: 1px solid red;
+}
+
+.payment input:invalid {
     border: 1px solid red;
 }
 

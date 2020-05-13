@@ -3,7 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from cart.models import Cart
 from order.forms.contact_form import ContactForm
-from order.forms.payment_form import PaymentForm3
+from order.forms.payment_form import PaymentForm
 from order.models import ContactInformation, Order, Payment
 
 
@@ -13,18 +13,17 @@ def order_contact_form(request):
         - fyllir út upplýsingar og ýtir á 'Continue to payment' þá fer hann aftur inn í fallið með POST request og
             ef formið er valid þá vistar hann upplýsingarnar í db og redirectar á 'payment-index' '''
 
-    print('order_contact_form: 1')
     contact_info = ContactInformation.objects.filter(user=request.user).first()
 
     if request.method == 'POST':
-        print('order_contact_form: 2')
         form = ContactForm(instance=contact_info, data=request.POST)
         if form.is_valid():
-            print('order_contact_form: 3')
+
             contact_info = form.save(commit=False)
             contact_info.user = request.user
             contact_info.save()
             return redirect('payment-index')
+
 
     return render(request, 'order/contactinfo.html', {
         'form': ContactForm(instance=contact_info)
@@ -40,7 +39,7 @@ def get_payment(request):
     payment = Payment.objects.filter(user=request.user).first()
     if request.method == 'POST':
         print('get_payment: 2')
-        form = PaymentForm3(instance=payment, data=request.POST)
+        form = PaymentForm(instance=payment, data=request.POST)
         if form.is_valid():
             print('get_payment: 3 -- form.is_valid()')
             payment = form.save(commit=False)
@@ -50,7 +49,7 @@ def get_payment(request):
         else:
             print('FORM INVALID')
     return render(request, 'order/payment.html', {
-        'form': PaymentForm3(instance=payment)
+        'form': PaymentForm(instance=payment)
     })
 
 
