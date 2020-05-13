@@ -9,7 +9,7 @@
 }
 
 /* Homepage rammi fyrir all products */
-.home_one {
+.home_one, .home_one_user {
     margin-top: 170px;
     border: 3px dotted #7818e5;
     border-top: none;
@@ -27,7 +27,7 @@
 }
 
 /* Homepage rammi fyrir sign up */
-.home_two {
+.home_two, .home_two_user {
     margin-top: 50px;
     margin-bottom: 150px;
     margin-right: 1px;

@@ -52,9 +52,11 @@ $(document).ready(function () {
                     timer: 1450,});
             },
             error: function (status, error) {
-
-                alert("Whoops something went wrong :(")
-
+                swal({
+                    title: "Woops something went wrong",
+                    text: "Try again",
+                    buttons: false,
+                    timer: 1450,});
             }
         });
     })

@@ -98,7 +98,6 @@ $(document).ready(function () {
             url: '/cart/' + cartid + '/update_cart/' + quantity,
             type: 'PATCH',
             success: function (resp) {
-
             },
             error: function (status, error) {
                 alert("Whoops something went wrong :(")
@@ -113,6 +112,10 @@ $(document).ready(function () {
             url: '/cart/' + cartId + '/remove_cart_item',
             type: 'DELETE',
             success: function (resp) {
+                swal({
+                    text: "Item removed from cart!",
+                    icon: "success",
+                    buttons: false,});
                 window.location.replace("/cart/")
             },
             error: function (status, error) {

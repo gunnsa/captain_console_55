@@ -43,12 +43,18 @@ $(document).ready(function () {
             url: '/products/' + wishlistItemId + '/add_to_wishlist',
             type: 'POST',
             success: function (resp) {
-                //swal("Here's a message!")
-                swal("Item added to wishlist")
+                swal({
+                    text: "Item added to wishlist!!",
+                    icon: "success",
+                    buttons: false,
+                    timer: 1450,});
             },
             error: function (status, error) {
-                alert("Whoops something went wrong :(")
-
+                swal({
+                    title: "Woops something went wrong",
+                    text: "Try again",
+                    buttons: false,
+                    timer: 1450,});
             }
         });
     })
@@ -78,11 +84,19 @@ $(document).ready(function () {
             url: '/wishlist/' + wishlistItemId + '/add_to_cart/',
             type: 'POST',
             success: function (resp) {
-                swal("Item added to cart")
+                swal({
+                    text: "Item added to cart!",
+                    icon: "success",
+                    buttons: false,
+                    timer: 1450,});
                 window.location.replace("/wishlist/")
             },
             error: function (status, error) {
-                alert("Whoops something went wrong :(")
+                swal({
+                    title: "Woops something went wrong",
+                    text: "Try again",
+                    buttons: false,
+                    timer: 1450,});
             }
         });
     })
