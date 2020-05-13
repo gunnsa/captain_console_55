@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-    <!--<img class="productdetails-img" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96013030_10158139329987567_4199711239271612416_n.jpg?_nc_cat=100&_nc_sid=e007fa&_nc_oc=AQmLLQCCJ_2BuXXnF6ZOlq54VbKUDlRhB1ujwsm8W-DGJCSy1MKjFsHg_pzXhAEMLFM&_nc_ht=scontent.frkv3-1.fna&oh=644930f0dd3d7435701f542f8be0c3ef&oe=5ED6E0B5"> -->
-    <iframe class="productdetails-img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=0&image_font_size=50&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=Product details&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="600" height="200"></iframe>
+
+    <img class="productdetails-img"  src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96426986_10158190330363972_8993374094317584384_o.jpg?_nc_cat=109&_nc_sid=0debeb&_nc_ohc=o428PqnkCscAX8GZemW&_nc_ht=scontent.frkv3-1.fna&oh=d52a57346275332cae9d9cef35f39365&oe=5EDED50E" frameborder='no' scrolling='no' width="500" height="200">
     <div class="all-product-detail">
         <div class="product-details">
             {% for product_image in product.productimage_set.all %}
@@ -51,7 +51,7 @@
         <iframe id="recently-viewed-NEON" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=30&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=Recently viewed items&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="500" height="100"></iframe>
         <!--<h3>Recently viewed items</h3>-->
         <div class="recently-viewed">
-            {% for key, product_id  in request.COOKIES.items reversed %}
+            {% for key, product_id  in request.COOKIES.items %}
                 {% for product in all_products %}
                     {% include 'product/recently_viewed.html' with product=product %}
                 {% endfor %}

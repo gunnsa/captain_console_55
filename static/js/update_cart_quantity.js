@@ -103,7 +103,6 @@ $(document).ready(function () {
             },
             error: function (status, error) {
                 alert("Whoops something went wrong :(")
-
             }
         });
     });
