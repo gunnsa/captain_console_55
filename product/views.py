@@ -4,12 +4,13 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.template import loader, RequestContext
-from django.views.decorators.csrf import csrf_exempt
 from cart.models import Cart
 from home.models import Newsletter
 from product.models import Product
+from wishlist.models import WishList
 
 # Create your views here.
+
 def index(request):
     if 'min_price' in request.GET:
 
@@ -44,7 +45,7 @@ def index(request):
     return render(request, 'product/index.html', context)
 
 
-#/products/id OG GEYMIR COOKIE
+# /products/id OG GEYMIR COOKIE
 def get_product_by_id(request, id):
     product_id = id
     if request.method == 'GET':
@@ -71,25 +72,33 @@ def sort_product_by_specific(request, manufacturer):
     return render(request, 'product/index.html', context)
 
 
-
-@csrf_exempt
 def add_to_cart(request, productid, quantity):
     if request.method == 'POST':
         current_user = request.user.id
         if Cart.objects.filter(user_id__exact=current_user, product_id=productid, order_id__exact=''):
             existing_cart = Cart.objects.get(product_id=productid, user_id=current_user)
-            print(existing_cart.quantity)
             existing_cart.quantity = existing_cart.quantity + quantity
-            print(existing_cart.quantity)
             existing_cart.save()
         else:
             Cart.objects.create(user_id=current_user, product_id=productid, quantity=quantity)
 
-    #context = {'products': Product.objects.all().order_by('name')}
+    # context = {'products': Product.objects.all().order_by('name')}
     return render(request, 'product/index.html')
 
 
-@csrf_exempt
+def add_to_wishlist(request, productid):
+    if request.method == 'POST':
+        current_user = request.user.id
+        if WishList.objects.filter(user_id__exact=current_user, product_id=productid):
+            existing_wishlist = WishList.objects.get(product_id=productid, user_id=current_user)
+            existing_wishlist.save()
+        else:
+            WishList.objects.create(user_id=current_user, product_id=productid)
+
+    # context = {'products': Product.objects.all().order_by('name')}
+    return render(request, 'product/index.html')
+
+
 def sort_by_brand(request, manufacturer):
     if 'min_price' in request.GET:
         #tilraun = JsonResponse_form(Product.objects.all().order_by('price'))
@@ -116,8 +125,6 @@ def sort_by_brand(request, manufacturer):
     return render(request, 'product/index.html', context)
 
 
-
-
 def JsonResponse_form(request):
     products = [{
         'id': x.id,
@@ -130,6 +137,7 @@ def JsonResponse_form(request):
         'firstImage': x.productimage_set.first().image
     } for x in request]
     return products
+
 
 def add_to_newsletter(request, email):
     if request.method == 'POST':

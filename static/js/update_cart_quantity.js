@@ -1,6 +1,5 @@
 
-//fá þegar quantity er hækkað, matcha við cart Id og skrifa aftur niður í db nýtt quantity, verðið þarf
-//líka að uppfærast
+//------CSRF TOKEN------//
 $(document).ready(function () {
     function getCookie(name) {
         var cookieValue = null;
@@ -70,7 +69,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('.decrease_cart').on('click', function (e) {
-
+        e.preventDefault();
         var cartid = $(this).attr('data-id');
         var parent_value = this.parentNode.parentNode
         var child_value = parent_value.childNodes
@@ -89,7 +88,7 @@ $(document).ready(function () {
         });
     });
     $('.increase_cart').on('click', function (e) {
-
+        e.preventDefault();
         var cartid = $(this).attr('data-id');
         var parent_value = this.parentNode.parentNode
         var child_value = parent_value.childNodes
@@ -107,6 +106,7 @@ $(document).ready(function () {
         });
     });
     $('.remove_cart_item_btn').on('click', function(e){
+        e.preventDefault();
         console.log('remove item pushed')
         var cartId = $(this).attr('data-id');
         $.ajax({
