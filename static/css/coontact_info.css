@@ -43,8 +43,6 @@
     background-color: black;
 }
 
-#id_country {
-}
 
 
 
@@ -131,14 +129,38 @@
 }
 
 
-
-
-
-
-.payment select {
-    width: 100px;
-    display: inline-block;
+/*
+.payment {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
 }
+
+
+#id_card_year {
+    width: 100px;
+    display: inline;
+}
+
+#id_card_month {
+    width: 100px;
+    display: inline;
+}
+
+.payment label {
+    float: right;
+}
+ */
+
+
+
+/* label */
+/* select */
+
+
+
+
+
 
 #payment-info-NEON {
     width: 700px;

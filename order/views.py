@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.shortcuts import render, redirect
 from cart.models import Cart
 from order.forms.contact_form import ContactForm
@@ -6,6 +7,8 @@ from order.models import ContactInformation, Order, Payment
 
 # Create your views here.
 
+
+from django.utils.translation import gettext_lazy as _
 def order_contact_form(request):
     ''' þegar ýtir á 'proceed to next step' í cart
         - sendir fyrst hingað með GET request og skilar 'ContactForm'
