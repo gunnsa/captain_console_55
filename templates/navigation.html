@@ -46,9 +46,10 @@
                     {% endif %}
                 </li>
 
-                <li class="heart">
+                <li><a href="{% url 'wishlist-index' %}" class="heart">
                     <i class="fa fa-heart-o fa-lg" id="heart-nav-bar"></i>
                     <i class="fa fa-heart fa-lg" id="heart-nav-bar"></i>
+                    </a>
                 </li>
                 <li><a id="cart" href="{% url 'cart-index' %}"><i class="fa fa-shopping-cart fa-lg"></i></a></li>
                         <div class="search-navigationbar">
