@@ -8,11 +8,10 @@ $(document).ready(function () {
             url: '/products/' + cartItemId + '/add_to_cart/' + quantity,
             type: 'POST',
             success: function (resp) {
-                swal("Here's a message!")
-                alert("Item added to cart")
+                swal("Item added to cart")
             },
             error: function (status, error) {
-                alert("Whoops something went wrong :(")
+                swal("Whoops something went wrong :(")
 
             }
         });
