@@ -62,7 +62,7 @@ def display_order(request):
         eachItem[product.product.id] = total
         sumtotal += product.quantity * product.product.price
         rounded_sumtotal = ("{:.2f}".format(float(sumtotal))+' $')
-        context = {'carts': Cart.objects.all().filter(user_id=request.user.id, order_id__exact=''), 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
+        context = {'carts': usercart, 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
     return render(request, 'order/display_order.html', context)
 
 
@@ -82,4 +82,21 @@ def create_order(request):
             user_cart.update(order_id=instance.id)
 
     return render(request, 'order/display_order.html')
+
+
+
+#tengt overview_order.html, síðan sem á að birtast eftir að þú staðfestir pöntunina, ss gerist eftir display_order.html
+def order_overview(request):
+    final_order = Order.objects.get(user_id=request.user.id, processed=True)
+    final_order_id = final_order.id
+    line_items = Cart.objects.filter(order_id=final_order_id)
+    sumtotal = 0
+    eachItem = {}
+    for product in line_items:
+        total = ("{:.2f}".format(float(product.quantity * product.product.price))+' $')
+        eachItem[product.product.id] = total
+        sumtotal += product.quantity * product.product.price
+        rounded_sumtotal = ("{:.2f}".format(float(sumtotal))+' $')
+    context = {'order': final_order, 'products': line_items, 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
+    return render(request, 'order/overview_order.html', context)
 
