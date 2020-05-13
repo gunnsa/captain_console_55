@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="order-overview">
+
+    <img class="cart-img" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96261753_10158190362808972_2626307312490381312_n.jpg?_nc_cat=109&_nc_sid=0debeb&_nc_ohc=gZtynOCRo3sAX8C6JXO&_nc_ht=scontent.frkv3-1.fna&oh=e029c8923856b2e37ff85acca24f46cb&oe=5EE1838C" frameborder='no' scrolling='no' width="250" height="190">
+        <h4>YOUR ORDER WAS SUCCESSFUL</h4>
+        <div class="table-and-buttons">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td> Product </td>
+                        <td> Quantity </td>
+                        <td> Price </td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                {% for item in products %} <!-- carts kemur fra cart\views.py - listi af öllum vörum sem þessi notandi hefur í körfu -->
+                    <tr>
+                        <td>
+                                <img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}">
+                        </td>
+                        <td>
+                                <h4>{{ item.product.name }} </h4>
+                                {{ item.product.short_description }} <br>
+                                {{ item.product.price }} $
+                        </td>
+
+
+                        <td>
+                            <input id="quantity-displayorder" data-id="{{ item.product.id }}" type="number" value="{{ item.quantity }}" disabled>
+                        </td>
+
+                        <td>
+                            {% for product, price in eachItemTotal.items %}
+                                {% if product == cart.product.id %}
+                                    {{ price }}
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+
+
+                    </tr>
+
+
+                {% endfor %}
+
+                </tbody>
+                <td id="total" colspan="3"> <h4>Total:</h4></td>
+                <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
+
+            {% for x in order %}
+                <td>
+                    <h4>{{ x.contact_info.full_name }} </h4>
+                    {{ x.contac_tinfo.email_address }}
+                    {{ x.contac_tinfo.phone_number }}<br>
+                    {{ x.contac_tinfo.home_address }}
+                    {{ x.contac_tinfo.city }}
+                    {{ x.contac_tinfo.country }}
+                    {{ x.contac_tinfo.zip_code }}
+                    {{ x.contac_tinfo.additional_info }}
+                </td>
+
+            {% endfor %}
+
+            </table>
+            <a class="btn -btn-primary" id="previous-page" href="{% url 'products-index' %}">Go back to products</a>
+        </div>
+    </div>
+
+{% endblock %}
