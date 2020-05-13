@@ -1,50 +1,35 @@
-from django import forms
+from datetime import datetime
+
+from django.core.validators import RegexValidator, MinLengthValidator
 from django.db import models
 from django.contrib.auth.models import User
 from cart.models import Cart
 from product.models import Product
 from django_countries.fields import CountryField
-from creditcards.models import CardNumberField, CardExpiryField, SecurityCodeField
 
 
 class ContactInformation(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=100)
-    email_address = models.CharField(max_length=100)  # EmailField
-    phone_number = models.CharField(max_length=7)  # min_length=7
+    email_address = models.EmailField(max_length=100)  # EmailField
+    phone_number = models.CharField(max_length=7, validators=[RegexValidator('^[0-9]*$'), MinLengthValidator(7)])
     home_address = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     country = CountryField(blank_label='(Select country)')
-    zip_code = models.CharField(max_length=3)  # min_length=3
+    zip_code = models.CharField(max_length=3, validators=[RegexValidator('^[0-9]*$'), MinLengthValidator(3)])
     additional_info = models.CharField(max_length=999, blank=True)
+
+
+DATE_CHOISES = [(x, str(x)) for x in range(1, 13)]
+YEAR_CHOISES = [(x, str(x)) for x in range(datetime.now().year, datetime.now().year + 13)]
 
 
 class Payment(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    card_number = models.CharField(max_length=16)
-    card_month = models.CharField(max_length=2)
-    card_year = models.CharField(max_length=2)
-    card_CVC = models.CharField(max_length=3)
-
-
-class Payment2(forms.ModelForm):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    card_number = models.CharField(max_length=16)
-    card_month = models.DateField()
-    # card_year = models.CharField(max_length=2)
-    card_CVC = models.CharField(max_length=3)
-
-
-# from django import forms
-# from fields import CreditCardField, ExpiryDateField, VerificationValueField
-
-# class PaymentForm(forms.Form):
-
-#    name_on_card = forms.CharField(max_length=50, required=True)
-#    card_number = CreditCardField(required=True)
-#    expiry_date = ExpiryDateField(required=True)
-#    card_code = VerificationValueField(required=True)
-
+    card_number = models.CharField(max_length=16, validators=[RegexValidator('^[0-9]*$'), MinLengthValidator(16)])
+    card_year = models.IntegerField(choices=YEAR_CHOISES, default=1)
+    card_month = models.IntegerField(choices=DATE_CHOISES, default=1)
+    card_CVC = models.CharField(max_length=3, validators=[RegexValidator('^[0-9]*$'), MinLengthValidator(3)])
 
 
 class Order(models.Model):
