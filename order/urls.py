@@ -15,5 +15,7 @@ urlpatterns = [
     path('displayorder/create', views.create_order, name="createorder-index"),
 
     path('displayorder', views.display_order, name="displayorder-index"),
+
+    path('overview', views.overview, name="overview-index")
     #path('display_order', views.display_order, name="displayorder-index")
 ]
