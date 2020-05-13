@@ -60,7 +60,9 @@
         <div class="recently-viewed">
             {% for key, product_id  in request.COOKIES.items %}
                 {% for product in all_products %}
-                    {% include 'product/recently_viewed.html' with product=product %}
+                    {% if forloop.parentloop.counter == 1 or forloop.parentloop.counter == 2 or forloop.parentloop.counter == 3 or forloop.parentloop.counter == 4 %}
+                        {% include 'product/recently_viewed.html' with product=product %}
+                    {% endif %}
                 {% endfor %}
             {% endfor %}
         </div>

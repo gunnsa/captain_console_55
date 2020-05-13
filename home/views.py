@@ -5,7 +5,6 @@ from home.forms.newsletter_form import NewsletterForm
 # Create your views here.
 
 
-
 def index(request):
     if request.method == 'GET':
         form = NewsletterForm()

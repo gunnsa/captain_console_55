@@ -1,21 +1,18 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-
-# Create your views here.
-from django.views.decorators.csrf import csrf_exempt
-
 from cart.models import Cart
 from wishlist.models import WishList
+
+# Create your views here.
 
 
 @login_required
 def index(request):
     wishlist = WishList.objects.all().filter(user_id=request.user.id).order_by('product__name')
     context = {'wishlist': wishlist}
-    try:
+    if wishlist:
         return render(request, 'wishlist/index.html', context)
-
-    except:
+    else:
         return render(request, 'wishlist/emptywishlist.html')
 
 
@@ -26,7 +23,6 @@ def remove_wishlist_item(request, wishlistid):
         return render(request, 'wishlist/index.html')
 
 
-@csrf_exempt
 def add_to_cart(request, productid):
     if request.method == 'POST':
         current_user = request.user.id

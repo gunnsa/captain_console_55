@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
-from django.views.decorators.csrf import csrf_exempt
-
 from cart.models import Cart
 from order.forms.contact_form import ContactForm
 from order.forms.payment_form import PaymentForm
 from order.models import ContactInformation, Order, Payment
 
+# Create your views here.
 
 def order_contact_form(request):
     ''' þegar ýtir á 'proceed to next step' í cart
@@ -68,7 +67,6 @@ def display_order(request):
 
 
 # þegar ýtt er á 'proceed to next step'
-# @csrf_exempt
 def create_order(request):
 
     if request.method == 'POST':

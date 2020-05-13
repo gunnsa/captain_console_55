@@ -4,14 +4,12 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.template import loader, RequestContext
-from django.views.decorators.csrf import csrf_exempt
 from cart.models import Cart
 from home.models import Newsletter
 from product.models import Product
-
-# Create your views here.
 from wishlist.models import WishList
 
+# Create your views here.
 
 def index(request):
     if 'min_price' in request.GET:
@@ -61,7 +59,7 @@ def get_product_by_id(request, id):
     response = render(request, 'product/product_details.html', {
         'product': get_object_or_404(Product, pk=id), 'all_products': all_products
     })
-    response.set_cookie(str(id), product_id, max_age=604800)
+    response.set_cookie(str(id), product_id, max_age=300)
     return response
 
     #return render(request, 'product/product_details.html', {
@@ -74,7 +72,6 @@ def sort_product_by_specific(request, manufacturer):
     return render(request, 'product/index.html', context)
 
 
-@csrf_exempt
 def add_to_cart(request, productid, quantity):
     if request.method == 'POST':
         current_user = request.user.id
@@ -89,7 +86,6 @@ def add_to_cart(request, productid, quantity):
     return render(request, 'product/index.html')
 
 
-@csrf_exempt
 def add_to_wishlist(request, productid):
     if request.method == 'POST':
         current_user = request.user.id
@@ -103,7 +99,6 @@ def add_to_wishlist(request, productid):
     return render(request, 'product/index.html')
 
 
-@csrf_exempt
 def sort_by_brand(request, manufacturer):
     if 'min_price' in request.GET:
         #tilraun = JsonResponse_form(Product.objects.all().order_by('price'))
