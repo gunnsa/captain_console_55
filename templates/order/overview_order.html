@@ -16,20 +16,20 @@
                 </thead>
 
                 <tbody>
-                {% for item in products %} <!-- carts kemur fra cart\views.py - listi af öllum vörum sem þessi notandi hefur í körfu -->
+                {% for cart in carts %} <!-- carts kemur fra cart\views.py - listi af öllum vörum sem þessi notandi hefur í körfu -->
                     <tr>
                         <td>
                                 <img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}">
                         </td>
                         <td>
-                                <h4>{{ item.product.name }} </h4>
-                                {{ item.product.short_description }} <br>
-                                {{ item.product.price }} $
+                                <h4>{{ cart.product.name }} </h4>
+                                {{ cart.product.short_description }} <br>
+                                {{ cart.product.price }} $
                         </td>
 
 
                         <td>
-                            <input id="quantity-displayorder" data-id="{{ item.product.id }}" type="number" value="{{ item.quantity }}" disabled>
+                            <input id="quantity-displayorder" data-id="{{ cart.product.id }}" type="number" value="{{ cart.quantity }}" disabled>
                         </td>
 
                         <td>
@@ -47,22 +47,23 @@
                 {% endfor %}
 
                 </tbody>
-                <td id="total" colspan="3"> <h4>Total:</h4></td>
-                <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
 
-            {% for x in order %}
+                {% for x in info %}
                 <td>
-                    <h4>{{ x.contact_info.full_name }} </h4>
-                    {{ x.contac_tinfo.email_address }}
-                    {{ x.contac_tinfo.phone_number }}<br>
-                    {{ x.contac_tinfo.home_address }}
-                    {{ x.contac_tinfo.city }}
-                    {{ x.contac_tinfo.country }}
-                    {{ x.contac_tinfo.zip_code }}
-                    {{ x.contac_tinfo.additional_info }}
+                    <h4>{{ x.full_name }} </h4>
+                    {{ x.email_address }}
+                    {{ x.phone_number }}<br>
+                    {{ x.home_address }}
+                    {{ x.city }}
+                    {{ x.country }}
+                    {{ x.zip_code }}
+                    {{ x.additional_info }}
                 </td>
 
             {% endfor %}
+                <td id="total" colspan="3"> <h4>Total:</h4></td>
+                <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
+
 
             </table>
             <a class="btn -btn-primary" id="previous-page" href="{% url 'products-index' %}">Go back to products</a>

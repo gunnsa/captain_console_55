@@ -46,11 +46,25 @@
                 {% endfor %}
 
                 </tbody>
+
+                {% for x in info %}
+                <td>
+                    <h4>{{ x.full_name }} </h4>
+                    {{ x.email_address }}
+                    {{ x.phone_number }}<br>
+                    {{ x.home_address }}
+                    {{ x.city }}
+                    {{ x.country }}
+                    {{ x.zip_code }}
+                    {{ x.additional_info }}
+                </td>
+                {% endfor %}
                 <td id="total" colspan="3"> <h4>Total:</h4></td>
                 <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
 
             </table>
-            <a class="btn -btn-primary" id="create-order" >Submit order</a>
+            <a class="btn -btn-primary" id="previous-page" href="{% url 'payment-index' %}">Go back to payment</a>
+            <a class="btn -btn-primary" id="create-order" >Confirm order</a>
         </div>
     </div>
 

@@ -3,14 +3,14 @@
 {% block content %}
     <div class="payment_information">
 
-    <img class="contact-img" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96396612_10158190362773972_4123140248785911808_o.jpg?_nc_cat=100&_nc_sid=0debeb&_nc_ohc=tKcX1PmlOp8AX8xxlqZ&_nc_ht=scontent.frkv3-1.fna&oh=a17a06f9d24e0502c96b1260e7fdc52e&oe=5EDFD03B"frameborder='no' scrolling='no' width="700" height="140">
+    <img id="payment-info-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/97394031_10158167028017567_7650003182776483840_n.jpg?_nc_cat=102&_nc_sid=e007fa&_nc_oc=AQlIt3LzQByOKi-Rpf96hMWIoM4OpzpPAKR6JeBX6hKHw1R77yu1dIK-rGMCxYuvYBM&_nc_ht=scontent.frkv3-1.fna&oh=14a73f0a5e6c1d2c447f7f0cd6fc040d&oe=5EE0A1CB">
     <form method="post" class="form form-horizontal" id="contact-form-horizontal">
 
         {% csrf_token %}
         <div class='payment'>
             {{ form }}
         </div>
-
+        <a class="btn -btn-primary" id="previous-page" href="{% url 'contactinfo-index' %}">Go back to contact information</a>
         <input type="submit" class="btn btn-primary" value="submit" id="processed-order" href="{% url 'displayorder-index' %}"  />
 
         <!--<button class="btn btn-primary" id="processed-order">Review Order</button> -->

@@ -12,6 +12,18 @@
     border-radius: 5px;
 }
 
+#contact-info-NEON {
+    width: 700px;
+    height: auto;
+    margin-top: 70px;
+    padding: 70px;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: block;
+}
+
+
 .delivery_info{
     margin-bottom: 10px;
     vertical-align: center;
@@ -31,8 +43,6 @@
     background-color: black;
 }
 
-#id_country {
-}
 
 
 
@@ -152,4 +162,13 @@
 
 
 
-
+#payment-info-NEON {
+    width: 700px;
+    height: auto;
+    margin-top: 70px;
+    padding: 70px;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: block;
+}

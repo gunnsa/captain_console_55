@@ -198,6 +198,16 @@
     clear: both;
 }
 
+#recently-viewed-NEON {
+    width: 600px;
+    height: auto;
+    margin-top: 20px;
+    padding: 70px;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: block;
+}
 
 .product-img-auka {
     width: 120px;
@@ -206,6 +216,3 @@
     clear: both;
     float: left;
 }
-
-
-

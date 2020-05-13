@@ -76,7 +76,11 @@ $(document).ready(function () {
             url: '/order/displayorder/create',
             type: 'POST',
             success: function (resp) {
-                alert("Processed order created")
+                swal({
+                    text: "Purchase Complete!",
+                    icon: "success",
+                    buttons: false,});
+                window.location.replace("/order/overview")
             },
             error: function (status, error) {
                 alert("Whoops something went wrong :(")
