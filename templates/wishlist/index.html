@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="wishlist">
+        <iframe class="cart-img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=0&image_font_size=50&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=Cart&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="250" height="190"></iframe>
+
+        <div class="table-and-buttons">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td> Product </td>
+                        <td> Quantity </td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                {% for item in carts %} <!-- carts kemur fra cart\views.py - listi af öllum vörum sem þessi notandi hefur í körfu// VEIT EKKI HVAÐ ÞETTA Á AÐ VERA -->
+                    <tr>
+                        <td>
+                            <a href="/products/{{ cart.product.id }}">
+                                <img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/products/{{ cart.product.id }}">
+                                <h4>{{ cart.product.name }} </h4></a>
+                                {{ cart.product.short_description }} <br>
+                                {{ cart.product.price }} $
+                        </td>
+
+                        <td>
+                            <div class="cart_quantity" id="nice-number">
+                                <div class="pull-left">
+                                   <button onclick="location.href='{% url 'cart-index' %}';"class="decrease_cart" id="decrease" data-id="{{ cart.id }}">-</button>
+                                </div>
+                                    <input id="quantity" data-id="{{ cart.product.id }}" type="number" value="{{ cart.quantity }}" disabled>
+                                <div class="pull-right">
+                                    <button onclick="location.href='{% url 'cart-index' %}';"class="increase_cart" id="increase" data-id="{{ cart.id }}">+</button>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td><button class="btn -btn-primary" id="add_to_cart_btn" data-id="{{ product.id }}">Add to cart</button></td>
+                        <td><button class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
+
+                    </tr>
+
+
+                {% endfor %}
+
+                </tbody>
+                <td id="total" colspan="3"> <h4>Total:</h4></td>
+                <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
+
+            </table>
+            <a class="btn -btn-primary" id="previous-page" href="{% url 'products-index' %}">Go back to products</a>
+            <a class="btn -btn-primary" id="contact-info" href="{% url 'contactinfo-index' %}">Proceed to next step</a>
+        </div>
+    </div>
+
+{% endblock %}
