@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from cart.models import Cart
 from order.forms.contact_form import ContactForm
-from order.forms.payment_form import PaymentForm3
+from order.forms.payment_form import PaymentForm
 from order.models import ContactInformation, Order, Payment
 
 # Create your views here.
@@ -12,18 +12,17 @@ def order_contact_form(request):
         - fyllir út upplýsingar og ýtir á 'Continue to payment' þá fer hann aftur inn í fallið með POST request og
             ef formið er valid þá vistar hann upplýsingarnar í db og redirectar á 'payment-index' '''
 
-    print('order_contact_form: 1')
     contact_info = ContactInformation.objects.filter(user=request.user).first()
 
     if request.method == 'POST':
-        print('order_contact_form: 2')
         form = ContactForm(instance=contact_info, data=request.POST)
         if form.is_valid():
-            print('order_contact_form: 3')
+
             contact_info = form.save(commit=False)
             contact_info.user = request.user
             contact_info.save()
             return redirect('payment-index')
+
 
     return render(request, 'order/contactinfo.html', {
         'form': ContactForm(instance=contact_info)
@@ -39,7 +38,7 @@ def get_payment(request):
     payment = Payment.objects.filter(user=request.user).first()
     if request.method == 'POST':
         print('get_payment: 2')
-        form = PaymentForm3(instance=payment, data=request.POST)
+        form = PaymentForm(instance=payment, data=request.POST)
         if form.is_valid():
             print('get_payment: 3 -- form.is_valid()')
             payment = form.save(commit=False)
@@ -49,7 +48,7 @@ def get_payment(request):
         else:
             print('FORM INVALID')
     return render(request, 'order/payment.html', {
-        'form': PaymentForm3(instance=payment)
+        'form': PaymentForm(instance=payment)
     })
 
 
@@ -63,7 +62,7 @@ def display_order(request):
         eachItem[product.product.id] = total
         sumtotal += product.quantity * product.product.price
         rounded_sumtotal = ("{:.2f}".format(float(sumtotal))+' $')
-        context = {'carts': Cart.objects.all().filter(user_id=request.user.id, order_id__exact=''), 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
+        context = {'carts': usercart, 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
     return render(request, 'order/display_order.html', context)
 
 
@@ -83,4 +82,21 @@ def create_order(request):
             user_cart.update(order_id=instance.id)
 
     return render(request, 'order/display_order.html')
+
+
+
+#tengt overview_order.html, síðan sem á að birtast eftir að þú staðfestir pöntunina, ss gerist eftir display_order.html
+def order_overview(request):
+    final_order = Order.objects.get(user_id=request.user.id, processed=True)
+    final_order_id = final_order.id
+    line_items = Cart.objects.filter(order_id=final_order_id)
+    sumtotal = 0
+    eachItem = {}
+    for product in line_items:
+        total = ("{:.2f}".format(float(product.quantity * product.product.price))+' $')
+        eachItem[product.product.id] = total
+        sumtotal += product.quantity * product.product.price
+        rounded_sumtotal = ("{:.2f}".format(float(sumtotal))+' $')
+    context = {'order': final_order, 'products': line_items, 'eachItemTotal': eachItem, 'sumTotal': rounded_sumtotal}
+    return render(request, 'order/overview_order.html', context)
 

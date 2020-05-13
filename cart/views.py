@@ -29,15 +29,13 @@ def remove_cart_item(request, cartid):
         return render(request, 'cart/index.html')
 
 
-
 def update_cart(request, cartid, quantity):
     if request.method == 'PATCH':
         print('in update cart')
         Cart.objects.filter(pk=cartid).update(quantity=quantity)
         return render(request, 'cart/index.html')
 
-
-
+# erum við að nota þetta???
 def create_order(request):
     if request.method == 'POST':
         print('create_order: we here')

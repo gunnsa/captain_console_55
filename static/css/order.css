@@ -21,24 +21,5 @@
     color: black;
 }
 
-/* texti hvitur */
-.payment input, .payment select {
-    background: black;
-    color: white;
-}
-
-#processed-order {
-    float: right;
-}
-
-/* texti hvitur */
-.deliveries input, .deliveries select {
-    background: black;
-    color: white;
-}
-
-.deliveries input:invalid {
-    border: 1px solid red;
-}
 
 

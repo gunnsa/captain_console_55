@@ -13,12 +13,6 @@ from wishlist.models import WishList
 
 def index(request):
     if 'min_price' in request.GET:
-
-        print('request: ', request) #request:  <WSGIRequest: GET '/products/?min_price=min&sort_by=min'>
-        print('request: ', request.GET) #request: < QueryDict: {'min_price': ['min'], 'sort_by': ['min']} >
-
-
-
         products = JsonResponse_form(Product.objects.all().order_by('price'))
         return JsonResponse({'data': products})
 
@@ -62,14 +56,10 @@ def get_product_by_id(request, id):
     response.set_cookie(str(id), product_id, max_age=300)
     return response
 
-    #return render(request, 'product/product_details.html', {
-    #    'product': get_object_or_404(Product, pk=id)
-    #})
 
-
-def sort_product_by_specific(request, manufacturer):
-    context = {'products': Product.objects.all()}
-    return render(request, 'product/index.html', context)
+# def sort_product_by_specific(request, manufacturer):
+#    context = {'products': Product.objects.all()}
+#    return render(request, 'product/index.html', context)
 
 
 def add_to_cart(request, productid, quantity):

@@ -95,3 +95,23 @@
 .helptext {
     display: none;
 }
+
+#sign-in-NEON {
+    width: 320px;
+    height: auto;
+    padding: 70px;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: block;
+}
+
+#sign-up-NEON {
+    width: 320px;
+    height: auto;
+    padding: 70px;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: block;
+}
