@@ -3,7 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from cart.models import Cart
 from order.forms.contact_form import ContactForm
-from order.forms.payment_form import PaymentForm, PaymentForm2
+from order.forms.payment_form import PaymentForm3
 from order.models import ContactInformation, Order, Payment
 
 
@@ -40,16 +40,17 @@ def get_payment(request):
     payment = Payment.objects.filter(user=request.user).first()
     if request.method == 'POST':
         print('get_payment: 2')
-        form = PaymentForm(instance=payment, data=request.POST)
+        form = PaymentForm3(instance=payment, data=request.POST)
         if form.is_valid():
             print('get_payment: 3 -- form.is_valid()')
             payment = form.save(commit=False)
             payment.user = request.user
             payment.save()
             return redirect('displayorder-index')  # PASSIVE AGRESSIVE SERIOUSLY HER ER REDIRECT
-
+        else:
+            print('FORM INVALID')
     return render(request, 'order/payment.html', {
-        'form': PaymentForm(instance=payment)
+        'form': PaymentForm3(instance=payment)
     })
 
 
@@ -68,7 +69,7 @@ def display_order(request):
 
 
 # þegar ýtt er á 'proceed to next step'
-@csrf_exempt
+# @csrf_exempt
 def create_order(request):
 
     if request.method == 'POST':
