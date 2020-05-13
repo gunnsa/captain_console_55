@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'cart.apps.CartConfig',
     'order.apps.OrderConfig',
+    'wishlist.apps.WishlistConfig',
     'django_countries',
 ]
 

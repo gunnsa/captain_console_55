@@ -11,7 +11,7 @@ from django_countries.fields import CountryField
 class ContactInformation(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=100)
-    email_address = models.EmailField(max_length=100)  # EmailField
+    email_address = models.EmailField(max_length=100)
     phone_number = models.CharField(max_length=7, validators=[RegexValidator('^[0-9]*$'), MinLengthValidator(7)])
     home_address = models.CharField(max_length=100)
     city = models.CharField(max_length=100)

@@ -33,15 +33,16 @@
 
                     {% if user.is_authenticated %}
                         <button class="btn -btn-primary" id="add_to_cart_btn" data-id="{{ product.id }}">Add to cart</button>
+                        <a id="add_to_wishlist_btn" data-id="{{ product.id }}" class="heart" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
+                        <i class="fa fa-heart-o fa-2x" id="heart-product"></i>
+                        <i class="fa fa-heart fa-2x" id="heart-product"></i>
+                    </a>
                      {% else %}
                         <button class="btn -btn-primary" onclick="location.href='{% url 'login' %}?next={{request.path}}';" id = "add_to_cart">Add to cart</button>
                     {% endif %}
 
                     <!-- ef mús fer yfir fyllist hjarta og texti "Add to Wishlist" -->
-                    <a class="heart" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
-                        <i class="fa fa-heart-o fa-2x" id="heart-product"></i>
-                        <i class="fa fa-heart fa-2x" id="heart-product"></i>
-                    </a>
+
 
                 </div>
 
