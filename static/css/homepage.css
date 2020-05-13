@@ -1,7 +1,11 @@
+/* heldur utan um linka a homepage */
 .home_page1 {
     display: inline-block;
+    margin-bottom: 10px;
+    height: 450px;
 }
 
+/* heldur utan um linka a homepage */
 .home_page2 {
     display: inline-block;
     margin-bottom: 10px;
@@ -30,6 +34,25 @@
 .home_two, .home_two_user {
     margin-top: 50px;
     margin-bottom: 150px;
+    margin-right: 1px;
+    margin-left: 3px;
+    border: 3px dotted #bfe871;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0px;
+    clear: both;
+    padding: 10px;
+    width: 460px;
+    height: 108px;
+    padding-bottom: 2px;
+}
+
+
+/* Homepage rammi fyrir sign up */
+.home_two_user {
+    margin-top: 50px;
+    margin-bottom: 50px;
     margin-right: 1px;
     margin-left: 3px;
     border: 3px dotted #bfe871;
@@ -73,7 +96,7 @@
 }
 
 /* NEON mynd */
-.join_us_img {
+.sign_up_img, .my_wishlist_img {
     padding: 1px;
     margin-top: 1px;
     margin-bottom: 0px;
@@ -100,70 +123,23 @@
 }
 
 .retro_img {
-    width: 320px;
-    height: 260px;
+    width: 370px;
+    height: 310px;
 }
 
 .home_page_retro {
     display: inline-block;
     margin-left: 80px;
     vertical-align: top;
-    margin-top: 210px;
+    margin-top: 270px;
 }
 
-.newsletter_email {
-    border: 0px dotted #d718e5;
-    clear: both;
-    margin-top: 50px;
-    margin-right: 1px;
-    margin-left: 3px;
-    padding-bottom: 2px;
-    margin-bottom: 20px;
-    padding: 10px;
-    width: 420px;
-    height: 220px;
-
-}
-
-#id_email {
-    margin-left: 20px;
-    width: 360px;
-    border: 1px solid #535353;
-}
-
-#newsletter-btn {
-    margin-left: 150px;
-}
-
-.newsletter_img {
-    margin-left: 10px;
-}
-
-
-
-
-
-.swal-modal {
-    background-color: black;
-    border: 1px solid #5d7171;
-    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
-    width: 380px;
-    height: 200px;
-}
-
-.swal-text {
-    color: white;
-    font-size: 20px;
-}
-
-.swal-icon--success:before, .swal-icon--success:after, .swal-icon--success__hide-corners{
-    background: #000000;
-}
-
-.swal-icon--success__ring {
-    border: 1px solid #90ffff;
-}
-
-.swal-icon--success__line {
-    background-color: #90ffff;
+.add_to_newsletter_btn {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+    height: 100%;
+    width: 100%;
+    padding: 3px 6px;
 }

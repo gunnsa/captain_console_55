@@ -8,5 +8,5 @@ class NewsletterForm(ModelForm):
         model = Newsletter
         exclude = ['id']
         widgets = {
-            'email': widgets.EmailInput(attrs={'class': 'form-control'})
+            'email': widgets.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter your email here...'})
         }

@@ -1,0 +1,64 @@
+
+.swal-modal {
+    background-color: black;
+    border: 1px solid #5d7171;
+    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
+    width: 380px;
+    height: 200px;
+}
+
+.swal-text {
+    color: white;
+    font-size: 20px;
+}
+
+.swal-icon--success:before, .swal-icon--success:after, .swal-icon--success__hide-corners{
+    background: #000000;
+}
+
+.swal-icon--success__ring {
+    border: 1px solid #90ffff;
+}
+
+.swal-icon--success__line {
+    background-color: #90ffff;
+}
+
+.swal-content__input, .swal-content__textarea {
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+
+.swal-footer {
+    margin-top: 0px;
+    padding-top: 6px;
+    padding-right: 145px;
+}
+
+.swal-button.swal-button--confirm {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+    background-color: #000000;
+    height: 30px;
+    width: 70px;
+    padding: 3px 6px;
+}
+
+
+.swal-icon--warning__body, .swal-icon--warning__dot {
+    background-color: #90ffff;
+}
+
+@keyframes pulseWarning {
+    0% {
+    border-color: #8de87d;
+}
+    100% {
+    border-color: #90ffff;
+}
+    
+}
+
