@@ -67,7 +67,7 @@
 }
 
 /* setur product-img í inline-block við nafn, verð, lit og framleiðanda */
-.product-details .product-img {
+.product-details .product-detail-images  {
     display: inline-block;
     margin: 20px;
     margin-left: 0px;
@@ -197,4 +197,15 @@
     border-radius: 5px;
     clear: both;
 }
+
+
+.product-img-auka {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    clear: both;
+    float: left;
+}
+
+
 

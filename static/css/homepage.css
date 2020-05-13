@@ -1,26 +1,33 @@
 /* Homepage rammi fyrir all products */
 .home_one {
     margin-top: 150px;
-    box-shadow: 0px 3px 16px 3px rgba(218, 255, 255, 0.63);
-    border-radius: 5px;
+    border: 3px dotted #7818e5;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0px;
     clear: both;
     padding: 50px;
     width: 670px;
-    height: 220px;
+    height: 190px;
     margin-right: 1px;
     margin-left: 10px;
+    padding-bottom: 2px;
 }
 
 /* Homepage rammi fyrir sign up */
 .home_two {
     margin-top: 60px;
     margin-bottom: 60px;
-    box-shadow: 0px 3px 16px 3px rgba(218, 255, 255, 0.63);
-    border-radius: 5px;
+    border: 3px dotted #bfe871;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0px;
     clear: both;
     padding: 50px;
     width: 670px;
-    height: 220px;
+    height: 190px;
     float: right;
     margin-right: 10px;
 }
@@ -28,8 +35,11 @@
 /* Homepage rammi fyrir all products - innskradur */
 .home_one_user {
     margin-top: 150px;
-    box-shadow: 0px 3px 16px 3px rgba(218, 255, 255, 0.63);
-    border-radius: 5px;
+    border: 3px dotted #7818e5;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0px;
     clear: both;
     padding: 50px;
     width: 670px;
@@ -38,6 +48,7 @@
     margin-left: 240px;
     margin-bottom: 180px;
 }
+
 
 /* NEON mynd */
 .view_all_img {
@@ -65,7 +76,7 @@
 /* Rammi utan um link a NEON myndum */
 .blocker {
     position:absolute;
-    height:100%;
+    height:80%;
     width:100%;
     z-index:1;
 }
