@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="cart">
-
-
-        <img class="cart-img" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96424532_10158190365528972_371126728182988800_n.jpg?_nc_cat=101&_nc_sid=0debeb&_nc_ohc=JPjhIuhqqzcAX8N3S-L&_nc_ht=scontent.frkv3-1.fna&oh=5cbff76af5019459586212165490a801&oe=5EDF8331" frameborder='no' scrolling='no' width="250" height="190"></img>
+    <div class="wishlist">
+        <iframe class="cart-img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=0&image_font_size=50&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=Cart&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="250" height="190"></iframe>
 
         <div class="table-and-buttons">
             <table class="table">
@@ -12,12 +10,11 @@
                         <td></td>
                         <td> Product </td>
                         <td> Quantity </td>
-                        <td> Price </td>
                     </tr>
                 </thead>
 
                 <tbody>
-                {% for cart in carts %} <!-- carts kemur fra cart\views.py - listi af öllum vörum sem þessi notandi hefur í körfu -->
+                {% for item in carts %} <!-- carts kemur fra cart\views.py - listi af öllum vörum sem þessi notandi hefur í körfu// VEIT EKKI HVAÐ ÞETTA Á AÐ VERA -->
                     <tr>
                         <td>
                             <a href="/products/{{ cart.product.id }}">
@@ -31,7 +28,6 @@
                                 {{ cart.product.price }} $
                         </td>
 
-
                         <td>
                             <div class="cart_quantity" id="nice-number">
                                 <div class="pull-left">
@@ -44,14 +40,7 @@
                             </div>
                         </td>
 
-                        <td>
-                            {% for product, price in eachItemTotal.items %}
-                                {% if product == cart.product.id %}
-                                    {{ price }}
-                                {% endif %}
-                            {% endfor %}
-                        </td>
-
+                        <td><button class="btn -btn-primary" id="add_to_cart_btn" data-id="{{ product.id }}">Add to cart</button></td>
                         <td><button class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
 
                     </tr>

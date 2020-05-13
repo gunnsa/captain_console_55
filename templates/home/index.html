@@ -1,22 +1,43 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="home">
-        <iframe class="view_all_img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=37&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=View all our products&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="600" height="200"></iframe><br>
-        <iframe class="join_us_img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=37&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=Sign up now!&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="330" height="200"></iframe><br>
-        <img class="retro" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/95780155_10158174373333972_4315991465856598016_o.jpg?_nc_cat=105&_nc_sid=e007fa&_nc_ohc=GmphSWzuRNAAX_lqCom&_nc_ht=scontent.frkv3-1.fna&oh=bedd5eb7bc360a315cb91b4fa4704c54&oe=5ED95877">
-     <div class="newsletter_email">
 
-         <b>Sign up to our newsletter</b>
-        <form action="/" method="post" class="form form-horizontal" id="newsletter-horizontal">
-            <div class='newsletter'>
-                {% csrf_token %}
-                {{ form}}
-            </div>
-            <input type="submit" class="btn btn-primary" value="Sign up" id="newsletter-btn"/>
-        </form>
+    {% if user.is_authenticated %}
+        <div class="home_one_user">
+            <a href="{% url 'products-index'%}" class="img_link">
+                <div class="blocker"></div>
+                <iframe class="view_all_img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=37&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=View all our products&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="570" height="200"></iframe><br>
+            </a>
+        </div>
 
-    </div>
+    {% else %}
+        <div class="home_page">
+        <div class="home_one">
+            <a href="{% url 'products-index'%}" class="img_link">
+                <div class="blocker"></div>
+                <iframe class="view_all_img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=37&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=View all our products&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="570" height="200"></iframe><br>
+            </a>
+        </div>
 
-    </div>
+        <div class="home_two">
+            <a href="{% url 'register'%}" class="img_link">
+                <div class="blocker"></div>
+                <iframe class="join_us_img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=37&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=Sign up now!&image_font_family=ssvivas&" frameborder='no' scrolling='no' width="580" height="200"></iframe><br>
+            </a>
+        </div>
+        </div>
 
+    {% endif %}
+
+
+
+        <div class="newsletter_email">
+             <b>Sign up to our newsletter</b>
+            <form action="/" method="post" class="form form-horizontal" id="newsletter-horizontal">
+                <div class='newsletter'>
+                    {% csrf_token %}
+                    {{ form}}
+                </div>
+                <input type="submit" class="btn btn-primary" value="Sign up" id="newsletter-btn"/>
+            </form>
+        </div>
 {% endblock %}
