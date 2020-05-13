@@ -31,6 +31,9 @@
     background-color: black;
 }
 
+#id_country {
+}
+
 
 
 #id_home_delivery{
@@ -65,3 +68,62 @@
     display: block;
 }
 
+/* texti hvitur */
+.contact_info_form input, .contact_info_form select {
+    background: black;
+    color: white;
+}
+
+/* rauður rammi ef vitlaust */
+.contact_info_form input:invalid {
+    border: 1px solid red;
+}
+
+
+#id_additional_info {
+    color: #d718e5;
+}
+
+
+/* ----- PAYMENT INFORMATION ----- */
+.payment {
+    width: 570px;
+    height: 600px;
+    margin: 0 auto;
+    padding: 70px;
+    padding-left: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    margin-bottom: 60px;
+    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
+    border-radius: 5px;
+}
+
+
+#processed-order {
+    float: right;
+}
+
+/* texti hvitur */
+.payment input, .payment select {
+    background: black;
+    color: white;
+    margin-bottom: 20px;
+
+}
+
+/* rauður rammi ef invalid */
+.payment input:invalid {
+    border: 1px solid red;
+}
+
+
+
+
+
+
+.payment select {
+    width: 100px;
+    display: inline-block;
+}
