@@ -207,6 +207,17 @@ label[for="id_email"] {
     background-color: black;
 }
 
+#profile-info-NEON {
+    width: 700px;
+    height: auto;
+    margin-top: 70px;
+    padding: 70px;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: block;
+}
+
 /* --------------------------------- */
 /* tharf thetta????? */
 
