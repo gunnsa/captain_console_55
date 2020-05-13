@@ -8,7 +8,7 @@ $(document).ready(function () {
             type: 'POST',
             success: function (resp) {
                 //swal("Here's a message!")
-                alert("Item added to wishlist")
+                swal("Item added to wishlist")
             },
             error: function (status, error) {
                 alert("Whoops something went wrong :(")
@@ -17,6 +17,7 @@ $(document).ready(function () {
         });
     })
     $('.remove_wishlist_item_btn').on('click', function(e){
+        e.preventDefault();
         console.log('remove item pushed')
         var wishlistId = $(this).attr('data-id');
         console.log('wishlistId: ', wishlistId)
@@ -41,8 +42,8 @@ $(document).ready(function () {
             url: '/wishlist/' + wishlistItemId + '/add_to_cart/',
             type: 'POST',
             success: function (resp) {
-                swal("Here's a message!")
-                alert("Item added to cart")
+                swal("Item added to cart")
+                window.location.replace("/wishlist/")
             },
             error: function (status, error) {
                 alert("Whoops something went wrong :(")

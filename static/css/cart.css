@@ -126,3 +126,26 @@
 #remove_cart_item_btn {
     border: none;
 }
+
+/*-------Wishlist--------*/
+/* taka útlínur á takka þannig sjáist bara ruslið */
+#remove_wishlist_item_btn{
+    border: none;
+}
+
+
+/* add to cart úr wishlist */
+#add_to_cart_btn-wishlist {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+    height: 30px;
+    padding: 3px 6px;
+}
+
+#add_to_cart_btn-wishlist:focus{
+    outline:0;
+}
+
+/*------------------------*/

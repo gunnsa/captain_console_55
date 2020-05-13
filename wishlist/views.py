@@ -12,10 +12,9 @@ from wishlist.models import WishList
 def index(request):
     wishlist = WishList.objects.all().filter(user_id=request.user.id).order_by('product__name')
     context = {'wishlist': wishlist}
-    try:
+    if wishlist:
         return render(request, 'wishlist/index.html', context)
-
-    except:
+    else:
         return render(request, 'wishlist/emptywishlist.html')
 
 
