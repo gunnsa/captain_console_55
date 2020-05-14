@@ -74,7 +74,7 @@
     margin: 20px;
     margin-left: 0px;
     margin-right: 0px;
-    width: 220px;
+    /*width: 220px;*/
     height: 220px;
 }
 
@@ -238,6 +238,8 @@
     clear: both;
     display: inline;
 }
+
+
 
 .recently-viewed {
     display: grid;
