@@ -69,7 +69,7 @@ $(document).ready(function () {
             type: 'DELETE',
             success: function (resp) {
                 swal({
-                    text: "Item added to cart!",
+                    text: "Item removed from wishlist!",
                     icon: "success",
                     buttons: false,
                     timer: 1450,});
