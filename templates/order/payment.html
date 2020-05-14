@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <div class="payment_information">
 
-    <img id="payment-info-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/97394031_10158167028017567_7650003182776483840_n.jpg?_nc_cat=102&_nc_sid=e007fa&_nc_oc=AQlIt3LzQByOKi-Rpf96hMWIoM4OpzpPAKR6JeBX6hKHw1R77yu1dIK-rGMCxYuvYBM&_nc_ht=scontent.frkv3-1.fna&oh=14a73f0a5e6c1d2c447f7f0cd6fc040d&oe=5EE0A1CB">
-    <form method="post" class="form form-horizontal" id="contact-form-horizontal">
+    <div class="payment-information">
+        <img id="payment-info-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/97394031_10158167028017567_7650003182776483840_n.jpg?_nc_cat=102&_nc_sid=e007fa&_nc_oc=AQlIt3LzQByOKi-Rpf96hMWIoM4OpzpPAKR6JeBX6hKHw1R77yu1dIK-rGMCxYuvYBM&_nc_ht=scontent.frkv3-1.fna&oh=14a73f0a5e6c1d2c447f7f0cd6fc040d&oe=5EE0A1CB">
 
-        {% csrf_token %}
-        <div class='payment'>
-            {{ form }}
-        </div>
-        <a class="btn -btn-primary" id="previous-page" href="{% url 'contactinfo-index' %}">Go back to contact information</a>
-        <input type="submit" class="btn btn-primary" value="submit" id="processed-order" href="{% url 'displayorder-index' %}"  />
+        <form method="post" class="form form-horizontal" id="contact-form-horizontal">
 
-        <!--<button class="btn btn-primary" id="processed-order">Review Order</button> -->
+            {% csrf_token %}
+            <div class='payment'>
+                {{ form }}
+            </div>
 
-    </form>
+            <a class="btn -btn-primary" id="previous-page"
+               href="{% url 'contactinfo-index' %}">Go back to contact information</a>
+            <input type="submit" class="btn btn-primary" value="submit" id="processed-order"
+                   href="{% url 'displayorder-index' %}"/>
+
+        </form>
     </div>
+
 {% endblock %}

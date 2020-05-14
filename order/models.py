@@ -1,11 +1,10 @@
-from datetime import datetime
-
 from django.core.validators import RegexValidator, MinLengthValidator
-from django.db import models
-from django.contrib.auth.models import User
-from cart.models import Cart
-from product.models import Product
 from django_countries.fields import CountryField
+from django.contrib.auth.models import User
+from product.models import Product
+from datetime import datetime
+from django.db import models
+from cart.models import Cart
 
 
 class ContactInformation(models.Model):
@@ -20,15 +19,15 @@ class ContactInformation(models.Model):
     additional_info = models.CharField(max_length=999, blank=True)
 
 
-DATE_CHOISES = [(x, str(x)) for x in range(1, 13)]
-YEAR_CHOISES = [(x, str(x)) for x in range(datetime.now().year, datetime.now().year + 13)]
+DATE_CHOICES = [(x, str(x)) for x in range(1, 13)]
+YEAR_CHOICES = [(x, str(x)) for x in range(datetime.now().year, datetime.now().year + 13)]
 
 
 class Payment(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     card_number = models.CharField(max_length=16, validators=[RegexValidator('^[0-9]*$'), MinLengthValidator(16)])
-    card_year = models.IntegerField(choices=YEAR_CHOISES, default=1)
-    card_month = models.IntegerField(choices=DATE_CHOISES, default=1)
+    card_year = models.IntegerField(choices=YEAR_CHOICES, default=1)
+    card_month = models.IntegerField(choices=DATE_CHOICES, default=1)
     card_CVC = models.CharField(max_length=3, validators=[RegexValidator('^[0-9]*$'), MinLengthValidator(3)])
 
 

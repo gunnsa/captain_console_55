@@ -3,50 +3,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Captain Console</title> <!-- TODO: tékka hvort megi/sé hægt að setja css skrárnar í html þar sem á heima -->
+    <title>Captain Console</title>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
-    <link rel="stylesheet" href="{% static 'css/product.css' %}">
-    <link rel="stylesheet" href="{% static 'css/sort_filter.css' %}">
-    <link rel="stylesheet" href="{% static 'css/coontact_info.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/signIn_signOut.css' %}">
     <link rel="stylesheet" href="{% static 'css/navigation_bar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact_info.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sort_filter.css' %}">
     <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
-    <link rel="stylesheet" href="{% static 'css/order.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
     <link rel="stylesheet" href="{% static 'css/alerts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/order.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
 
-    <!-- linkur fyrir wishlist -->
+    <!-- Link for font-awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
 <body>
     {% include 'navigation.html' %}
+
     <div class="container">
         {% block content %}
         {% endblock %}
     </div>
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" ></script>
+
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="{% static "js/add_to_cart.js" %}"></script>
-    <script src="{% static "js/add_to_wishlist.js" %}"></script>
-    <script src="{% static 'js/quantity_of_product.js' %}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
     <script src="{% static 'js/update_cart_quantity.js' %}"></script>
+    <script src="{% static 'js/quantity_of_product.js' %}"></script>
+    <script src="{% static "js/add_to_wishlist.js" %}"></script>
+    <script src="{% static "js/add_to_cart.js" %}"></script>
+    <script src="{% static 'js/newsletter.js' %}"></script>
     <script src="{% static 'js/product.js' %}"></script>
     <script src="{% static 'js/order.js' %}"></script>
-    <script src="{% static 'js/newsletter.js' %}"></script>
-
 </body>
 
-
 {% include 'footer.html' %}
-
 
 </html>
