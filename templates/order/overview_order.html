@@ -2,15 +2,12 @@
 {% block content %}
 
     <div class="order-overview">
-        <img class="order-overview-img" id="order-overview-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96261753_10158190362808972_2626307312490381312_n.jpg?_nc_cat=109&_nc_sid=0debeb&_nc_ohc=gZtynOCRo3sAX8C6JXO&_nc_ht=scontent.frkv3-1.fna&oh=e029c8923856b2e37ff85acca24f46cb&oe=5EE1838C" frameborder='no' scrolling='no' width="250" height="190">
-        <h4>YOUR ORDER WAS SUCCESSFUL!</h4>
-        <h3>You can pick your parcel up during opening hours:
-            Monday - Friday 11:30 – 19:00
-
-            Saturday 12:00 – 18:00
-
-            Sunday 13:00 – 18:00
-        </h3>
+        <img class="order-overview-img" id="order-overview-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96261753_10158190362808972_2626307312490381312_n.jpg?_nc_cat=109&_nc_sid=0debeb&_nc_ohc=gZtynOCRo3sAX8C6JXO&_nc_ht=scontent.frkv3-1.fna&oh=e029c8923856b2e37ff85acca24f46cb&oe=5EE1838C">
+        <h4 id="order-success">CONGRATULATIONS! Your order was successful!</h4>
+        <h3 id="pick-up-parcel">You can pick up your parcel during opening hours:</h3>
+            <p id="opening-hours">Monday - Friday 11:30 – 19:00</p>
+            <p id="opening-hours">Saturday 12:00 – 18:00</p>
+            <p id="opening-hours">Sunday 13:00 – 18:00</p>
 
         <div class="table-and-buttons">
             <table class="table">
@@ -54,7 +51,8 @@
 
                 {% for x in info %}
                     <td>
-                        <h4>{{ x.full_name }} </h4>
+                        <h3 id="contact-information">Contact information</h3>
+                        <h4 id="full-name">{{ x.full_name }} </h4>
                         {{ x.email_address }}
                         {{ x.phone_number }}<br>
                         {{ x.home_address }}
@@ -70,7 +68,7 @@
 
 
             </table>
-            <a class="btn -btn-primary" id="previous-page" href="{% url 'products-index' %}">Go back to products</a>
+            <a class="btn -btn-primary" id="previous-page" href="{% url 'products-index' %}">Continue shopping</a>
         </div>
     </div>
 
