@@ -8,6 +8,7 @@
             {% csrf_token %}
             <div class='contact-info-form'>
                 {{ form }}
+
             </div>
             <a class="btn -btn-primary" id="previous-page" href="{% url 'cart-index' %}">Go back to cart</a>
             <input type="submit" class="btn btn-primary" value="Continue to payment" id="continue-to-payment"/>

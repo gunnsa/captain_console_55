@@ -33,7 +33,6 @@ $(document).ready(function () {
 });
 
 
-
 var searchText = new URLSearchParams(window.location.search).get('search-text');
 if (searchText != null){
     $.ajax( {
@@ -60,8 +59,6 @@ if (searchText != null){
         }
     })
 };
-
-
 
 
 $(document).ready(function () {
@@ -168,7 +165,3 @@ $(document).ready(function () {
 
 
 });
-
-
-
-

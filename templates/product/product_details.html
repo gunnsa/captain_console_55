@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load custom_tags %}
 {% block content %}
 
     <img class="product-details-img" id="product-details-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96426986_10158190330363972_8993374094317584384_o.jpg?_nc_cat=109&_nc_sid=0debeb&_nc_ohc=o428PqnkCscAX8GZemW&_nc_ht=scontent.frkv3-1.fna&oh=d52a57346275332cae9d9cef35f39365&oe=5EDED50E" frameborder='no' scrolling='no' width="500" height="200">
@@ -72,21 +73,56 @@
 
         <div class="recently-viewed">
 
-            <div id="myCarousel-recently-viewed" class="carousel recently-viewed">
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel-recently-viewed" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel-recently-viewed" data-slide-to="1"></li>
-                    <li data-target="#myCarousel-recently-viewed" data-slide-to="2"></li>
-                    <li data-target="#myCarousel-recently-viewed" data-slide-to="3"></li>
-                </ol>
-            <div class="carousel-inner">
-                {% for product_id  in request.COOKIES.values %}
-                    {% for product in all_products %}
-                        {% include 'product/recently_viewed.html' with product=product %}
-                    {% endfor %}
-                {% endfor %}
-            </div>
-            </div>
+
+            <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+
+                <div class="carousel-inner">
+                    <div class="item active">
+
+                        {% for product_id  in request.COOKIES.values %}
+
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper1">
+                                        {% load custom_tags %}
+                                        {% if product_id|is_numeric %}
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+
+                                                    {% for product in all_products %}
+                                                        {% if product_id|add:0 == product.id %}
+                                                            <a href="/products/{{ product.id }}">
+                                                                <img class="product-img" src="{{ product.productimage_set.first.image }}" />
+                                                                <h4>{{ product.name }}</h4>
+                                                            </a>
+                                                            <p>{{ product.short_description }}</p>
+                                                            <p>{{ product.price }}$</p>
+                                                        {% endif %}
+                                                    {% endfor %}
+
+                                                </div>
+                                            </div>
+                                            {% else %}
+                                            <h3>in else</h3>
+                                        {% endif %}
+                                </div>
+                            </div>
+                            {% if forloop.counter|divisibleby:4 and not forloop.last %}
+                            </div>
+                                <div class="item">
+                            {% endif %}
+                        {% endfor %}
+
+                    </div>
+                </div>
+                <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+                </a>
+        </div>
+
+
         </div>
 
     </div>

@@ -38,22 +38,11 @@ def get_product_by_id(request, id):
     """ Returns display of chosen product and sets COOKIES """
     product_id = id
 
-    if request.method == 'GET':
-        print("GET")
-        if id in request.COOKIES:
-            product_id = request.COOKIES[str(id)]
-            print('hello: ', product_id)
-
-    elif request.method == 'POST':
-        print("POST")
-        product_id = request.POST.get(id)
-        print(product_id)
-
     all_products = Product.objects.all()
     response = render(request, 'product/product_details.html', {
         'product': get_object_or_404(Product, pk=id), 'all_products': all_products
     })
-    response.set_cookie(str(id), product_id, max_age=300)
+    response.set_cookie(str(id), product_id, max_age=30000)
     return response
 
 
@@ -123,3 +112,16 @@ def json_response_form(request):
         'firstImage': x.productimage_set.first().image
     } for x in request]
     return products
+
+
+
+
+
+
+from django import template
+
+register = template.Library()
+@register.filter(is_safe=True)
+def is_numeric(value):
+    return "{}".format(value).isdigit()
+
