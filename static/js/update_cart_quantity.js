@@ -81,8 +81,11 @@ $(document).ready(function () {
 
             },
             error: function (status, error) {
-                alert("Whoops something went wrong :(")
-
+                swal({
+                    text: "Whoops! Try again!",
+                    icon: "warning",
+                    buttons: false,
+                    timer: 1450,});
             }
         });
     });
@@ -99,7 +102,11 @@ $(document).ready(function () {
             success: function (resp) {
             },
             error: function (status, error) {
-                alert("Whoops something went wrong :(")
+                swal({
+                    text: "Whoops! Try again!",
+                    icon: "warning",
+                    buttons: false,
+                    timer: 1450,});
             }
         });
     });
@@ -118,8 +125,11 @@ $(document).ready(function () {
                 window.location.replace("/cart/")
             },
             error: function (status, error) {
-                alert("Whoops something went wrong :(")
-
+                swal({
+                    text: "Whoops! Try again!",
+                    icon: "warning",
+                    buttons: false,
+                    timer: 1450,});
             }
         });
     })
