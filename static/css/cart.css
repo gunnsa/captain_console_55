@@ -108,7 +108,7 @@
 }
 
 /* mynd af vöru í cart */
-.product-img_cart {
+.product-img-cart {
     object-fit: contain;
     width:  100px;
     height: 150px;

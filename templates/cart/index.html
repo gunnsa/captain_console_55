@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
+
     <div class="cart">
-
-
         <img class="cart-img" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96424532_10158190365528972_371126728182988800_n.jpg?_nc_cat=101&_nc_sid=0debeb&_nc_ohc=JPjhIuhqqzcAX8N3S-L&_nc_ht=scontent.frkv3-1.fna&oh=5cbff76af5019459586212165490a801&oe=5EDF8331" frameborder='no' scrolling='no' width="250" height="190"></img>
 
         <div class="table-and-buttons">
@@ -17,30 +16,38 @@
                 </thead>
 
                 <tbody>
-                {% for cart in carts %} <!-- carts kemur fra cart\views.py - listi af öllum vörum sem þessi notandi hefur í körfu -->
+                {% for cart in carts %}
+
                     <tr>
                         <td>
                             <a href="/products/{{ cart.product.id }}">
-                                <img class="product-img_cart" src="{{ cart.product.productimage_set.first.image }}">
+                                <img class="product-img-cart" src="{{ cart.product.productimage_set.first.image }}">
                             </a>
                         </td>
+
                         <td>
                             <a href="/products/{{ cart.product.id }}">
-                                <h4>{{ cart.product.name }} </h4></a>
+                                <h4>{{ cart.product.name }} </h4>
+                            </a>
                                 {{ cart.product.short_description }} <br>
                                 {{ cart.product.price }} $
                         </td>
 
-
                         <td>
-                            <div class="cart_quantity" id="nice-number">
+                            <div class="cart-quantity" id="nice-number">
                                 <div class="pull-left">
-                                   <button onclick="location.href='{% url 'cart-index' %}';"class="decrease_cart" id="decrease" data-id="{{ cart.id }}">-</button>
+                                   <button onclick="location.href='{% url 'cart-index' %}';"class="decrease-cart"
+                                           id="decrease" data-id="{{ cart.id }}">-</button>
                                 </div>
-                                    <input id="quantity" data-id="{{ cart.product.id }}" type="number" value="{{ cart.quantity }}" disabled>
+
+                                    <input id="quantity" data-id="{{ cart.product.id }}" type="number"
+                                           value="{{ cart.quantity }}" disabled>
+
                                 <div class="pull-right">
-                                    <button onclick="location.href='{% url 'cart-index' %}';"class="increase_cart" id="increase" data-id="{{ cart.id }}">+</button>
+                                    <button onclick="location.href='{% url 'cart-index' %}';"class="increase-cart"
+                                            id="increase" data-id="{{ cart.id }}">+</button>
                                 </div>
+
                             </div>
                         </td>
 
@@ -52,10 +59,12 @@
                             {% endfor %}
                         </td>
 
-                        <td><button class="bth -bth-primary remove_cart_item_btn" id="remove_cart_item_btn" data-id="{{ cart.id }}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
+                        <td>
+                            <button class="bth -bth-primary remove-cart-item-btn" id="remove-cart-item-btn"
+                                    data-id="{{ cart.id }}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+                        </td>
 
                     </tr>
-
 
                 {% endfor %}
 
@@ -67,6 +76,7 @@
             <a class="btn -btn-primary" id="previous-page" href="{% url 'products-index' %}">Go back to products</a>
             <a class="btn -btn-primary" id="contact-info" href="{% url 'contactinfo-index' %}">Proceed to next step</a>
         </div>
+    
     </div>
 
 {% endblock %}
