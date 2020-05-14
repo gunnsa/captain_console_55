@@ -33,10 +33,8 @@ $(document).ready(function () {
 });
 
 
-
-
 $(document).ready(function () {
-    $('#add_to_cart_btn').on('click', function(e){
+    $('#add-to-cart-btn').on('click', function(e){
         e.preventDefault();
         var cartItemId = $(this).attr('data-id');
         var quantity = $('#quantity').val()
@@ -53,13 +51,11 @@ $(document).ready(function () {
             },
             error: function (status, error) {
                 swal({
-                    title: "Woops something went wrong",
+                    title: "Whoops! Something went wrong",
                     text: "Try again",
                     buttons: false,
                     timer: 1450,});
             }
         });
     })
-})
-
-
+});

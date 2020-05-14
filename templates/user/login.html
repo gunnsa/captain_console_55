@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
+
     <div class="sign-in">
 
         <form method="post" class="form form-horizontal" id="login-form-horizontal">
-            <!-- <img class="login" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/95988761_10158139212232567_2812288407248568320_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_oc=AQn00Xr5woK-_yeqp5HXbEYmds0Q5MBtd91v-DXe2CZO4yEmhzeatMj9GXh4YgZMr_4&_nc_ht=scontent.frkv3-1.fna&oh=5239797a671b85963df60bbf3174c1b7&oe=5ED58860"> -->
             <img id="sign-in-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96525104_10158166861207567_6177378984263680000_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_oc=AQlxXeOEflfESo7hpzppsw_eippZCwoqYEc5kv3L0Z4bog2eo5janitwFRwY6XEAPkw&_nc_ht=scontent.frkv3-1.fna&oh=c8e4b913bb29d433c2d34abef96c2f2f&oe=5EE11477"></img>
 
             {% csrf_token %}
             {{ form }}
 
-            <input type="submit" class="btn btn-primary" value="Sign in" id="submit_login"/>
+            <input type="submit" class="btn btn-primary" value="Sign in" id="submit-login"/>
         </form>
     </div>
+
 {% endblock %}

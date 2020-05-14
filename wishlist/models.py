@@ -1,8 +1,6 @@
 from django.contrib.auth.models import User
-from django.db import models
-
-# Create your models here.
 from product.models import Product
+from django.db import models
 
 
 class WishList(models.Model):

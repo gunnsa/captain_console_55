@@ -1,32 +1,27 @@
-import json
-
-from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404
-from django.template import loader, RequestContext
-from cart.models import Cart
-from home.models import Newsletter
-from product.models import Product
+from django.http import JsonResponse
 from wishlist.models import WishList
+from product.models import Product
+from cart.models import Cart
 
-# Create your views here.
 
 def index(request):
+    """ Returns selected 'Sort by' view """
     if 'min_price' in request.GET:
-        products = JsonResponse_form(Product.objects.all().order_by('price'))
+        products = json_response_form(Product.objects.all().order_by('price'))
         return JsonResponse({'data': products})
 
     elif 'max_price' in request.GET:
-        products = JsonResponse_form(Product.objects.all().order_by('-price'))
+        products = json_response_form(Product.objects.all().order_by('-price'))
         return JsonResponse({'data': products})
 
     elif 'name' in request.GET:
-        products = JsonResponse_form(Product.objects.all().order_by('name'))
+        products = json_response_form(Product.objects.all().order_by('name'))
         return JsonResponse({'data': products})
 
     elif 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
-        products = JsonResponse_form(Product.objects.filter(name__icontains=search_filter))
+        products = json_response_form(Product.objects.filter(name__icontains=search_filter))
         return JsonResponse({'data': products})
 
     products = Product.objects.all().order_by('name')
@@ -39,8 +34,8 @@ def index(request):
     return render(request, 'product/index.html', context)
 
 
-# /products/id OG GEYMIR COOKIE
 def get_product_by_id(request, id):
+    """ Returns display of chosen product and sets COOKIES """
     product_id = id
     if request.method == 'GET':
         if id in request.COOKIES:
@@ -49,7 +44,6 @@ def get_product_by_id(request, id):
         product_id = request.POST.get(id)
 
     all_products = Product.objects.all()
-
     response = render(request, 'product/product_details.html', {
         'product': get_object_or_404(Product, pk=id), 'all_products': all_products
     })
@@ -57,14 +51,11 @@ def get_product_by_id(request, id):
     return response
 
 
-# def sort_product_by_specific(request, manufacturer):
-#    context = {'products': Product.objects.all()}
-#    return render(request, 'product/index.html', context)
-
-
 def add_to_cart(request, productid, quantity):
+    """ Adds product to current users cart """
     if request.method == 'POST':
         current_user = request.user.id
+
         if Cart.objects.filter(user_id__exact=current_user, product_id=productid, order_id__exact=''):
             existing_cart = Cart.objects.get(product_id=productid, user_id=current_user)
             existing_cart.quantity = existing_cart.quantity + quantity
@@ -76,8 +67,10 @@ def add_to_cart(request, productid, quantity):
 
 
 def add_to_wishlist(request, productid):
+    """ Adds product to current users wishlist """
     if request.method == 'POST':
         current_user = request.user.id
+
         if WishList.objects.filter(user_id__exact=current_user, product_id=productid):
             existing_wishlist = WishList.objects.get(product_id=productid, user_id=current_user)
             existing_wishlist.save()
@@ -88,16 +81,17 @@ def add_to_wishlist(request, productid):
 
 
 def sort_by_brand(request, manufacturer):
+    """ Returns either selected 'Filtered by' view or 'Filtered by' and 'Sort by' view """
     if 'min_price' in request.GET:
-        product = JsonResponse_form(Product.objects.all().filter(manufacturer__exact=manufacturer).order_by('price'))
+        product = json_response_form(Product.objects.all().filter(manufacturer__exact=manufacturer).order_by('price'))
         return JsonResponse({'data': product})
 
     elif 'max_price' in request.GET:
-        product = JsonResponse_form(Product.objects.all().filter(manufacturer__exact=manufacturer).order_by('-price'))
+        product = json_response_form(Product.objects.all().filter(manufacturer__exact=manufacturer).order_by('-price'))
         return JsonResponse({'data': product})
 
     elif 'name' in request.GET:
-        product = JsonResponse_form(Product.objects.all().filter(manufacturer__exact=manufacturer).order_by('name'))
+        product = json_response_form(Product.objects.all().filter(manufacturer__exact=manufacturer).order_by('name'))
         return JsonResponse({'data': product})
 
     products = Product.objects.all().filter(manufacturer__exact=manufacturer)
@@ -110,7 +104,8 @@ def sort_by_brand(request, manufacturer):
     return render(request, 'product/index.html', context)
 
 
-def JsonResponse_form(request):
+def json_response_form(request):
+    """ Helper function for 'Sort by' and 'Filter by' """
     products = [{
         'id': x.id,
         'name': x.name,
@@ -122,9 +117,3 @@ def JsonResponse_form(request):
         'firstImage': x.productimage_set.first().image
     } for x in request]
     return products
-
-
-def add_to_newsletter(request, email):
-    if request.method == 'POST':
-        Newsletter.objects.create(email=email)
-    return render(request, 'home/index.html')

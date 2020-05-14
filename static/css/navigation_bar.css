@@ -83,7 +83,7 @@
     vertical-align: center;
 }
 
-#fa_search {
+#fa-search {
     box-sizing: border-box;
     padding: 5px;
     padding-top: 4px;
@@ -112,7 +112,7 @@
     display: block;
 }
 
-#search-form:hover #fa_search{
+#search-form:hover #fa-search{
     background: black;
     color: white;
 }
@@ -136,7 +136,7 @@
 /* -------------------- Dropdown - Navigation bar -------------------- */
 
 /* Dropdown Button */
-.dropbtn_nav {
+.dropbtn-nav {
     background-color: black;
     color: white;
     font-size: 16px;
@@ -206,7 +206,7 @@
 /* ---------------------------------- */
 
 /* Products takki a nav-bar */
-.all_prodctss {
+.all-prodctss {
     margin-bottom: 1px;
     margin-top: 15px;
 }
@@ -230,7 +230,7 @@
 
 
 /* LOGO myndin */
-.logo_img {
+.logo-img {
     margin-top: 7px;
     margin-bottom: 1px;
     padding: 2px;

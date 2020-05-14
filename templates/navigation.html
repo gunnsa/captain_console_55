@@ -14,31 +14,22 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <!--<li><a href=" url 'home-index'"> <img src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96511671_10158185265663972_4464422009438208000_o.jpg?_nc_cat=100&_nc_sid=e007fa&_nc_ohc=2Et9fvUtIvcAX-tSj_A&_nc_ht=scontent.frkv3-1.fna&oh=c6b588c0b4bb2429da3e4b019e2ca9df&oe=5EDF82BC" width="240" height="30"></img>  <span class="sr-only">(current)</span></a></li>-->
-                <!--<li><a href=" url 'products-index' ">Products </a></li>-->
-                <li><a href="{% url 'home-index'%}" > <img class="logo_img" id="logo_img" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96636397_10158190979333972_4260977869712261120_o.jpg?_nc_cat=103&_nc_sid=0debeb&_nc_ohc=rn-s_ing02oAX-WtO85&_nc_ht=scontent.frkv3-1.fna&oh=66d27d60cd32fa5ec66f97ddbae17494&oe=5EE17AE2" width="330" height="45"></img> </a></li>
+                <li><a href="{% url 'home-index'%}" >
+                    <img class="logo-img" id="logo-img" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96636397_10158190979333972_4260977869712261120_o.jpg?_nc_cat=103&_nc_sid=0debeb&_nc_ohc=rn-s_ing02oAX-WtO85&_nc_ht=scontent.frkv3-1.fna&oh=66d27d60cd32fa5ec66f97ddbae17494&oe=5EE17AE2" width="330" height="45"></a></li>
             </ul>
 
-
-
-
             <ul class="nav navbar-nav navbar-right">
-                <!-- search icon -->
-                <!-- <i class="fa fa-search fa-sm" aria-hidden="true"></i> -->
-                <li><a href="{% url 'products-index' %}" class="all_prodctss">PRODUCTS</a></li>
-
-
+                <li><a href="{% url 'products-index' %}" class="all-prodctss">PRODUCTS</a></li>
 
                 <li class="login-navigationbar">
                     {% if user.is_authenticated %}
                         <div class="dropdown-nav-bar">
-                            <button class="dropbtn_nav"><i class="fa fa-user fa-lg" id="account-img" ></i></button>
+                            <button class="dropbtn-nav"><i class="fa fa-user fa-lg" id="account-img" ></i></button>
                             <div class="dropdown-content-navbar">
                               <a href="{% url 'profile' %}" class="nav-drop-btn" id="nav-drop-btn" >My account</a>
                               <a href="{% url 'logout' %}" class="nav-drop-btn"  id="nav-drop-btn">Sign out</a>
                             </div>
                         </div>
-
 
                     {% else %}
                         <a href="{% url 'login' %}" id="sign-in-btn">SIGN IN</a>
@@ -49,13 +40,14 @@
                 <li><a href="{% url 'wishlist-index' %}" class="heart">
                     <i class="fa fa-heart-o fa-lg" id="heart-nav-bar"></i>
                     <i class="fa fa-heart fa-lg" id="heart-nav-bar"></i>
-                    </a>
-                </li>
+                </a></li>
+
                 <li><a id="cart" href="{% url 'cart-index' %}"><i class="fa fa-shopping-cart fa-lg"></i></a></li>
-                        <div class="search-navigationbar">
+
+                <div class="search-navigationbar">
                     <form action="/products" method="get" class="navbar-form navbar-left" id="search-form" role="search">
                         <input type="search"  id="search-box" name="search-text" placeholder="Search...">
-                        <button id="disabled-navigation-btn"><i id="fa_search" class="fa fa-search"></i></button>
+                        <button id="disabled-navigation-btn"><i id="fa-search" class="fa fa-search"></i></button>
                     </form>
                 </div>
 

@@ -85,8 +85,6 @@
 
 
 
-
-
 /* -------------- Cart og Wishlist -------------- */
 #previous-page {
     display: inline-block;
@@ -108,7 +106,7 @@
 }
 
 /* mynd af vöru í cart */
-.product-img_cart {
+.product-img-cart {
     object-fit: contain;
     width:  100px;
     height: 150px;
@@ -123,19 +121,19 @@
 
 
 /* taka útlínur á takka þannig sjáist bara ruslið */
-#remove_cart_item_btn {
+#remove-cart-item-btn {
     border: none;
 }
 
 /*-------Wishlist--------*/
 /* taka útlínur á takka þannig sjáist bara ruslið */
-#remove_wishlist_item_btn{
+#remove-wishlist-item-btn{
     border: none;
 }
 
 
 /* add to cart úr wishlist */
-#add_to_cart_btn-wishlist {
+#add-to-cart-btn-wishlist {
     display: inline-block;
     vertical-align: top;
     margin: 5px;
@@ -144,7 +142,7 @@
     padding: 3px 6px;
 }
 
-#add_to_cart_btn-wishlist:focus{
+#add-to-cart-btn-wishlist:focus{
     outline:0;
 }
 

@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <div class="contact_information">
 
+    <div class="contact-information">
         <img id="contact-info-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/97100574_10158167013437567_1234811361117077504_n.jpg?_nc_cat=101&_nc_sid=e007fa&_nc_oc=AQnYAZGtBzMSrW76z2yCT9Pz4hlvDNL5sbpof1iEY7A13zm3qrMKtFle358KyHWyswo&_nc_ht=scontent.frkv3-1.fna&oh=816750134b8e29aa1e5b526dff09a5b8&oe=5EE32312"></img>
-        <form method="post" class="form form-horizontal" id="contact-form-horizontal">
 
+        <form method="post" class="form form-horizontal" id="contact-form-horizontal">
             {% csrf_token %}
-            <div class='contact_info_form'>
+            <div class='contact-info-form'>
                 {{ form }}
             </div>
             <a class="btn -btn-primary" id="previous-page" href="{% url 'cart-index' %}">Go back to cart</a>
-            <input type="submit" class="btn btn-primary" value="Continue to payment" id="continue_to_payment"/>
+            <input type="submit" class="btn btn-primary" value="Continue to payment" id="continue-to-payment"/>
         </form>
 
     </div>
+
 {% endblock %}

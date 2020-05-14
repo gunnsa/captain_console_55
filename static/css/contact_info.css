@@ -1,4 +1,4 @@
-.contact_info_form {
+.contact-info-form {
     width: 570px;
     height: 730px;
     margin: 0 auto;
@@ -24,18 +24,18 @@
 }
 
 
-.delivery_info{
+.delivery-info{
     margin-bottom: 10px;
     vertical-align: center;
 }
 
 
-.contact_information{
+.contact-information{
     margin-bottom: 50px;
 }
 
 
-#id_full_name, #id_email_address, #id_phone_number, #id_home_address, #id_city, #id_zip_code, #id_country {
+#id-full-name, #id-email-address, #id-phone-number, #id-home-address, #id-city, #id-zip-code, #id-country {
     height: 35px;
     width: 300px;
     font-size: 18px;
@@ -44,14 +44,12 @@
 }
 
 
-
-
-#id_home_delivery{
+#id-home-delivery{
     padding: 6px 12px;
     margin-bottom: 20px;
 }
 
-#id_additional_info {
+#id-additional-info {
     height: 95px;
     width: 400px;
     font-size: 18px;
@@ -60,7 +58,7 @@
     background-color: black;
 }
 
-#continue_to_payment {
+#continue-to-payment {
     background: black;
     width: 200px;
     border: 2px solid #90FFFF;
@@ -79,18 +77,18 @@
 }
 
 /* texti hvitur */
-.contact_info_form input, .contact_info_form select {
+.contact-info-form input, .contact-info-form select {
     background: black;
     color: white;
 }
 
 /* rauður rammi ef vitlaust */
-.contact_info_form input:invalid {
+.contact-info-form input:invalid {
     border: 1px solid red;
 }
 
 
-#id_additional_info {
+#id-additional-info {
     color: #d718e5;
 }
 

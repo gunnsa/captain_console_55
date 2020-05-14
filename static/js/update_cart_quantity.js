@@ -1,4 +1,3 @@
-
 //------CSRF TOKEN------//
 $(document).ready(function () {
     function getCookie(name) {
@@ -34,7 +33,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $('.decrease_cart').on('click', function(e){
+    $('.decrease-cart').on('click', function(e){
       e.preventDefault();
       var parent_value = this.parentNode.parentNode
       var child_value = parent_value.childNodes
@@ -52,7 +51,7 @@ $(document).ready(function () {
       child_value[3].innerHTML = value; //þannig við sjáum breytingu í HTML til að tengja við cart
     })
 
-    $('.increase_cart').on('click', function(e){
+    $('.increase-cart').on('click', function(e){
         e.preventDefault();
         var parent_value = this.parentNode.parentNode
         var child_value = parent_value.childNodes
@@ -68,7 +67,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $('.decrease_cart').on('click', function (e) {
+    $('.decrease-cart').on('click', function (e) {
         e.preventDefault();
         var cartid = $(this).attr('data-id');
         var parent_value = this.parentNode.parentNode
@@ -87,7 +86,7 @@ $(document).ready(function () {
             }
         });
     });
-    $('.increase_cart').on('click', function (e) {
+    $('.increase-cart').on('click', function (e) {
         e.preventDefault();
         var cartid = $(this).attr('data-id');
         var parent_value = this.parentNode.parentNode
@@ -104,7 +103,7 @@ $(document).ready(function () {
             }
         });
     });
-    $('.remove_cart_item_btn').on('click', function(e){
+    $('.remove-cart-item-btn').on('click', function(e){
         e.preventDefault();
         console.log('remove item pushed')
         var cartId = $(this).attr('data-id');

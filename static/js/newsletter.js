@@ -1,6 +1,7 @@
 $(document).ready(function () {
-    $('#add_to_newsletter_btn').on('click', function(e){
+    $('#add-to-newsletter-btn').on('click', function(e){
         e.preventDefault();
+
         swal({
             text: "Please enter your email",
             content: "input",
@@ -19,7 +20,7 @@ $(document).ready(function () {
                 },
                 error: function (status, error) {
                 swal({
-                    text: "Woops! try again",
+                    text: "Whoops! Try again",
                     icon: "warning",
                     buttons: false,
                     });

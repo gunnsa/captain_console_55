@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-    <img class="productdetails-img"  src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96426986_10158190330363972_8993374094317584384_o.jpg?_nc_cat=109&_nc_sid=0debeb&_nc_ohc=o428PqnkCscAX8GZemW&_nc_ht=scontent.frkv3-1.fna&oh=d52a57346275332cae9d9cef35f39365&oe=5EDED50E" frameborder='no' scrolling='no' width="500" height="200">
+    <img class="product-details-img" id="product-details-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96426986_10158190330363972_8993374094317584384_o.jpg?_nc_cat=109&_nc_sid=0debeb&_nc_ohc=o428PqnkCscAX8GZemW&_nc_ht=scontent.frkv3-1.fna&oh=d52a57346275332cae9d9cef35f39365&oe=5EDED50E" frameborder='no' scrolling='no' width="500" height="200">
     <div class="all-product-detail">
         <div class="product-details">
             <div class="product-detail-images">
@@ -10,7 +10,7 @@
                     {% if forloop.counter == 1 %}
                         <img src="{{ product_image.image }}" class="product-img" />
                     {% else %}
-                        <img src="{{ product_image.image }}" class="product-img-auka" />
+                        <img src="{{ product_image.image }}" class="product-img-extra" />
                     {% endif %}
                 {% endfor %}
             </div>
@@ -19,33 +19,31 @@
                 <p>{{ product.price }}$</p>
                 <p>{{ product.color }}</p>
                 <p>{{ product.manufacturer }}</p>
-                <div class="quantity_cart_wishlist">
+                <div class="quantity-cart-wishlist">
 
                     <div class="nice-number" id="nice-number">
                         <div class="pull-left">
-                            <button class="decrease_value" id="decrease">-</button>
+                            <button class="decrease-value" id="decrease">-</button>
                         </div>
                         <input id="quantity" type="number" value="1" disabled>
                         <div class="pull-right">
-                            <button class="increase_value" id="increase">+</button>
+                            <button class="increase-value" id="increase">+</button>
                         </div>
                     </div>
 
                     {% if user.is_authenticated %}
-                        <button class="btn -btn-primary" id="add_to_cart_btn" data-id="{{ product.id }}">Add to cart</button>
-                        <a id="add_to_wishlist_btn" data-id="{{ product.id }}" class="heart" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
-                        <i class="fa fa-heart-o fa-2x" id="heart-product"></i>
-                        <i class="fa fa-heart fa-2x" id="heart-product"></i>
-                    </a>
+                        <button class="btn -btn-primary" id="add-to-cart-btn" data-id="{{ product.id }}">Add to cart</button>
+                        <a id="add-to-wishlist-btn" data-id="{{ product.id }}" class="heart" data-toggle="tooltip"
+                           data-placement="top" title="Add to Wishlist">
+                            <i class="fa fa-heart-o fa-2x" id="heart-product"></i>
+                            <i class="fa fa-heart fa-2x" id="heart-product"></i>
+                        </a>
                      {% else %}
-                        <button class="btn -btn-primary" onclick="location.href='{% url 'login' %}?next={{request.path}}';" id = "add_to_cart">Add to cart</button>
+                        <button class="btn -btn-primary" onclick="location.href='{% url 'login' %}?next={{request.path}}';"
+                                id = "add_to_cart">Add to cart</button>
                     {% endif %}
 
-                    <!-- ef mús fer yfir fyllist hjarta og texti "Add to Wishlist" -->
-
-
                 </div>
-
             </div>
         </div>
 
@@ -54,9 +52,10 @@
             <p>{{ product.long_description }}</p>
         </div>
     </div>
+
     <div class="recently-viewed-box">
         <img id="recently-viewed-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96688090_10158166842747567_905460701785489408_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_oc=AQnvkKQ99KPGO8tuwbOKGhbH4j3G3B5PUpB4Vhbdpz6ELjTiJniNs5tpe0Dl5Qkn8t0&_nc_ht=scontent.frkv3-1.fna&oh=db3462f7dbc8e8cc1f7fe5b97bebd479&oe=5EE2B101"></img>
-        <!--<h3>Recently viewed items</h3>-->
+
         <div class="recently-viewed">
             {% for key, product_id  in request.COOKIES.items %}
                 {% for product in all_products %}
@@ -64,5 +63,6 @@
                 {% endfor %}
             {% endfor %}
         </div>
+
     </div>
 {% endblock %}

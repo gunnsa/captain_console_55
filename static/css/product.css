@@ -1,7 +1,8 @@
 /* -------------- PRODUCTS -------------- */
 
 /* NEON - all products img */
-.allproducts-img{
+/* má taka út 'class="all-products-img"' í product/index.html?? */
+#all-products-NEON{
     display: block;
     height: auto;
     margin-top: 100px;
@@ -43,7 +44,8 @@
 /* -------------- PRODUCT DETAIL -------------- */
 
 /* NEON - product detail img */
-.productdetails-img {
+/* má taka út 'class="product-details-img"' í product/product_details.html?? */
+#product-details-NEON{
     display: block;
     height: auto;
     margin-top: 100px;
@@ -75,13 +77,13 @@
 }
 
 /* heldur utan um quantity cart og wishlist takka --> PRODUCT DETAIL */
-.quantity_cart_wishlist {
+.quantity_cart-wishlist {
     margin: 5px;
     height: 40px;
 }
 
 /* fyrir logged in people --> PRODUCT DETAIL */
-#add_to_cart_btn {
+#add-to-cart-btn {
     display: inline-block;
     vertical-align: top;
     margin: 5px;
@@ -90,12 +92,12 @@
     padding: 3px 6px;
 }
 
-#add_to_cart_btn:focus{
+#add-to-cart-btn:focus{
     outline:0;
 }
 
 /* fyrir loggedout people --> PRODUCT DETAIL */
-#add_to_cart {
+#add-to-cart {
     display: inline-block;
     vertical-align: top;
     margin: 5px;
@@ -104,7 +106,7 @@
     padding: 3px 6px;
 }
 
-#add_to_cart:focus{
+#add-to-cart:focus{
     outline:0;
 }
 
@@ -209,7 +211,7 @@
     display: block;
 }
 
-.product-img-auka {
+.product-img-extra {
     width: 120px;
     height: 120px;
     object-fit: contain;
