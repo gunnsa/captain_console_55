@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load custom_tags %}
+{% load custom_tags %}
 {% load static %}
 {% load custom_tags %}
 {% block content %}
@@ -88,7 +89,6 @@
                                         {% if product_id|is_numeric %}
                                             <div class="single-products">
                                                 <div class="productinfo text-center">
-
                                                     {% for product in all_products %}
                                                         {% if product_id|add:0 == product.id %}
                                                             <a href="/products/{{ product.id }}">
