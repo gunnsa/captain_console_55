@@ -1,5 +1,11 @@
 /* -------------- PRODUCTS -------------- */
 
+#all-products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 /* NEON - all products img */
 /* má taka út 'class="all-products-img"' í product/index.html?? */
 #all-products-NEON{
@@ -240,8 +246,31 @@
 }
 
 
-
 .recently-viewed {
     display: grid;
 }
 
+
+@media (min-width: 992px) {
+    .single-product {
+        width: 270px;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .single-product {
+        width: 300px;
+    }
+}
+
+
+@media (max-width: 667px) {
+    .single-product {
+        width: 340px;
+    }
+}
+
+#all-products {
+
+}
