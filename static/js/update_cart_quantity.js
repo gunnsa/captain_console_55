@@ -121,8 +121,33 @@ $(document).ready(function () {
                 swal({
                     text: "Item removed from cart!",
                     icon: "success",
-                    buttons: false,});
+                    buttons: false,
+                    timer: 1450,});
                 window.location.replace("/cart/")
+            },
+            error: function (status, error) {
+                swal({
+                    text: "Whoops! Try again!",
+                    icon: "warning",
+                    buttons: false,
+                    timer: 1450,});
+            }
+        });
+    })
+
+    $('#delete-all-items-btn').on('click', function(e){
+        e.preventDefault();
+        console.log('remove all items pushed')
+        $.ajax({
+            url: '/cart'+ '/remove_all_cart_items',
+            type: 'DELETE',
+            success: function (resp) {
+                swal({
+                    text: "All items removed from cart!",
+                    icon: "success",
+                    buttons: false,
+                    timer: 1450,});
+                window.location.replace('/cart/')
             },
             error: function (status, error) {
                 swal({

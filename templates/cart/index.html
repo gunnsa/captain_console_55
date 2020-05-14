@@ -67,8 +67,11 @@
                     </tr>
 
                 {% endfor %}
-
                 </tbody>
+                <td>
+                    <button class="btn -btn-primary delete-all-items-btn" id="delete-all-items-btn">
+                        Delete all items in cart <i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+                </td>
                 <td id="total" colspan="3"> <h4>Total:</h4></td>
                 <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
 
