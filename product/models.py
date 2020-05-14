@@ -1,9 +1,6 @@
 from django.db import models
-from django.db import connections
-from django.conf import settings
 
 
-# Create your models here.
 class Product(models.Model):
     name = models.CharField(max_length=255)
     manufacturer = models.CharField(max_length=255)
