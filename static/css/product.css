@@ -1,7 +1,8 @@
 /* -------------- PRODUCTS -------------- */
 
 /* NEON - all products img */
-.allproducts-img{
+/* má taka út 'class="all-products-img"' í product/index.html?? */
+#all-products-NEON{
     display: block;
     height: auto;
     margin-top: 100px;
@@ -43,7 +44,8 @@
 /* -------------- PRODUCT DETAIL -------------- */
 
 /* NEON - product detail img */
-.productdetails-img {
+/* má taka út 'class="product-details-img"' í product/product_details.html?? */
+#product-details-NEON{
     display: block;
     height: auto;
     margin-top: 100px;
