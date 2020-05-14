@@ -1,6 +1,6 @@
 .contact-info-form {
     width: 570px;
-    height: 730px;
+    height: 100%;
     margin: 0 auto;
     padding: 70px;
     padding-left: 100px;
@@ -95,11 +95,11 @@
 
 /* ----- PAYMENT INFORMATION ----- */
 .payment {
-    width: 570px;
-    height: 600px;
+    width: 480px;
+    height: 100%;
     margin: 0 auto;
     padding: 70px;
-    padding-left: 100px;
+    padding-left: 120px;
     padding-top: 20px;
     padding-bottom: 20px;
     border-radius: 5px;
@@ -126,10 +126,13 @@
 }
 
 
-#id_card_month, #id_card_year {
+#id_card_month, #id_card_year, #id_card_CVC  {
     width: 100px;
 }
 
+#id_card_number{
+    width: 250px;
+}
 
 
 #payment-info-NEON {

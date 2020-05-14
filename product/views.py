@@ -35,13 +35,19 @@ def index(request):
 
 
 def get_product_by_id(request, id):
-    """ Returns display of chosen product and sets COOKIES """
+    """ Returns display of chosen product and sets as well as gets COOKIES """
+    product_id = id
 
     all_products = Product.objects.all()
+    cookie_product_id = []
+    for key, value in request.COOKIES.items():
+        if value.isdigit():
+            cookie_product_id.append(int(value))
     response = render(request, 'product/product_details.html', {
-        'product': get_object_or_404(Product, pk=id), 'all_products': all_products
+        'product': get_object_or_404(Product, pk=id), 'all_products': all_products,
+        'cookie_product_id': cookie_product_id
     })
-    response.set_cookie(str(id), id, max_age=30000)
+    response.set_cookie(str(id), product_id, max_age=432000)
     return response
 
 
