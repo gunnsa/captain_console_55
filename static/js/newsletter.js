@@ -20,9 +20,9 @@ $(document).ready(function () {
                         buttons: false,
                         timer: 1450,});
                 },
-                error: function (xhr, status, error) {
+                error: function (xhr,status, error) {
                 swal({
-                    text: "Whoops! Try again!",
+                    text: "Whoops! Please enter a valid email!",
                     icon: "warning",
                     buttons: false,
                     timer: 1450,});
