@@ -33,8 +33,13 @@
                         </div>
 
                     {% else %}
-                        <a href="{% url 'login' %}" id="sign-in-btn">SIGN IN</a>
-                        <a href="{% url 'register' %}" id="sign-up-btn" >SIGN UP</a>
+                        <div class="dropdown-nav-bar">
+                            <button class="dropbtn-nav"><i class="fa fa-user fa-lg" id="account-img" ></i></button>
+                            <div class="dropdown-content-navbar">
+                              <a href="{% url 'login' %}" class="nav-drop-btn" id="nav-drop-btn" >Sign in</a>
+                              <a href="{% url 'register' %}" class="nav-drop-btn"  id="nav-drop-btn">Sign up</a>
+                            </div>
+                        </div>
                     {% endif %}
                 </li>
 
