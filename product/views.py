@@ -47,7 +47,7 @@ def get_product_by_id(request, id):
         'product': get_object_or_404(Product, pk=id), 'all_products': all_products,
         'cookie_product_id': cookie_product_id
     })
-    response.set_cookie(str(id), product_id, max_age=30000)
+    response.set_cookie(str(id), product_id, max_age=432000)
     return response
 
 
