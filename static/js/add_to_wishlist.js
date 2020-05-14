@@ -35,8 +35,9 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-    $('#add_to_wishlist_btn').on('click', function(e){
+    $('#add-to-wishlist-btn').on('click', function(e){
         e.preventDefault();
+        
         var wishlistItemId = $(this).attr('data-id');
 
         $.ajax({
@@ -51,34 +52,42 @@ $(document).ready(function () {
             },
             error: function (status, error) {
                 swal({
-                    title: "Woops something went wrong",
+                    title: "Whoops! Something went wrong",
                     text: "Try again",
                     buttons: false,
                     timer: 1450,});
             }
         });
     })
-    $('.remove_wishlist_item_btn').on('click', function(e){
+    $('.remove-wishlist-item-btn').on('click', function(e){
         e.preventDefault();
-        console.log('remove item pushed')
+
         var wishlistId = $(this).attr('data-id');
-        console.log('wishlistId: ', wishlistId)
+
         $.ajax({
             url: '/wishlist/' + wishlistId + '/remove_wishlist_item',
             type: 'DELETE',
             success: function (resp) {
+                swal({
+                    text: "Item added to cart!",
+                    icon: "success",
+                    buttons: false,
+                    timer: 1450,});
                 window.location.replace("/wishlist/")
             },
             error: function (status, error) {
-                alert("Whoops something went wrong :(")
-
+                swal({
+                    title: "Whoops! Something went wrong",
+                    text: "Try again",
+                    buttons: false,
+                    timer: 1450,});
             }
         });
     })
-    $('.add_to_cart_btn-wishlist').on('click', function(e){
+    $('.add-to-cart-btn-wishlist').on('click', function(e){
         e.preventDefault();
+
         var wishlistItemId = $(this).attr('data-id');
-        console.log('wishlistItemId: ', wishlistItemId)
 
         $.ajax({
             url: '/wishlist/' + wishlistItemId + '/add_to_cart/',

@@ -33,7 +33,6 @@ $(document).ready(function () {
 });
 
 
-
 $(document).ready(function () {
     function getCookie(name) {
         var cookieValue = null;
@@ -68,8 +67,6 @@ $(document).ready(function () {
 });
 
 
-
-
 $(document).ready(function () {
     $('#create-order').on('click', function(e){
         $.ajax({
@@ -79,12 +76,16 @@ $(document).ready(function () {
                 swal({
                     text: "Purchase Complete!",
                     icon: "success",
-                    buttons: false,});
+                    buttons: false,
+                    timer: 1450,});
                 window.location.replace("/order/overview")
             },
             error: function (status, error) {
-                alert("Whoops something went wrong :(")
-
+                swal({
+                    title: "Whoops! Something went wrong",
+                    text: "Try again",
+                    buttons: false,
+                    timer: 1450,});
             }
         });
     })

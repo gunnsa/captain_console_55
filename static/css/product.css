@@ -75,13 +75,13 @@
 }
 
 /* heldur utan um quantity cart og wishlist takka --> PRODUCT DETAIL */
-.quantity_cart_wishlist {
+.quantity_cart-wishlist {
     margin: 5px;
     height: 40px;
 }
 
 /* fyrir logged in people --> PRODUCT DETAIL */
-#add_to_cart_btn {
+#add-to-cart-btn {
     display: inline-block;
     vertical-align: top;
     margin: 5px;
@@ -90,12 +90,12 @@
     padding: 3px 6px;
 }
 
-#add_to_cart_btn:focus{
+#add-to-cart-btn:focus{
     outline:0;
 }
 
 /* fyrir loggedout people --> PRODUCT DETAIL */
-#add_to_cart {
+#add-to-cart {
     display: inline-block;
     vertical-align: top;
     margin: 5px;
@@ -104,7 +104,7 @@
     padding: 3px 6px;
 }
 
-#add_to_cart:focus{
+#add-to-cart:focus{
     outline:0;
 }
 

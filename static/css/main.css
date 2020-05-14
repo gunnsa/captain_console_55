@@ -60,17 +60,17 @@ button {
 }
 
 /* mynd a forsíðu */
-.join_us_img {
+.join-us-img {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 /* mynd a forsíðu */
-.view_all_img {
+.view-all-img {
     margin-top: 100px;
     margin-bottom: 1px;
 }
 /*input field fyrir póstlista á forsíðu*/
-#id_email{
+#id-email{
     height: 35px;
     width: 300px;
     font-size: 18px;
@@ -95,7 +95,7 @@ label[for="id_email"] {
 /* ---------------------------- footer ---------------------------- */
 
 /* search bar --> í footer */
-#news_letter_box.form-control {
+#news-letter-box.form-control {
     background-color: black;
     color: white;
     height: 32px;
@@ -117,12 +117,12 @@ label[for="id_email"] {
     border-top-right-radius: 5px;
 }
 
-#newsletter-btn.btn-default:focus{
+#newsletter-btn.btn-default:focus {
     outline:0;
 }
 
 
-#footer_openhours {
+#footer-openhours {
     margin: 10px;
     padding: 10px;
     width: 270px;
@@ -131,7 +131,7 @@ label[for="id_email"] {
     margin-top: 30px;
 }
 
-#footer_contact {
+#footer-contact {
     margin: 10px;
     padding: 10px;
     width: 200px;
@@ -139,25 +139,25 @@ label[for="id_email"] {
     float: right;
     margin-top: 30px;
 }
-#footer_contact hr, #footer_openhours hr{
+#footer-contact hr, #footer-openhours hr{
   height: 1px;
   background-color: #90ffff;
   border: none;
 }
 
-#footer_newsletter {
+#footer-newsletter {
     margin-right: 100px;
     margin-left: 35px;
     width: 370px;
     margin-top: 108px;
 }
 
-#footer_newsletter b{
+#footer-newsletter b{
     float: left;
     font-size: 15px;
 }
 
-#footer_row {
+#footer-row {
     margin: 10px;
     padding: 10px;
     width: 1260px;
@@ -199,7 +199,7 @@ label[for="id_email"] {
     margin-left: 3%;
 }
 
-#id_profile_image {
+#id-profile-image {
     height: 35px;
     width: 300px;
     font-size: 18px;

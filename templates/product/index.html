@@ -1,20 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <img class="allproducts-img"  src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/97034301_10158187529833972_5585139325273636864_o.jpg?_nc_cat=106&_nc_sid=0debeb&_nc_ohc=MCSvIKB53x8AX9slRuv&_nc_ht=scontent.frkv3-1.fna&oh=18219a3b70a95f441ce5807fbbb1a894&oe=5EDF2563" frameborder='no' scrolling='no' width="500" height="200">
-
+    <img class="all-products-img" id="all-products-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/97034301_10158187529833972_5585139325273636864_o.jpg?_nc_cat=106&_nc_sid=0debeb&_nc_ohc=MCSvIKB53x8AX9slRuv&_nc_ht=scontent.frkv3-1.fna&oh=18219a3b70a95f441ce5807fbbb1a894&oe=5EDF2563" frameborder='no' scrolling='no' width="500" height="200">
 
     <div class="both-drop-down">
         <div class="dropdown-brand">
-          <button class="dropbtn">Filter by
-            <span class="caret"></span>
-          </button>
+            <button class="dropbtn">Filter by
+                <span class="caret"></span>
+            </button>
+
             <div class="dropdown-content">
                 <a href="/products/" class="brand-btn" id="brand-btn" >All products</a>
-                  {% for filter in manufacturers  %}
-                      <a href="/products/{{ filter }}" class="brand-btn" id="brand-btn" data-name="{{ filter }}">{{ filter }}</a>
-                  {% endfor %}
-
+                {% for filter in manufacturers  %}
+                    <a href="/products/{{ filter }}" class="brand-btn" id="brand-btn" data-name="{{ filter }}">{{ filter }}</a>
+                {% endfor %}
               </div>
         </div>
 
@@ -32,7 +31,7 @@
 
 
 
-    <div class="products" id ="all_products">
+    <div class="products" id ="all-products">
         {% for product in products %}
             {% include 'product/single_product.html' with product=product %}
         {% endfor %}

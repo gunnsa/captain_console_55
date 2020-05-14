@@ -48,7 +48,7 @@
 
 
 /* input gluggar á sign in og sign up síðunum */
-#id_username, #id_password, #id_password1, #id_password2 {
+#id-username, #id-password, #id-password1, #id-password2 {
     height: 35px;
     width: 300px;
     font-size: 18px;
@@ -60,7 +60,7 @@
 
 
 /* sign in takkinn á sign in síðunni */
-#submit_login{
+#submit-login{
     background: black;
     width: 100px;
     border: 2px solid #90FFFF;
@@ -69,7 +69,7 @@
 
 
 /* sign up takkinn á sign up síðunni */
-#submit_register {
+#submit-register {
     background: black;
     width: 100px;
     border: 2px solid #90FFFF;

@@ -35,7 +35,7 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-    $('.decrease_value').on('click', function(e){
+    $('.decrease-value').on('click', function(e){
       e.preventDefault();
       var parent_value = this.parentNode.parentNode
       var child_value = parent_value.childNodes
@@ -50,10 +50,10 @@ $(document).ready(function () {
           value--;
       }
       child_value[3].value = value;
-      child_value[3].innerHTML = value; //þannig við sjáum breytingu í HTML til að tengja við cart
+      child_value[3].innerHTML = value;
     })
 
-    $('.increase_value').on('click', function(e){
+    $('.increase-value').on('click', function(e){
       e.preventDefault();
       var parent_value = this.parentNode.parentNode
       var child_value = parent_value.childNodes
@@ -64,7 +64,7 @@ $(document).ready(function () {
       value++;
 
       child_value[3].value = value;
-      child_value[3].innerHTML = value; //þannig við sjáum breytingu í HTML til að tengja við cart
+      child_value[3].innerHTML = value;
     })
 });
 

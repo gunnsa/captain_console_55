@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
+
     <div class="wishlist">
         <img id="wishlist-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/98176831_10158166953192567_3568966292234829824_n.jpg?_nc_cat=109&_nc_sid=e007fa&_nc_oc=AQm5y4vFRXoHzstiMJaO-sCxMEdH_ePQ00Ui6ZT2pJhu9y8t5rhrINTvZihIxALJ-xg&_nc_ht=scontent.frkv3-1.fna&oh=7b5bed2901129b075a7214d0a87abf73&oe=5EE1BBBE">
+
         <div class="table-and-buttons">
             <table class="table">
                 <thead>
@@ -13,13 +15,14 @@
                 </thead>
 
                 <tbody>
-                {% for item in wishlist %} <!-- wishlist kemur fra wislist\views.py - listi af öllum vörum sem þessi notandi hefur í wishlistanum -->
+                {% for item in wishlist %}
                     <tr>
                         <td>
                             <a href="/products/{{ item.product.id }}">
-                                <img class="product-img_cart" src="{{ item.product.productimage_set.first.image }}">
+                                <img class="product-img-cart" src="{{ item.product.productimage_set.first.image }}">
                             </a>
                         </td>
+
                         <td>
                             <a href="/products/{{ item.product.id }}">
                                 <h4>{{ item.product.name }} </h4>
@@ -28,12 +31,16 @@
                                 {{ item.product.price }} $
                         </td>
 
-                        <td><button class="btn -btn-primary add_to_cart_btn-wishlist" id="add_to_cart_btn-wishlist" data-id="{{ item.product.id }}">Add to cart</button></td>
-                        <td><button class="bth -bth-primary remove_wishlist_item_btn" id="remove_wishlist_item_btn" data-id="{{ item.id }}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button></td>
+                        <td>
+                            <button class="btn -btn-primary add_to_cart_btn-wishlist" id="add_to_cart_btn-wishlist"
+                                    data-id="{{ item.product.id }}">Add to cart</button>
+                        </td>
 
+                        <td>
+                            <button class="bth -bth-primary remove_wishlist_item_btn" id="remove_wishlist_item_btn"
+                                    data-id="{{ item.id }}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+                        </td>
                     </tr>
-
-
                 {% endfor %}
 
                 </tbody>
