@@ -86,7 +86,7 @@
 }
 
 
-/* NEON mynd */
+/* NEON mynd á forsíðu */
 .view-all-img {
     padding: 1px;
     margin-top: 1px;
@@ -95,7 +95,7 @@
     height: 90px;
 }
 
-/* NEON mynd */
+/* NEON mynd á forsíðu */
 .sign-up-img, .my-wishlist-img {
     padding: 1px;
     margin-top: 1px;
@@ -105,7 +105,7 @@
     float: left;
 }
 
-/* Linkar a NEON myndum */
+/* Linkar a NEON myndum á forsíðu */
 .img-link {
     position:relative;
     display:inline-block;
