@@ -15,7 +15,7 @@
 /* Homepage rammi fyrir all products */
 .home-one, .home-one-user {
     margin-top: 170px;
-    border: 3px dotted #7818e5;
+    border: 1px solid #7818e5;
     border-top: none;
     border-right: none;
     border-left: none;
@@ -36,7 +36,7 @@
     margin-bottom: 150px;
     margin-right: 1px;
     margin-left: 3px;
-    border: 3px dotted #bfe871;
+    border: 1px solid #bfe871;
     border-top: none;
     border-right: none;
     border-left: none;
@@ -55,7 +55,7 @@
     margin-bottom: 50px;
     margin-right: 1px;
     margin-left: 3px;
-    border: 3px dotted #bfe871;
+    border: 1px solid #bfe871;
     border-top: none;
     border-right: none;
     border-left: none;
@@ -66,27 +66,6 @@
     height: 108px;
     padding-bottom: 2px;
 }
-
-/* Homepage rammi fyrir all products - innskradur */
-/* TVÍTEKINN KÓÐI???
-.home-one-user {
-    margin-top: 170px;
-    border: 3px dotted #7818e5;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-radius: 0px;
-    clear: both;
-    padding: 10px;
-    width: 620px;
-    height: 108px;
-    margin-right: 1px;
-    margin-left: 3px;
-    padding-bottom: 2px;
-    margin-bottom: 20px;
-}
- */
-
 
 
 /* NEON mynd á forsíðu */
@@ -128,6 +107,10 @@
     height: 390px;
 }
 
+.remote-img {
+    margin-left: 340px;
+}
+
 .home-page-retro {
     display: inline-block;
     margin-left: 60px;
@@ -135,12 +118,17 @@
     margin-top: 140px;
 }
 
-.add-to-newsletter-btn {
+#add-to-newsletter-btn {
+    background: black;
+    width: 100%;
     display: inline-block;
     vertical-align: top;
-    margin: 5px;
-    border: 2px solid #90FFFF;
-    height: 100%;
-    width: 100%;
-    padding: 3px 6px;
+    margin: 0px;
+    border: 1px solid #f65cf5
+}
+
+.newsletter-email {
+    width: 300px;
+    margin-left: 150px;
+    padding-top: 40px;
 }
