@@ -3,7 +3,7 @@
 /* sign in síðan */
 .container #login-form-horizontal {
     width: 500px;
-    height: 400px;
+    height: 100%;
     margin: 0 auto;
     padding: 70px;
     padding-left: 100px;
