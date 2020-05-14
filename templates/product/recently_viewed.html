@@ -1,13 +1,28 @@
 {% if product_id|add:0 == product.id %}
-    <div class="single-recently-viewed">
-        {% if forloop.parentloop.counter == 1 or forloop.parentloop.counter == 2 or forloop.parentloop.counter == 3 or forloop.parentloop.counter == 4 %}
 
-            <a href="/products/{{ product.id }}">
-                <img class="product-img" src="{{ product.productimage_set.first.image }}" />
-                <h4>{{ product.name }}</h4>
-            </a>
-            <p>{{ product.short_description }}</p>
-            <p>{{ product.price }}$</p>
-        {% endif %}
-     </div>
+
+                {% if forloop.parentloop.counter == 1 or forloop.parentloop.counter == 2 or forloop.parentloop.counter == 3 or forloop.parentloop.counter == 4 %}
+                    <div class="grid-row">
+                        <div class="item active" id="recently-viewed">
+                            <a href="/products/{{ product.id }}">
+                                <img class="product-img" src="{{ product.productimage_set.first.image }}" />
+                                <h4>{{ product.name }}</h4>
+                            </a>
+                            <p>{{ product.short_description }}</p>
+                            <p>{{ product.price }}$</p>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="item" id="recently-viewed">
+                        <a href="/products/{{ product.id }}">
+                            <img class="product-img-extra" src="{{ product.productimage_set.first.image }}" />
+                            <h4>{{ product.name }}</h4>
+                        </a>
+                        <p>{{ product.short_description }}</p>
+                        <p>{{ product.price }}$</p>
+                    </div>
+                {% endif %}
+
+
+
 {% endif %}

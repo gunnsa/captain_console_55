@@ -106,3 +106,30 @@ def overview(request):
         context = {'carts': user_cart, 'eachItemTotal': each_item, 'sumTotal': rounded_sumtotal, 'info': user_info}
 
     return render(request, 'order/overview_order.html', context)
+
+
+def order_history(request):
+    """ Returns view of current users order history """
+
+    user_info = ContactInformation.objects.filter(user_id=request.user.id)
+    user_order = Order.objects.all().filter(user_id=request.user.id)
+    sum_total = 0
+    each_item = {}
+    print(user_order)
+
+    print()
+    for order in user_order:
+        # user_cart = Cart.objects.all().filter(user_id=request.user.id, order_id=order.id)
+        user_cart = Cart.objects.all().filter(user_id=request.user.id, order_id=order.id)
+
+        # tilraun = order.cart.all()
+        # print(tilraun)
+
+        # tilraun2 = user_order.all().filter(cart__order_id=order.id)
+        # print(tilraun2)
+
+        context = {'carts': user_cart, 'user_info': user_info}
+        print('context: ', context)
+
+    return render(request, 'order/display_order.html', context)
+

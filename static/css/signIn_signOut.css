@@ -1,21 +1,5 @@
 /* ------------------------ SIGN IN -- SIGN UP ------------------------ */
 
-/* útlit á input í sign in */
-.form.form-horizontal#login-form-horizontal input {
-    background: black;
-    color: white;
-    border: 0.5px solid white;
-}
-
-
-/* útlit á input í sign out */
-.form.form-horizontal#register-form-horizontal input {
-    background: black;
-    color: white;
-    border: 0.5px solid white;
-}
-
-
 /* sign in síðan */
 .container #login-form-horizontal {
     width: 500px;
@@ -23,9 +7,10 @@
     margin: 0 auto;
     padding: 70px;
     padding-left: 100px;
-    padding-top: 10px;
+    padding-top: 40px;
     padding-bottom: 20px;
     display: block;
+    border: 1px solid rgba(33, 33, 33, 0.38); /* ?? */
     box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
     border-radius: 5px;
 }
@@ -38,17 +23,17 @@
     margin: 0 auto;
     padding: 70px;
     padding-left: 100px;
-    padding-top: 10px;
+    padding-top: 40px;
     padding-bottom: 20px;
     display: block;
-    border: 1px solid rgba(33, 33, 33, 0.38);
+    border: 1px solid rgba(33, 33, 33, 0.38); /* ?? */
     box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
     border-radius: 5px;
 }
 
 
-/* input gluggar á sign in og sign up síðunum */
-#id-username, #id-password, #id-password1, #id-password2 {
+/* input gluggar á sign in og sign up síðunum -- ÞARF AÐ VERA UNDIRSTRIK ÞVÍ ER Í FORMI??? */
+#id_username, #id_password, #id_password1, #id_password2 {
     height: 35px;
     width: 300px;
     font-size: 18px;
@@ -56,6 +41,8 @@
     padding-left: 10px;
     background-color: black;
     border-radius: 5px;
+    color: white;
+    border: 0.5px solid white;
 }
 
 
@@ -93,8 +80,10 @@
 
 /* hjálpar texti á sign up síðunni */
 .helptext {
-    display: none;
+    color: #d718e5;
 }
+
+
 
 #sign-in-NEON {
     width: 320px;
@@ -105,6 +94,7 @@
     padding-bottom: 20px;
     display: block;
 }
+
 
 #sign-up-NEON {
     width: 320px;

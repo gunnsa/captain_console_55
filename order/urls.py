@@ -8,5 +8,6 @@ urlpatterns = [
     path('payment', views.get_payment, name="payment-index"),
     path('displayorder/create', views.create_order, name="createorder-index"),
     path('displayorder', views.display_order, name="displayorder-index"),
-    path('overview', views.overview, name="overview-index")
+    path('overview', views.overview, name="overview-index"),
+    path('order_history', views.order_history, name="orderhistory-index")
 ]
