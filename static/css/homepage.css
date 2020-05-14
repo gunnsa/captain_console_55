@@ -1,19 +1,19 @@
 /* heldur utan um linka a homepage */
-.home_page1 {
+.home-page-authenticated {
     display: inline-block;
     margin-bottom: 10px;
     height: 450px;
 }
 
 /* heldur utan um linka a homepage */
-.home_page2 {
+.home-page {
     display: inline-block;
     margin-bottom: 10px;
     height: 450px;
 }
 
 /* Homepage rammi fyrir all products */
-.home_one, .home_one_user {
+.home-one, .home-one-user {
     margin-top: 170px;
     border: 3px dotted #7818e5;
     border-top: none;
@@ -31,7 +31,7 @@
 }
 
 /* Homepage rammi fyrir sign up */
-.home_two, .home_two_user {
+.home-two, .home-two-user {
     margin-top: 50px;
     margin-bottom: 150px;
     margin-right: 1px;
@@ -50,7 +50,7 @@
 
 
 /* Homepage rammi fyrir sign up */
-.home_two_user {
+.home-two-user {
     margin-top: 50px;
     margin-bottom: 50px;
     margin-right: 1px;
@@ -68,7 +68,7 @@
 }
 
 /* Homepage rammi fyrir all products - innskradur */
-.home_one_user {
+.home-one-user {
     margin-top: 170px;
     border: 3px dotted #7818e5;
     border-top: none;
@@ -87,7 +87,7 @@
 
 
 /* NEON mynd */
-.view_all_img {
+.view-all-img {
     padding: 1px;
     margin-top: 1px;
     margin-bottom: 0px;
@@ -96,7 +96,7 @@
 }
 
 /* NEON mynd */
-.sign_up_img, .my_wishlist_img {
+.sign-up-img, .my-wishlist-img {
     padding: 1px;
     margin-top: 1px;
     margin-bottom: 0px;
@@ -106,7 +106,7 @@
 }
 
 /* Linkar a NEON myndum */
-.img_link {
+.img-link {
     position:relative;
     display:inline-block;
     z-index: 2;
@@ -122,19 +122,19 @@
     z-index:1;
 }
 
-.retro_img {
+.retro-img {
     width: 370px;
     height: 310px;
 }
 
-.home_page_retro {
+.home-page-retro {
     display: inline-block;
     margin-left: 80px;
     vertical-align: top;
     margin-top: 270px;
 }
 
-.add_to_newsletter_btn {
+.add-to-newsletter-btn {
     display: inline-block;
     vertical-align: top;
     margin: 5px;
