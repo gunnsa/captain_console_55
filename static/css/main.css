@@ -127,3 +127,41 @@ button {
     display: block;
 }
 
+/*Error messages*/
+ul.errorlist {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.errorlist li {
+    margin: 0 0 3px;
+    padding: 4px 5px;
+}
+
+.error-msg{
+    color: #ff073a;
+    background-color: black;
+    box-shadow:0 0 5px #ff073a;
+    display: block;
+    margin: 0 0 3px;
+    padding: 4px 5px;
+    text-align: left;
+    border-radius: 3px;
+}
+
+.errorlist.nonfield{
+    color: #ff073a;
+    background-color: black;
+    box-shadow:0 0 5px #ff073a;
+    display: block;
+    margin: 0px 5px 20px 0px;
+    padding: 4px 5px;
+    text-align: left;
+    border-radius: 3px;
+    width: 300px;
+
+}
+
+.error{
+    color: #ff073a;
+}

@@ -6,7 +6,13 @@
             <img id="sign-up-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/97368510_10158166861202567_7883960767333007360_n.jpg?_nc_cat=108&_nc_sid=e007fa&_nc_oc=AQnEn6D930rxUPYlrKBH3JRynQe9gK9mt2hfdaHmXOWgEQLnruObybQA48uM4pASGHw&_nc_ht=scontent.frkv3-1.fna&oh=a8c939dea33e84744792a9fe96062740&oe=5EE2FF00"></img>
 
             {% csrf_token %}
-            {{ form }}
+            {{ form }}<br>
+            {% if error %}
+                <h4 class="error">Please review fields again</h4>
+                <div class = "error-msg">
+                    {{ error }}
+                </div>
+            {% endif %}
 
             <input type="submit" class="btn btn-primary" value="Sign Up" id="submit-register" />
         </form>

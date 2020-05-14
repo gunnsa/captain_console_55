@@ -1,5 +1,6 @@
 from django.forms import ModelForm, widgets
 from order.models import ContactInformation
+from django import forms
 
 
 class ContactForm(ModelForm):

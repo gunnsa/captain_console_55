@@ -7,8 +7,13 @@
         <form method="post" class="form form-horizontal" id="contact-form-horizontal">
             {% csrf_token %}
             <div class='contact-info-form'>
-                {{ form }}
-
+                {{ form }}<br>
+                {% if error %}
+                    <h4 class="error">Please review fields again</h4>
+                    <div class = "error-msg">
+                        {{ error }}
+                    </div>
+                {% endif %}
             </div>
             <a class="btn -btn-primary" id="previous-page" href="{% url 'cart-index' %}">Go back to cart</a>
             <input type="submit" class="btn btn-primary" value="Continue to payment" id="continue-to-payment"/>

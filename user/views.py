@@ -11,6 +11,13 @@ def register(request):
         if form.is_valid():
             form.save()
             return redirect('login')
+        else:
+            print(form.errors)
+            error = form.errors
+            return render(request, 'user/register.html', {
+                'form': UserCreationForm(),
+                'error': error
+            })
 
     return render(request, 'user/register.html', {
         'form': UserCreationForm()

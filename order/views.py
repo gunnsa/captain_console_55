@@ -1,3 +1,5 @@
+from django.forms import forms
+
 from order.models import ContactInformation, Order, Payment
 from order.forms.contact_form import ContactForm
 from order.forms.payment_form import PaymentForm
@@ -8,7 +10,6 @@ from cart.models import Cart
 def order_contact_form(request):
     """ Returns Contact information form and saves current users input to database """
     contact_info = ContactInformation.objects.filter(user=request.user).first()
-
     if request.method == 'POST':
         form = ContactForm(instance=contact_info, data=request.POST)
         if form.is_valid():
@@ -16,10 +17,17 @@ def order_contact_form(request):
             contact_info.user = request.user
             contact_info.save()
             return redirect('payment-index')
-
-    return render(request, 'order/contact_info.html', {
-        'form': ContactForm(instance=contact_info)
-    })
+        else:
+            print(form.errors)
+            error = form.errors
+            return render(request, 'order/contact_info.html', {
+                'form': ContactForm(instance=contact_info),
+                'error': error
+            })
+    else:
+        return render(request, 'order/contact_info.html', {
+            'form': ContactForm(instance=contact_info)
+        })
 
 
 def get_payment(request):
@@ -33,6 +41,13 @@ def get_payment(request):
             payment.user = request.user
             payment.save()
             return redirect('displayorder-index')
+        else:
+            print(form.errors)
+            error = form.errors
+            return render(request, 'order/payment.html', {
+                'form': PaymentForm(instance=payment),
+                'error': error
+            })
 
     return render(request, 'order/payment.html', {
         'form': PaymentForm(instance=payment)

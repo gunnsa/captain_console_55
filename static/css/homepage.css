@@ -112,7 +112,6 @@
 .img-link {
     position:relative;
     display:inline-block;
-    z-index: 2;
     height: 90px;
 }
 
@@ -122,19 +121,18 @@
     padding-bottom: 1px;
     height:100%;
     width:100%;
-    z-index:1;
 }
 
 .retro-img {
-    width: 370px;
-    height: 310px;
+    width: 400px;
+    height: 390px;
 }
 
 .home-page-retro {
     display: inline-block;
-    margin-left: 80px;
+    margin-left: 60px;
     vertical-align: top;
-    margin-top: 270px;
+    margin-top: 140px;
 }
 
 .add-to-newsletter-btn {
