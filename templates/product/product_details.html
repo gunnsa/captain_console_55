@@ -23,11 +23,10 @@
                     {% endfor %}
                 </div>
                 <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-
-                    </ol>
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
             </div>
 
             <div class="product-info">
@@ -69,42 +68,41 @@
         </div>
     </div>
 
-    <div class="recently-viewed-box">
-        <img id="recently-viewed-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96688090_10158166842747567_905460701785489408_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_oc=AQnvkKQ99KPGO8tuwbOKGhbH4j3G3B5PUpB4Vhbdpz6ELjTiJniNs5tpe0Dl5Qkn8t0&_nc_ht=scontent.frkv3-1.fna&oh=db3462f7dbc8e8cc1f7fe5b97bebd479&oe=5EE2B101"></img>
+    {% if cookie_product_id %}
+        <div class="recently-viewed-box">
+            <img id="recently-viewed-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96688090_10158166842747567_905460701785489408_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_oc=AQnvkKQ99KPGO8tuwbOKGhbH4j3G3B5PUpB4Vhbdpz6ELjTiJniNs5tpe0Dl5Qkn8t0&_nc_ht=scontent.frkv3-1.fna&oh=db3462f7dbc8e8cc1f7fe5b97bebd479&oe=5EE2B101"></img>
 
-        <div class="recently-viewed">
+            <div class="recently-viewed">
+
+                <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+
+                    <div class="carousel-inner">
+                        <div class="item active">
+                                {% for product_id in cookie_product_id reversed %}
+                                    <div class="col-sm-3">
+                                        <div class="product-image-wrapper1">
+                                            {% include 'product/recently_viewed.html' with product_id=product_id %}
+                                        </div>
+                                    </div>
+                                    {% if forloop.counter|divisibleby:4 and not forloop.last %}
+                                    </div>
+                                        <div class="item">
+                                    {% endif %}
+                                {% endfor %}
 
 
-            <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                        </div>
+                    </div> <!-- SETJA FREKAR PUNKTA EINS OG Í PRODUCT DETAIL???? -->
+                    <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                        <i class="fa fa-angle-left fa-5x"></i>
+                    </a>
+                    <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                        <i class="fa fa-angle-right fa-5x"></i>
+                    </a>
+            </div>
 
-                <div class="carousel-inner">
-                    <div class="item active">
 
-                        {% for product_id in cookie_product_id reversed %}
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper1">
-                                    {% include 'product/recently_viewed.html' with product_id=product_id %}
-                                </div>
-                            </div>
-                            {% if forloop.counter|divisibleby:4 and not forloop.last %}
-                            </div>
-                                <div class="item">
-                            {% endif %}
-                        {% endfor %}
-
-                    </div>
-                </div>
-                <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                    <i class="fa fa-angle-left fa-5x"></i>
-                </a>
-                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                    <i class="fa fa-angle-right fa-5x"></i>
-                </a>
+            </div>
         </div>
-
-
-        </div>
-
-    </div>
-
+    {% endif %}
 {% endblock %}
