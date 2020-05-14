@@ -12,18 +12,20 @@ $(document).ready(function () {
                 url: 'add_to_newsletter/' + email,
                 type: 'POST',
                 success: function (resp) {
+                    console.log(resp)
+                    console.log('hello', this.url)
                     swal({
                         text: "You have been signed!",
                         icon: "success",
                         buttons: false,
                         timer: 1450,});
                 },
-                error: function (status, error) {
+                error: function (xhr, status, error) {
                 swal({
-                    text: "Whoops! Try again",
+                    text: "Whoops! Try again!",
                     icon: "warning",
                     buttons: false,
-                    });
+                    timer: 1450,});
                     }
                 });
             });

@@ -121,6 +121,18 @@
     margin-bottom: 50px;
 }
 
+#go-shop {
+    border: 2px solid #90ffff;
+    margin-left: 45%;
+    font-size: x-large;
+}
+
+.cart h2 {
+    padding-top: 8%;
+    margin-left: 40%;
+    margin-bottom: 5%;
+}
+
 
 /* taka útlínur á takka þannig sjáist bara ruslið */
 #remove-cart-item-btn {
@@ -158,4 +170,11 @@
     padding-bottom: 20px;
     display: block;
 }
+
+.wishlist h2 {
+    padding-top: 8%;
+    margin-left: 40%;
+    margin-bottom: 5%;
+}
+
 /*------------------------*/

@@ -89,7 +89,11 @@ $(document).ready(function () {
               $('.products').html(newHtml.join(''));
             },
             error: function (xhr, status, error) {
-                console.error(error);
+                swal({
+                    text: "Whoops! Try again!",
+                    icon: "warning",
+                    buttons: false,
+                    timer: 1450,});
             }
         })
     });
@@ -118,7 +122,11 @@ $(document).ready(function () {
               $('.products').html(newHtml.join(''));
             },
             error: function (xhr, status, error) {
-                console.error(error);
+                swal({
+                    text: "Whoops! Try again!",
+                    icon: "warning",
+                    buttons: false,
+                    timer: 1450,});
             }
         })
     });
@@ -146,7 +154,11 @@ $(document).ready(function () {
               $('.products').html(newHtml.join(''));
             },
             error: function (xhr, status, error) {
-                console.error(error);
+                swal({
+                    text: "Whoops! Try again!",
+                    icon: "warning",
+                    buttons: false,
+                    timer: 1450,});
             }
         })
     });

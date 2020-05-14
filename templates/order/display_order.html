@@ -3,7 +3,7 @@
 
     <div class="order">
 
-        <img class="display-order-img" id="display-order-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96261753_10158190362808972_2626307312490381312_n.jpg?_nc_cat=109&_nc_sid=0debeb&_nc_ohc=gZtynOCRo3sAX8C6JXO&_nc_ht=scontent.frkv3-1.fna&oh=e029c8923856b2e37ff85acca24f46cb&oe=5EE1838C" frameborder='no' scrolling='no' width="250" height="190">
+        <img class="order-overview-img" id="order-overview-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96261753_10158190362808972_2626307312490381312_n.jpg?_nc_cat=109&_nc_sid=0debeb&_nc_ohc=gZtynOCRo3sAX8C6JXO&_nc_ht=scontent.frkv3-1.fna&oh=e029c8923856b2e37ff85acca24f46cb&oe=5EE1838C">
 
         <div class="table-and-buttons">
             <table class="table">
@@ -46,7 +46,7 @@
 
                 {% for x in info %}
                     <td>
-                        <h4>{{ x.full_name }} </h4>
+                        <h4 id="full-name">{{ x.full_name }} </h4>
                         {{ x.email_address }}
                         {{ x.phone_number }}<br>
                         {{ x.home_address }}
