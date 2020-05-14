@@ -21,5 +21,34 @@
     color: black;
 }
 
+.order-overview #order-success {
+    font-size: xx-large;
+    color: #90ffff;
+}
+.order-overview #pick-up-parcel {
+    font-size: large;
+}
 
+.order-overview #opening-hours {
+    font-size: medium;
+}
 
+#full-name {
+    font-size: large;
+}
+
+#order-overview-NEON {
+    width: 600px;
+    height: auto;
+    margin-top: 70px;
+    padding: 70px;
+    padding-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: block;
+}
+
+.order-overview #contact-information {
+    font-size: x-large;
+    color: #90ffff;
+}
