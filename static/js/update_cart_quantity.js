@@ -143,7 +143,7 @@ $(document).ready(function () {
             type: 'DELETE',
             success: function (resp) {
                 swal({
-                    text: "Items removed from cart!",
+                    text: "All items removed from cart!",
                     icon: "success",
                     buttons: false,
                     timer: 1450,});
