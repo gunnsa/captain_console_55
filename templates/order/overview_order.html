@@ -7,7 +7,6 @@
         {% for x in info %}
             <h4 id="order-success">Congratulations {{ x.full_name }} - Your order was successful!</h4>
 
-
             <div class="contact-info">
                 <h3 id="contact-information">Contact information</h3>
                 {{ x.full_name }}<br>
@@ -20,9 +19,6 @@
                 {{ x.additional_info }}<br>
             </div>
         {% endfor %}
-
-
-
 
             <div class="pickup-info">
                 <br><h4 id="contact-information">You can collect your order:</h4>
@@ -71,11 +67,8 @@
                 {% endfor %}
                 </tbody>
 
-
-
                 <td id="total" colspan="3"> <h4>Total:</h4></td>
                 <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
-
 
             </table>
             <a class="btn -btn-primary" id="shop-more-btn" href="{% url 'products-index' %}">Continue shopping more</a>
