@@ -8,11 +8,7 @@
 
 
             <div id="myCarousel" class="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
+
                 <div class="carousel-inner">
                     {% for product_image in product.productimage_set.all %}
                         {% if forloop.counter == 1 %}
@@ -21,11 +17,17 @@
                             </div>
                         {% else %}
                             <div class="item">
-                                <img src="{{ product_image.image }}" class="product-img-extra" />
+                                <img src="{{ product_image.image }}" class="product-img extra" />
                             </div>
                         {% endif %}
                     {% endfor %}
                 </div>
+                <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+
+                    </ol>
             </div>
 
             <div class="product-info">
@@ -93,10 +95,10 @@
                     </div>
                 </div>
                 <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                <i class="fa fa-angle-left"></i>
+                    <i class="fa fa-angle-left fa-5x"></i>
                 </a>
                 <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                <i class="fa fa-angle-right"></i>
+                    <i class="fa fa-angle-right fa-5x"></i>
                 </a>
         </div>
 

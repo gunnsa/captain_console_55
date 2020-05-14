@@ -119,14 +119,3 @@ def json_response_form(request):
     return products
 
 
-
-
-
-
-from django import template
-
-register = template.Library()
-@register.filter(is_safe=True)
-def is_numeric(value):
-    return "{}".format(value).isdigit()
-

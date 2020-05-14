@@ -1,5 +1,11 @@
 /* -------------- PRODUCTS -------------- */
 
+#all-products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 /* NEON - all products img */
 /* má taka út 'class="all-products-img"' í product/index.html?? */
 #all-products-NEON{
@@ -188,13 +194,8 @@
     margin-top: 50px;
 }
 
-/* setur vörur í fina röð
-.recently-viewed {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
 
- */
+
 
 .recently-viewed-box {
     margin-top: 60px;
@@ -226,7 +227,7 @@
 }
  */
 
-/* passar að myndir verði ekki of stórar */
+/* passar að myndir verði ekki of stórar -- PRODUCT DETAIL */
 .carousel-inner>.item>img {
     height: 220px;
 }
@@ -239,9 +240,51 @@
     display: inline;
 }
 
+.carousel-indicators {
+    position: inherit;
+    top: 1px;
+}
 
-
+/* held þurfi að vera til að sé fínt */
 .recently-viewed {
     display: grid;
+    /*margin-top: 60px;
+    margin-bottom: 50px;*/
+    border-radius: 5px;
+    clear: both;
+    width: 900px;
+    margin: 50px;
+}
+
+
+@media (min-width: 992px) {
+    .single-product {
+        width: 270px;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .single-product {
+        width: 300px;
+    }
+}
+
+
+@media (max-width: 667px) {
+    .single-product {
+        width: 340px;
+    }
+}
+
+.fa-angle-right {
+    color: #90FFFF;
+    float: right;
+    right: 30px;
+}
+
+.fa-angle-left {
+    color: #90FFFF;
+    float: left;
 }
 
