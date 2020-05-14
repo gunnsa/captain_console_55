@@ -9,9 +9,8 @@ from cart.models import Cart
 
 def order_contact_form(request):
     """ Returns Contact information form and saves current users input to database """
-
+    contact_info = ContactInformation.objects.filter(user=request.user).first()
     if request.method == 'POST':
-        contact_info = ContactInformation.objects.filter(user=request.user).first()
         form = ContactForm(instance=contact_info, data=request.POST)
         if form.is_valid():
             contact_info = form.save(commit=False)
@@ -21,15 +20,14 @@ def order_contact_form(request):
         else:
             print(form.errors)
             error = form.errors
-            return render(request, 'order/contactinfo.html', {
+            return render(request, 'order/contact_info.html', {
                 'form': ContactForm(instance=contact_info),
                 'error': error
             })
     else:
-        contact_info = ContactInformation.objects.filter(user=request.user).first()
-    return render(request, 'order/contactinfo.html', {
-        'form': ContactForm(instance=contact_info),
-    })
+        return render(request, 'order/contact_info.html', {
+            'form': ContactForm(instance=contact_info)
+        })
 
 
 def get_payment(request):

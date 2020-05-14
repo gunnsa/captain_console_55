@@ -131,8 +131,14 @@ button {
 ul.errorlist {
     margin: 0;
     padding: 0;
+    list-style-type: none;
 }
 .errorlist li {
+    margin: 0 0 3px;
+    padding: 4px 5px;
+}
+
+.error-msg{
     color: #ff073a;
     background-color: black;
     box-shadow:0 0 5px #ff073a;
@@ -141,4 +147,10 @@ ul.errorlist {
     padding: 4px 5px;
     text-align: left;
     border-radius: 3px;
+}
+
+
+
+.error{
+    color: #ff073a;
 }
