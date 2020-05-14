@@ -25,7 +25,6 @@ def add_to_newsletter(request, email):
                 Newsletter.objects.create(email=email)
                 print('3')
         else:
-            raise ValidationError
             print('not valid')
 
     return render(request, 'home/index.html')
