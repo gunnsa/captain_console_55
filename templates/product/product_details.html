@@ -5,15 +5,29 @@
     <img class="product-details-img" id="product-details-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96426986_10158190330363972_8993374094317584384_o.jpg?_nc_cat=109&_nc_sid=0debeb&_nc_ohc=o428PqnkCscAX8GZemW&_nc_ht=scontent.frkv3-1.fna&oh=d52a57346275332cae9d9cef35f39365&oe=5EDED50E" frameborder='no' scrolling='no' width="500" height="200">
     <div class="all-product-detail">
         <div class="product-details">
-            <div class="product-detail-images">
-                {% for product_image in product.productimage_set.all %}
-                    {% if forloop.counter == 1 %}
-                        <img src="{{ product_image.image }}" class="product-img" />
-                    {% else %}
-                        <img src="{{ product_image.image }}" class="product-img-extra" />
-                    {% endif %}
-                {% endfor %}
+
+
+            <div id="myCarousel" class="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    {% for product_image in product.productimage_set.all %}
+                        {% if forloop.counter == 1 %}
+                            <div class="item active">
+                                <img src="{{ product_image.image }}" class="product-img" />
+                            </div>
+                        {% else %}
+                            <div class="item">
+                                <img src="{{ product_image.image }}" class="product-img-extra" />
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
+
             <div class="product-info">
                 <h1>{{ product.name }}</h1>
                 <p>{{ product.price }}$</p>
@@ -40,7 +54,7 @@
                         </a>
                      {% else %}
                         <button class="btn -btn-primary" onclick="location.href='{% url 'login' %}?next={{request.path}}';"
-                                id = "add_to_cart">Add to cart</button>
+                                id = "add-to-cart">Add to cart</button>
                     {% endif %}
 
                 </div>
@@ -57,12 +71,24 @@
         <img id="recently-viewed-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96688090_10158166842747567_905460701785489408_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_oc=AQnvkKQ99KPGO8tuwbOKGhbH4j3G3B5PUpB4Vhbdpz6ELjTiJniNs5tpe0Dl5Qkn8t0&_nc_ht=scontent.frkv3-1.fna&oh=db3462f7dbc8e8cc1f7fe5b97bebd479&oe=5EE2B101"></img>
 
         <div class="recently-viewed">
-            {% for key, product_id  in request.COOKIES.items %}
-                {% for product in all_products %}
-                    {% include 'product/recently_viewed.html' with product=product %}
+
+            <div id="myCarousel-recently-viewed" class="carousel recently-viewed">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel-recently-viewed" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel-recently-viewed" data-slide-to="1"></li>
+                    <li data-target="#myCarousel-recently-viewed" data-slide-to="2"></li>
+                    <li data-target="#myCarousel-recently-viewed" data-slide-to="3"></li>
+                </ol>
+            <div class="carousel-inner">
+                {% for product_id  in request.COOKIES.values %}
+                    {% for product in all_products %}
+                        {% include 'product/recently_viewed.html' with product=product %}
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
+            </div>
+            </div>
         </div>
 
     </div>
+
 {% endblock %}

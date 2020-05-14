@@ -1,3 +1,5 @@
+from django.forms import forms
+
 from order.models import ContactInformation, Order, Payment
 from order.forms.contact_form import ContactForm
 from order.forms.payment_form import PaymentForm
@@ -7,18 +9,26 @@ from cart.models import Cart
 
 def order_contact_form(request):
     """ Returns Contact information form and saves current users input to database """
-    contact_info = ContactInformation.objects.filter(user=request.user).first()
 
     if request.method == 'POST':
+        contact_info = ContactInformation.objects.filter(user=request.user).first()
         form = ContactForm(instance=contact_info, data=request.POST)
         if form.is_valid():
             contact_info = form.save(commit=False)
             contact_info.user = request.user
             contact_info.save()
             return redirect('payment-index')
-
+        else:
+            print(form.errors)
+            error = form.errors
+            return render(request, 'order/contactinfo.html', {
+                'form': ContactForm(instance=contact_info),
+                'error': error
+            })
+    else:
+        contact_info = ContactInformation.objects.filter(user=request.user).first()
     return render(request, 'order/contactinfo.html', {
-        'form': ContactForm(instance=contact_info)
+        'form': ContactForm(instance=contact_info),
     })
 
 
@@ -33,6 +43,13 @@ def get_payment(request):
             payment.user = request.user
             payment.save()
             return redirect('displayorder-index')
+        else:
+            print(form.errors)
+            error = form.errors
+            return render(request, 'order/payment.html', {
+                'form': PaymentForm(instance=payment),
+                'error': error
+            })
 
     return render(request, 'order/payment.html', {
         'form': PaymentForm(instance=payment)
@@ -89,3 +106,30 @@ def overview(request):
         context = {'carts': user_cart, 'eachItemTotal': each_item, 'sumTotal': rounded_sumtotal, 'info': user_info}
 
     return render(request, 'order/overview_order.html', context)
+
+
+def order_history(request):
+    """ Returns view of current users order history """
+
+    user_info = ContactInformation.objects.filter(user_id=request.user.id)
+    user_order = Order.objects.all().filter(user_id=request.user.id)
+    sum_total = 0
+    each_item = {}
+    print(user_order)
+
+    print()
+    for order in user_order:
+        # user_cart = Cart.objects.all().filter(user_id=request.user.id, order_id=order.id)
+        user_cart = Cart.objects.all().filter(user_id=request.user.id, order_id=order.id)
+
+        # tilraun = order.cart.all()
+        # print(tilraun)
+
+        # tilraun2 = user_order.all().filter(cart__order_id=order.id)
+        # print(tilraun2)
+
+        context = {'carts': user_cart, 'user_info': user_info}
+        print('context: ', context)
+
+    return render(request, 'order/display_order.html', context)
+

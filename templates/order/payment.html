@@ -8,7 +8,11 @@
 
             {% csrf_token %}
             <div class='payment'>
-                {{ form }}
+                {{ form }}<br>
+                {% if error %}
+                    <p>Please review fields again</p>
+                    {{ error }}
+                {% endif %}
             </div>
 
             <a class="btn -btn-primary" id="previous-page"

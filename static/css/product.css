@@ -62,22 +62,25 @@
 }
 
 /* setur nafn, verð, lit og framleiðanda í inline-block við product-img */
-.product-details .product-info {
+.product-info {
     display: inline-block;
     vertical-align: top;
     margin: 20px;
 }
 
 /* setur product-img í inline-block við nafn, verð, lit og framleiðanda */
-.product-details .product-detail-images  {
+.carousel {
     display: inline-block;
     margin: 20px;
     margin-left: 0px;
     margin-right: 0px;
+    width: 220px;
+    height: 220px;
 }
 
+
 /* heldur utan um quantity cart og wishlist takka --> PRODUCT DETAIL */
-.quantity_cart-wishlist {
+.quantity-cart-wishlist {
     margin: 5px;
     height: 40px;
 }
@@ -185,11 +188,13 @@
     margin-top: 50px;
 }
 
-/* setur vörur í fina röð */
+/* setur vörur í fina röð
 .recently-viewed {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+ */
 
 .recently-viewed-box {
     margin-top: 60px;
@@ -211,6 +216,7 @@
     display: block;
 }
 
+/*
 .product-img-extra {
     width: 120px;
     height: 120px;
@@ -218,3 +224,22 @@
     clear: both;
     float: left;
 }
+ */
+
+/* passar að myndir verði ekki of stórar */
+.carousel-inner>.item>img {
+    height: 220px;
+}
+
+
+.carousel-inner>.item>a>img {
+    height: 220px;
+    width: 200px;
+    clear: both;
+    display: inline;
+}
+
+.recently-viewed {
+    display: grid;
+}
+

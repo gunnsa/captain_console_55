@@ -118,7 +118,6 @@
     background: black;
     color: white;
     margin-bottom: 20px;
-
 }
 
 /* rauður rammi ef invalid */
@@ -127,36 +126,9 @@
 }
 
 
-/*
-.payment {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-}
-
-
-#id_card_year {
+#id_card_month, #id_card_year {
     width: 100px;
-    display: inline;
 }
-
-#id_card_month {
-    width: 100px;
-    display: inline;
-}
-
-.payment label {
-    float: right;
-}
- */
-
-
-
-/* label */
-/* select */
-
-
-
 
 
 
