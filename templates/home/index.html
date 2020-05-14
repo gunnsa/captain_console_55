@@ -2,49 +2,49 @@
 {% block content %}
 
     {% if user.is_authenticated %}
-        <div class="home_page1">
-            <div class="home_one_user">
-                <a href="{% url 'products-index'%}" class="img_link">
+        <div class="home-page-authenticated">
+            <div class="home-one-user">
+                <a href="{% url 'products-index'%}" class="img-link">
                     <div class="blocker"></div>
-                    <iframe class="view_all_img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=45&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=view all products&image_font_family=ssvivas&" frameborder='no' scrolling='no'></iframe>
+                    <iframe class="view-all-img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=45&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=view all products&image_font_family=ssvivas&" frameborder='no' scrolling='no'></iframe>
                 </a>
             </div>
 
-            <div class="home_two_user">
-                <a href="{% url 'wishlist-index'%}" class="img_link">
+            <div class="home-two-user">
+                <a href="{% url 'wishlist-index'%}" class="img-link">
                     <div class="blocker"></div>
-                    <iframe class="my_wishlist_img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=47&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=My wishlist&image_font_family=ssvivas&" frameborder='no' scrolling='no'></iframe>
+                    <iframe class="my-wishlist-img" id="wishlist-home-NEON" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=47&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=My wishlist&image_font_family=ssvivas&" frameborder='no' scrolling='no'></iframe>
                 </a>
             </div>
 
-            <div class="newsletter_email">
-                <button class="btn -btn-primary" id="add_to_newsletter_btn">Sign up to our newsletter here</button>
+            <div class="newsletter-email">
+                <button class="btn -btn-primary" id="add-to-newsletter-btn">Sign up to our newsletter here</button>
             </div>
         </div>
 
-            <div class="home_page_retro">
-                <img class="retro_img" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96671148_10158192982933972_543705703911522304_o.jpg?_nc_cat=107&_nc_sid=0debeb&_nc_ohc=bUIW9BjfKdgAX8AirpC&_nc_ht=scontent.frkv3-1.fna&oh=d8f8a99258b6d2696873aa6fa1a59e78&oe=5EE2CC5B">
-            </div>
+        <div class="home-page-retro">
+            <img class="retro-img" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96671148_10158192982933972_543705703911522304_o.jpg?_nc_cat=107&_nc_sid=0debeb&_nc_ohc=bUIW9BjfKdgAX8AirpC&_nc_ht=scontent.frkv3-1.fna&oh=d8f8a99258b6d2696873aa6fa1a59e78&oe=5EE2CC5B">
+        </div>
 
     {% else %}
-        <div class="home_page2">
-        <div class="home_one">
-            <a href="{% url 'products-index'%}" class="img_link">
-                <div class="blocker"></div>
-                <iframe class="view_all_img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=45&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=view all products&image_font_family=ssvivas&" frameborder='no' scrolling='no'></iframe>
-            </a>
+        <div class="home-page">
+            <div class="home-one">
+                <a href="{% url 'products-index'%}" class="img-link">
+                    <div class="blocker"></div>
+                    <iframe class="view-all-img" id="view-all-NEON" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=45&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=view all products&image_font_family=ssvivas&" frameborder='no' scrolling='no'></iframe>
+                </a>
+            </div>
+
+            <div class="home-two">
+                <a href="{% url 'register'%}" class="img-link">
+                    <div class="blocker"></div>
+                    <iframe class="sign-up-img" id="sign-up-home-NEON" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=47&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=Sign up now!&image_font_family=ssvivas&" frameborder='no' scrolling='no'></iframe>
+                </a>
+            </div>
         </div>
 
-        <div class="home_two">
-            <a href="{% url 'register'%}" class="img_link">
-                <div class="blocker"></div>
-                <iframe class="sign_up_img" src="https://ntmaker.gfto.ru/newneontexten/?image_height=200&image_width=600&image_font_shadow_width=30&image_font_size=47&image_background_color=000000&image_text_color=90FFFF&image_font_shadow_color=000000&image_url=&image_text=Sign up now!&image_font_family=ssvivas&" frameborder='no' scrolling='no'></iframe>
-            </a>
-        </div>
-        </div>
-
-        <div class="home_page_retro">
-            <img class="retro_img" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96671148_10158192982933972_543705703911522304_o.jpg?_nc_cat=107&_nc_sid=0debeb&_nc_ohc=bUIW9BjfKdgAX8AirpC&_nc_ht=scontent.frkv3-1.fna&oh=d8f8a99258b6d2696873aa6fa1a59e78&oe=5EE2CC5B">
+        <div class="home-page-retro">
+            <img class="retro-img" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96671148_10158192982933972_543705703911522304_o.jpg?_nc_cat=107&_nc_sid=0debeb&_nc_ohc=bUIW9BjfKdgAX8AirpC&_nc_ht=scontent.frkv3-1.fna&oh=d8f8a99258b6d2696873aa6fa1a59e78&oe=5EE2CC5B">
         </div>
     {% endif %}
 
