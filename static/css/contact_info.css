@@ -95,11 +95,12 @@
 
 /* ----- PAYMENT INFORMATION ----- */
 .payment {
-    width: 480px;
+    width: 440px;
     height: 100%;
     margin: 0 auto;
     padding: 70px;
-    padding-left: 120px;
+    padding-left: 80px;
+    padding-right: 80px;
     padding-top: 20px;
     padding-bottom: 20px;
     border-radius: 5px;
@@ -131,7 +132,7 @@
 }
 
 #id_card_number{
-    width: 250px;
+    width: 280px;
 }
 
 
