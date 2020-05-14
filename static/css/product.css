@@ -188,18 +188,13 @@
     margin-top: 50px;
 }
 
-/* setur vörur í fina röð
-.recently-viewed {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
 
- */
+
 
 .recently-viewed-box {
     margin-top: 60px;
     margin-bottom: 50px;
-    padding: 50px;
+    padding: 90px;
     box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
     border-radius: 5px;
     clear: both;
@@ -226,7 +221,7 @@
 }
  */
 
-/* passar að myndir verði ekki of stórar */
+/* passar að myndir verði ekki of stórar -- PRODUCT DETAIL */
 .carousel-inner>.item>img {
     height: 220px;
 }
@@ -241,7 +236,19 @@
 
 
 
+/* held þurfi að vera til að sé fínt */
 .recently-viewed {
     display: grid;
+}
+
+
+.fa-angle-right {
+    color: #90FFFF;
+    float: right;
+}
+
+.fa-angle-left {
+    color: #90FFFF;
+    float: left;
 }
 
