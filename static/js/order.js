@@ -82,8 +82,8 @@ $(document).ready(function () {
             },
             error: function (status, error) {
                 swal({
-                    title: "Whoops! Something went wrong",
-                    text: "Try again",
+                    text: "Whoops! Try again!",
+                    icon: "warning",
                     buttons: false,
                     timer: 1450,});
             }
