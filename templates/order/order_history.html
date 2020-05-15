@@ -5,64 +5,59 @@
 
         <img class="order-history-img" id="order-history-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96261753_10158190362808972_2626307312490381312_n.jpg?_nc_cat=109&_nc_sid=0debeb&_nc_ohc=gZtynOCRo3sAX8C6JXO&_nc_ht=scontent.frkv3-1.fna&oh=e029c8923856b2e37ff85acca24f46cb&oe=5EE1838C" frameborder='no' scrolling='no' width="250" height="190">
 
-        <div class="table-and-buttons">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <td></td>
-                        <td> Product </td>
-                        <td> Quantity </td>
-                        <td> Price </td>
-                    </tr>
-                </thead>
+        {% for order in user_order %}
+            <div class="table-and-buttons">
+                <table class="table">
 
-                <tbody>
-                {% for cart in user_cart %}
-                    <tr>
-                        <td>
-                            <img class="product-img-cart" src="{{ cart.product.productimage_set.first.image }}">
-                        </td>
+                        <thead>
+                            <tr>
+                                <td><h4>Order ID: {{ order.id }}</h4><br></td>
+                                <td> Product </td>
+                                <td> Quantity </td>
+                                <td> Price </td>
+                            </tr>
+                        </thead>
 
-                        <td>
-                            <h4>{{ cart.product.name }} </h4>
-                            {{ cart.product.short_description }} <br>
-                            {{ cart.product.price }} $
-                        </td>
+                        <tbody>
+                            {% for cart in order.cart.all %}
+                                <tr>
+                                    <td>
+                                        <img class="product-img-cart" src="{{ cart.product.productimage_set.first.image }}">
+                                    </td>
 
-                        <td>
-                            <input id="quantity-order-history" data-id="{{ cart.product.id }}" type="number" value="{{ cart.quantity }}" disabled>
-                        </td>
+                                    <td>
+                                        <h4>{{ cart.product.name }}</h4>
+                                        {{ cart.product.short_description }} <br>
+                                        {{ cart.product.price }} $
+                                    </td>
 
-                        <td>
-                            {% for product, price in eachItemTotal.items %}
-                                {% if product == cart.product.id %}
-                                    {{ price }}
-                                {% endif %}
+                                    <td>
+                                        <input id="quantity-order-history" data-id="{{ cart.product.id }}" type="number" value="{{ cart.quantity }}" disabled>
+                                    </td>
+
+                                    <td>
+                                        {% for product, price in eachItemTotal.items %}
+                                            {% if product == cart.id %}
+                                                {{ price }}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </td>
+                                </tr>
                             {% endfor %}
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
+                        </tbody>
 
-                {% for x in info %}
-                    <td>
-                        <h4>{{ x.full_name }} </h4>
-                        {{ x.email_address }}
-                        {{ x.phone_number }}<br>
-                        {{ x.home_address }}
-                        {{ x.city }}
-                        {{ x.country }}
-                        {{ x.zip_code }}
-                        {{ x.additional_info }}
+                    <td id="total" colspan="3"> <h4>Total:</h4></td>
+                    <td id="total" colspan="2">
+                        {% for product, price in sumTotal.items %}
+                            {% if product == order.id %}
+                                <h4> {{ price }} </h4>
+                            {% endif %}
+                        {% endfor %}
                     </td>
-                {% endfor %}
-                <td id="total" colspan="3"> <h4>Total:</h4></td>
-                <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
-                <td><h4>ORDER ID: {{ orderId }}</h4></td>
-            </table>
-            <!--<a class="btn -btn-primary" id="previous-page" href=" url 'payment-index' ">Go back to payment</a>
-            <a class="btn -btn-primary" id="create-order" >Confirm order</a>-->
-        </div>
-    </div>
+                </table>
+            </div>
+
+        {% endfor %}
+     </div>
 
 {% endblock %}

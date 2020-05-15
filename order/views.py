@@ -111,23 +111,22 @@ def order_history(request):
 
     user_info = ContactInformation.objects.filter(user_id=request.user.id)
     user_order = Order.objects.all().filter(user_id=request.user.id)
+
     sum_total = 0
     each_item = {}
-    print(user_order)
+    each_order = {}
 
-    print()
-    for order in user_order:
-        # user_cart = Cart.objects.all().filter(user_id=request.user.id, order_id=order.id)
-        user_cart = Cart.objects.all().filter(user_id=request.user.id, order_id=order.id)
+    for cart in user_order:
+        for product in cart.cart.all():
+            total = ("{:.2f}".format(float(product.quantity * product.product.price)) + ' $')
+            each_item[product.id] = total
 
-        # tilraun = order.cart.all()
-        # print(tilraun)
+            sum_total += product.quantity * product.product.price
+            rounded_sum_total = ("{:.2f}".format(float(sum_total)) + ' $')
 
-        # tilraun2 = user_order.all().filter(cart__order_id=order.id)
-        # print(tilraun2)
+        each_order[cart.id] = rounded_sum_total
+        sum_total = 0
 
-        context = {'carts': user_cart, 'user_info': user_info}
-        print('context: ', context)
+        context = {'user_order': user_order, 'info': user_info, 'eachItemTotal': each_item, 'sumTotal': each_order}
 
-    return render(request, 'order/display_order.html', context)
-
+    return render(request, 'order/order_history.html', context)

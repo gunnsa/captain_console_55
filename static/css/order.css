@@ -17,6 +17,14 @@
     height: 25px;
 }
 
+#quantity-order-history {
+    text-align: right;
+    background-color: black;
+    border: none;
+    width: 32px;
+    height: 25px;
+}
+
 #email {
     color: black;
 }
