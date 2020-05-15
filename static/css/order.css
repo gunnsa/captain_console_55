@@ -80,6 +80,23 @@
     margin-left: 45px;
 }
 
+
+
+.payment-info{
+    display: inline-block;
+    margin-left: 45px;
+}
+
+.order #credit-card-information{
+    font-size: 19px;
+    color: #90FFFF;
+}
+
+.order #contact-information {
+    font-size: 19px;
+    color: #90FFFF;
+}
+
 #order-history-NEON {
     width: 600px;
     height: auto;
