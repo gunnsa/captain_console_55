@@ -46,14 +46,25 @@
 
                 {% for x in info %}
                     <td>
-                        <h4 id="full-name">{{ x.full_name }} </h4>
-                        {{ x.email_address }}<br>
-                        {{ x.phone_number }}<br>
-                        {{ x.home_address }}<br>
-                        {{ x.city }}
-                        {{ x.country }}
-                        {{ x.zip_code }}
-                        {{ x.additional_info }}
+                        <h4><u>Contact information</u></h4>
+                        <p>Full name: {{ x.full_name }} </p>
+                        <p>Email: {{ x.email_address }}</p>
+                        <p>Phone: {{ x.phone_number }}</p>
+                        <p>Address: {{ x.home_address }}</p>
+                        <p>City: {{ x.city }}   Zip: {{ x.zip_code }}</p>
+                        <p>Country: {{ x.country }}</p>
+                        {% if x.additional_info %}
+                            <p>Additional Information: {{ x.additional_info }}</p>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+                {% for x in payment %}
+                    <td>
+                        <h4><u>Credit card information</u></h4>
+                        <p>Card number: {{ x.card_number }}</p>
+                        <p> Expiration date: {{ x.card_month }}/
+                        {{ x.card_year }}</p>
+                        <p>CVC: {{ x.card_CVC }}</p>
                     </td>
                 {% endfor %}
                 <td id="total" colspan="3"> <h4>Total:</h4></td>
@@ -61,7 +72,7 @@
 
             </table>
             <a class="btn -btn-primary" id="previous-page" href="{% url 'payment-index' %}">Go back to payment</a>
-            <a class="btn -btn-primary" id="create-order" >Confirm order</a>
+            <a class="btn -btn-primary" id="create-order">Confirm purchase</a>
         </div>
     </div>
 

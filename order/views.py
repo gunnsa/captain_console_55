@@ -58,6 +58,7 @@ def display_order(request):
     """ Returns read only view of all information regarding current users order """
     user_cart = Cart.objects.all().filter(user_id=request.user.id, order_id__exact='')
     user_info = ContactInformation.objects.filter(user_id=request.user.id)
+    user_payment = Payment.objects.filter(user_id=request.user.id)
     sum_total = 0
     each_item = {}
 
@@ -66,7 +67,8 @@ def display_order(request):
         each_item[product.product.id] = total
         sum_total += product.quantity * product.product.price
         rounded_sum_total = ("{:.2f}".format(float(sum_total))+' $')
-        context = {'carts': user_cart, 'eachItemTotal': each_item, 'sumTotal': rounded_sum_total, 'info': user_info}
+        context = {'carts': user_cart, 'eachItemTotal': each_item, 'sumTotal': rounded_sum_total,
+                   'info': user_info, 'payment': user_payment}
 
     return render(request, 'order/display_order.html', context)
 
