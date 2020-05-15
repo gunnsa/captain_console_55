@@ -130,10 +130,9 @@
 }
 
 
-#heart-product {
-    padding: 15px;
-    padding-top: 5px;
-    padding-bottom: 15px;
+#add-to-wishlist-btn {
+    margin-left: 10px;
+    padding: 5px;
 }
 
 
@@ -171,7 +170,7 @@
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     width: 23px;
-    height: 30px;
+    height: 35px;
 }
 
 /*product quantity button*/
