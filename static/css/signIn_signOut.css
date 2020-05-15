@@ -19,7 +19,7 @@
 /* sign up síðan */
 .container #register-form-horizontal {
     width: 500px;
-    height: 450px;
+    height: 100%;
     margin: 0 auto;
     padding: 70px;
     padding-left: 100px;
@@ -61,6 +61,7 @@
     width: 100px;
     border: 2px solid #90FFFF;
     margin-left: 100px;
+    margin-top: 20px;
 }
 
 
@@ -74,15 +75,14 @@
 /* glugginn a sign up siðunni */
 .register {
     margin-top: 100px;
-    margin-bottom: 250px;
+    margin-bottom: 400px;
 }
 
 
 /* hjálpar texti á sign up síðunni */
 .helptext {
-    color: #d718e5;
+    display: none;
 }
-
 
 
 #sign-in-NEON {

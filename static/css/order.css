@@ -17,6 +17,14 @@
     height: 25px;
 }
 
+#quantity-order-history {
+    text-align: right;
+    background-color: black;
+    border: none;
+    width: 32px;
+    height: 25px;
+}
+
 #email {
     color: black;
 }
@@ -54,11 +62,13 @@
 }
 
 #shop-more-btn {
+    font-size: large;
     display: inline-block;
     vertical-align: top;
     margin: 5px;
     border: 2px solid #90FFFF;
     float: left;
+    margin-left: 380px;
     margin-bottom: 70px;
 }
 
