@@ -74,7 +74,7 @@
     box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
     border-radius: 5px;
     clear: both;
-    padding: 50px;
+    padding: 70px;
 }
 
 /* setur nafn, verð, lit og framleiðanda í inline-block við product-img */
@@ -99,6 +99,7 @@
 .quantity-cart-wishlist {
     margin: 5px;
     height: 40px;
+    margin-top: 15px;
 }
 
 /* fyrir logged in people --> PRODUCT DETAIL */
@@ -133,6 +134,8 @@
 #add-to-wishlist-btn {
     margin-left: 10px;
     padding: 5px;
+    text-decoration: none;
+    vertical-align: top;
 }
 
 
@@ -187,8 +190,9 @@
 }
 
 .product-description {
-    margin-right: 25px;
-    margin-left: 25px;
+    margin-right: 45px;
+    margin-left: 45px;
+    margin-top: 30px;
 }
 
 /* texti undir myndir hvitur */
@@ -300,3 +304,11 @@
     clear: both;
     display: inline;
 }
+
+
+.product-details {
+    margin-right: 45px;
+    margin-left: 45px;
+
+}
+
