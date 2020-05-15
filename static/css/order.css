@@ -69,3 +69,14 @@
 .pickup-info {
     margin-left: 45px;
 }
+
+#order-history-NEON-NEON {
+    width: 600px;
+    height: auto;
+    margin-top: 70px;
+    padding: 70px;
+    padding-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: block;
+}
