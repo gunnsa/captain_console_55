@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-    <img class="product-details-img" id="product-details-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96426986_10158190330363972_8993374094317584384_o.jpg?_nc_cat=109&_nc_sid=0debeb&_nc_ohc=o428PqnkCscAX8GZemW&_nc_ht=scontent.frkv3-1.fna&oh=d52a57346275332cae9d9cef35f39365&oe=5EDED50E">
+    <img class="product-details-img" alt="Product detail NEON" id="product-details-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96426986_10158190330363972_8993374094317584384_o.jpg?_nc_cat=109&_nc_sid=0debeb&_nc_ohc=o428PqnkCscAX8GZemW&_nc_ht=scontent.frkv3-1.fna&oh=d52a57346275332cae9d9cef35f39365&oe=5EDED50E">
     <div class="all-product-detail">
         <div class="product-details">
 
@@ -13,11 +13,11 @@
                     {% for product_image in product.productimage_set.all %}
                         {% if forloop.counter == 1 %}
                             <div class="item active">
-                                <img src="{{ product_image.image }}" class="product-img" />
+                                <img src="{{ product_image.image }}" alt="Product image" class="product-img" />
                             </div>
                         {% else %}
                             <div class="item">
-                                <img src="{{ product_image.image }}" class="product-img extra" />
+                                <img src="{{ product_image.image }}" alt="Product image extra" class="product-img extra" />
                             </div>
                         {% endif %}
                     {% endfor %}
@@ -71,7 +71,7 @@
 
     {% if cookie_product_id %}
         <div class="recently-viewed-box">
-            <img id="recently-viewed-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96688090_10158166842747567_905460701785489408_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_oc=AQnvkKQ99KPGO8tuwbOKGhbH4j3G3B5PUpB4Vhbdpz6ELjTiJniNs5tpe0Dl5Qkn8t0&_nc_ht=scontent.frkv3-1.fna&oh=db3462f7dbc8e8cc1f7fe5b97bebd479&oe=5EE2B101">
+            <img id="recently-viewed-NEON" alt="Recently viewed NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96688090_10158166842747567_905460701785489408_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_oc=AQnvkKQ99KPGO8tuwbOKGhbH4j3G3B5PUpB4Vhbdpz6ELjTiJniNs5tpe0Dl5Qkn8t0&_nc_ht=scontent.frkv3-1.fna&oh=db3462f7dbc8e8cc1f7fe5b97bebd479&oe=5EE2B101">
 
             <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
                 <i class="fa fa-angle-left fa-5x"></i>
