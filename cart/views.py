@@ -16,6 +16,7 @@ def index(request):
         sum_total += product.quantity * product.product.price
         rounded_sum_total = ("{:.2f}".format(float(sum_total))+' $')
         context = {'carts': user_cart, 'eachItemTotal': each_item, 'sumTotal': rounded_sum_total}
+
     if user_cart:
         return render(request, 'cart/index.html', context)
     else:
