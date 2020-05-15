@@ -150,18 +150,22 @@ ul.errorlist {
 }
 
 .errorlist.nonfield{
-    color: #ff073a;
+    color: #ffffff;
     background-color: black;
     box-shadow:0 0 5px #ff073a;
     display: block;
-    margin: 0px 5px 20px 0px;
+    margin: 0 0 3px;
     padding: 4px 5px;
     text-align: left;
     border-radius: 3px;
     width: 300px;
-
 }
 
 .error{
     color: #ffffff;
+}
+
+/* Firefox remove number arrows*/
+input[type=number] {
+  -moz-appearance: textfield;
 }
