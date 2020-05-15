@@ -113,7 +113,7 @@
     color: white;
 }
 
-.search-navigationbar{
+.search-navigationbar {
     padding: 8px;
     margin-top: 16px;
     margin-right: 10px;
@@ -231,15 +231,15 @@
 }
 
 
-.navbar-default .navbar-collapse .all-prodctss{
+.navbar-default .navbar-collapse .all-prodctss {
     margin-left: 14px;
 }
 
-.navbar-default .navbar-collapse #heart-nav-bar{
+.navbar-default .navbar-collapse #heart-nav-bar {
     margin-left: 14px;
 }
 
-.navbar-default .navbar-collapse #cart{
+.navbar-default .navbar-collapse #cart {
     margin-left: 12px;
 }
 

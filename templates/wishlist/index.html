@@ -2,7 +2,7 @@
 {% block content %}
 
     <div class="wishlist">
-        <img id="wishlist-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/98176831_10158166953192567_3568966292234829824_n.jpg?_nc_cat=109&_nc_sid=e007fa&_nc_oc=AQm5y4vFRXoHzstiMJaO-sCxMEdH_ePQ00Ui6ZT2pJhu9y8t5rhrINTvZihIxALJ-xg&_nc_ht=scontent.frkv3-1.fna&oh=7b5bed2901129b075a7214d0a87abf73&oe=5EE1BBBE">
+        <img id="wishlist-NEON" alt="Wishlist NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/98176831_10158166953192567_3568966292234829824_n.jpg?_nc_cat=109&_nc_sid=e007fa&_nc_oc=AQm5y4vFRXoHzstiMJaO-sCxMEdH_ePQ00Ui6ZT2pJhu9y8t5rhrINTvZihIxALJ-xg&_nc_ht=scontent.frkv3-1.fna&oh=7b5bed2901129b075a7214d0a87abf73&oe=5EE1BBBE">
 
         <div class="table-and-buttons">
             <table class="table">
@@ -19,7 +19,7 @@
                     <tr>
                         <td>
                             <a href="/products/{{ item.product.id }}">
-                                <img class="product-img-cart" src="{{ item.product.productimage_set.first.image }}">
+                                <img class="product-img-cart" alt="Product image cart" src="{{ item.product.productimage_set.first.image }}">
                             </a>
                         </td>
 

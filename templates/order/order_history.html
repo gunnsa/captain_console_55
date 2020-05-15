@@ -3,57 +3,62 @@
 
     <div class="order-history">
 
-        <img class="order-history-img" id="order-history-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96828032_10158197971628972_1665970268830433280_n.jpg?_nc_cat=103&_nc_sid=0debeb&_nc_ohc=XPOYqFOPqZUAX9ZqYRb&_nc_ht=scontent.frkv3-1.fna&oh=430a35d7895ae98e6f97bdb97074402f&oe=5EE1A804">
+        <img class="order-history-img" alt="Neon order history lgo" id="order-history-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96828032_10158197971628972_1665970268830433280_n.jpg?_nc_cat=103&_nc_sid=0debeb&_nc_ohc=XPOYqFOPqZUAX9ZqYRb&_nc_ht=scontent.frkv3-1.fna&oh=430a35d7895ae98e6f97bdb97074402f&oe=5EE1A804">
 
         {% for order in user_order %}
             <div class="table-and-buttons">
                 <table class="table">
 
-                        <thead>
+                    <thead>
+                        <tr>
+                            <td>Order: {{ order.id }}<br></td>
+                            <td> Product </td>
+                            <td> Quantity </td>
+                            <td> Price </td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for cart in order.cart.all %}
                             <tr>
-                                <td>Order: {{ order.id }}<br></td>
-                                <td> Product </td>
-                                <td> Quantity </td>
-                                <td> Price </td>
+                                <td>
+                                    <img class="product-img-cart" alt="Neon product logo" src="{{ cart.product.productimage_set.first.image }}">
+                                </td>
+
+                                <td>
+                                    <h4>{{ cart.product.name }}</h4>
+                                    {{ cart.product.short_description }} <br>
+                                    {{ cart.product.price }} $
+                                </td>
+
+                                <td>
+                                    <input id="quantity-order-history" data-id="{{ cart.product.id }}" type="number" value="{{ cart.quantity }}" disabled>
+                                </td>
+
+                                <td>
+                                    {% for product, price in eachItemTotal.items %}
+                                        {% if product == cart.id %}
+                                            {{ price }}
+                                        {% endif %}
+                                    {% endfor %}
+                                </td>
                             </tr>
-                        </thead>
-
-                        <tbody>
-                            {% for cart in order.cart.all %}
-                                <tr>
-                                    <td>
-                                        <img class="product-img-cart" src="{{ cart.product.productimage_set.first.image }}">
-                                    </td>
-
-                                    <td>
-                                        <h4>{{ cart.product.name }}</h4>
-                                        {{ cart.product.short_description }} <br>
-                                        {{ cart.product.price }} $
-                                    </td>
-
-                                    <td>
-                                        <input id="quantity-order-history" data-id="{{ cart.product.id }}" type="number" value="{{ cart.quantity }}" disabled>
-                                    </td>
-
-                                    <td>
-                                        {% for product, price in eachItemTotal.items %}
-                                            {% if product == cart.id %}
-                                                {{ price }}
-                                            {% endif %}
-                                        {% endfor %}
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-
-                    <td id="total" colspan="3"> <h4>Total:</h4></td>
-                    <td id="total" colspan="2">
-                        {% for product, price in sumTotal.items %}
-                            {% if product == order.id %}
-                                <h4> {{ price }} </h4>
-                            {% endif %}
                         {% endfor %}
-                    </td>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td id="total" colspan="3"> <h4>Total:</h4></td>
+                            <td id="total" colspan="2">
+                                {% for product, price in sumTotal.items %}
+                                    {% if product == order.id %}
+                                        <h4> {{ price }} </h4>
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    </tbody>
+
                 </table>
             </div>
 

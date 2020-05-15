@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="{% url 'home-index'%}" >
-                    <img class="logo-img" id="logo-img" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96636397_10158190979333972_4260977869712261120_o.jpg?_nc_cat=103&_nc_sid=0debeb&_nc_ohc=rn-s_ing02oAX-WtO85&_nc_ht=scontent.frkv3-1.fna&oh=66d27d60cd32fa5ec66f97ddbae17494&oe=5EE17AE2" width="330" height="45"></a></li>
+                    <img class="logo-img" id="logo-img" alt="Logo image" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96636397_10158190979333972_4260977869712261120_o.jpg?_nc_cat=103&_nc_sid=0debeb&_nc_ohc=rn-s_ing02oAX-WtO85&_nc_ht=scontent.frkv3-1.fna&oh=66d27d60cd32fa5ec66f97ddbae17494&oe=5EE17AE2" width="330" height="45"></a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -51,7 +51,7 @@
                 <li><a id="cart" href="{% url 'cart-index' %}"><i class="fa fa-shopping-cart fa-lg"></i></a></li>
 
                 <div class="search-navigationbar">
-                    <form action="/products" method="get" class="navbar-form navbar-left" id="search-form" role="search">
+                    <form action="{% url 'products-index' %}" method="get" class="navbar-form navbar-left" id="search-form" role="search">
                         <input type="search"  id="search-box" name="search-text" placeholder="Search...">
                         <button id="disabled-navigation-btn"><i id="fa-search" class="fa fa-search"></i></button>
                     </form>

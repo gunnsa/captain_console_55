@@ -2,7 +2,7 @@
 {% block content %}
 
     <div class="order-overview">
-        <img class="order-overview-img" id="order-overview-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96790235_10158197493443972_2000969076444233728_o.jpg?_nc_cat=103&_nc_sid=0debeb&_nc_ohc=claK_gRLF1wAX8ZGui1&_nc_ht=scontent.frkv3-1.fna&oh=04832a635296c8e09030f59bafae285f&oe=5EE47153">
+        <img class="order-overview-img" alt="Neon order review logo" id="order-overview-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96790235_10158197493443972_2000969076444233728_o.jpg?_nc_cat=103&_nc_sid=0debeb&_nc_ohc=claK_gRLF1wAX8ZGui1&_nc_ht=scontent.frkv3-1.fna&oh=04832a635296c8e09030f59bafae285f&oe=5EE47153">
 
         {% for x in info %}
             <h4 id="order-success">Congratulations {{ x.full_name }} - Your order was successful!</h4>
@@ -45,7 +45,7 @@
                 {% for cart in carts %}
                     <tr>
                         <td>
-                            <img class="product-img-cart" src="{{ cart.product.productimage_set.first.image }}">
+                            <img class="product-img-cart" alt="product image" src="{{ cart.product.productimage_set.first.image }}">
                         </td>
 
                         <td>
@@ -70,8 +70,12 @@
                 {% endfor %}
                 </tbody>
 
-                <td id="total" colspan="3"> <h4>Total:</h4></td>
-                <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
+                <tbody>
+                    <tr>
+                        <td id="total" colspan="3"> <h4>Total:</h4></td>
+                        <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
+                    </tr>
+                </tbody>
 
             </table>
             <a class="btn -btn-primary" id="shop-more-btn" href="{% url 'products-index' %}">Want something else? Keep on shopping!</a>

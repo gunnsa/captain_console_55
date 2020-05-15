@@ -3,35 +3,37 @@
 
     <div class="order">
 
-        <img class="order-overview-img" id="order-overview-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/98154675_10158170413967567_2815162504873771008_n.jpg?_nc_cat=106&_nc_sid=e007fa&_nc_oc=AQmAOepIek6-ejWZKj1R3IaiYSsIxC3y4LvQOJ_6V0H_li1BQZjuDeN6OaZW8eVii4g&_nc_ht=scontent.frkv3-1.fna&oh=b5ea90a176c5c41d170840cf6c8cd4c9&oe=5EE189D3">
-                {% for x in info %}
-                    <div class="contact-info">
-                        <h3 id="contact-information">Contact information</h3>
-                        Full name: {{ x.full_name }} <br>
-                        Email: {{ x.email_address }}<br>
-                        Phone: {{ x.phone_number }}<br>
-                        Address: {{ x.home_address }}<br>
-                        City: {{ x.city }}, {{ x.zip_code }}<br>
-                        Country: {{ x.country }}<br>
-                        {% if x.additional_info %}
-                            Additional Information: {{ x.additional_info }}<br>
-                        {% endif %}
-                    </div>
-                {% endfor %}
-                {% for x in payment %}
-                    <div class="payment-info">
-                    <h3 id="credit-card-information">Credit card information</h3>
-                        Card number: {{ x.card_number }}<br>
-                         Expiration date: {{ x.card_month }}/
-                        {{ x.card_year }}<br>
-                        CVC: {{ x.card_CVC }}<br>
-                    <br>
-                    <br>
-                    <br>
-                    </div>
-                {% endfor %}
+        <img class="order-overview-img" alt="Neon order review lgo" id="order-overview-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/98154675_10158170413967567_2815162504873771008_n.jpg?_nc_cat=106&_nc_sid=e007fa&_nc_oc=AQmAOepIek6-ejWZKj1R3IaiYSsIxC3y4LvQOJ_6V0H_li1BQZjuDeN6OaZW8eVii4g&_nc_ht=scontent.frkv3-1.fna&oh=b5ea90a176c5c41d170840cf6c8cd4c9&oe=5EE189D3">
+
+        {% for x in info %}
+            <div class="contact-info">
+                <h3 id="contact-information">Contact information</h3>
+                    Full name: {{ x.full_name }} <br>
+                    Email: {{ x.email_address }}<br>
+                    Phone: {{ x.phone_number }}<br>
+                    Address: {{ x.home_address }}<br>
+                    City: {{ x.city }}, {{ x.zip_code }}<br>
+                    Country: {{ x.country }}<br>
+                    {% if x.additional_info %}
+                        Additional Information: {{ x.additional_info }}<br>
+                    {% endif %}
+            </div>
+        {% endfor %}
+
+        {% for x in payment %}
+            <div class="payment-info">
+                <h3 id="credit-card-information">Credit card information</h3>
+                    Card number: {{ x.card_number }}<br>
+                     Expiration date: {{ x.card_month }}/
+                    {{ x.card_year }}<br>
+                    CVC: {{ x.card_CVC }}<br>
+                <br><br><br>
+            </div>
+        {% endfor %}
+
         <div class="table-and-buttons">
             <table class="table">
+
                 <thead>
                     <tr>
                         <td></td>
@@ -45,7 +47,7 @@
                 {% for cart in carts %}
                     <tr>
                         <td>
-                            <img class="product-img-cart" src="{{ cart.product.productimage_set.first.image }}">
+                            <img class="product-img-cart" alt="Neon product logo" src="{{ cart.product.productimage_set.first.image }}">
                         </td>
 
                         <td>
@@ -69,8 +71,14 @@
                 {% endfor %}
                 </tbody>
 
-                <td id="total" colspan="3"> <h4>Total:</h4></td>
-                <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
+                <tbody>
+
+                    <tr>
+                        <td id="total" colspan="3"> <h4>Total:</h4></td>
+                        <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
+                    </tr>
+
+                </tbody>
 
             </table>
             <a class="btn -btn-primary" id="previous-page" href="{% url 'payment-index' %}">Go back to payment</a>
