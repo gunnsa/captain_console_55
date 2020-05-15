@@ -2,7 +2,7 @@
 {% block content %}
 
     <div class="cart">
-        <img class="cart-img" id="cart-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96424532_10158190365528972_371126728182988800_n.jpg?_nc_cat=101&_nc_sid=0debeb&_nc_ohc=JPjhIuhqqzcAX8N3S-L&_nc_ht=scontent.frkv3-1.fna&oh=5cbff76af5019459586212165490a801&oe=5EDF8331"">
+        <img class="cart-img" id="cart-NEON" alt="Neon cart logo" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96424532_10158190365528972_371126728182988800_n.jpg?_nc_cat=101&_nc_sid=0debeb&_nc_ohc=JPjhIuhqqzcAX8N3S-L&_nc_ht=scontent.frkv3-1.fna&oh=5cbff76af5019459586212165490a801&oe=5EDF8331">
 
         <div class="table-and-buttons">
             <table class="table">
@@ -21,7 +21,7 @@
                     <tr>
                         <td class="product-image-cart">
                             <a href="/products/{{ cart.product.id }}">
-                                <img class="product-img-cart" src="{{ cart.product.productimage_set.first.image }}">
+                                <img class="product-img-cart" alt="product image" src="{{ cart.product.productimage_set.first.image }}">
                             </a>
                         </td>
 
