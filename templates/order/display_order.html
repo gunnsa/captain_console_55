@@ -3,7 +3,7 @@
 
     <div class="order">
 
-        <img class="order-overview-img" id="order-overview-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96261753_10158190362808972_2626307312490381312_n.jpg?_nc_cat=109&_nc_sid=0debeb&_nc_ohc=gZtynOCRo3sAX8C6JXO&_nc_ht=scontent.frkv3-1.fna&oh=e029c8923856b2e37ff85acca24f46cb&oe=5EE1838C">
+        <img class="order-overview-img" id="order-overview-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/98154675_10158170413967567_2815162504873771008_n.jpg?_nc_cat=106&_nc_sid=e007fa&_nc_oc=AQmAOepIek6-ejWZKj1R3IaiYSsIxC3y4LvQOJ_6V0H_li1BQZjuDeN6OaZW8eVii4g&_nc_ht=scontent.frkv3-1.fna&oh=b5ea90a176c5c41d170840cf6c8cd4c9&oe=5EE189D3">
 
         <div class="table-and-buttons">
             <table class="table">
@@ -46,14 +46,25 @@
 
                 {% for x in info %}
                     <td>
-                        <h4 id="full-name">{{ x.full_name }} </h4>
-                        {{ x.email_address }}<br>
-                        {{ x.phone_number }}<br>
-                        {{ x.home_address }}<br>
-                        {{ x.city }}
-                        {{ x.country }}
-                        {{ x.zip_code }}
-                        {{ x.additional_info }}
+                        <h4><u>Contact information</u></h4>
+                        <p>Full name: {{ x.full_name }} </p>
+                        <p>Email: {{ x.email_address }}</p>
+                        <p>Phone: {{ x.phone_number }}</p>
+                        <p>Address: {{ x.home_address }}</p>
+                        <p>City: {{ x.city }}   Zip: {{ x.zip_code }}</p>
+                        <p>Country: {{ x.country }}</p>
+                        {% if x.additional_info %}
+                            <p>Additional Information: {{ x.additional_info }}</p>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+                {% for x in payment %}
+                    <td>
+                        <h4><u>Credit card information</u></h4>
+                        <p>Card number: {{ x.card_number }}</p>
+                        <p> Expiration date: {{ x.card_month }}/
+                        {{ x.card_year }}</p>
+                        <p>CVC: {{ x.card_CVC }}</p>
                     </td>
                 {% endfor %}
                 <td id="total" colspan="3"> <h4>Total:</h4></td>
@@ -61,7 +72,7 @@
 
             </table>
             <a class="btn -btn-primary" id="previous-page" href="{% url 'payment-index' %}">Go back to payment</a>
-            <a class="btn -btn-primary" id="create-order" >Confirm order</a>
+            <a class="btn -btn-primary" id="create-order">Confirm purchase</a>
         </div>
     </div>
 
