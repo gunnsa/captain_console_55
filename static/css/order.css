@@ -80,6 +80,8 @@
     margin-left: 45px;
 }
 
+
+
 .payment-info{
     display: inline-block;
     margin-left: 45px;
@@ -95,7 +97,7 @@
     color: #90FFFF;
 }
 
-#order-history-NEON-NEON {
+#order-history-NEON {
     width: 600px;
     height: auto;
     margin-top: 70px;
