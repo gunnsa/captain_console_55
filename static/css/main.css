@@ -47,6 +47,10 @@ button {
     background: black;
 }
 
+button:focus {
+    outline:0;
+}
+
 
 /* ---------------------------- Footer ---------------------------- */
 
