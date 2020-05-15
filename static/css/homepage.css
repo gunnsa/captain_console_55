@@ -103,20 +103,20 @@
 }
 
 .retro-img {
-    width: 400px;
-    height: 390px;
+    width: 450px;
+    height: 410px;
 }
 
 .remote-img {
-    margin-left: 340px;
-    width: 120px;
+    margin-left: 260px;
+    width: 160px;
 }
 
 .home-page-retro {
     display: inline-block;
     margin-left: 60px;
     vertical-align: top;
-    margin-top: 140px;
+    margin-top: 160px;
 }
 
 #add-to-newsletter-btn {
@@ -125,11 +125,11 @@
     display: inline-block;
     vertical-align: top;
     margin: 0px;
-    border: 1px solid #f65cf5
+    border: 1px solid #5d5f5f;
 }
 
 .newsletter-email {
     width: 300px;
-    margin-left: 150px;
+    margin-left: 80px;
     padding-top: 40px;
 }
