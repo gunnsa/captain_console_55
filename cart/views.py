@@ -38,7 +38,6 @@ def update_cart(request, cartid, quantity):
 
 
 def remove_all_cart_items(request):
-    print('in remove')
     """ Removes all products from the current users cart  """
     if request.method == 'DELETE':
         Cart.objects.filter(user=request.user.id, order_id='').delete()
