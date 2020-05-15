@@ -117,5 +117,3 @@ def json_response_form(request):
         'firstImage': x.productimage_set.first().image
     } for x in request]
     return products
-
-
