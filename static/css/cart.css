@@ -1,8 +1,13 @@
 /* NEON - cart img */
 .cart-img{
-    display: block;
+    width: 500px;
     height: auto;
-    margin-top: 100px;
+    margin-top: 70px;
+    padding: 70px;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: block;
 }
 
 

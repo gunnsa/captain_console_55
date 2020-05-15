@@ -131,4 +131,7 @@ def order_history(request):
 
         context = {'user_order': user_order, 'info': user_info, 'eachItemTotal': each_item, 'sumTotal': each_order}
 
-    return render(request, 'order/order_history.html', context)
+    if user_order:
+        return render(request, 'order/order_history.html', context)
+    else:
+        return render(request, 'order/empty_order_history.html')
