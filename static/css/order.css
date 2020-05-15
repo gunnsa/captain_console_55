@@ -62,11 +62,13 @@
 }
 
 #shop-more-btn {
+    font-size: large;
     display: inline-block;
     vertical-align: top;
     margin: 5px;
     border: 2px solid #90FFFF;
     float: left;
+    margin-left: 380px;
     margin-bottom: 70px;
 }
 
@@ -82,4 +84,31 @@
     padding-top: 8%;
     margin-left: 35%;
     margin-bottom: 5%;
+
+}
+
+.payment-info {
+    display: inline-block;
+    margin-left: 45px;
+}
+
+.order #credit-card-information{
+    font-size: 19px;
+    color: #90FFFF;
+}
+
+.order #contact-information {
+    font-size: 19px;
+    color: #90FFFF;
+}
+
+#order-history-NEON {
+    width: 600px;
+    height: auto;
+    margin-top: 70px;
+    padding: 70px;
+    padding-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: block;
 }
