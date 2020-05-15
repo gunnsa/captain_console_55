@@ -57,7 +57,7 @@ def add_to_cart(request, productid, quantity):
         current_user = request.user.id
 
         if Cart.objects.filter(user_id__exact=current_user, product_id=productid, order_id__exact=''):
-            existing_cart = Cart.objects.get(product_id=productid, user_id=current_user)
+            existing_cart = Cart.objects.get(product_id=productid, user_id=current_user, order_id__exact='')
             existing_cart.quantity = existing_cart.quantity + quantity
             existing_cart.save()
         else:
