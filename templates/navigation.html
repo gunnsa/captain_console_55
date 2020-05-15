@@ -51,7 +51,7 @@
                 <li><a id="cart" href="{% url 'cart-index' %}"><i class="fa fa-shopping-cart fa-lg"></i></a></li>
 
                 <div class="search-navigationbar">
-                    <form action="/products" method="get" class="navbar-form navbar-left" id="search-form" role="search">
+                    <form action="{% url 'products-index' %}" method="get" class="navbar-form navbar-left" id="search-form" role="search">
                         <input type="search"  id="search-box" name="search-text" placeholder="Search...">
                         <button id="disabled-navigation-btn"><i id="fa-search" class="fa fa-search"></i></button>
                     </form>

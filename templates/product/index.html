@@ -10,7 +10,7 @@
             </button>
 
             <div class="dropdown-content">
-                <a href="/products/" class="brand-btn" id="brand-btn" >All products</a>
+                <a href="{% url 'products-index' %}" class="brand-btn" id="brand-btn" >All products</a>
                 {% for filter in manufacturers  %}
                     <a href="/products/{{ filter }}" class="brand-btn" id="brand-btn" data-name="{{ filter }}">{{ filter }}</a>
                 {% endfor %}
