@@ -19,7 +19,7 @@
                 {% for cart in carts %}
 
                     <tr>
-                        <td>
+                        <td class="product-image-cart">
                             <a href="/products/{{ cart.product.id }}">
                                 <img class="product-img-cart" src="{{ cart.product.productimage_set.first.image }}">
                             </a>
@@ -67,8 +67,11 @@
                     </tr>
 
                 {% endfor %}
-
                 </tbody>
+                <td>
+                    <button class="btn -btn-primary delete-all-items-btn" id="delete-all-items-btn">
+                        <i class="fa fa-trash fa-lg" aria-hidden="true"></i> Delete all items in cart </button>
+                </td>
                 <td id="total" colspan="3"> <h4>Total:</h4></td>
                 <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
 

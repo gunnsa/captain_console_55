@@ -34,3 +34,10 @@ def update_cart(request, cartid, quantity):
     if request.method == 'PATCH':
         Cart.objects.filter(pk=cartid).update(quantity=quantity)
         return render(request, 'cart/index.html')
+
+def remove_all_cart_items(request):
+    print('in remove')
+    """ Removes all products from the current users cart  """
+    if request.method == 'DELETE':
+        Cart.objects.filter(user=request.user.id, order_id='').delete()
+        return render(request, 'cart/emptycart.html')

@@ -30,8 +30,8 @@
 }
 
 .order-overview #order-success {
-    font-size: xx-large;
-    color: #90ffff;
+    font-size: 22px;
+    color: #ffffff;
 }
 .order-overview #pick-up-parcel {
     font-size: large;
@@ -57,6 +57,23 @@
 }
 
 .order-overview #contact-information {
-    font-size: x-large;
-    color: #90ffff;
+    font-size: 19px;
+    color: #90FFFF;
+}
+
+#shop-more-btn {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+    float: left;
+    margin-bottom: 70px;
+}
+
+.contact-info, .pickup-info {
+    display: inline-block;
+}
+
+.pickup-info {
+    margin-left: 45px;
 }

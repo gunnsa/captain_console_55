@@ -205,6 +205,8 @@
     box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
     border-radius: 5px;
     clear: both;
+    width: 100%;
+    height: 680px;
 }
 
 #recently-viewed-NEON {
@@ -216,17 +218,8 @@
     padding-top: 10px;
     padding-bottom: 20px;
     display: block;
+    margin-left: 230px;
 }
-
-/*
-.product-img-extra {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-    clear: both;
-    float: left;
-}
- */
 
 /* passar að myndir verði ekki of stórar -- PRODUCT DETAIL */
 .carousel-inner>.item>img {
@@ -248,13 +241,15 @@
 
 /* held þurfi að vera til að sé fínt */
 .recently-viewed {
-    display: grid;
     /*margin-top: 60px;
     margin-bottom: 50px;*/
     border-radius: 5px;
     clear: both;
-    width: 900px;
+    width: 80%;
     margin: 50px;
+    margin-left: 100px;
+    margin-right: 30px;
+    height: 60%;
 }
 
 
@@ -280,12 +275,21 @@
 
 .fa-angle-right {
     color: #90FFFF;
+    position: center;
     float: right;
-    right: 30px;
+
 }
 
 .fa-angle-left {
     color: #90FFFF;
+    position: center;
     float: left;
 }
 
+
+#carousel-inner-id img{
+    height: 200px;
+    width: 180px;
+    clear: both;
+    display: inline;
+}

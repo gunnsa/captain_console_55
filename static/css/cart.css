@@ -112,6 +112,7 @@
     object-fit: contain;
     width:  100px;
     height: 150px;
+    margin-left: 80px;
 }
 
 
@@ -131,6 +132,14 @@
     padding-top: 8%;
     margin-left: 40%;
     margin-bottom: 5%;
+}
+
+#delete-all-items-btn {
+    display: block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+    float: left;
 }
 
 
