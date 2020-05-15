@@ -77,3 +77,9 @@
 .pickup-info {
     margin-left: 45px;
 }
+
+.order-history h2 {
+    padding-top: 8%;
+    margin-left: 35%;
+    margin-bottom: 5%;
+}
