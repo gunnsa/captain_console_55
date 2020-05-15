@@ -72,12 +72,27 @@
         <div class="recently-viewed-box">
             <img id="recently-viewed-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96688090_10158166842747567_905460701785489408_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_oc=AQnvkKQ99KPGO8tuwbOKGhbH4j3G3B5PUpB4Vhbdpz6ELjTiJniNs5tpe0Dl5Qkn8t0&_nc_ht=scontent.frkv3-1.fna&oh=db3462f7dbc8e8cc1f7fe5b97bebd479&oe=5EE2B101"></img>
 
-            <div class="recently-viewed">
+
+                <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                    <i class="fa fa-angle-left fa-5x"></i>
+                </a>
+
+                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                    <i class="fa fa-angle-right fa-5x"></i>
+                </a>
+
+        <div class="recently-viewed">
+
 
                 <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
 
-                    <div class="carousel-inner">
+
+                    <div class="carousel-inner" id="carousel-inner-id">
+
+
+
                         <div class="item active">
+
                                 {% for product_id in cookie_product_id reversed %}
                                     <div class="col-sm-3">
                                         <div class="product-image-wrapper1">
@@ -92,13 +107,8 @@
 
 
                         </div>
-                    </div> <!-- SETJA FREKAR PUNKTA EINS OG Í PRODUCT DETAIL???? -->
-                    <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                        <i class="fa fa-angle-left fa-5x"></i>
-                    </a>
-                    <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                        <i class="fa fa-angle-right fa-5x"></i>
-                    </a>
+                    </div>
+
             </div>
 
 

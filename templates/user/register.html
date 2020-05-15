@@ -8,10 +8,23 @@
             {% csrf_token %}
             {{ form }}<br>
             {% if error %}
-                <h4 class="error">Please review fields again</h4>
-                <div class = "error-msg">
-                    {{ error }}
-                </div>
+                {% for errors in error %}
+                    {% if errors == 'username' %}
+                        <h4 class="error">Username taken</h4>
+                        <div class="error-msg">
+                            <p>A user with that username already exists</p>
+                            <p>Please try another username</p>
+                        </div>
+                    {% endif %}
+                    {% if errors == 'password2' %}
+                        <h4 class="error">Invalid password</h4>
+                        <div class="error-msg">
+                            <p>Your password must contain at least 8 characters
+                            and it can't be entirely numeric</p>
+                            <p> Make sure you type the same password in twice for verification</p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             {% endif %}
 
             <input type="submit" class="btn btn-primary" value="Sign Up" id="submit-register" />

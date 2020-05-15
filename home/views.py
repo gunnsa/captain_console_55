@@ -1,4 +1,4 @@
-from django.http import JsonResponse, HttpResponseForbidden
+from django.http import HttpResponseForbidden
 from django.shortcuts import render
 from home.models import Newsletter
 from django.core.validators import validate_email
