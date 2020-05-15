@@ -11,10 +11,10 @@ def index(request):
     each_item = {}
 
     for product in user_cart:
-        total = ("{:.2f}".format(float(product.quantity * product.product.price))+' $')
+        total = ("{:.2f}".format(float(product.quantity * product.product.price)) + ' $')
         each_item[product.product.id] = total
         sum_total += product.quantity * product.product.price
-        rounded_sum_total = ("{:.2f}".format(float(sum_total))+' $')
+        rounded_sum_total = ("{:.2f}".format(float(sum_total)) + ' $')
         context = {'carts': user_cart, 'eachItemTotal': each_item, 'sumTotal': rounded_sum_total}
 
     if user_cart:
@@ -35,6 +35,7 @@ def update_cart(request, cartid, quantity):
     if request.method == 'PATCH':
         Cart.objects.filter(pk=cartid).update(quantity=quantity)
         return render(request, 'cart/index.html')
+
 
 def remove_all_cart_items(request):
     print('in remove')
