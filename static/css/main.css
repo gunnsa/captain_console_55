@@ -139,7 +139,7 @@ ul.errorlist {
 }
 
 .error-msg{
-    color: #ff073a;
+    color: #ffffff;
     background-color: black;
     box-shadow:0 0 5px #ff073a;
     display: block;
@@ -163,5 +163,5 @@ ul.errorlist {
 }
 
 .error{
-    color: #ff073a;
+    color: #ffffff;
 }

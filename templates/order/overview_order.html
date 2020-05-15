@@ -2,12 +2,30 @@
 {% block content %}
 
     <div class="order-overview">
-        <img class="order-overview-img" id="order-overview-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96261753_10158190362808972_2626307312490381312_n.jpg?_nc_cat=109&_nc_sid=0debeb&_nc_ohc=gZtynOCRo3sAX8C6JXO&_nc_ht=scontent.frkv3-1.fna&oh=e029c8923856b2e37ff85acca24f46cb&oe=5EE1838C">
-        <h4 id="order-success">CONGRATULATIONS! Your order was successful!</h4>
-        <h3 id="pick-up-parcel">You can pick up your parcel during opening hours:</h3>
-            <p id="opening-hours">Monday - Friday 11:30 – 19:00</p>
-            <p id="opening-hours">Saturday 12:00 – 18:00</p>
-            <p id="opening-hours">Sunday 13:00 – 18:00</p>
+        <img class="order-overview-img" id="order-overview-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96790235_10158197493443972_2000969076444233728_o.jpg?_nc_cat=103&_nc_sid=0debeb&_nc_ohc=claK_gRLF1wAX8ZGui1&_nc_ht=scontent.frkv3-1.fna&oh=04832a635296c8e09030f59bafae285f&oe=5EE47153">
+
+        {% for x in info %}
+            <h4 id="order-success">Congratulations {{ x.full_name }} - Your order was successful!</h4>
+
+            <div class="contact-info">
+                <h3 id="contact-information">Contact information</h3>
+                {{ x.full_name }}<br>
+                {{ x.email_address }}<br>
+                {{ x.phone_number }}<br>
+                {{ x.home_address }}<br>
+                {{ x.city }}
+                {{ x.country }}
+                {{ x.zip_code }}
+                {{ x.additional_info }}<br>
+            </div>
+        {% endfor %}
+
+            <div class="pickup-info">
+                <br><h4 id="contact-information">You can collect your order:</h4>
+                    Monday - Friday 11:30 – 19:00<br>
+                    Saturday 12:00 – 18:00<br>
+                    Sunday 13:00 – 18:00
+            </div>
 
         <div class="table-and-buttons">
             <table class="table">
@@ -49,26 +67,11 @@
                 {% endfor %}
                 </tbody>
 
-                {% for x in info %}
-                    <td>
-                        <h3 id="contact-information">Contact information</h3>
-                        <h4 id="full-name">{{ x.full_name }} </h4>
-                        {{ x.email_address }}<br>
-                        {{ x.phone_number }}<br>
-                        {{ x.home_address }}<br>
-                        {{ x.city }}
-                        {{ x.country }}
-                        {{ x.zip_code }}
-                        {{ x.additional_info }}
-                    </td>
-
-                {% endfor %}
                 <td id="total" colspan="3"> <h4>Total:</h4></td>
                 <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
 
-
             </table>
-            <a class="btn -btn-primary" id="previous-page" href="{% url 'products-index' %}">Continue shopping</a>
+            <a class="btn -btn-primary" id="shop-more-btn" href="{% url 'products-index' %}">Continue shopping more</a>
         </div>
     </div>
 

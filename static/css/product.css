@@ -1,5 +1,6 @@
 /* -------------- PRODUCTS -------------- */
 
+/*flex svo ad media virki*/
 #all-products {
     display: flex;
     flex-direction: row;
@@ -204,6 +205,8 @@
     box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
     border-radius: 5px;
     clear: both;
+    width: 100%;
+    height: 680px;
 }
 
 #recently-viewed-NEON {
@@ -247,12 +250,11 @@
 
 /* held þurfi að vera til að sé fínt */
 .recently-viewed {
-    display: grid;
     /*margin-top: 60px;
     margin-bottom: 50px;*/
     border-radius: 5px;
     clear: both;
-    width: 900px;
+    width: 80%;
     margin: 50px;
 }
 
@@ -280,7 +282,7 @@
 .fa-angle-right {
     color: #90FFFF;
     float: right;
-    right: 30px;
+
 }
 
 .fa-angle-left {
@@ -288,3 +290,10 @@
     float: left;
 }
 
+
+#carousel-inner-id img{
+    height: 200px;
+    width: 180px;
+    clear: both;
+    display: inline;
+}

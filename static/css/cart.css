@@ -133,6 +133,14 @@
     margin-bottom: 5%;
 }
 
+#delete-all-items-btn {
+    display: block;
+    vertical-align: top;
+    margin: 5px;
+    border: 2px solid #90FFFF;
+    float: left;
+}
+
 
 /* taka útlínur á takka þannig sjáist bara ruslið */
 #remove-cart-item-btn {
