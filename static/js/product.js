@@ -159,9 +159,4 @@ $(document).ready(function () {
             }
         })
     });
-
-
-
-
-
 });

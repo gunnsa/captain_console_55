@@ -7,13 +7,11 @@ $(document).ready(function () {
             content: "input",
         })
             .then((email) => {
-                console.log(email)
                 $.ajax({
                 url: 'add_to_newsletter/' + email,
                 type: 'POST',
                 success: function (resp) {
-                    console.log(resp)
-                    console.log('hello', this.url)
+
                     swal({
                         text: "You have been signed!",
                         icon: "success",
