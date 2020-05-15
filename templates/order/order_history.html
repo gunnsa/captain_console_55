@@ -3,7 +3,7 @@
 
     <div class="order-history">
 
-        <img class="order-history-img" id="order-history-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96828032_10158197971628972_1665970268830433280_n.jpg?_nc_cat=103&_nc_sid=0debeb&_nc_ohc=XPOYqFOPqZUAX9ZqYRb&_nc_ht=scontent.frkv3-1.fna&oh=430a35d7895ae98e6f97bdb97074402f&oe=5EE1A804">
+        <img class="order-history-img" alt="Neon order history lgo" id="order-history-NEON" src="https://scontent.frkv3-1.fna.fbcdn.net/v/t1.0-9/96828032_10158197971628972_1665970268830433280_n.jpg?_nc_cat=103&_nc_sid=0debeb&_nc_ohc=XPOYqFOPqZUAX9ZqYRb&_nc_ht=scontent.frkv3-1.fna&oh=430a35d7895ae98e6f97bdb97074402f&oe=5EE1A804">
 
         {% for order in user_order %}
             <div class="table-and-buttons">
@@ -22,7 +22,7 @@
                         {% for cart in order.cart.all %}
                             <tr>
                                 <td>
-                                    <img class="product-img-cart" src="{{ cart.product.productimage_set.first.image }}">
+                                    <img class="product-img-cart" alt="Neon product logo" src="{{ cart.product.productimage_set.first.image }}">
                                 </td>
 
                                 <td>
