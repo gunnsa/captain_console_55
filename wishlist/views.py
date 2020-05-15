@@ -26,11 +26,9 @@ def remove_wishlist_item(request, wishlistid):
 def add_to_cart(request, productid):
     """ Moves product from current users wishlist to cart """
     if request.method == 'POST':
-        print('1')
         current_user = request.user.id
 
         if Cart.objects.filter(user_id__exact=current_user, product_id=productid, order_id__exact=''):
-            print('2')
             existing_cart = Cart.objects.get(product_id=productid, user_id=current_user,order_id__exact='')
             existing_cart.quantity = existing_cart.quantity + 1
             existing_cart.save()
