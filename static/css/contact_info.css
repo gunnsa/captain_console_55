@@ -24,12 +24,6 @@
 }
 
 
-.delivery-info{
-    margin-bottom: 10px;
-    vertical-align: center;
-}
-
-
 .contact-information{
     margin-bottom: 50px;
 }
@@ -43,20 +37,6 @@
     background-color: black;
 }
 
-
-#id-home-delivery{
-    padding: 6px 12px;
-    margin-bottom: 20px;
-}
-
-#id-additional-info {
-    height: 95px;
-    width: 400px;
-    font-size: 18px;
-    margin-bottom: 20px;
-    padding-left: 10px;
-    background-color: black;
-}
 
 #continue-to-payment {
     background: black;

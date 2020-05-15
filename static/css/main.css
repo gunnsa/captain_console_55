@@ -165,3 +165,8 @@ ul.errorlist {
 .error{
     color: #ffffff;
 }
+
+/* Firefox remove number arrows*/
+input[type=number] {
+  -moz-appearance: textfield;
+}
