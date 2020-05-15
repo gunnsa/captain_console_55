@@ -70,8 +70,12 @@
                 {% endfor %}
                 </tbody>
 
-                <td id="total" colspan="3"> <h4>Total:</h4></td>
-                <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
+                <tbody>
+                    <tr>
+                        <td id="total" colspan="3"> <h4>Total:</h4></td>
+                        <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
+                    </tr>
+                </tbody>
 
             </table>
             <a class="btn -btn-primary" id="shop-more-btn" href="{% url 'products-index' %}">Want something else? Keep on shopping!</a>
