@@ -248,10 +248,8 @@
     top: 1px;
 }
 
-/* held þurfi að vera til að sé fínt */
+
 .recently-viewed {
-    /*margin-top: 60px;
-    margin-bottom: 50px;*/
     border-radius: 5px;
     clear: both;
     width: 80%;
@@ -259,6 +257,7 @@
     margin-left: 100px;
     margin-right: 30px;
     height: 60%;
+    display: grid;
 }
 
 

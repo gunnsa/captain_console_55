@@ -100,7 +100,7 @@
 
 
 /* ATH!! #pick_up */
-#contact-info, #pick_up{
+#contact-info {
     display: inline-block;
     vertical-align: top;
     margin: 5px;
