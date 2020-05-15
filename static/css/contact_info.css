@@ -1,25 +1,17 @@
 .contact-info-form {
     width: 570px;
     height: 100%;
-    margin: 0 auto;
-    padding: 70px;
-    padding-left: 100px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 70px 20px 100px;
     border-radius: 5px;
-    margin-bottom: 60px;
-    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
-    border-radius: 5px;
+    margin: 0 auto 60px;
+    box-shadow: 0 3px 16px 3px rgba(225, 245, 235, 0.24);
 }
 
 #contact-info-NEON {
     width: 700px;
     height: auto;
     margin-top: 70px;
-    padding: 70px;
-    padding-left: 40px;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding: 10px 70px 20px 40px;
     display: block;
 }
 
@@ -49,10 +41,7 @@
 /* NEON */
 .contact-img{
     margin-top: 50px;
-    padding: 70px;
-    padding-left: 100px;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding: 10px 70px 20px 100px;
     display: block;
 }
 
@@ -77,16 +66,10 @@
 .payment {
     width: 440px;
     height: 100%;
-    margin: 0 auto;
-    padding: 70px;
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 80px;
     border-radius: 5px;
-    margin-bottom: 60px;
+    margin: 0 auto 60px;
     box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
-    border-radius: 5px;
 }
 
 
@@ -120,9 +103,6 @@
     width: 700px;
     height: auto;
     margin-top: 70px;
-    padding: 70px;
-    padding-left: 40px;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding: 10px 70px 20px 40px;
     display: block;
 }

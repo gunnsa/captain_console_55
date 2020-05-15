@@ -2,7 +2,7 @@
 .swal-modal {
     background-color: black;
     border: 1px solid #5d7171;
-    box-shadow: 0px 3px 16px 3px rgba(225, 245, 235, 0.24);
+    box-shadow: 0 3px 16px 3px rgba(225, 245, 235, 0.24);
     width: 380px;
     height: 200px;
 }
@@ -31,7 +31,7 @@
 }
 
 .swal-footer {
-    margin-top: 0px;
+    margin-top: 0;
     padding-top: 6px;
     padding-right: 145px;
 }
